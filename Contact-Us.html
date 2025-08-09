@@ -1,11 +1,947 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Privacy Policy - Visual Sites | Professional Web Development</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Privacy Policy for Visual Sites - Professional Web Development. Learn how we protect your data and privacy.">
+    <meta name="keywords" content="privacy policy, data protection, Visual Sites, web development">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Lordicon for Premium Icons -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    
+    <style>
+        /* ===========================================
+           MODERN PRIVACY POLICY DESIGN SYSTEM
+           =========================================== */
+        
+        /* CSS Variables for Consistent Design */
+        :root {
+            --primary-blue: #3B82F6;
+            --primary-blue-dark: #1E40AF;
+            --primary-blue-light: #60A5FA;
+            --accent-purple: #8B5CF6;
+            --accent-cyan: #06B6D4;
+            --dark-bg: #0F172A;
+            --dark-card: #1E293B;
+            --text-primary: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --text-muted: #64748B;
+            --border-subtle: #334155;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
+            --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+            --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.3);
+            --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Cursor */
+        body {
+            cursor: none;
+        }
+        
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
+        }
+        
+        .custom-cursor.hover {
+            transform: scale(2);
+            background: var(--gradient-primary);
+            mix-blend-mode: normal;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-card);
+        }
+        
+        .nav-link {
+            color: var(--text-secondary) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            text-decoration: none;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-blue-light) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            background: var(--gradient-hero);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #F8FAFC 0%, #60A5FA 50%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: slideInUp 1s ease-out 0.4s both;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #F8FAFC 0%, #60A5FA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Content Cards */
+        .content-card {
+            background: var(--dark-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .content-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--primary-blue);
+        }
+        
+        /* Typography */
+        .content-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue-light);
+            margin-bottom: 1rem;
+        }
+        
+        .content-card h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .content-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .content-card ul {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .content-card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-glow);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-card);
+            border-top: 1px solid var(--border-subtle);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+        
+        /* Contact Info Highlights */
+        .contact-highlight {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-blue-light);
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 2rem 0;
+            }
+            
+            .hero {
+                min-height: 50vh;
+                padding-top: 80px;
+            }
+            
+            .content-card {
+                padding: 1.5rem;
+            }
+            
+            .custom-cursor {
+                display: none;
+            }
+            
+            body {
+                cursor: auto;
+            }
+        }
+        
+        /* Utility Classes */
+        .text-gradient {
+            background: linear-gradient(135deg, #60A5FA 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Code styling */
+        .code {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: var(--primary-blue-light);
+        }
+        
+        /* Table Styles */
+        .privacy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .privacy-table th,
+        .privacy-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        
+        .privacy-table th {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-blue-light);
+            font-weight: 600;
+        }
+        
+        .privacy-table td {
+            color: var(--text-secondary);
+        }
+    </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
     
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="portfolio.html" class="text-xl font-bold text-gradient">Visual Sites</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="portfolio.html" class="nav-link">Home</a>
+                        <a href="portfolio.html#about" class="nav-link">About</a>
+                        <a href="portfolio.html#skills" class="nav-link">Services</a>
+                        <a href="portfolio.html#contact" class="nav-link">Contact</a>
+                        <a href="#" class="nav-link active">Privacy Policy</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-btn text-gray-300 hover:text-white focus:outline-none focus:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-menu hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800 rounded-lg mt-2">
+                    <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Home</a>
+                    <a href="portfolio.html#about" class="block px-3 py-2 rounded-md text-base font-medium nav-link">About</a>
+                    <a href="portfolio.html#skills" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Services</a>
+                    <a href="portfolio.html#contact" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Contact</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium nav-link active">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="flex items-center justify-center mb-6">
+                <lord-icon
+                    src="https://cdn.lordicon.com/abfverha.json"
+                    trigger="loop"
+                    delay="2000"
+                    colors="primary:#3b82f6,secondary:#8b5cf6"
+                    style="width:80px;height:80px;">
+                </lord-icon>
+            </div>
+            <h1 class="hero-title">Privacy Policy</h1>
+            <p class="hero-subtitle">
+                Your privacy and data protection are our top priorities. Learn how Visual Sites 
+                collects, uses, and protects your personal information.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="content-section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Introduction -->
+            <div class="content-card fade-in">
+                <p class="text-lg mb-4">
+                    This privacy policy applies between you, the User of this Website, and <span class="contact-highlight">Visual Sites</span>, 
+                    the owner and provider of this Website. Visual Sites takes the privacy of your information very seriously. 
+                    This privacy policy applies to our use of any and all Data collected by us or provided by you in relation 
+                    to your use of the Website.
+                </p>
+                <p class="font-semibold text-yellow-400">Please read this privacy policy carefully.</p>
+            </div>
+            
+            <!-- Definitions -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Definitions and Interpretation</h2>
+                <p class="mb-4">In this privacy policy, the following definitions are used:</p>
+                
+                <h4><span class="code">Data</span></h4>
+                <p>Collectively all information that you submit to Visual Sites via the Website. This definition incorporates, 
+                where applicable, the definitions provided in the Data Protection Laws.</p>
+                
+                <h4><span class="code">Cookies</span></h4>
+                <p>A small text file placed on your computer by this Website when you visit certain parts of the Website 
+                and/or when you use certain features of the Website. Details of the cookies used by this Website are set 
+                out in the clause below (Cookies).</p>
+                
+                <h4><span class="code">Data Protection Laws</span></h4>
+                <p>Any applicable law relating to the processing of personal Data, including but not limited to the Directive 
+                96/46/EC (Data Protection Directive) or the GDPR, and any national implementing laws, regulations and secondary 
+                legislation, for as long as the GDPR is effective in the UK.</p>
+                
+                <h4><span class="code">GDPR</span></h4>
+                <p>The General Data Protection Regulation (EU) 2016/679.</p>
+                
+                <h4><span class="code">Visual Sites</span></h4>
+                <p>Visual Sites, a professional web development company located in <span class="contact-highlight">Gwynedd, North Wales, UK</span>.</p>
+                
+                <h4><span class="code">UK and EU Cookie Law</span></h4>
+                <p>The Privacy and Electronic Communications (EC Directive) Regulations 2003 as amended by the Privacy and 
+                Electronic Communications (EC Directive) (Amendment) Regulations 2011.</p>
+                
+                <h4><span class="code">User or you</span></h4>
+                <p>Any third party that accesses the Website and is not either (i) employed by Visual Sites and acting in 
+                the course of their employment or (ii) engaged as a consultant or otherwise providing services to Visual Sites 
+                and accessing the Website in connection with the provision of such services.</p>
+                
+                <h4><span class="code">Website</span></h4>
+                <p>The website that you are currently using, and any sub-domains of this site unless expressly excluded by 
+                their own terms and conditions.</p>
+            </div>
+            
+            <!-- Scope -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Scope of this Privacy Policy</h2>
+                <p>This privacy policy applies only to the actions of Visual Sites and Users with respect to this Website. 
+                It does not extend to any websites that can be accessed from this Website including, but not limited to, 
+                any links we may provide to social media websites.</p>
+                
+                <p>For purposes of the applicable Data Protection Laws, Visual Sites is the "data controller". This means 
+                that Visual Sites determines the purposes for which, and the manner in which, your Data is processed.</p>
+            </div>
+            
+            <!-- Data Collected -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Data Collected</h2>
+                <p>We may collect the following Data, which includes personal Data, from you:</p>
+                <ul>
+                    <li>Name</li>
+                    <li>Contact information such as email addresses and telephone numbers</li>
+                    <li>Project requirements and business information</li>
+                    <li>IP address (automatically collected)</li>
+                    <li>Web browser type and version (automatically collected)</li>
+                    <li>Operating system (automatically collected)</li>
+                </ul>
+                <p>In each case, in accordance with this privacy policy.</p>
+            </div>
+            
+            <!-- How We Collect Data -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">How We Collect Data</h2>
+                <p>We collect Data in the following ways:</p>
+                
+                <h4>Data that is given to us by you</h4>
+                <p>Visual Sites will collect your Data in a number of ways, for example:</p>
+                <ul>
+                    <li>When you contact us through the Website, by telephone, post, email or through any other means</li>
+                    <li>When you use our web development services</li>
+                    <li>When you request a quote or consultation</li>
+                </ul>
+                
+                <h4>Data that is collected automatically</h4>
+                <p>To the extent that you access the Website, we will collect your Data automatically, for example:</p>
+                <ul>
+                    <li>We automatically collect some information about your visit to the Website. This information helps us 
+                    to make improvements to Website content and navigation, and includes your IP address, the date, times and 
+                    frequency with which you access the Website and the way you use and interact with its content.</li>
+                    <li>We will collect your Data automatically via cookies, in line with the cookie settings on your browser.</li>
+                </ul>
+            </div>
+            
+            <!-- Our Use of Data -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Our Use of Data</h2>
+                <p>Any or all of the above Data may be required by us from time to time in order to provide you with the 
+                best possible service and experience when using our Website. Specifically, Data may be used by us for the 
+                following reasons:</p>
+                <ul>
+                    <li>Internal record keeping</li>
+                    <li>Improvement of our web development services</li>
+                    <li>Transmission by email of project updates and service information that may be of interest to you</li>
+                    <li>Contact for project consultation purposes which may be done using email, telephone, or other communication methods</li>
+                    <li>Customization and improvement of the Website based on user feedback</li>
+                </ul>
+                
+                <p>For the delivery of direct marketing to you via email, we'll need your consent, whether via an opt-in or soft-opt-in:</p>
+                <ul>
+                    <li><strong>Soft opt-in consent</strong> applies when you have previously engaged with us (for example, 
+                    you contact us to ask for more details about our web development services).</li>
+                    <li>For other types of e-marketing, we are required to obtain your explicit consent.</li>
+                </ul>
+                
+                <p>If you are not satisfied about our approach to marketing, you have the right to withdraw consent at any time.</p>
+            </div>
+            
+            <!-- Who We Share Data With -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Who We Share Data With</h2>
+                <p>We may share your Data with the following groups of people for the following reasons:</p>
+                <ul>
+                    <li><strong>Our employees and professional advisors</strong> - For project management, communication, 
+                    and service delivery purposes</li>
+                    <li><strong>Third-party service providers</strong> - Only when necessary for website hosting, email services, 
+                    or other technical requirements for your project</li>
+                </ul>
+                <p>In each case, in accordance with this privacy policy and applicable data protection laws.</p>
+            </div>
+            
+            <!-- Keeping Data Secure -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Keeping Data Secure</h2>
+                <p>We will use technical and organisational measures to safeguard your Data, for example:</p>
+                <ul>
+                    <li>Access to your information is controlled by secure authentication methods</li>
+                    <li>We store your Data on secure servers with encryption</li>
+                    <li>Regular security audits and updates to our systems</li>
+                    <li>Staff training on data protection and privacy best practices</li>
+                </ul>
+                
+                <p>If you suspect any misuse or loss or unauthorised access to your Data, please let us know immediately by 
+                contacting us via email: <span class="contact-highlight">jos@visualsites.co.uk</span></p>
+                
+                <p>For additional online security information, please visit 
+                <a href="https://www.getsafeonline.org" class="text-blue-400 hover:text-blue-300 transition-colors">www.getsafeonline.org</a>. 
+                Get Safe Online is supported by HM Government and leading businesses.</p>
+            </div>
+            
+            <!-- Data Retention -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Data Retention</h2>
+                <p>Unless a longer retention period is required or permitted by law, we will only hold your Data on our 
+                systems for the period necessary to fulfil the purposes outlined in this privacy policy or until you request 
+                that the Data be deleted.</p>
+                
+                <p>Even if we delete your Data, it may persist on backup or archival media for legal, tax or regulatory purposes.</p>
+            </div>
+            
+            <!-- Your Rights -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Your Rights</h2>
+                <p>You have the following rights in relation to your Data:</p>
+                
+                <h4>Right to access</h4>
+                <p>The right to request (i) copies of the information we hold about you at any time, or (ii) that we modify, 
+                update or delete such information. If we provide you with access to the information we hold about you, we will 
+                not charge you for this, unless your request is "manifestly unfounded or excessive."</p>
+                
+                <h4>Right to correct</h4>
+                <p>The right to have your Data rectified if it is inaccurate or incomplete.</p>
+                
+                <h4>Right to erase</h4>
+                <p>The right to request that we delete or remove your Data from our systems.</p>
+                
+                <h4>Right to restrict our use of your Data</h4>
+                <p>The right to "block" us from using your Data or limit the way in which we can use it.</p>
+                
+                <h4>Right to data portability</h4>
+                <p>The right to request that we move, copy or transfer your Data.</p>
+                
+                <h4>Right to object</h4>
+                <p>The right to object to our use of your Data including where we use it for our legitimate interests.</p>
+                
+                <p class="mt-6 p-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg">
+                    <strong>To exercise any of your rights:</strong><br>
+                    Contact us via email: <span class="contact-highlight">jos@visualsites.co.uk</span><br>
+                    Or phone: <span class="contact-highlight">Available upon request</span>
+                </p>
+                
+                <p>If you are not satisfied with how we handle your complaint, you may refer it to the Information Commissioner's 
+                Office (ICO). Visit <a href="https://ico.org.uk/" class="text-blue-400 hover:text-blue-300 transition-colors">https://ico.org.uk/</a> 
+                for more information.</p>
+            </div>
+            
+            <!-- Transfers Outside EEA -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Transfers Outside the European Economic Area</h2>
+                <p>Data which we collect from you may be stored and processed in and transferred to countries outside of the 
+                European Economic Area (EEA). For example, this could occur if our servers are located in a country outside 
+                the EEA or one of our service providers is situated in a country outside the EEA.</p>
+                
+                <p>We will only transfer Data outside the EEA where it is compliant with data protection legislation and the 
+                means of transfer provides adequate safeguards in relation to your data, for example by way of data transfer 
+                agreement, incorporating the current standard contractual clauses adopted by the European Commission.</p>
+                
+                <p>To ensure that your Data receives an adequate level of protection, we have put in place appropriate safeguards 
+                and procedures with the third parties we share your Data with.</p>
+            </div>
+            
+            <!-- Links to Other Websites -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Links to Other Websites</h2>
+                <p>This Website may, from time to time, provide links to other websites. We have no control over such websites 
+                and are not responsible for the content of these websites. This privacy policy does not extend to your use of 
+                such websites. You are advised to read the privacy policy or statement of other websites prior to using them.</p>
+            </div>
+            
+            <!-- Business Ownership Changes -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Changes of Business Ownership and Control</h2>
+                <p>Visual Sites may, from time to time, expand or reduce our business and this may involve the sale and/or 
+                the transfer of control of all or part of Visual Sites. Data provided by Users will, where it is relevant to 
+                any part of our business so transferred, be transferred along with that part and the new owner or newly 
+                controlling party will, under the terms of this privacy policy, be permitted to use the Data for the purposes 
+                for which it was originally supplied to us.</p>
+                
+                <p>We may also disclose Data to a prospective purchaser of our business or any part of it.</p>
+                
+                <p>In the above instances, we will take steps with the aim of ensuring your privacy is protected.</p>
+            </div>
+            
+            <!-- Cookies -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Cookies</h2>
+                <p>This Website may place and access certain Cookies on your computer. Visual Sites uses Cookies to improve 
+                your experience of using the Website. Visual Sites has carefully chosen these Cookies and has taken steps to 
+                ensure that your privacy is protected and respected at all times.</p>
+                
+                <p>All Cookies used by this Website are used in accordance with current UK and EU Cookie Law.</p>
+                
+                <p>Before the Website places Cookies on your computer, you will be presented with a message bar requesting your 
+                consent to set those Cookies. By giving your consent to the placing of Cookies, you are enabling Visual Sites 
+                to provide a better experience and service to you.</p>
+                
+                <h4>Types of Cookies We Use:</h4>
+                
+                <table class="privacy-table">
+                    <thead>
+                        <tr>
+                            <th>Type of Cookie</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Analytical/Performance Cookies</td>
+                            <td>They allow us to recognise and count the number of visitors and to see how visitors move 
+                            around our website when they are using it. This helps us to improve the way our website works, 
+                            for example, by ensuring that users are finding what they are looking for easily.</td>
+                        </tr>
+                        <tr>
+                            <td>Functional Cookies</td>
+                            <td>These cookies enable the website to provide enhanced functionality and personalisation. 
+                            They may be set by us or by third party providers whose services we have added to our pages.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>You can choose to enable or disable Cookies in your internet browser. By default, most internet browsers 
+                accept Cookies but this can be changed. For further details, please consult the help menu in your internet browser.</p>
+                
+                <p>For more information generally on cookies, including how to disable them, please refer to 
+                <a href="https://www.aboutcookies.org" class="text-blue-400 hover:text-blue-300 transition-colors">aboutcookies.org</a>.</p>
+            </div>
+            
+            <!-- General -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">General</h2>
+                <p>You may not transfer any of your rights under this privacy policy to any other person. We may transfer our 
+                rights under this privacy policy where we reasonably believe your rights will not be affected.</p>
+                
+                <p>If any court or competent authority finds that any provision of this privacy policy (or part of any provision) 
+                is invalid, illegal or unenforceable, that provision or part-provision will, to the extent required, be deemed 
+                to be deleted, and the validity and enforceability of the other provisions of this privacy policy will not be affected.</p>
+                
+                <p>Unless otherwise agreed, no delay, act or omission by a party in exercising any right or remedy will be 
+                deemed a waiver of that, or any other, right or remedy.</p>
+                
+                <p>This Agreement will be governed by and interpreted according to the law of England and Wales. All disputes 
+                arising under the Agreement will be subject to the exclusive jurisdiction of the English and Welsh courts.</p>
+            </div>
+            
+            <!-- Changes to Policy -->
+            <div class="content-card fade-in">
+                <h2 class="section-title">Changes to this Privacy Policy</h2>
+                <p>Visual Sites reserves the right to change this privacy policy as we may deem necessary from time to time 
+                or as may be required by law. Any changes will be immediately posted on the Website and you are deemed to have 
+                accepted the terms of the privacy policy on your first use of the Website following the alterations.</p>
+                
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-6 rounded-lg border border-blue-500/20 mt-6">
+                    <h4 class="text-blue-400 font-semibold mb-3">Contact Information</h4>
+                    <p>You may contact Visual Sites by:</p>
+                    <ul class="mt-2">
+                        <li>Email: <span class="contact-highlight">jos@visualsites.co.uk</span></li>
+                        <li>Location: <span class="contact-highlight">Gwynedd, North Wales, UK</span></li>
+                        <li>Response Time: <span class="contact-highlight">Within 24 hours</span></li>
+                    </ul>
+                </div>
+                
+                <p class="text-center mt-8 text-gray-400">
+                    <strong>Last Updated:</strong> January 2025
+                </p>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="text-center mt-12 fade-in">
+                <h3 class="text-2xl font-bold text-gradient mb-4">Questions About Your Privacy?</h3>
+                <p class="text-gray-300 mb-6">
+                    If you have any questions about this privacy policy or how we handle your data, 
+                    don't hesitate to get in touch.
+                </p>
+                <a href="portfolio.html#contact" class="btn-primary">Contact Us</a>
+            </div>
+            
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <div class="text-xl font-bold text-gradient mb-2">Visual Sites</div>
+                    <div class="text-gray-400">Professional Web Development</div>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/iqagrlso.json"
+                            trigger="hover"
+                            colors="primary:#64748b"
+                            style="width:24px;height:24px;">
+                        </lord-icon>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/ewswvzmw.json"
+                            trigger="hover"
+                            colors="primary:#64748b"
+                            style="width:24px;height:24px;">
+                        </lord-icon>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/puvaffet.json"
+                            trigger="hover"
+                            colors="primary:#64748b"
+                            style="width:24px;height:24px;">
+                        </lord-icon>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 Visual Sites. All rights reserved. Built with passion and modern technology.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // ============================================
+        // MODERN PRIVACY POLICY JAVASCRIPT
+        // ============================================
+        
+        // Custom Cursor
+        const cursor = document.querySelector('.custom-cursor');
+        const hoverElements = document.querySelectorAll('a, button, .content-card');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        
+        hoverElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+        
+        // Navigation
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Close mobile menu
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scroll to top when clicking logo
+        document.querySelector('.navbar .text-gradient').addEventListener('click', (e) => {
+            if (e.target.getAttribute('href') === '#') {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        });
+        
+        // Loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+        
+        console.log('🔒 Privacy Policy page loaded successfully!');
+    </script>
 </body>
 </html>
