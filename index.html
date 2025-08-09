@@ -3,502 +3,1673 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Visual Sites</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    <!-- Tailwind CSS CDN -->
+    <title>Jos Watson- Professional Web Developer | VisualSites</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Jos Watson- Professional Web Developer specializing in modern, high-performance websites. Hire me for your next project.">
+    <meta name="keywords" content="web developer, frontend developer, react developer, portfolio">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <!-- Lordicon CDN -->
+    
+    <!-- Lordicon for Premium Icons -->
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    
+    <!-- EmailJS for Contact Form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <style>
-        /* Custom animated gradient for header */
-        .animated-gradient {
-            background: linear-gradient(270deg, #190043, #150052, #360e8c, #25005c, #3906d4);
-            background-size: 1200% 1200%;
-            animation: gradientMove 12s ease infinite;
+        /* ===========================================
+           MODERN PORTFOLIO DESIGN SYSTEM
+           =========================================== */
+        
+        /* CSS Variables for Consistent Design */
+        :root {
+            --primary-blue: #3B82F6;
+            --primary-blue-dark: #1E40AF;
+            --primary-blue-light: #60A5FA;
+            --accent-purple: #8B5CF6;
+            --accent-cyan: #06B6D4;
+            --dark-bg: #0F172A;
+            --dark-card: #1E293B;
+            --text-primary: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --text-muted: #64748B;
+            --border-subtle: #334155;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
+            --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+            --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.3);
+            --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         }
-        @keyframes gradientMove {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        /* Navbar shrink effect */
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Cursor */
+        body {
+            cursor: none;
+        }
+        
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
+        }
+        
+        .custom-cursor.hover {
+            transform: scale(2);
+            background: var(--gradient-primary);
+            mix-blend-mode: normal;
+        }
+        
+        /* Navigation */
         .navbar {
-            transition: all 0.3s cubic-bezier(.4,0,.2,1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .navbar.shrunk {
-            padding-top: 0.25rem !important;
-            padding-bottom: 0.25rem !important;
-            /* Keep the animated gradient background */
-            background-color: #ffffff !important;
-            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+        
+        .navbar.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid var(--primary-blue);
+            box-shadow: var(--shadow-card);
         }
-        /* Navigation color change on scroll */
-        .navbar.scrolled .nav-link {
-            color: #ffffff !important;
-        }
-        .navbar.scrolled .navbar-brand {
-            color: #ffffff !important;
-        }
-        .navbar.scrolled .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-        }
-        /* Idle animation for nav links */
+        
         .nav-link {
+            color: var(--text-secondary) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
-            transition: color 0.2s;
+            text-decoration: none;
         }
-        .nav-link.idle-animate::after {
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-blue-light) !important;
+        }
+        
+        .nav-link::after {
             content: '';
             position: absolute;
-            left: 0; right: 0; bottom: -4px;
+            bottom: -4px;
+            left: 0;
+            width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #500ede, #6b00a4, #b115fa, #7663f1);
-            border-radius: 2px;
-            opacity: 0.7;
-            animation: navIdle 2s infinite alternate;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
         }
-        @keyframes navIdle {
-            0% {width: 0; opacity: 0.3;}
-            100% {width: 100%; opacity: 1;}
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
         }
-        /* Enhanced fade-in on scroll with fade-out */
-        .fade-scroll {
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-hero);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #F8FAFC 0%, #60A5FA 50%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            animation: slideInUp 1s ease-out 0.4s both;
+        }
+        
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-glow);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Contact Button Enhanced Animations */
+        .contact-btn {
+            min-width: 160px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Button Click Animation States */
+        .contact-btn.clicking {
+            transform: scale(0.95) translateY(-1px);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+        }
+        
+        .contact-btn.success {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.6);
+        }
+        
+        .contact-btn.success::before {
+            left: 100%;
+        }
+        
+        /* Button Text Animation */
+        .btn-text {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .btn-text.hide {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+            transform: translateY(-10px);
         }
-        .fade-scroll.visible {
+        
+        .btn-text.show {
             opacity: 1;
-            transform: none;
+            transform: translateY(0);
         }
-        .fade-scroll.fade-out {
+        
+        /* Checkmark Confirmation Element */
+        .confirmation-popup {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(16, 185, 129, 0.95);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
             opacity: 0;
-            transform: translateY(-20px);
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
         }
-        /* Add fade-scroll class to all major elements */
-        .fade-scroll-element {
+        
+        .confirmation-popup::before {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid rgba(16, 185, 129, 0.95);
+        }
+        
+        .confirmation-popup.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+        
+        /* Checkmark Icon Animation */
+        .checkmark {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 0.5rem;
+            position: relative;
+        }
+        
+        .checkmark::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 4px;
+            height: 8px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            animation: checkmarkDraw 0.3s ease-in-out;
+        }
+        
+        @keyframes checkmarkDraw {
+            0% {
+                height: 0;
+                opacity: 0;
+            }
+            50% {
+                height: 4px;
+                opacity: 0.5;
+            }
+            100% {
+                height: 8px;
+                opacity: 1;
+            }
+        }
+        
+        /* Ripple Effect for Button Click */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: rippleEffect 0.6s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue-light);
+            border: 2px solid var(--primary-blue);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: none;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--dark-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--primary-blue);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #F8FAFC 0%, #60A5FA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Animations */
+        .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .fade-scroll-element.visible {
+        
+        .fade-in.visible {
             opacity: 1;
-            transform: none;
+            transform: translateY(0);
         }
-        .fade-scroll-element.fade-out {
+        
+        .slide-in-left {
             opacity: 0;
-            transform: translateY(-15px);
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        /* Stagger animation delays for child elements */
-        .fade-scroll-element:nth-child(1) { transition-delay: 0.1s; }
-        .fade-scroll-element:nth-child(2) { transition-delay: 0.2s; }
-        .fade-scroll-element:nth-child(3) { transition-delay: 0.3s; }
-        .fade-scroll-element:nth-child(4) { transition-delay: 0.4s; }
-        .fade-scroll-element:nth-child(5) { transition-delay: 0.5s; }
-        .fade-scroll-element:nth-child(6) { transition-delay: 0.6s; }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .skill-category {
+            background: var(--dark-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+        }
+        
+        .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: rgba(59, 130, 246, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateX(5px);
+        }
+        
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-item {
+            background: var(--dark-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--primary-blue);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-image::before {
+            opacity: 1;
+        }
+        
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--dark-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-card);
+            border-top: 1px solid var(--border-subtle);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            
+            .skills-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .custom-cursor {
+                display: none;
+            }
+            
+            body {
+                cursor: auto;
+            }
+        }
+        
+        /* Code styling */
+        .code {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: var(--primary-blue-light);
+        }
+        
+        /* Utility Classes */
+        .text-gradient {
+            background: linear-gradient(135deg, #60A5FA 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glow {
+            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+        }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark py-2 sticky-top shadow-lg animated-gradient">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold text-xl tracking-widest" href="#">
-          <span class="text-cyan-400">Visual</span><span class="text-fuchsia-400">Sites</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#why-visualsites">Why VisualSites?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold text-gradient">Visual Sites</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link active">Home</a>
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#skills" class="nav-link">Skills</a>
+                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-btn text-gray-300 hover:text-white focus:outline-none focus:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-menu hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800 rounded-lg mt-2">
+                    <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Home</a>
+                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium nav-link">About</a>
+                    <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Skills</a>
+                    <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Portfolio</a>
+                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Contact</a>
+                </div>
+            </div>
         </div>
-      </div>
     </nav>
-    <!-- Header -->
-    <header class="animated-gradient text-white py-5 md:py-16 flex flex-col items-center justify-center text-center relative overflow-hidden">
-      <div class="z-10 relative">
-        <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow-lg fade-scroll-element">Welcome to <span class="text-cyan-300">VisualSites</span></h1>
-        <p class="text-lg md:text-2xl font-medium mb-6 fade-scroll-element">Crafting stunning, modern websites with cutting-edge technology.</p>
-        <a href="#contact" class="btn btn-lg btn-primary shadow-lg fade-scroll-element">Get in Touch</a>
-      </div>
- 
-    </header>
-    <!-- About Section -->
-    <section id="about" class="py-12 bg-white text-gray-900 fade-scroll">
-      <div class="container mx-auto px-4 max-w-5xl">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="flex-1">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-scroll-element">About <span class="text-cyan-600">VisualSites</span></h2>
-            <p class="mb-2 text-lg fade-scroll-element">Est. 2025 &mdash; We are a forward-thinking web design company using only the latest and greatest technologies to build stunning, high-performance websites.</p>
-            <ul class="list-disc pl-6 mb-4 fade-scroll-element">
-              <li>React, Next.js, Tailwind CSS, Bootstrap 5</li>
-           
-              <li>Progressive Web Apps, Responsive Design.</li>
-              <li>Modern Animations</li>
-            </ul>
-            <span class="inline-block bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full font-semibold text-sm animate-pulse fade-scroll-element">All technology we use is new</span>
-          </div>
-          <div class="flex-1 flex justify-center">
-            <div class="rounded-xl shadow-lg overflow-hidden fade-scroll-element">
-              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=80" alt="Team working" class="w-80 h-64 object-cover">
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Visual Sites</h1>
+            <h2 class="hero-subtitle">Professional Web Developments</h2>
+            <p class="hero-description">
+                I create stunning, high-performance websites that drive results. 
+                Specializing in modern frameworks, responsive design, and cutting-edge technology.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center">
+                <a href="#portfolio" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Hire Me</a>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
-    <!-- Why VisualSites Section -->
-    <section id="why-visualsites" class="py-16 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden">
-      <!-- Animated background elements -->
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-10 left-10 w-20 h-20 bg-cyan-400 rounded-full animate-pulse"></div>
-        <div class="absolute top-32 right-20 w-16 h-16 bg-fuchsia-400 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-        <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-cyan-300 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
-      </div>
-      
-      <div class="container mx-auto px-4 max-w-6xl relative z-10">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 fade-scroll-element">
-            Why <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">VisualSites</span>?
-          </h2>
-          <p class="text-xl md:text-2xl text-black max-w-3xl mx-auto fade-scroll-element">
-            A fresh perspective on building websites with cutting-edge technology
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div class="space-y-6">
-            
-            
-                <div class="fade-scroll-element">
-                  <div class="flex justify-center mb-4">
-                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
-                    <lord-icon
-                        src="https://cdn.lordicon.com/srupsmbe.json"
-                        trigger="in"
-                        delay="1500"
-                        stroke="light"
-                        state="in-reveal"
-                        colors="primary:#6c16c7,secondary:#000000"
-                        style="width:250px;height:250px">
-                    </lord-icon>
-                  </div>
-                                     <p class="text-lg text-black leading-relaxed">
-           
-               </div>
-               <p class="text-lg text-black leading-relaxed">
-                 We're not just another web design company. We're a team that embraces the latest technologies and innovative approaches to create websites that stand out in today's digital landscape.
-               </p>
-            </div>
-            
-            <div class="fade-scroll-element">
-              <div class="flex justify-center mb-4">
-                <script src="https://cdn.lordicon.com/lordicon.js"></script>
-                <lord-icon
-                    src="https://cdn.lordicon.com/ailnzwyn.json"
-                    trigger="loop"
-                    delay="1500"
-                    stroke="light"
-                    state="loop"
-                    colors="primary:#6c16c7,secondary:#000000"
-                    style="width:250px;height:250px">
-                </lord-icon>
-              </div>
-                             <p class="text-lg text-black leading-relaxed">
-                 Established in 2025, we bring a modern, forward-thinking approach to web development. No outdated methods, no legacy code – just clean, efficient, and beautiful solutions.
-               </p>
-            </div>
-          </div>
-          
-          <div class="fade-scroll-element">
-            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h3 class="text-2xl font-bold mb-6 text-center text-cyan-300">What We Can Do For You</h3>
-              <div class="space-y-6">
-                <div class="flex items-start space-x-4 group hover:bg-white/5 p-4 rounded-lg transition-all duration-300">
-                  <div class="flex-shrink-0 w-20 h-20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <lord-icon
-                      src="https://cdn.lordicon.com/lewtedlh.json"
-                      trigger="loop"
-                      stroke="light"
-                      state="loop"
-                      colors="primary:#3080e8,secondary:#6c16c7"
-                      style="width:80px;height:80px">
-                    </lord-icon>
-                  </div>
-                  <div>
-                                         <h4 class="text-lg font-semibold mb-2">Updating Websites</h4>
-                     <p class="text-black">Transform your existing website with modern design, improved performance, and enhanced user experience.</p>
-                  </div>
-                </div>
-                
-                <div class="flex items-start space-x-4 group hover:bg-white/5 p-4 rounded-lg transition-all duration-300">
-                  <div class="flex-shrink-0 w-20 h-20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <lord-icon
-                      src="https://cdn.lordicon.com/ogjpwrxe.json"
-                      trigger="loop"
-                      stroke="light"
-                      state="loop"
-                      colors="primary:#3080e8,secondary:#6c16c7"
-                      style="width:80px;height:80px">
-                    </lord-icon>
-                  </div>
-                  <div>
-                                         <h4 class="text-lg font-semibold mb-2">Creating New Websites</h4>
-                     <p class="text-black">Build stunning, modern websites from scratch using the latest technologies and best practices.</p>
-                  </div>
-                </div>
-                
-                <div class="flex items-start space-x-4 group hover:bg-white/5 p-4 rounded-lg transition-all duration-300">
-                  <div class="flex-shrink-0 w-20 h-20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <lord-icon
-                      src="https://cdn.lordicon.com/fqbvgezn.json"
-                      trigger="loop"
-                      stroke="light"
-                      state="loop"
-                      colors="primary:#3080e8,secondary:#6c16c7"
-                      style="width:80px;height:80px">
-                    </lord-icon>
-                  </div>
-                  <div>
-                                         <h4 class="text-lg font-semibold mb-2">Google Business Setup</h4>
-                     <p class="text-black">Get your business discovered online with professional Google Business Profile setup and optimization.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Technology showcase -->
-
-
         
-      </div>
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-blue-500 rounded-full opacity-60 animate-pulse"></div>
+        <div class="absolute top-40 right-20 w-6 h-6 bg-purple-500 rounded-full opacity-40 animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-40 left-20 w-3 h-3 bg-cyan-500 rounded-full opacity-50 animate-pulse" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-20 right-10 w-5 h-5 bg-blue-400 rounded-full opacity-30 animate-pulse" style="animation-delay: 0.5s;"></div>
     </section>
-    <!-- Why We Started Section -->
-   
-
-    <!-- Our Philosophy Section -->
-    <section id="our-philosophy" class="py-16 bg-gradient-to-br from-cyan-100 to-fuchsia-100 fade-scroll">
-      <div class="container mx-auto px-4 max-w-4xl">
-        <div class="text-center mb-10 fade-scroll-element">
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-cyan-700">Our Philosophy</h2>
-          <hr class="my-4 border-cyan-200">
-          <p class="text-xl md:text-2xl text-gray-800 mb-8">One purchase. One good quality website. <span class="text-fuchsia-600 font-semibold">No hidden fees.</span></p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center fade-scroll-element">
-              <div class="mb-3 text-4xl text-cyan-500">
-                <i class="bi bi-emoji-smile"></i>
-              </div>
-              <h3 class="text-lg font-bold mb-2 text-cyan-600">No More Rip-Offs</h3>
-              <p class="text-gray-700 text-base">Pay once for a modern, high-quality website. No recurring charges for the same work. Your investment is protected.</p>
+    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">
+                    Passionate about creating exceptional digital experiences
+                </p>
             </div>
-            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center fade-scroll-element">
-              <div class="mb-3 text-4xl text-fuchsia-500">
-                <i class="bi bi-pencil-square"></i>
-              </div>
-              <h3 class="text-lg font-bold mb-2 text-fuchsia-600">Free Edits*</h3>
-              <p class="text-gray-700 text-base">Need a small change? We offer <span class="font-semibold">free edits</span> for reasonable requests.<br><span class="text-xs text-gray-500">*If reasonable</span></p>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="slide-in-left">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-gradient">Building the Future of Web</h3>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            With over <span class="code">5+ years</span> of experience in web development, 
+                            I specialize in creating modern, responsive websites that deliver exceptional 
+                            user experiences and drive business results.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            I work with cutting-edge technologies like <span class="code">React</span>, 
+                            <span class="code">Next.js</span>, <span class="code">TypeScript</span>, 
+                            and <span class="code">Node.js</span> to build scalable, performant applications.
+                        </p>
+                        <div class="flex space-x-4 pt-4">
+                            
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-gradient">Guaranteed</div>
+                                <div class="text-sm text-gray-400">Client Satisfaction</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-gradient">24/7</div>
+                                <div class="text-sm text-gray-400">Support Available</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide-in-right">
+                    <div class="card">
+                        <div class="flex items-center mb-6">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/wxnxiano.json"
+                                trigger="loop"
+                                delay="2000"
+                                colors="primary:#3b82f6,secondary:#8b5cf6"
+                                style="width:60px;height:60px;">
+                            </lord-icon>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold">VisualSites</h4>
+                                <p class="text-gray-400">Founded 2025</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            I founded VisualSites to help businesses establish a powerful digital presence 
+                            without the extortionate costs and ongoing fees that plague the industry.
+                        </p>
+                        <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-4 rounded-lg border border-blue-500/20">
+                            <p class="font-semibold text-blue-400">My Promise:</p>
+                            <p class="text-sm text-gray-300 mt-1">
+                                One purchase, one high-quality website, with reasonable ongoing support.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="fade-scroll-element">
-            <span class="inline-block bg-cyan-200 text-cyan-900 px-6 py-3 rounded-full font-semibold text-lg shadow-md animate-pulse">One purchase. One website. No stress.</span>
-          </div>
         </div>
-      </div>
     </section>
+    
     <!-- Services Section -->
-    <section id="services" class="py-12 bg-gradient-to-br from-cyan-50 to-fuchsia-50 fade-scroll">
-      <div class="container mx-auto px-4 max-w-5xl">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-scroll-element">Our <span class="text-fuchsia-600">Services</span></h2>
-        <div class="row g-4">
-          <div class="col-md-4 fade-scroll">
-            <div class="p-5 bg-white rounded-lg shadow-lg h-100 hover:scale-105 transition-transform duration-300 fade-scroll-element">
-              <div class="mb-3 text-4xl text-cyan-500"><i class="bi bi-laptop"></i></div>
-              <h3 class="font-semibold text-xl mb-2">Web Design</h3>
-              <p>Modern, responsive, and beautiful designs tailored to your brand.</p>
+    <section id="skills" class="section" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">
+                    Professional front-end development and design solutions for modern businesses
+                </p>
             </div>
-          </div>
-          <div class="col-md-4 fade-scroll">
-            <div class="p-5 bg-white rounded-lg shadow-lg h-100 hover:scale-105 transition-transform duration-300 fade-scroll-element">
-              <div class="mb-3 text-4xl text-cyan-500"><i class="bi bi-laptop"></i></div>
-              <h3 class="font-semibold text-xl mb-2">Good Communication</h3>
-              <p>We will work with you to understand your needs and goals, and we will provide regular updates on the progress of your project.</p>
+            
+            <div class="skills-grid">
+                <!-- Design & Creative -->
+                <div class="skill-category fade-in">
+                    <div class="flex items-center mb-4">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/gqzfzudq.json"
+                            trigger="hover"
+                            colors="primary:#3b82f6,secondary:#8b5cf6"
+                            style="width:40px;height:40px;">
+                        </lord-icon>
+                        <h3 class="text-xl font-bold ml-3">Design & Creative</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/wxnxiano.json"
+                                trigger="hover"
+                                colors="primary:#8b5cf6"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Custom UI/UX Design</span>
+                        </div>
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/gqzfzudq.json"
+                                trigger="hover"
+                                colors="primary:#06b6d4"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Brand Integration & Identity</span>
+                        </div>
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/rehjpyyh.json"
+                                trigger="hover"
+                                colors="primary:#10b981"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Responsive Design Systems</span>
+                        </div>
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/dxjqoygy.json"
+                                trigger="hover"
+                                colors="primary:#f59e0b"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Visual Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Front-End Development -->
+                <div class="skill-category fade-in">
+                    <div class="flex items-center mb-4">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/fkdzyfle.json"
+                            trigger="hover"
+                            colors="primary:#3b82f6,secondary:#8b5cf6"
+                            style="width:40px;height:40px;">
+                        </lord-icon>
+                        <h3 class="text-xl font-bold ml-3">Front-End Development</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/fkdzyfle.json"
+                                trigger="hover"
+                                colors="primary:#61dafb"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">React & Next.js Applications</span>
+                        </div>
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/lomfljuq.json"
+                                trigger="hover"
+                                colors="primary:#f97316"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Modern HTML5 & CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/gqzfzudq.json"
+                                trigger="hover"
+                                colors="primary:#06b6d4"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Tailwind CSS Styling</span>
+                        </div>
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/kiynvdns.json"
+                                trigger="hover"
+                                colors="primary:#f59e0b"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Interactive JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Support & Communication -->
+                <div class="skill-category fade-in">
+                    <div class="flex items-center mb-4">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/diihvcfp.json"
+                            trigger="hover"
+                            colors="primary:#3b82f6,secondary:#8b5cf6"
+                            style="width:40px;height:40px;">
+                        </lord-icon>
+                        <h3 class="text-xl font-bold ml-3">Support & Communication</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/abfverha.json"
+                                trigger="hover"
+                                colors="primary:#10b981"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Rapid Response Times</span>
+                        </div>
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/tkgyrmwq.json"
+                                trigger="hover"
+                                colors="primary:#8b5cf6"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Clear Project Communication</span>
+                        </div>
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/surcxhka.json"
+                                trigger="hover"
+                                colors="primary:#06b6d4"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Ongoing Maintenance</span>
+                        </div>
+                        <div class="skill-item">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/rehjpyyh.json"
+                                trigger="hover"
+                                colors="primary:#f59e0b"
+                                style="width:24px;height:24px;">
+                            </lord-icon>
+                            <span class="ml-3 font-medium">Performance Optimization</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-4 fade-scroll ">
-            <div class="p-5 bg-white rounded-lg shadow-lg h-100 hover:scale-105 transition-transform duration-300 fade-scroll-element">
-              <div class="mb-3 text-4xl text-fuchsia-500"><i class="bi bi-code-slash"></i></div>
-              <h3 class="font-semibold text-xl mb-2">Web Development</h3>
-              <p>Cutting-edge technology for fast, secure, and scalable websites.</p>
-            </div>
-          </div>
-          <div class="col-md-6 fade-scroll mx-auto text-center">
-            <div class="p-5 bg-white rounded-lg shadow-lg h-100 hover:scale-105 transition-transform duration-300 fade-scroll-element">
-              <div class="mb-3 text-4xl text-fuchsia-500"><i class="bi bi-code-slash"></i></div>
-              <h3 class="font-semibold text-xl mb-2">Website Revamps</h3>
-              <p>One of our most popular services is website revamps. We will take an outdated website and make it look brand new.</p>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
+    
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-12 bg-white fade-scroll">
-      <div class="container mx-auto px-4 max-w-5xl">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-scroll-element">Our <span class="text-cyan-600">Work</span></h2>
-        <div class="row g-4">
-          <div class="col-md-4 fade-scroll">
-            <div class="portfolio-card rounded-lg shadow-lg overflow-hidden group relative cursor-pointer fade-scroll-element">
-              <img src="https://placehold.co/400x250?text=Project+1" alt="Project 1" class="w-100 h-56 object-cover group-hover:scale-110 transition-transform duration-500">
-              <div class="absolute inset-0 bg-cyan-900 bg-opacity-70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 class="text-white text-xl font-bold mb-2">Cnicht cleaning services</h4>
-                <p class="text-cyan-100">We worked with Cnicht cleaning services to redeisgn a website for their business.</p>
-              </div>
+    <section id="portfolio" class="section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="section-title">Portfolio</h2>
+                <p class="section-subtitle">
+                    A showcase of my recent projects and achievements
+                </p>
             </div>
-          </div>
-          <div class="col-md-4 fade-scroll">
-            <div class="portfolio-card rounded-lg shadow-lg overflow-hidden group relative cursor-pointer fade-scroll-element">
-              <img src="https://placehold.co/400x250?text=Project+2" alt="Project 2" class="w-100 h-56 object-cover group-hover:scale-110 transition-transform duration-500">
-              <div class="absolute inset-0 bg-fuchsia-900 bg-opacity-70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 class="text-white text-xl font-bold mb-2">Y Griffin</h4>
-                <p class="text-fuchsia-100">Y Griffin is a local business that we worked with to freshen up their old website .</p>
-              </div>
+            
+            <!-- Coming Soon Card -->
+            <div class="max-w-2xl mx-auto fade-in">
+                <div class="card text-center">
+                    <div class="mb-6">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/wxnxiano.json"
+                            trigger="loop"
+                            delay="2000"
+                            colors="primary:#3b82f6,secondary:#8b5cf6"
+                            style="width:80px;height:80px;">
+                        </lord-icon>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gradient mb-4">Coming Soon</h3>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        I'm currently working on some exciting projects that showcase modern web development 
+                        with cutting-edge technologies. Portfolio examples will be available soon!
+                    </p>
+                    <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-6 rounded-lg border border-blue-500/20 mb-6">
+                        <p class="font-semibold text-blue-400 mb-2">What's Coming:</p>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Next.js Applications</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">E-Commerce Solutions</span>
+                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm">SaaS Dashboards</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Mobile-First PWAs</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        In the meantime, feel free to <a href="#contact" class="text-blue-400 hover:text-blue-300 transition-colors">get in touch</a> 
+                        to discuss your project needs.
+                    </p>
+                </div>
             </div>
-          </div>
-          <div class="col-md-4 fade-scroll">
-            <div class="portfolio-card rounded-lg shadow-lg overflow-hidden group relative cursor-pointer fade-scroll-element">
-              <img src="https://placehold.co/400x250?text=Project+3" alt="Project 3" class="w-100 h-56 object-cover group-hover:scale-110 transition-transform duration-500">
-              <div class="absolute inset-0 bg-yellow-900 bg-opacity-70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 class="text-white text-xl font-bold mb-2">Soch</h4>
-                <p class="text-yellow-100">A brand new website for a local business based in Aberosch, North Wales.</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
-    <!-- Location Section -->
-    <section id="location" class="py-12 bg-gradient-to-br from-cyan-50 to-fuchsia-50 fade-scroll">
-      <div class="container mx-auto px-4 max-w-5xl">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 fade-scroll-element">Our <span class="text-fuchsia-600">Location</span></h2>
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="flex-1">
-            <div class="rounded-xl shadow-lg overflow-hidden fade-scroll-element">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d616186.9115707949!2d-4.1205422!3d52.8947812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486434b66c1c0fed%3A0xecce1b0314ace6fc!2sGwynedd!5e0!3m2!1sen!2suk!4v1752099342012!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-            </div>
-          </div>
-          <div class="flex-1">
-            <h3 class="text-xl font-semibold mb-2 fade-scroll-element">Where we are based</h3>
-            <p class="mb-2 fade-scroll-element">Gwynedd, North Wales, UK</p>
-            <p class="text-gray-600 fade-scroll-element">We work globally, but our creative hub is in the heart of North Wales.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    
     <!-- Contact Section -->
-    <section id="contact" class="py-12 bg-white fade-scroll">
-      <div class="container mx-auto px-4 max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 fade-scroll-element">Contact <span class="text-cyan-600">Us</span></h2>
-        <form class="row g-3" id="contactForm">
-          <div class="col-md-6">
-            <input type="text" class="form-control form-control-lg fade-scroll-element" placeholder="Your Name" required>
-          </div>
-          <div class="col-md-6">
-            <input type="email" class="form-control form-control-lg fade-scroll-element" placeholder="Your Email" required>
-          </div>
-          <div class="col-12">
-            <textarea class="form-control form-control-lg fade-scroll-element" rows="4" placeholder="Your Message" required></textarea>
-          </div>
-          <div class="col-12 text-center">
-            <button type="submit" class="btn btn-primary btn-lg px-5 shadow-lg fade-scroll-element">Send Message</button>
-          </div>
-        </form>
-        <div id="contactSuccess" class="alert alert-success mt-4 d-none fade-scroll-element" role="alert">
-          Thank you for reaching out! We'll get back to you soon.
+    <section id="contact" class="section" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">
+                    Ready to bring your project to life? Get in touch and let's discuss your vision.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="slide-in-left">
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gradient mb-6">Get In Touch</h3>
+                            <p class="text-lg text-gray-300 leading-relaxed">
+                                I'm always excited to work on new projects and help businesses 
+                                create amazing digital experiences. Let's discuss how we can 
+                                bring your vision to life.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/tkgyrmwq.json"
+                                        trigger="hover"
+                                        colors="primary:#ffffff"
+                                        style="width:24px;height:24px;">
+                                    </lord-icon>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Email</div>
+                                    <div class="text-gray-400">contact@visualsites.co.uk</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/surcxhka.json"
+                                        trigger="hover"
+                                        colors="primary:#ffffff"
+                                        style="width:24px;height:24px;">
+                                    </lord-icon>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Location</div>
+                                    <div class="text-gray-400">Gwynedd, North Wales, UK</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/abfverha.json"
+                                        trigger="hover"
+                                        colors="primary:#ffffff"
+                                        style="width:24px;height:24px;">
+                                    </lord-icon>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Response Time</div>
+                                    <div class="text-gray-400">Within 24 hours</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="slide-in-right">
+                    <form class="contact-form space-y-6" id="contactForm">
+                        <!-- Hidden timestamp field for EmailJS template -->
+                        <input type="hidden" name="time" id="timeField">
+                        
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                            <input type="text" name="name" class="form-input" placeholder="Your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Project Type</label>
+                            <select name="project_type" class="form-input" required>
+                                <option value="">Select project type</option>
+                                <option value="Website Development">Website Development</option>
+                                <option value="Web Application">Web Application</option>
+                                <option value="E-Commerce">E-Commerce</option>
+                                <option value="Website Redesign">Website Redesign</option>
+                                <option value="Consultation">Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Budget Range</label>
+                            <select name="budget_range" class="form-input" required>
+                                <option value="">Select budget range</option>
+                                <option value="£1,000 - £5,000">£1,000 - £5,000</option>
+                                <option value="£5,000 - £10,000">£5,000 - £10,000</option>
+                                <option value="£10,000 - £25,000">£10,000 - £25,000</option>
+                                <option value="£25,000+">£25,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
+                            <textarea name="message" class="form-input h-32" placeholder="Tell me about your project, goals, and requirements..." required></textarea>
+                        </div>
+                        
+                        <div class="relative inline-block w-full">
+                            <button type="submit" class="btn-primary contact-btn w-full" id="contactSubmitBtn">
+                                <span class="btn-text" id="btnText">Send Message</span>
+                            </button>
+                            <!-- Confirmation Popup -->
+                            <div class="confirmation-popup" id="confirmationPopup">
+                                <span class="checkmark"></span>
+                                Message Sent!
+                            </div>
+                            <!-- Error Popup -->
+                            <div class="confirmation-popup" id="errorPopup" style="background: rgba(239, 68, 68, 0.95); border-color: rgba(239, 68, 68, 0.3);">
+                                <span style="color: #fff;">❌</span>
+                                Failed to send. Please try again.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <div class="text-xl font-bold text-gradient mb-2">Visual Sites</div>
+                    <div class="text-gray-400">Professional Web Developments</div>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/iqagrlso.json"
+                            trigger="hover"
+                            colors="primary:#64748b"
+                            style="width:24px;height:24px;">
+                        </lord-icon>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/ewswvzmw.json"
+                            trigger="hover"
+                            colors="primary:#64748b"
+                            style="width:24px;height:24px;">
+                        </lord-icon>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/puvaffet.json"
+                            trigger="hover"
+                            colors="primary:#64748b"
+                            style="width:24px;height:24px;">
+                        </lord-icon>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 Visual Sites. All rights reserved. Built with passion and modern technology.</p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-      // Navbar shrink on scroll and mobile
-      const navbar = document.getElementById('mainNavbar');
-      window.addEventListener('scroll', function() {
-        if(window.scrollY > 30) {
-          navbar.classList.add('shrunk');
-          navbar.classList.add('scrolled'); // Add scrolled class
-        } else {
-          navbar.classList.remove('shrunk');
-          navbar.classList.remove('scrolled'); // Remove scrolled class
+        // ============================================
+        // MODERN PORTFOLIO JAVASCRIPT
+        // ============================================
+        
+        // Custom Cursor
+        const cursor = document.querySelector('.custom-cursor');
+        const hoverElements = document.querySelectorAll('a, button, .card, .portfolio-item, .skill-item');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        
+        hoverElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+        
+        // Navigation
+        const navbar = document.querySelector('.navbar');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Navbar scroll effect
+        let hasScrolled = false;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50 && !hasScrolled) {
+                navbar.classList.add('scrolled');
+                hasScrolled = true;
+            }
+        });
+        
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling and active link management
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Update active link
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // ============================================
+        // EMAIL.JS CONFIGURATION & FORM HANDLING
+        // ============================================
+        
+        // Initialize EmailJS (You need to replace these with your actual EmailJS credentials)
+        // To set up EmailJS:
+        // 1. Go to https://www.emailjs.com/
+        // 2. Create a free account
+        // 3. Add an email service (Gmail, Outlook, etc.)
+        // 4. Create an email template
+        // 5. Replace the IDs below with your actual IDs
+        
+        // IMPORTANT: Replace these with your actual EmailJS credentials
+        const EMAIL_SERVICE_ID = 'service_2k6g3nj';  // Replace with your EmailJS service ID
+        const EMAIL_TEMPLATE_ID = 'template_dwsx5lb'; // Replace with your EmailJS template ID
+        const EMAIL_PUBLIC_KEY = 'Z9ZCcUyWEn1fzRB0g';   // Replace with your EmailJS public key
+        
+        // Initialize EmailJS
+        emailjs.init(EMAIL_PUBLIC_KEY);
+        
+        // Enhanced Form submission with actual email sending
+        const contactForm = document.getElementById('contactForm');
+        const contactBtn = document.getElementById('contactSubmitBtn');
+        const btnText = document.getElementById('btnText');
+        const confirmationPopup = document.getElementById('confirmationPopup');
+        const errorPopup = document.getElementById('errorPopup');
+        
+         contactForm.addEventListener('submit', async (e) => {
+             e.preventDefault();
+             
+             // Set timestamp field for EmailJS template
+             const now = new Date();
+             const timeString = now.toLocaleString('en-GB', {
+                 day: 'numeric',
+                 month: 'short',
+                 year: 'numeric',
+                 hour: '2-digit',
+                 minute: '2-digit'
+             });
+             document.getElementById('timeField').value = timeString;
+             
+             // Validate all required fields are filled and exist
+             const requiredFields = ['name', 'email', 'project_type', 'budget_range', 'message'];
+             const missingFields = [];
+             const missingElements = [];
+             
+             console.log('=== FORM FIELD VALIDATION ===');
+             requiredFields.forEach(field => {
+                 const fieldElement = contactForm.querySelector(`[name="${field}"]`);
+                 if (!fieldElement) {
+                     missingElements.push(field);
+                     console.error(`❌ Field element missing: ${field}`);
+                 } else if (!fieldElement.value.trim()) {
+                     missingFields.push(field);
+                     console.warn(`⚠️ Field empty: ${field}`);
+                 } else {
+                     console.log(`✅ Field OK: ${field} = "${fieldElement.value}"`);
+                 }
+             });
+             
+             if (missingElements.length > 0) {
+                 console.error('CRITICAL: Form elements missing:', missingElements);
+                 alert('Form setup error: Missing form elements: ' + missingElements.join(', '));
+                 return;
+             }
+             
+             if (missingFields.length > 0) {
+                 console.error('Missing required fields:', missingFields);
+                 alert('Please fill in all required fields: ' + missingFields.join(', '));
+                 return;
+             }
+            
+            // Trigger button click animation
+            handleContactButtonClick();
+            
+            // Show loading state
+            showLoadingState();
+            
+             try {
+                 // Log form data before sending
+                 const formData = new FormData(contactForm);
+                 console.log('=== COMPLETE FORM DATA BEING SENT TO EMAILJS ===');
+                 console.log('Expected fields in your EmailJS template:');
+                 console.log('- name (required)');
+                 console.log('- email (required)'); 
+                 console.log('- project_type (required)');
+                 console.log('- budget_range (required)');
+                 console.log('- message (required)');
+                 console.log('- time (auto-generated)');
+                 console.log('');
+                 console.log('Actual form data being sent:');
+                 for (let [key, value] of formData.entries()) {
+                     console.log(`✓ ${key}: "${value}"`);
+                 }
+                 console.log('=== END FORM DATA ===');
+                
+                // Create template parameters object manually to ensure all data is sent
+                const templateParams = {
+                    time: document.getElementById('timeField').value,
+                    name: contactForm.querySelector('[name="name"]').value,
+                    email: contactForm.querySelector('[name="email"]').value,
+                    project_type: contactForm.querySelector('[name="project_type"]').value,
+                    budget_range: contactForm.querySelector('[name="budget_range"]').value,
+                    message: contactForm.querySelector('[name="message"]').value
+                };
+                
+                console.log('=== TEMPLATE PARAMS BEING SENT ===');
+                Object.entries(templateParams).forEach(([key, value]) => {
+                    console.log(`${key}: "${value}"`);
+                });
+                console.log('=== END TEMPLATE PARAMS ===');
+                
+                // Send email using EmailJS send method with explicit parameters
+                const result = await emailjs.send(
+                    EMAIL_SERVICE_ID,
+                    EMAIL_TEMPLATE_ID,
+                    templateParams
+                );
+                
+                console.log('Email sent successfully:', result);
+                
+                // Show success animation
+                setTimeout(() => {
+                    showSuccessAnimation();
+                    contactForm.reset();
+                }, 800);
+                
+            } catch (error) {
+                console.error('Failed to send email:', error);
+                console.error('EmailJS Error Details:', error.text || error.message);
+                
+                // Try fallback method if EmailJS fails
+                console.log('Attempting fallback email method...');
+                const formData = new FormData(contactForm);
+                const fallbackParams = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    project_type: formData.get('project_type'),
+                    budget_range: formData.get('budget_range'),
+                    message: formData.get('message'),
+                    subject: `New Project Inquiry: ${formData.get('project_type')}`
+                };
+                sendEmailFallback(fallbackParams);
+                
+                // Show error animation
+                setTimeout(() => {
+                    showErrorAnimation();
+                }, 800);
+            }
+        });
+        
+        // Enhanced contact button click handler
+        function handleContactButtonClick() {
+            // Add clicking animation
+            contactBtn.classList.add('clicking');
+            
+            // Create ripple effect
+            createRippleEffect(event);
+            
+            // Remove clicking class after animation
+            setTimeout(() => {
+                contactBtn.classList.remove('clicking');
+            }, 200);
         }
-      });
-      // Idle animation for nav links
-      let idleTimeout;
-      const navLinks = document.querySelectorAll('.nav-link');
-      function setIdleAnimation() {
-        navLinks.forEach(link => link.classList.add('idle-animate'));
-      }
-      function clearIdleAnimation() {
-        navLinks.forEach(link => link.classList.remove('idle-animate'));
-      }
-      function resetIdleTimer() {
-        clearTimeout(idleTimeout);
-        clearIdleAnimation();
-        idleTimeout = setTimeout(setIdleAnimation, 2000);
-      }
-      document.addEventListener('mousemove', resetIdleTimer);
-      document.addEventListener('keydown', resetIdleTimer);
-      setTimeout(setIdleAnimation, 2000);
-      // Portfolio hover animation (extra JS polish)
-      document.querySelectorAll('.portfolio-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          card.classList.add('shadow-2xl');
+        
+        // Create ripple effect on button click
+        function createRippleEffect(e) {
+            const ripple = document.createElement('span');
+            const rect = contactBtn.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = (e?.clientX || rect.left + rect.width / 2) - rect.left - size / 2;
+            const y = (e?.clientY || rect.top + rect.height / 2) - rect.top - size / 2;
+            
+            ripple.classList.add('ripple');
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            
+            contactBtn.appendChild(ripple);
+            
+            // Remove ripple after animation
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+        
+        // Show loading state while sending email
+        function showLoadingState() {
+            btnText.classList.add('hide');
+            
+            setTimeout(() => {
+                btnText.textContent = 'Sending...';
+                btnText.classList.remove('hide');
+                btnText.classList.add('show');
+                contactBtn.disabled = true;
+            }, 300);
+        }
+        
+        // Show success animation sequence
+        function showSuccessAnimation() {
+            // Step 1: Hide loading text
+            btnText.classList.add('hide');
+            
+            setTimeout(() => {
+                // Step 2: Change button to success state and update text
+                contactBtn.classList.add('success');
+                btnText.textContent = 'Sent!';
+                btnText.classList.remove('hide');
+                btnText.classList.add('show');
+                contactBtn.disabled = false;
+                
+                // Step 3: Show confirmation popup
+                setTimeout(() => {
+                    confirmationPopup.classList.add('show');
+                }, 100);
+                
+                // Step 4: Hide popup after 3 seconds
+                setTimeout(() => {
+                    confirmationPopup.classList.remove('show');
+                    
+                    // Step 5: Reset button after popup hides
+                    setTimeout(() => {
+                        resetContactButton();
+                    }, 400);
+                }, 3000);
+                
+            }, 300);
+        }
+        
+        // Show error animation sequence
+        function showErrorAnimation() {
+            // Step 1: Hide loading text
+            btnText.classList.add('hide');
+            
+            setTimeout(() => {
+                // Step 2: Show error state
+                btnText.textContent = 'Try Again';
+                btnText.classList.remove('hide');
+                btnText.classList.add('show');
+                contactBtn.disabled = false;
+                
+                // Step 3: Show error popup
+                setTimeout(() => {
+                    errorPopup.classList.add('show');
+                }, 100);
+                
+                // Step 4: Hide popup after 3 seconds
+                setTimeout(() => {
+                    errorPopup.classList.remove('show');
+                    
+                    // Step 5: Reset button after popup hides
+                    setTimeout(() => {
+                        resetContactButton();
+                    }, 400);
+                }, 3000);
+                
+            }, 300);
+        }
+        
+        // Reset contact button to original state
+        function resetContactButton() {
+            btnText.classList.add('hide');
+            
+            setTimeout(() => {
+                contactBtn.classList.remove('success');
+                contactBtn.disabled = false;
+                btnText.textContent = 'Send Message';
+                btnText.classList.remove('hide', 'show');
+            }, 300);
+        }
+        
+        // Add click event listener for enhanced feedback
+        contactBtn.addEventListener('click', (e) => {
+            // Only add visual effects if form is valid
+            if (contactForm.checkValidity()) {
+                handleContactButtonClick();
+            }
         });
-        card.addEventListener('mouseleave', () => {
-          card.classList.remove('shadow-2xl');
+        
+        // Alternative: Fallback email method using mailto (if EmailJS fails)
+        function sendEmailFallback(params) {
+            const emailBody = `
+Project Inquiry Details:
+
+Name: ${params.name}
+Email: ${params.email}
+Project Type: ${params.project_type}
+Budget Range: ${params.budget_range}
+
+Project Details:
+${params.message}
+
+---
+This email was sent from the VisualSites contact form.
+            `.trim();
+            
+            const emailSubject = encodeURIComponent(params.subject || 'New Project Inquiry');
+            const emailBodyEncoded = encodeURIComponent(emailBody);
+            
+            // Create mailto link with all form data
+            const mailtoLink = `mailto:your-email@example.com?subject=${emailSubject}&body=${emailBodyEncoded}`;
+            
+            console.log('Opening fallback email with all form data...');
+            window.open(mailtoLink);
+        }
+        
+        // Legacy fallback method (keeping for compatibility)
+        function sendEmailFallbackLegacy(formData) {
+            const subject = `New Project Inquiry: ${formData.get('project_type')}`;
+            const body = `
+Name: ${formData.get('from_name')}
+Email: ${formData.get('from_email')}
+Project Type: ${formData.get('project_type')}
+Budget Range: ${formData.get('budget_range')}
+
+Project Details:
+${formData.get('message')}
+            `;
+            
+            const mailtoLink = `mailto:contact@visualsites.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+        
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero .absolute');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
         });
-      });
-      // Contact form fake submit
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        document.getElementById('contactSuccess').classList.remove('d-none');
-        this.reset();
-      });
-      // Enhanced fade-in and fade-out on scroll for all elements
-      const fadeEls = document.querySelectorAll('.fade-scroll, .fade-scroll-element');
-      const fadeObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            entry.target.classList.remove('fade-out');
-          } else {
-            entry.target.classList.remove('visible');
-            entry.target.classList.add('fade-out');
-          }
+        
+        // Performance optimization: Throttle scroll events
+        let ticking = false;
+        function updateScrollEffects() {
+            // Your scroll-based animations here
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollEffects);
+                ticking = true;
+            }
         });
-      }, { 
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px' // Trigger slightly before element comes into view
-      });
-      fadeEls.forEach(el => fadeObserver.observe(el));
+        
+        // Section visibility for navigation highlighting
+        const sections = document.querySelectorAll('section');
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    const navLink = document.querySelector(`a[href="#${id}"]`);
+                    
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    if (navLink) navLink.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.6
+        });
+        
+        sections.forEach(section => {
+            navObserver.observe(section);
+        });
+        
+        // Loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+        
+        console.log('🚀 Portfolio loaded successfully!');
     </script>
 </body>
-</html>                                
+</html>
