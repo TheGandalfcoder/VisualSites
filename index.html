@@ -274,171 +274,275 @@ small business online, professional portfolio, personal site design, brand ident
             left: 100%;
         }
         
-                /* Package Popup Styles */
-        .package-popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden; /* Prevent any overflow */
+                                /* Package Display Styles */
+        .package-display-section {
+            margin-top: 2rem;
         }
 
-.package-popup-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-        .package-popup-container {
-            background: var(--dark-card);
-            border-radius: 20px;
-            padding: 2.5rem;
-            width: 90%;
-            max-width: 600px;
-            max-height: 85vh; /* Limit height to 85% of viewport */
-            overflow-y: auto; /* Allow scrolling within popup */
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            position: relative;
-            transform: translateX(100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            /* Add custom scrollbar styling */
-            scrollbar-width: thin;
-            scrollbar-color: var(--primary-blue) var(--dark-card);
-        }
-
-        /* Custom scrollbar for webkit browsers */
-        .package-popup-container::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .package-popup-container::-webkit-scrollbar-track {
-            background: var(--dark-card);
-            border-radius: 4px;
-        }
-
-        .package-popup-container::-webkit-scrollbar-thumb {
-            background: var(--primary-blue);
-            border-radius: 4px;
-        }
-
-        .package-popup-container::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-blue-light);
-        }
-
-.package-popup-overlay.active .package-popup-container {
-    transform: translateX(0);
-}
-
-        .package-popup-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-.popup-title {
-    font-size: 1.875rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0;
-}
-
-.close-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    color: var(--text-secondary);
-    transition: color 0.3s ease;
-    border-radius: 8px;
-}
-
-.close-button:hover {
-    color: var(--primary-blue-light);
-    background: rgba(96, 165, 250, 0.1);
-}
-
-        .package-popup-content {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-.popup-description {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-}
-
-.popup-features-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.popup-features-list li {
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--primary-blue-light);
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.75rem;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    border: 1px solid rgba(96, 165, 250, 0.3);
-    position: relative;
-    padding-left: 2.5rem;
-}
-
-.popup-features-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 1rem;
-    color: #10b981;
-    font-weight: bold;
-}
-
-        .package-popup-footer {
-            text-align: center;
-            padding-top: 1rem;
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin-top: 1rem;
         }
 
-.select-package-btn {
-    background: var(--gradient-primary);
-    color: white;
-    border: none;
-    padding: 1rem 2.5rem;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-glow);
-}
+        .package-container {
+            background: var(--dark-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-.select-package-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
-}
+        .package-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
 
-.select-package-btn:active {
-    transform: translateY(0);
-}
+        .package-container:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+        }
+
+        .package-container:hover::before {
+            transform: scaleX(1);
+        }
+
+        .package-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .package-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .package-price {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-blue-light);
+            margin: 0;
+        }
+
+        .package-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .package-features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .package-features-list li {
+            background: rgba(59, 130, 246, 0.08);
+            color: var(--text-secondary);
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .package-features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 1rem;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .package-footer {
+            text-align: center;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .package-select-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 0.875rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-glow);
+            width: 100%;
+        }
+
+        .package-select-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .package-select-btn:active {
+            transform: translateY(0);
+        }
+
+        .package-select-btn.selected {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .package-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .package-container {
+                padding: 1.25rem;
+            }
+
+            .package-title {
+                font-size: 1.25rem;
+            }
+
+            .package-price {
+                font-size: 1.125rem;
+            }
+
+            .package-description {
+                font-size: 0.95rem;
+            }
+
+            .package-features-list li {
+                font-size: 0.85rem;
+                padding: 0.625rem 0.875rem;
+                padding-left: 2.25rem;
+            }
+        }
+
+        /* ===========================================
+           WEBSITE PROJECT QUESTIONS STYLES
+           =========================================== */
+        
+        .question-group {
+            background: rgba(59, 130, 246, 0.03);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .question-group:hover {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .radio-option:hover, .checkbox-option:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .radio-option input, .checkbox-option input {
+            display: none;
+        }
+
+        .radio-custom, .checkbox-custom {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .checkbox-custom {
+            border-radius: 4px;
+        }
+
+        .radio-option input:checked + .radio-custom {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .radio-option input:checked + .radio-custom::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .checkbox-option input:checked + .checkbox-custom {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .checkbox-option input:checked + .checkbox-custom::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .radio-text, .checkbox-text {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            user-select: none;
+        }
+
+        .radio-option input:checked + .radio-text,
+        .checkbox-option input:checked + .checkbox-text {
+            color: var(--primary-blue-light);
+            font-weight: 600;
+        }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -885,13 +989,7 @@ small business online, professional portfolio, personal site design, brand ident
                 position: relative !important;
             }
             
-            .package-popup-overlay {
-                overflow: hidden !important;
-            }
-            
-            .package-popup-container {
-                overflow-x: hidden !important;
-            }
+
         }
         
         /* Code styling */
@@ -969,7 +1067,7 @@ small business online, professional portfolio, personal site design, brand ident
             <h1 class="hero-title">Visual Sites</h1>
             <h2 class="hero-subtitle">Professional Web Developments</h2>
             <p class="hero-description">
-                Stunning, high-performance websites that drive results. 
+                I create stunning, high-performance websites that drive results. 
                 Specializing in modern frameworks, responsive design, and cutting-edge technology.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center">
@@ -1373,33 +1471,140 @@ small business online, professional portfolio, personal site design, brand ident
                             </select>
                         </div>
 
-                                                <!-- Package Popup Overlay -->
-                        <div id="packagePopup" class="package-popup-overlay">
-                            <div class="package-popup-container">
-                                <div class="package-popup-header">
-                                    <h3 id="popupTitle" class="popup-title"></h3>
-                                    <button id="closePopup" class="close-button">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                
-                                <div class="package-popup-content">
-                                    <p id="popupDescription" class="popup-description"></p>
-                                    <ul id="popupFeatures" class="popup-features-list"></ul>
-                                </div>
-                                
-                                <div class="package-popup-footer">
-                                    <button id="selectPackage" class="select-package-btn">Select This Package</button>
-                                </div>
+                        <!-- Package Display Containers -->
+                        <div class="package-display-section">
+                            <div class="package-grid" id="packageGrid">
+                                <!-- Package containers will be populated by JavaScript -->
                             </div>
                         </div>
                         
+                        <!-- Website Project Questions -->
                         <div class="form-group">
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
-                            <textarea name="message" class="form-input h-32" placeholder="Tell me about your project, goals, and requirements..." required></textarea>
-                        </div>
+                            <label class="block text-sm font-medium text-gray-300 mb-3">Website Project Questions</label>
+                            
+                            <!-- Logo Question -->
+                            <div class="question-group mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">1. Do you have a logo?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="has_logo" value="Yes" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Yes</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="has_logo" value="No" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">No</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Domain Question -->
+                            <div class="question-group mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">2. Do you have a domain name?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="has_domain" value="Yes" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Yes</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="has_domain" value="No" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">No</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Existing Website Question -->
+                            <div class="question-group mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">3. Do you have an existing website?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="has_website" value="Yes" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Yes (please provide URL):</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="has_website" value="No" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">No</span>
+                                    </label>
+                                </div>
+                                <input type="url" name="website_url" class="form-input mt-2" placeholder="https://yourwebsite.com" style="display: none;">
+                            </div>
+
+                            <!-- Online Information Question -->
+                            <div class="question-group mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">4. Do you have accessible information online (e.g., social media, company profiles)?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="has_online_info" value="Yes" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Yes (please specify):</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="has_online_info" value="No" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">No</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="online_info_details" class="form-input mt-2" placeholder="e.g., Facebook, LinkedIn, Company website..." style="display: none;">
+                            </div>
+
+                            <!-- Company Description -->
+                            <div class="question-group mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">5. What is your company/about your business?</label>
+                                <textarea name="company_description" class="form-input" rows="4" placeholder="Please describe your business, services, and target audience..." required></textarea>
+                            </div>
+
+
+
+                            <!-- Style Preferences -->
+                            <div class="question-group mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">6. What style are you going for? (tick all that apply)</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="style_preferences[]" value="Modern">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Modern</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="style_preferences[]" value="Minimalist">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Minimalist</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="style_preferences[]" value="Professional">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Professional</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="style_preferences[]" value="Fun / Creative">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Fun / Creative</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="style_preferences[]" value="Corporate">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Corporate</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="style_preferences[]" value="Other">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Other (please specify):</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="other_style" class="form-input mt-2" placeholder="Please specify your style preference..." style="display: none;">
+                                <!-- Hidden input to store comma-separated style preferences for EmailJS -->
+                                <input type="hidden" id="stylePreferencesHidden" name="style_preferences" value="">
+                            </div>
+
+                            <!-- Project Details -->
+                            <div class="form-group">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
+                                <textarea name="message" class="form-input" rows="6" placeholder="Tell us about your project, goals, and any specific requirements..." required></textarea>
+                            </div>
                         
                         <div class="relative inline-block w-full">
                             <button type="submit" class="btn-primary contact-btn w-full" id="contactSubmitBtn">
@@ -1755,74 +1960,193 @@ const packageData = {
 };
 
 // DOM elements
-const packagePopup = document.getElementById('packagePopup');
-const popupTitle = document.getElementById('popupTitle');
-const popupDescription = document.getElementById('popupDescription');
-const popupFeatures = document.getElementById('popupFeatures');
-const closePopup = document.getElementById('closePopup');
-const selectPackage = document.getElementById('selectPackage');
 const budgetRangeSelect = document.getElementById('budgetRangeSelect');
 
-        // Show package popup
-        function showPackagePopup(packageKey) {
-            const package = packageData[packageKey];
-            if (!package) return;
+// ============================================
+// WEBSITE PROJECT QUESTIONS FUNCTIONALITY
+// ============================================
 
-            // Update popup content
-            popupTitle.textContent = `${package.title} - ${package.price}`;
-            popupDescription.textContent = package.description;
-            
-            // Clear and populate features
-            popupFeatures.innerHTML = '';
-            package.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.textContent = feature;
-                popupFeatures.appendChild(li);
+// Function to toggle text input containers based on radio button selection
+function toggleTextInputs() {
+    // Website URL input
+    const hasWebsiteRadios = document.querySelectorAll('input[name="has_website"]');
+    const websiteUrlInput = document.querySelector('input[name="website_url"]');
+    
+    hasWebsiteRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'Yes') {
+                websiteUrlInput.style.display = 'block';
+                websiteUrlInput.required = true;
+            } else {
+                websiteUrlInput.style.display = 'none';
+                websiteUrlInput.required = false;
+                websiteUrlInput.value = '';
+            }
+        });
+    });
+
+    // Online info details input
+    const hasOnlineInfoRadios = document.querySelectorAll('input[name="has_online_info"]');
+    const onlineInfoInput = document.querySelector('input[name="online_info_details"]');
+    
+    hasOnlineInfoRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'Yes') {
+                onlineInfoInput.style.display = 'block';
+                onlineInfoInput.required = true;
+            } else {
+                onlineInfoInput.style.display = 'none';
+                onlineInfoInput.required = false;
+                onlineInfoInput.value = '';
+            }
+        });
+    });
+
+    // Style preferences "Other" input
+    const otherStyleCheckbox = document.querySelector('input[value="Other"]');
+    const otherStyleInput = document.querySelector('input[name="other_style"]');
+    
+    if (otherStyleCheckbox) {
+        otherStyleCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                otherStyleInput.style.display = 'block';
+                otherStyleInput.required = true;
+            } else {
+                otherStyleInput.style.display = 'none';
+                otherStyleInput.required = false;
+                otherStyleInput.value = '';
+            }
+        });
+    }
+}
+
+        // Create and display package containers
+        function createPackageContainers() {
+            const packageGrid = document.getElementById('packageGrid');
+            if (!packageGrid) return;
+
+            // Clear existing containers
+            packageGrid.innerHTML = '';
+
+            // Create containers for all packages
+            Object.keys(packageData).forEach(packageKey => {
+                const package = packageData[packageKey];
+                const container = document.createElement('div');
+                container.className = 'package-container';
+                container.dataset.packageKey = packageKey;
+
+                container.innerHTML = `
+                    <div class="package-header">
+                        <h3 class="package-title">${package.title}</h3>
+                        <p class="package-price">${package.price}</p>
+                    </div>
+                    <p class="package-description">${package.description}</p>
+                    <ul class="package-features-list">
+                        ${package.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                    <div class="package-footer">
+                        <button class="package-select-btn" data-package-key="${packageKey}">Select This Package</button>
+                    </div>
+                `;
+
+                packageGrid.appendChild(container);
             });
 
-            // Show popup with slide-in animation
-            packagePopup.classList.add('active');
-            // Lock main page scrolling when popup is open
-            document.body.style.overflow = 'hidden';
+            // Add event listeners to package select buttons
+            const selectButtons = packageGrid.querySelectorAll('.package-select-btn');
+            selectButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const packageKey = this.dataset.packageKey;
+                    selectPackage(packageKey, this);
+                });
+            });
         }
 
-        // Hide package popup
-        function hidePackagePopup() {
-            packagePopup.classList.remove('active');
-            // Restore main page scrolling when popup is closed
-            document.body.style.overflow = '';
+        // Handle package selection
+        function selectPackage(packageKey, buttonElement) {
+            // Update the budget range select to match the selected package
+            const budgetSelect = document.getElementById('budgetRangeSelect');
+            if (budgetSelect) {
+                budgetSelect.value = packageKey;
+            }
+
+            // Show success state on the clicked button
+            buttonElement.textContent = 'Package Selected!';
+            buttonElement.classList.add('selected');
+
+            // Reset all other buttons
+            const allButtons = document.querySelectorAll('.package-select-btn');
+            allButtons.forEach(btn => {
+                if (btn !== buttonElement) {
+                    btn.textContent = 'Select This Package';
+                    btn.classList.remove('selected');
+                }
+            });
+
+            // Keep the selected button green permanently - no timeout reset
         }
 
-// Event listeners
-closePopup.addEventListener('click', hidePackagePopup);
+        // Initialize package containers on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            createPackageContainers();
+        });
 
-// Close popup when clicking outside
-packagePopup.addEventListener('click', (e) => {
-    if (e.target === packagePopup) {
-        hidePackagePopup();
-    }
-});
+        // Add change event listener to budget range select
+        budgetRangeSelect.addEventListener('change', function(e) {
+            if (e.target.value) {
+                // Highlight the corresponding package container
+                const allContainers = document.querySelectorAll('.package-container');
+                allContainers.forEach(container => {
+                    container.style.borderColor = 'var(--border-subtle)';
+                });
 
-// Handle package selection
-selectPackage.addEventListener('click', () => {
-    // Show success state briefly
-    selectPackage.textContent = 'Package Selected!';
-    selectPackage.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-    
-    // Close popup after delay
-    setTimeout(() => {
-        hidePackagePopup();
-        selectPackage.textContent = 'Select This Package';
-        selectPackage.style.background = '';
-    }, 1500);
-});
+                const selectedContainer = document.querySelector(`[data-package-key="${e.target.value}"]`);
+                if (selectedContainer) {
+                    selectedContainer.style.borderColor = 'var(--primary-blue)';
+                    selectedContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
 
-// Add change event listener to budget range select
-budgetRangeSelect.addEventListener('change', function(e) {
-    if (e.target.value && packageData[e.target.value]) {
-        showPackagePopup(e.target.value);
-    }
-});
+        // Add event listeners for style preferences checkboxes
+        document.addEventListener('DOMContentLoaded', function() {
+            const styleCheckboxes = document.querySelectorAll('input[name="style_preferences[]"]');
+            const otherStyleInput = document.querySelector('input[name="other_style"]');
+            
+            // Update hidden field when any checkbox changes
+            styleCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateStylePreferencesHidden);
+            });
+            
+            // Update hidden field when other style input changes
+            if (otherStyleInput) {
+                otherStyleInput.addEventListener('input', updateStylePreferencesHidden);
+            }
+        });
+
+        // Function to get selected style preferences
+        function getStylePreferences() {
+            const selectedStyles = document.querySelectorAll('input[name="style_preferences[]"]:checked');
+            const styleList = Array.from(selectedStyles).map(style => {
+                if (style.value === 'Other') {
+                    const otherInput = document.querySelector('input[name="other_style"]');
+                    return otherInput.value.trim() || 'Other (not specified)';
+                }
+                return style.value;
+            });
+            
+            if (styleList.length === 0) {
+                return 'No style preferences selected';
+            }
+            
+            return styleList.join(', ');
+        }
+
+        // Function to update hidden style preferences field
+        function updateStylePreferencesHidden() {
+            const hiddenField = document.getElementById('stylePreferencesHidden');
+            hiddenField.value = getStylePreferences();
+        }
         
         // Show loading state while sending email
         function showLoadingState() {
@@ -2010,6 +2334,9 @@ ${formData.get('message')}
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
+
+        // Initialize website project questions functionality
+        toggleTextInputs();
         
         console.log('🚀 Portfolio loaded successfully!');
     </script>
