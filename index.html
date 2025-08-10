@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VisualSites | Web development</title>
+    <title>Jos Watson- Professional Web Developer | VisualSites</title>
     
     <!-- Meta Tags for SEO -->
     <meta name="description" content="Jos Watson- Professional Web Developer specializing in modern, high-performance websites. Hire me for your next project.">
@@ -1105,9 +1105,6 @@
                 <!-- Contact Form -->
                 <div class="slide-in-right">
                     <form class="contact-form space-y-6" id="contactForm">
-                        <!-- Hidden timestamp field for EmailJS template -->
-                        <input type="hidden" name="time" id="timeField">
-                        
                         <div class="form-group">
                             <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
                             <input type="text" name="name" class="form-input" placeholder="Your full name" required>
@@ -1311,7 +1308,7 @@
         // IMPORTANT: Replace these with your actual EmailJS credentials
         const EMAIL_SERVICE_ID = 'service_2k6g3nj';  // Replace with your EmailJS service ID
         const EMAIL_TEMPLATE_ID = 'template_dwsx5lb'; // Replace with your EmailJS template ID
-        const EMAIL_PUBLIC_KEY = 'Z9ZCcUyWEn1fzRB0g';   // Replace with your EmailJS public key
+        const EMAIL_PUBLIC_KEY = 'I-7odFuBbJUAYM6es';   // Replace with your EmailJS public key
         
         // Initialize EmailJS
         emailjs.init(EMAIL_PUBLIC_KEY);
@@ -1323,50 +1320,25 @@
         const confirmationPopup = document.getElementById('confirmationPopup');
         const errorPopup = document.getElementById('errorPopup');
         
-         contactForm.addEventListener('submit', async (e) => {
-             e.preventDefault();
-             
-             // Set timestamp field for EmailJS template
-             const now = new Date();
-             const timeString = now.toLocaleString('en-GB', {
-                 day: 'numeric',
-                 month: 'short',
-                 year: 'numeric',
-                 hour: '2-digit',
-                 minute: '2-digit'
-             });
-             document.getElementById('timeField').value = timeString;
-             
-             // Validate all required fields are filled and exist
-             const requiredFields = ['name', 'email', 'project_type', 'budget_range', 'message'];
-             const missingFields = [];
-             const missingElements = [];
-             
-             console.log('=== FORM FIELD VALIDATION ===');
-             requiredFields.forEach(field => {
-                 const fieldElement = contactForm.querySelector(`[name="${field}"]`);
-                 if (!fieldElement) {
-                     missingElements.push(field);
-                     console.error(`❌ Field element missing: ${field}`);
-                 } else if (!fieldElement.value.trim()) {
-                     missingFields.push(field);
-                     console.warn(`⚠️ Field empty: ${field}`);
-                 } else {
-                     console.log(`✅ Field OK: ${field} = "${fieldElement.value}"`);
-                 }
-             });
-             
-             if (missingElements.length > 0) {
-                 console.error('CRITICAL: Form elements missing:', missingElements);
-                 alert('Form setup error: Missing form elements: ' + missingElements.join(', '));
-                 return;
-             }
-             
-             if (missingFields.length > 0) {
-                 console.error('Missing required fields:', missingFields);
-                 alert('Please fill in all required fields: ' + missingFields.join(', '));
-                 return;
-             }
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Validate all required fields are filled
+            const requiredFields = ['name', 'email', 'project_type', 'budget_range', 'message'];
+            const missingFields = [];
+            
+            requiredFields.forEach(field => {
+                const fieldElement = contactForm.querySelector(`[name="${field}"]`);
+                if (!fieldElement || !fieldElement.value.trim()) {
+                    missingFields.push(field);
+                }
+            });
+            
+            if (missingFields.length > 0) {
+                console.error('Missing required fields:', missingFields);
+                alert('Please fill in all required fields: ' + missingFields.join(', '));
+                return;
+            }
             
             // Trigger button click animation
             handleContactButtonClick();
@@ -1374,45 +1346,19 @@
             // Show loading state
             showLoadingState();
             
-             try {
-                 // Log form data before sending
-                 const formData = new FormData(contactForm);
-                 console.log('=== COMPLETE FORM DATA BEING SENT TO EMAILJS ===');
-                 console.log('Expected fields in your EmailJS template:');
-                 console.log('- name (required)');
-                 console.log('- email (required)'); 
-                 console.log('- project_type (required)');
-                 console.log('- budget_range (required)');
-                 console.log('- message (required)');
-                 console.log('- time (auto-generated)');
-                 console.log('');
-                 console.log('Actual form data being sent:');
-                 for (let [key, value] of formData.entries()) {
-                     console.log(`✓ ${key}: "${value}"`);
-                 }
-                 console.log('=== END FORM DATA ===');
+            try {
+                // Log form data before sending
+                const formData = new FormData(contactForm);
+                console.log('Form data being sent:');
+                for (let [key, value] of formData.entries()) {
+                    console.log(`${key}: ${value}`);
+                }
                 
-                // Create template parameters object manually to ensure all data is sent
-                const templateParams = {
-                    time: document.getElementById('timeField').value,
-                    name: contactForm.querySelector('[name="name"]').value,
-                    email: contactForm.querySelector('[name="email"]').value,
-                    project_type: contactForm.querySelector('[name="project_type"]').value,
-                    budget_range: contactForm.querySelector('[name="budget_range"]').value,
-                    message: contactForm.querySelector('[name="message"]').value
-                };
-                
-                console.log('=== TEMPLATE PARAMS BEING SENT ===');
-                Object.entries(templateParams).forEach(([key, value]) => {
-                    console.log(`${key}: "${value}"`);
-                });
-                console.log('=== END TEMPLATE PARAMS ===');
-                
-                // Send email using EmailJS send method with explicit parameters
-                const result = await emailjs.send(
+                // Send email using EmailJS sendForm method
+                const result = await emailjs.sendForm(
                     EMAIL_SERVICE_ID,
                     EMAIL_TEMPLATE_ID,
-                    templateParams
+                    contactForm
                 );
                 
                 console.log('Email sent successfully:', result);
