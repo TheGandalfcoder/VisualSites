@@ -246,6 +246,207 @@
             left: 100%;
         }
         
+        /* Package Popup Styles */
+.package-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.package-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+        .package-popup-container {
+            background: var(--dark-card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh; /* Limit height to 85% of viewport */
+            overflow-y: auto; /* Allow scrolling within popup */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Add custom scrollbar styling */
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-blue) var(--dark-card);
+        }
+
+        /* Custom scrollbar for webkit browsers */
+        .package-popup-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .package-popup-container::-webkit-scrollbar-track {
+            background: var(--dark-card);
+            border-radius: 4px;
+        }
+
+        .package-popup-container::-webkit-scrollbar-thumb {
+            background: var(--primary-blue);
+            border-radius: 4px;
+        }
+
+        .package-popup-container::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-blue-light);
+        }
+
+.package-popup-overlay.active .package-popup-container {
+    transform: translateX(0);
+}
+
+        .package-popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            /* Make header sticky */
+            position: sticky;
+            top: 0;
+            background: var(--dark-card);
+            z-index: 1;
+            padding-top: 0.5rem;
+        }
+
+.popup-title {
+    font-size: 1.875rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    border-radius: 8px;
+}
+
+.close-button:hover {
+    color: var(--primary-blue-light);
+    background: rgba(96, 165, 250, 0.1);
+}
+
+.package-popup-content {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.popup-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.popup-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popup-features-list li {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-blue-light);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.popup-features-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 1rem;
+    color: #10b981;
+    font-weight: bold;
+}
+
+        .package-popup-footer {
+            text-align: center;
+            /* Make footer sticky at bottom */
+            position: sticky;
+            bottom: 0;
+            background: var(--dark-card);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+.select-package-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-glow);
+}
+
+.select-package-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+}
+
+.select-package-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .package-popup-container {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .popup-title {
+        font-size: 1.5rem;
+    }
+    
+    .popup-description {
+        font-size: 1rem;
+    }
+    
+    .popup-features-list li {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+        padding-left: 2rem;
+    }
+    
+    .select-package-btn {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+}
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
@@ -1120,22 +1321,44 @@
                             <select name="project_type" class="form-input" required>
                                 <option value="">Select project type</option>
                                 <option value="Website Development">Website Development</option>
-                                <option value="Web Application">Web Application</option>
-                                <option value="E-Commerce">E-Commerce</option>
+                           
                                 <option value="Website Redesign">Website Redesign</option>
-                                <option value="Consultation">Consultation</option>
+
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label class="block text-sm font-medium text-gray-300 mb-2">Budget Range</label>
-                            <select name="budget_range" class="form-input" required>
+                            <select name="budget_range" id="budgetRangeSelect" class="form-input" required>
                                 <option value="">Select budget range</option>
-                                <option value="£1,000 - £5,000">£1,000 - £5,000</option>
-                                <option value="£5,000 - £10,000">£5,000 - £10,000</option>
-                                <option value="£10,000 - £25,000">£10,000 - £25,000</option>
-                                <option value="£25,000+">£25,000+</option>
+                                <option value="1000-1500">£1,000 – £1,500 — Starter Pro Website</option>
+                                <option value="1501-2000">£1,501 – £2,000 — Business Website</option>
+                                <option value="2001-2500">£2,001 – £2,500 — Custom Website</option>
+                                <option value="2501-3000">£2,501 – £3,000 — Advanced Business / Booking Website</option>
                             </select>
+                        </div>
+
+                                                <!-- Package Popup Overlay -->
+                        <div id="packagePopup" class="package-popup-overlay">
+                            <div class="package-popup-container">
+                                <div class="package-popup-header">
+                                    <h3 id="popupTitle" class="popup-title"></h3>
+                                    <button id="closePopup" class="close-button">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <div class="package-popup-content">
+                                    <p id="popupDescription" class="popup-description"></p>
+                                    <ul id="popupFeatures" class="popup-features-list"></ul>
+                                </div>
+                                
+                                <div class="package-popup-footer">
+                                    <button id="selectPackage" class="select-package-btn">Select This Package</button>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="form-group">
@@ -1203,6 +1426,9 @@
             
             <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
                 <p>&copy; 2025 Visual Sites. All rights reserved. Built with passion and modern technology.</p>
+                <div class="mt-2">
+                    <a href="privacy-policy.html" class="text-blue-200 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -1292,7 +1518,7 @@
         document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
             observer.observe(el);
         });
-         
+        
         // ============================================
         // EMAIL.JS CONFIGURATION & FORM HANDLING
         // ============================================
@@ -1427,6 +1653,139 @@
                 ripple.remove();
             }, 600);
         }
+
+        // Package data with features
+const packageData = {
+    '1000-1500': {
+        title: "Starter Pro Website",
+        price: "£1,000 – £1,500",
+        description: "Perfect for small businesses or personal brands needing a professional online presence.",
+        features: [
+            "Up to 5 pages (Home, About, Services, Contact, Blog/Portfolio)",
+            "Mobile & tablet responsive design",
+            "Basic SEO setup (titles, descriptions, keywords)",
+            "Contact form with email notifications",
+            "SSL certificate for secure browsing",
+            "Social media links integration",
+            "1 revision round",
+            "Stock images included",
+            "1 month of basic support"
+        ]
+    },
+    '1501-2000': {
+        title: "Business Website",
+        price: "£1,501 – £2,000",
+        description: "For businesses wanting a stronger presence and content flexibility.",
+        features: [
+            "Up to 10 pages",
+            "Everything in Starter Pro Website",
+            "Blog setup with categories/tags",
+            "Basic CMS (WordPress) so you can edit content yourself",
+            "Enhanced SEO optimisation (page speed, headings, sitemap)",
+            "Social media feed integration",
+            "2 revision rounds",
+            "2 months of standard support"
+        ]
+    },
+    '2001-2500': {
+        title: "Custom Website",
+        price: "£2,001 – £2,500",
+        description: "Tailored for brands that need more complex design & features.",
+        features: [
+            "Up to 15 pages",
+            "Everything in Business Website",
+            "Bespoke custom design (no templates)",
+            "Advanced CMS functionality (custom post types, plugins)",
+            "Image optimisation & performance tuning",
+            "Email newsletter integration (Mailchimp, etc.)",
+            "On-page SEO for every page",
+            "3 revision rounds",
+            "3 months of support"
+        ]
+    },
+    '2501-3000': {
+        title: "Advanced Business / Booking Website",
+        price: "£2,501 – £3,000",
+        description: "For companies needing booking systems or advanced functionality.",
+        features: [
+            "Up to 20 pages",
+            "Everything in Custom Website",
+            "Booking system integration (appointments, events, classes)",
+            "Advanced search/filter features for services/products",
+            "Custom animations & interactive elements",
+            "Training session for managing your website",
+            "Ongoing support for 3 months with priority updates"
+        ]
+    }
+};
+
+// DOM elements
+const packagePopup = document.getElementById('packagePopup');
+const popupTitle = document.getElementById('popupTitle');
+const popupDescription = document.getElementById('popupDescription');
+const popupFeatures = document.getElementById('popupFeatures');
+const closePopup = document.getElementById('closePopup');
+const selectPackage = document.getElementById('selectPackage');
+const budgetRangeSelect = document.getElementById('budgetRangeSelect');
+
+        // Show package popup
+        function showPackagePopup(packageKey) {
+            const package = packageData[packageKey];
+            if (!package) return;
+
+            // Update popup content
+            popupTitle.textContent = `${package.title} - ${package.price}`;
+            popupDescription.textContent = package.description;
+            
+            // Clear and populate features
+            popupFeatures.innerHTML = '';
+            package.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                popupFeatures.appendChild(li);
+            });
+
+            // Show popup with slide-in animation
+            packagePopup.classList.add('active');
+            // REMOVED: document.body.style.overflow = 'hidden'; - This was causing the scroll lock
+        }
+
+        // Hide package popup
+        function hidePackagePopup() {
+            packagePopup.classList.remove('active');
+            // REMOVED: document.body.style.overflow = ''; - No need to restore since we never locked it
+        }
+
+// Event listeners
+closePopup.addEventListener('click', hidePackagePopup);
+
+// Close popup when clicking outside
+packagePopup.addEventListener('click', (e) => {
+    if (e.target === packagePopup) {
+        hidePackagePopup();
+    }
+});
+
+// Handle package selection
+selectPackage.addEventListener('click', () => {
+    // Show success state briefly
+    selectPackage.textContent = 'Package Selected!';
+    selectPackage.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+    
+    // Close popup after delay
+    setTimeout(() => {
+        hidePackagePopup();
+        selectPackage.textContent = 'Select This Package';
+        selectPackage.style.background = '';
+    }, 1500);
+});
+
+// Add change event listener to budget range select
+budgetRangeSelect.addEventListener('change', function(e) {
+    if (e.target.value && packageData[e.target.value]) {
+        showPackagePopup(e.target.value);
+    }
+});
         
         // Show loading state while sending email
         function showLoadingState() {
