@@ -1,49 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> VisualSites: Web Development Company </title>
+    <title>VisualSites - Websites Built for Speed, Beauty & Growth</title>
  
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
 <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
 <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
-<link rel="manifest" href="/site.webmanifest">
-
     
     <!-- Meta Tags for SEO -->
-   <meta name="description" content="Visual Sites – Professional web development specializing in modern, high-performance, responsive websites. Expert in SEO-friendly designs. Let us build your next custom website.">
-
-   <meta name="keywords" content="
-Visual Sites, VisualSites, visual sites, visual site, visul sites, visul site, visula sites, visual sited, visual sitez,
-web design, web desgin, web desgn, web designng, web deisgn, website development, website devlopment, wesbite development, web site development, web development, professional web designer, profssional web designer, profeessional web desinger, creative web solutions, creative web solutons, creative web slutions,
-responsive websites, responsive websties, responsive webstes, responsive web site, responsive web sites, custom website design, custom website desgin, costum website design, custom web site design, visual website builder, visual website buider, visual website buider, modern website design, modern web design, modrn website design,
-small business websites, small bussiness websites, small busines website, portfolio websites, portfolio webstes, portolio websites, visual site creation, visual site cretion, visual site creaton,
-frontend developer, front end developer, frontend develper, frontend developr, user-friendly websites, user friendly websites, userfriendly websites, SEO optimized websites, SEO optimised websites, SEO optmized websites, branding and web design, branding & web design, branding and web deisgn, website design services,
-online presence, online presense, online presense, web developer portfolio, web dev portfolio, portfolio website, website makeover, freelance web developer, freelance web developer, freelence web developer,
-full stack developer, full-stack developer, fullstack developer, React developer, React js developer, Reactjs developer, JavaScript developer, javascript developer, JS developer, HTML CSS JavaScript, HTML,CSS, JavaScript, UI/UX design, UI UX design, mobile responsive design, mobile responsive desgin,
-ecommerce websites, e-commerce websites, ecommerce site, CMS websites, WordPress developer, wordpress developer, website redesign, website re-design, website maintenance, website maintanence, digital marketing websites, digital marketing webstes,
-graphic design and web, graphic design & web, creative website design, fast loading websites, fast loading web sites, website performance optimization, cross-browser compatible websites, cross browser compatible websites,
-interactive websites, interactive web sites, blog website design, business website design, startup website design, landing page design, website usability, website accessability, custom themes, custom theme, website templates, website template,
-website hosting setup, website hosting set up, SSL secured websites, SSL secured web sites, website analytics integration, conversion rate optimization, conversion rate optmization, online booking websites, online booking site, small business online presence,
-professional portfolio websites, personal website design, brand identity websites, minimalist web design, creative portfolio sites, web development company, custom web applications, website consultation, website audit services, website user experience, website navigation design,
-visual site, visualsite, visual-site, visulsite, visulasite, visuual sites, visual sitz, visal site, visualise site, visualise sites,
-webdesign, web-deisgn, web_deisgn, webdesigning, webdesigns, websitedevelopment, websitedeveloper, websitedevelopement,
-profesional webdesigner, creative webs, creative solutions, responsve website, responsive webstie, custom site design, visual builder, modern website, small business site, portfolio site, frontend dev, user friendly site, SEO optimized site,
-branding webdesign, website services, online presence website, developer portfolio, makeover website, freelance developer, fullstack dev, react dev, js developer, html css js, UI UX design, mobile responsive site,
-ecomerce websites, CMS sites, wordpress dev, redesign website, website maintenance, digital marketing site, graphic design web, creative webdesign, fast websites, performance optimization, crossbrowser compatibility,
-interactive site, blog design, business site design, startup site design, landing page site, usability website, accessibility website, custom theme, template website, hosting setup, SSL website, analytics integration, conversion optimization, booking website,
-small business online, professional portfolio, personal site design, brand identity site, minimalist design, portfolio sites, web dev company, custom web app, consultation website, audit service, user experience website, navigation design
-">
-
+    <meta name="description" content="Professional web development agency specializing in fast, beautiful, and growth-focused websites. Custom development, performance optimization, and responsive design.">
+    <meta name="keywords" content="web development, custom websites, responsive design, performance optimization, SEO, professional web agency">
     
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Google Fonts - Premium Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Apple-style Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -56,26 +32,241 @@ small business online, professional portfolio, personal site design, brand ident
     
     <style>
         /* ===========================================
-           MODERN PORTFOLIO DESIGN SYSTEM
+           CINEMATIC VS LOGO INTRO ANIMATION
            =========================================== */
         
-        /* CSS Variables for Consistent Design */
+        .cinematic-intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            animation: introFadeOut 0.5s ease-out 3.5s forwards;
+        }
+        
+        .cinematic-logo {
+            position: relative;
+            font-size: clamp(6rem, 15vw, 12rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.1em;
+            z-index: 10;
+        }
+        
+        .cinematic-letter-v {
+            position: relative;
+            background: linear-gradient(135deg, #E5E5E5 0%, #C0C0C0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            animation: letterVAppear 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+        }
+        
+        .cinematic-letter-s {
+            position: relative;
+            background: linear-gradient(135deg, #E5E5E5 0%, #C0C0C0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateX(40px) scale(0.9);
+            animation: letterSAppear 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s forwards;
+        }
+        
+        .cinematic-letter-v::after,
+        .cinematic-letter-s::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.7) 50%, transparent 100%);
+            filter: blur(10px);
+            pointer-events: none;
+        }
+        
+        .cinematic-letter-v::after {
+            animation: sheenSlide 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards;
+        }
+        
+        .cinematic-letter-s::after {
+            animation: sheenSlide 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s forwards;
+        }
+        
+        .cinematic-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(192, 192, 192, 0.15) 0%, transparent 70%);
+            filter: blur(60px);
+            opacity: 0;
+            animation: glowPulse 2s ease-in-out 0.5s forwards;
+        }
+        
+        .cinematic-rays {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(
+                from 0deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.03) 10%,
+                transparent 20%,
+                rgba(255, 255, 255, 0.03) 30%,
+                transparent 40%
+            );
+            opacity: 0;
+            animation: raysRotate 3s ease-out 0.5s forwards;
+        }
+        
+        @keyframes letterVAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        @keyframes letterSAppear {
+            0% {
+                opacity: 0;
+                transform: translateX(40px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+        
+        @keyframes sheenSlide {
+            0% {
+                left: -100%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                left: 200%;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes glowPulse {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 0.3;
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes raysRotate {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(0deg);
+            }
+            50% {
+                opacity: 0.15;
+                transform: scale(1.5) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.8) rotate(360deg);
+            }
+        }
+        
+        @keyframes introFadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        /* ===========================================
+           APPLE-INSPIRED DESIGN SYSTEM
+           =========================================== */
+        
+        /* CSS Variables for Apple Design System */
         :root {
-            --primary-blue: #3B82F6;
-            --primary-blue-dark: #1E40AF;
-            --primary-blue-light: #60A5FA;
-            --accent-purple: #8B5CF6;
-            --accent-cyan: #06B6D4;
-            --dark-bg: #0F172A;
-            --dark-card: #1E293B;
-            --text-primary: #F8FAFC;
-            --text-secondary: #CBD5E1;
-            --text-muted: #64748B;
-            --border-subtle: #334155;
-            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
-            --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
-            --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.3);
-            --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            /* Apple Color System */
+            --white: #FFFFFF;
+            --off-white: #F5F5F7;
+            --text-primary: #1D1D1F;
+            --text-secondary: #424245;
+            --accent: #0071E3;
+            --border: #D2D2D7;
+            --footer-bg: #1D1D1F;
+            --footer-text: #F5F5F7;
+            
+            /* Typography Scale */
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-size-6xl: 3.75rem;
+            --font-size-7xl: 4.5rem;
+            --font-size-8xl: 6rem;
+            --font-size-9xl: 8rem;
+            
+            /* Spacing Scale (8px base) */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+            --space-32: 8rem;
+            --space-40: 10rem;
+            --space-48: 12rem;
+            --space-56: 14rem;
+            --space-64: 16rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            /* Transitions */
+            --transition-fast: 150ms ease-in-out;
+            --transition-normal: 300ms ease-in-out;
+            --transition-slow: 500ms ease-in-out;
+            
+            /* Container */
+            --container-max: 1440px;
+            --container-padding: 5rem;
         }
         
         /* Base Styles */
@@ -92,36 +283,49 @@ small business online, professional portfolio, personal site design, brand ident
         }
         
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--white);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
             width: 100%;
             position: relative;
+            font-weight: 400;
+            font-size: var(--font-size-base);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            letter-spacing: -0.022em;
         }
         
-        /* Custom Cursor */
-        body {
-            cursor: none;
-        }
+        /* Typography Scale */
+        .text-xs { font-size: var(--font-size-xs); }
+        .text-sm { font-size: var(--font-size-sm); }
+        .text-base { font-size: var(--font-size-base); }
+        .text-lg { font-size: var(--font-size-lg); }
+        .text-xl { font-size: var(--font-size-xl); }
+        .text-2xl { font-size: var(--font-size-2xl); }
+        .text-3xl { font-size: var(--font-size-3xl); }
+        .text-4xl { font-size: var(--font-size-4xl); }
+        .text-5xl { font-size: var(--font-size-5xl); }
+        .text-6xl { font-size: var(--font-size-6xl); }
+        .text-7xl { font-size: var(--font-size-7xl); }
+        .text-8xl { font-size: var(--font-size-8xl); }
+        .text-9xl { font-size: var(--font-size-9xl); }
         
-        .custom-cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-            mix-blend-mode: difference;
-        }
+        /* Font Weights */
+        .font-light { font-weight: 300; }
+        .font-normal { font-weight: 400; }
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .font-extrabold { font-weight: 800; }
         
-        .custom-cursor.hover {
-            transform: scale(2);
-            background: var(--gradient-primary);
-            mix-blend-mode: normal;
+        /* Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
         }
         
         /* Navigation */
@@ -131,40 +335,73 @@ small business online, professional portfolio, personal site design, brand ident
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-subtle);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(29, 29, 31, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            transition: all var(--transition-normal);
+            height: 44px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .navbar.scrolled {
-            background: rgba(15, 23, 42, 0.95);
-            border-bottom: 1px solid var(--primary-blue);
-            box-shadow: var(--shadow-card);
+            background: rgba(29, 29, 31, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .nav-logo {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: -0.022em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-logo img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
         }
         
         .nav-link {
-            color: var(--text-secondary) !important;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            font-size: var(--font-size-sm);
+            letter-spacing: -0.022em;
             text-decoration: none;
+            transition: color var(--transition-fast);
+            position: relative;
         }
         
         .nav-link:hover,
         .nav-link.active {
-            color: var(--primary-blue-light) !important;
+            color: #FFFFFF;
         }
         
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -8px;
             left: 0;
             width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
+            height: 1px;
+            background: #FFFFFF;
+            transition: width var(--transition-fast);
         }
         
         .nav-link:hover::after,
@@ -172,73 +409,124 @@ small business online, professional portfolio, personal site design, brand ident
             width: 100%;
         }
         
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: var(--space-2);
+        }
+        
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 44px;
+            left: 0;
+            right: 0;
+            background: rgba(29, 29, 31, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: var(--space-4) 0;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu .nav-link {
+            display: block;
+            padding: var(--space-3) var(--space-6);
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .mobile-menu .nav-link::after {
+            display: none;
+        }
+        
+        .mobile-menu .nav-link:hover,
+        .mobile-menu .nav-link.active {
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: var(--gradient-hero);
-            position: relative;
+            background: #000000;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            position: relative;
+            padding: var(--space-20) 0;
         }
         
         .hero-content {
             text-align: center;
-            z-index: 2;
-            position: relative;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
         }
         
         .hero-title {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            background: linear-gradient(135deg, #F8FAFC 0%, #60A5FA 50%, #8B5CF6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            animation: slideInUp 1s ease-out 0.2s both;
+            font-size: clamp(var(--font-size-7xl), 8vw, var(--font-size-9xl));
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: var(--space-6);
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            animation: fadeInUp var(--transition-slow) ease-out 0.3s both;
         }
         
         .hero-subtitle {
-            font-size: clamp(1.25rem, 3vw, 2rem);
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-weight: 500;
-            animation: slideInUp 1s ease-out 0.4s both;
+            font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-5xl));
+            color: #E5E5E5;
+            margin-bottom: var(--space-8);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            animation: fadeInUp var(--transition-slow) ease-out 0.5s both;
         }
         
         .hero-description {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            animation: slideInUp 1s ease-out 0.6s both;
+            font-size: var(--font-size-xl);
+            color: #C0C0C0;
+            max-width: 680px;
+            margin: 0 auto var(--space-12);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            animation: fadeInUp var(--transition-slow) ease-out 0.7s both;
         }
         
-        @keyframes slideInUp {
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            align-items: center;
+            animation: fadeInUp var(--transition-slow) ease-out 0.9s both;
+        }
+        
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -247,651 +535,174 @@ small business online, professional portfolio, personal site design, brand ident
         }
         
         /* Buttons */
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-glow);
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-        
-                                /* Package Display Styles */
-        .package-display-section {
-            margin-top: 2rem;
-        }
-
-        .package-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .package-container {
-            background: var(--dark-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .package-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .package-container:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary-blue);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-        }
-
-        .package-container:hover::before {
-            transform: scaleX(1);
-        }
-
-        .package-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .package-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 0 0 0.5rem 0;
-        }
-
-        .package-price {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary-blue-light);
-            margin: 0;
-        }
-
-        .package-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        .package-features-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 1.5rem 0;
-        }
-
-        .package-features-list li {
-            background: rgba(59, 130, 246, 0.08);
-            color: var(--text-secondary);
-            padding: 0.75rem 1rem;
-            margin-bottom: 0.75rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(96, 165, 250, 0.2);
-            position: relative;
-            padding-left: 2.5rem;
-        }
-
-        .package-features-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 1rem;
-            color: #10b981;
-            font-weight: bold;
-        }
-
-        .package-footer {
-            text-align: center;
-            padding-top: 1rem;
-            margin-top: 1rem;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .package-select-btn {
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            padding: 0.875rem 2rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-glow);
-            width: 100%;
-        }
-
-        .package-select-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
-        }
-
-        .package-select-btn:active {
-            transform: translateY(0);
-        }
-
-        .package-select-btn.selected {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        }
-
-        /* Mobile responsive adjustments */
-        @media (max-width: 768px) {
-            .package-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .package-container {
-                padding: 1.25rem;
-            }
-
-            .package-title {
-                font-size: 1.25rem;
-            }
-
-            .package-price {
-                font-size: 1.125rem;
-            }
-
-            .package-description {
-                font-size: 0.95rem;
-            }
-
-            .package-features-list li {
-                font-size: 0.85rem;
-                padding: 0.625rem 0.875rem;
-                padding-left: 2.25rem;
-            }
-        }
-
-        /* ===========================================
-           WEBSITE PROJECT QUESTIONS STYLES
-           =========================================== */
-        
-        .question-group {
-            background: rgba(59, 130, 246, 0.03);
-            border: 1px solid rgba(96, 165, 250, 0.2);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .question-group:hover {
-            background: rgba(59, 130, 246, 0.05);
-            border-color: rgba(96, 165, 250, 0.3);
-        }
-
-        .radio-group, .checkbox-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .radio-option, .checkbox-option {
-            display: flex;
+        .btn {
+            display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .radio-option:hover, .checkbox-option:hover {
-            background: rgba(59, 130, 246, 0.05);
-        }
-
-        .radio-option input, .checkbox-option input {
-            display: none;
-        }
-
-        .radio-custom, .checkbox-custom {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary-blue);
-            border-radius: 50%;
-            position: relative;
-            transition: all 0.2s ease;
-            flex-shrink: 0;
-        }
-
-        .checkbox-custom {
-            border-radius: 4px;
-        }
-
-        .radio-option input:checked + .radio-custom {
-            background: var(--primary-blue);
-            border-color: var(--primary-blue);
-        }
-
-        .radio-option input:checked + .radio-custom::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 8px;
-            height: 8px;
-            background: white;
-            border-radius: 50%;
-        }
-
-        .checkbox-option input:checked + .checkbox-custom {
-            background: var(--primary-blue);
-            border-color: var(--primary-blue);
-        }
-
-        .checkbox-option input:checked + .checkbox-custom::after {
-            content: '✓';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-            line-height: 1;
-        }
-
-        .radio-text, .checkbox-text {
-            color: var(--text-primary);
-            font-size: 0.95rem;
+            justify-content: center;
+            padding: var(--space-3) var(--space-6);
+            border-radius: 980px;
+            font-size: var(--font-size-base);
             font-weight: 500;
-            user-select: none;
-        }
-
-        .radio-option input:checked + .radio-text,
-        .checkbox-option input:checked + .checkbox-text {
-            color: var(--primary-blue-light);
-            font-weight: 600;
-        }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .package-popup-container {
-        padding: 2rem;
-        margin: 1rem;
-    }
-    
-    .popup-title {
-        font-size: 1.5rem;
-    }
-    
-    .popup-description {
-        font-size: 1rem;
-    }
-    
-    .popup-features-list li {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.75rem;
-        padding-left: 2rem;
-    }
-    
-    .select-package-btn {
-        padding: 0.875rem 2rem;
-        font-size: 1rem;
-    }
-}
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
-            color: white;
+            letter-spacing: -0.022em;
             text-decoration: none;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            border: none;
+            min-width: 140px;
         }
         
-        /* Contact Button Enhanced Animations */
-        .contact-btn {
-            min-width: 160px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
         }
         
-        /* Button Click Animation States */
-        .contact-btn.clicking {
-            transform: scale(0.95) translateY(-1px);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+        .btn-primary:hover {
+            background: #0051D5;
+            transform: translateY(-1px);
+            color: var(--white);
         }
         
-        .contact-btn.success {
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.6);
-        }
-        
-        .contact-btn.success::before {
-            left: 100%;
-        }
-        
-        /* Button Text Animation */
-        .btn-text {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        
-        .btn-text.hide {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        
-        .btn-text.show {
-            opacity: 1;
+        .btn-primary:active {
             transform: translateY(0);
-        }
-        
-        /* Checkmark Confirmation Element */
-        .confirmation-popup {
-            position: absolute;
-            top: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(16, 185, 129, 0.95);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-        
-        .confirmation-popup::before {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 8px solid rgba(16, 185, 129, 0.95);
-        }
-        
-        .confirmation-popup.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(-5px);
-        }
-        
-        /* Checkmark Icon Animation */
-        .checkmark {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            margin-right: 0.5rem;
-            position: relative;
-        }
-        
-        .checkmark::after {
-            content: '';
-            position: absolute;
-            left: 6px;
-            top: 2px;
-            width: 4px;
-            height: 8px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-            animation: checkmarkDraw 0.3s ease-in-out;
-        }
-        
-        @keyframes checkmarkDraw {
-            0% {
-                height: 0;
-                opacity: 0;
-            }
-            50% {
-                height: 4px;
-                opacity: 0.5;
-            }
-            100% {
-                height: 8px;
-                opacity: 1;
-            }
-        }
-        
-        /* Ripple Effect for Button Click */
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(0);
-            animation: rippleEffect 0.6s linear;
-            pointer-events: none;
-        }
-        
-        @keyframes rippleEffect {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
         }
         
         .btn-secondary {
             background: transparent;
-            color: var(--primary-blue-light);
-            border: 2px solid var(--primary-blue);
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: none;
-            transition: all 0.3s ease;
-            margin-left: 1rem;
-            text-decoration: none;
-            display: inline-block;
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .btn-secondary:hover {
-            background: var(--primary-blue);
-            color: white;
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-1px);
             text-decoration: none;
         }
         
-        /* Cards */
-        .card {
-            background: var(--dark-card);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid var(--border-subtle);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-card);
-            border-color: var(--primary-blue);
+        .btn-secondary:active {
+            transform: translateY(0);
         }
         
         /* Sections */
         .section {
-            padding: 6rem 0;
+            padding: var(--space-24) 0;
             position: relative;
         }
         
+        .section-alt {
+            background: var(--off-white);
+        }
+        
         .section-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
+            font-size: clamp(var(--font-size-5xl), 6vw, var(--font-size-7xl));
+            font-weight: 600;
             text-align: center;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #F8FAFC 0%, #60A5FA 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: var(--space-6);
+            color: var(--text-primary);
+            letter-spacing: -0.04em;
+            line-height: 1.1;
         }
         
         .section-subtitle {
             text-align: center;
-            color: var(--text-muted);
-            font-size: 1.25rem;
-            margin-bottom: 4rem;
-            max-width: 600px;
+            color: var(--text-secondary);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-16);
+            max-width: 680px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: -0.022em;
         }
         
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: var(--space-12);
+            border: 1px solid var(--border);
+            transition: all var(--transition-normal);
+            position: relative;
+            box-shadow: var(--shadow-sm);
         }
         
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
         
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        /* Skills Grid */
-        .skills-grid {
+        /* Services Grid */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: var(--space-8);
+            margin-top: var(--space-16);
         }
         
-        .skill-category {
-            background: var(--dark-card);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid var(--border-subtle);
-            transition: all 0.3s ease;
+        .service-card {
+            text-align: center;
+            padding: var(--space-8);
         }
         
-        .skill-category:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-blue);
-        }
-        
-        .skill-item {
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-6);
+            background: var(--off-white);
+            border-radius: 20px;
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
-            padding: 0.75rem;
-            background: rgba(59, 130, 246, 0.05);
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            justify-content: center;
+            transition: all var(--transition-normal);
         }
         
-        .skill-item:hover {
-            background: rgba(59, 130, 246, 0.1);
-            transform: translateX(5px);
+        .service-card:hover .service-icon {
+            background: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .service-card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.022em;
+        }
+        
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
         
         /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
         }
         
         .portfolio-item {
-            background: var(--dark-card);
-            border-radius: 16px;
+            background: var(--white);
+            border-radius: 18px;
             overflow: hidden;
-            border: 1px solid var(--border-subtle);
-            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            transition: all var(--transition-normal);
             position: relative;
+            box-shadow: var(--shadow-sm);
         }
         
         .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-card);
-            border-color: var(--primary-blue);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
         
         .portfolio-image {
             width: 100%;
-            height: 200px;
-            background: var(--gradient-primary);
+            height: 280px;
+            background: linear-gradient(135deg, var(--accent) 0%, #0051D5 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -899,24 +710,423 @@ small business online, professional portfolio, personal site design, brand ident
             overflow: hidden;
         }
         
-        .portfolio-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.3);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .portfolio-content {
+            padding: var(--space-8);
         }
         
-        .portfolio-item:hover .portfolio-image::before {
+        .portfolio-content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+            letter-spacing: -0.022em;
+        }
+        
+        .portfolio-content p {
+            color: var(--text-secondary);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            margin-bottom: var(--space-4);
+        }
+        
+        .portfolio-stats {
+            display: flex;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: var(--off-white);
+            padding: var(--space-2) var(--space-3);
+            border-radius: 8px;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            color: var(--accent);
+        }
+        
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: var(--border);
+            z-index: -1;
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-6);
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+        }
+        
+        .step-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+            letter-spacing: -0.022em;
+        }
+        
+        .step-description {
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            line-height: 1.5;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+        }
+        
+        .testimonial {
+            background: var(--white);
+            border-radius: 18px;
+            padding: var(--space-8);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: var(--space-4);
+            left: var(--space-6);
+            font-size: var(--font-size-6xl);
+            color: var(--accent);
+            opacity: 0.3;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-6);
+            padding-left: var(--space-8);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+        
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .author-info h4 {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .author-info p {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--footer-bg);
+            border-top: 1px solid rgba(210, 210, 215, 0.2);
+            padding: var(--space-16) 0 var(--space-12);
+            margin-top: var(--space-16);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+        
+        .footer-section h3 {
+            color: var(--footer-text);
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.022em;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(245, 245, 247, 0.8);
+            font-size: var(--font-size-sm);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            line-height: 1.6;
+        }
+        
+        .footer-section a:hover {
+            color: var(--footer-text);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(210, 210, 215, 0.2);
+            padding-top: var(--space-8);
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: rgba(245, 245, 247, 0.6);
+            font-size: var(--font-size-sm);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-4);
+            }
+            
+            .section {
+                padding: var(--space-16) 0;
+            }
+            
+            .hero {
+                padding: var(--space-16) 0;
+            }
+            
+            .hero-content {
+                padding: 0 var(--space-4);
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: var(--space-4);
+            }
+            
+            .services-grid,
+            .portfolio-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+            
+            .process-step::after {
+                display: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all var(--transition-slow) ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Previous Work Portal Windows */
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: var(--space-16);
+            margin-top: var(--space-16);
+            perspective: 1500px;
+        }
+        
+        .portal-window {
+            position: relative;
+            background: var(--white);
+            border-radius: 20px;
+            padding: var(--space-6);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-style: preserve-3d;
+            overflow: hidden;
+        }
+        
+        .portal-window::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.3), rgba(229, 229, 229, 0.3));
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+            filter: blur(10px);
+        }
+        
+        .portal-window:hover::before {
             opacity: 1;
         }
         
-        .portfolio-content {
-            padding: 1.5rem;
+        .portal-window:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+            border-color: rgba(0, 113, 227, 0.3);
+        }
+        
+        .portal-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-4);
+        }
+        
+        .portal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .portal-dot:nth-child(1) { background: #FF5F57; }
+        .portal-dot:nth-child(2) { background: #FFBD2E; }
+        .portal-dot:nth-child(3) { background: #28CA42; }
+        
+        .portal-iframe-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f5f5f7;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .portal-window:hover .portal-iframe-container {
+            transform: scale(1.03);
+        }
+        
+        .portal-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            pointer-events: none;
+        }
+        
+        .portal-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            padding: var(--space-6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .portal-window:hover .portal-overlay {
+            opacity: 1;
+        }
+        
+        .portal-info h3 {
+            color: #FFFFFF;
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+            letter-spacing: -0.022em;
+        }
+        
+        .portal-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-4);
+        }
+        
+        .portal-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            background: var(--white);
+            color: var(--text-primary);
+            border-radius: 980px;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            pointer-events: all;
+        }
+        
+        .portal-btn:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+        
+        .portal-label {
+            margin-top: var(--space-4);
+            text-align: center;
+        }
+        
+        .portal-label h3 {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-1);
+            letter-spacing: -0.022em;
+        }
+        
+        .portal-label p {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .portal-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+            
+            .portal-iframe-container {
+                height: 300px;
+            }
         }
         
         /* Contact Form */
@@ -926,142 +1136,88 @@ small business online, professional portfolio, personal site design, brand ident
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-6);
         }
         
-        .form-input {
-            width: 100%;
-            padding: 1rem;
-            background: var(--dark-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
+        .form-label {
+            display: block;
+            font-weight: 500;
             color: var(--text-primary);
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            margin-bottom: var(--space-2);
+            font-size: var(--font-size-base);
+            letter-spacing: -0.022em;
         }
         
-        .form-input:focus {
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: var(--space-4);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: var(--font-size-base);
+            font-family: inherit;
+            background: var(--white);
+            color: var(--text-primary);
+            transition: all var(--transition-normal);
+            letter-spacing: -0.022em;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
             outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
         }
         
-        .form-input::placeholder {
-            color: var(--text-muted);
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
         }
         
-        /* Footer */
-        .footer {
-            background: var(--dark-card);
-            border-top: 1px solid var(--border-subtle);
-            padding: 3rem 0 2rem;
-            text-align: center;
-        }
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .section {
-                padding: 3rem 0;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            .btn-secondary {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
-            
-            .skills-grid,
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .custom-cursor {
-                display: none;
-            }
-            
-            body {
-                cursor: auto;
-            }
-            
-            /* Ensure no horizontal scroll on mobile */
-            html, body {
-                overflow-x: hidden !important;
-                width: 100% !important;
-                position: relative !important;
-            }
-            
-
-        }
-        
-        /* Code styling */
-        .code {
-            font-family: 'JetBrains Mono', monospace;
-            background: rgba(59, 130, 246, 0.1);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            color: var(--primary-blue-light);
-        }
-        
-        /* Utility Classes */
-        .text-gradient {
-            background: linear-gradient(135deg, #60A5FA 0%, #8B5CF6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .glow {
-            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-secondary);
         }
     </style>
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
+    <!-- Apple-Style Cinematic VS Logo Intro -->
+    <div class="cinematic-intro">
+        <div class="cinematic-glow"></div>
+        <div class="cinematic-rays"></div>
+        <div class="cinematic-logo">
+            <span class="cinematic-letter-v">V</span>
+            <span class="cinematic-letter-s">S</span>
+        </div>
+    </div>
     
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="#home" class="text-xl font-bold text-gradient">Visual Sites</a>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="logo.png" alt="VisualSites Logo">
+                    VisualSites
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="contact-us.html" class="nav-link">Contact Us</a>
                 </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="nav-link active">Home</a>
-                        <a href="#about" class="nav-link">About</a>
-                        <a href="#skills" class="nav-link">Skills</a>
-                        <a href="#portfolio" class="nav-link">Portfolio</a>
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </div>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button type="button" class="mobile-menu-btn text-gray-300 hover:text-white focus:outline-none focus:text-white">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
-            
-            <!-- Mobile Navigation -->
-            <div class="mobile-menu hidden md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800 rounded-lg mt-2">
-                    <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Home</a>
-                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium nav-link">About</a>
-                    <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Skills</a>
-                    <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Portfolio</a>
-                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Contact</a>
-                </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="contact-us.html" class="nav-link">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -1069,690 +1225,424 @@ small business online, professional portfolio, personal site design, brand ident
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Visual Sites</h1>
-            <h2 class="hero-subtitle">Professional Web Developments</h2>
+            <h1 class="hero-title">Websites Built for Speed, Beauty & Growth</h1>
+            <h2 class="hero-subtitle">Professional web development that drives results</h2>
             <p class="hero-description">
-                I create stunning, high-performance websites that drive results. 
-                Specializing in modern frameworks, responsive design, and cutting-edge technology.
+                We create stunning, high-performance websites that help businesses grow. 
+                From concept to launch, we deliver exceptional digital experiences that convert visitors into customers.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center">
-                <a href="#portfolio" class="btn-primary">View My Work</a>
-                <a href="#contact" class="btn-secondary">Hire Me</a>
-            </div>
-        </div>
-        
-        <!-- Floating Elements -->
-        <div class="absolute top-20 left-10 w-4 h-4 bg-blue-500 rounded-full opacity-60 animate-pulse"></div>
-        <div class="absolute top-40 right-20 w-6 h-6 bg-purple-500 rounded-full opacity-40 animate-pulse" style="animation-delay: 1s;"></div>
-        <div class="absolute bottom-40 left-20 w-3 h-3 bg-cyan-500 rounded-full opacity-50 animate-pulse" style="animation-delay: 2s;"></div>
-        <div class="absolute bottom-20 right-10 w-5 h-5 bg-blue-400 rounded-full opacity-30 animate-pulse" style="animation-delay: 0.5s;"></div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="fade-in">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">
-                    Passionate about creating exceptional digital experiences
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="slide-in-left">
-                    <div class="space-y-6">
-                        <h3 class="text-2xl font-bold text-gradient">Building the Future of Web</h3>
-                        <p class="text-lg text-gray-300 leading-relaxed">
-                            With over <span class="code">5+ years</span> of experience in web development, 
-                            I specialize in creating modern, responsive websites that deliver exceptional 
-                            user experiences and drive business results.
-                        </p>
-                        <p class="text-lg text-gray-300 leading-relaxed">
-                            I work with cutting-edge technologies like <span class="code">React</span>, 
-                            <span class="code">Next.js</span>, <span class="code">TypeScript</span>, 
-                            and <span class="code">Node.js</span> to build scalable, performant applications.
-                        </p>
-                        <div class="flex space-x-4 pt-4">
-                            
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-gradient">Guaranteed</div>
-                                <div class="text-sm text-gray-400">Client Satisfaction</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-gradient">24/7</div>
-                                <div class="text-sm text-gray-400">Support Available</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="slide-in-right">
-                    <div class="card">
-                        <div class="flex items-center mb-6">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/wxnxiano.json"
-                                trigger="loop"
-                                delay="2000"
-                                colors="primary:#3b82f6,secondary:#8b5cf6"
-                                style="width:60px;height:60px;">
-                            </lord-icon>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold">VisualSites</h4>
-                                <p class="text-gray-400">Founded 2025</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-300 mb-4">
-                            I founded VisualSites to help businesses establish a powerful digital presence 
-                            without the extortionate costs and ongoing fees that plague the industry.
-                        </p>
-                        <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-4 rounded-lg border border-blue-500/20">
-                            <p class="font-semibold text-blue-400">My Promise:</p>
-                            <p class="text-sm text-gray-300 mt-1">
-                                One purchase, one high-quality website, with reasonable ongoing support.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="hero-buttons">
+                <a href="contact-us.html" class="btn btn-primary">Contact Us</a>
+                <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
             </div>
         </div>
     </section>
     
     <!-- Services Section -->
-    <section id="skills" class="section" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" class="section">
+        <div class="container">
             <div class="fade-in">
-                <h2 class="section-title">Services</h2>
+                <h2 class="section-title">Our Services</h2>
                 <p class="section-subtitle">
-                    Professional front-end development and design solutions for modern businesses
+                    Comprehensive web development solutions tailored to your business needs
                 </p>
             </div>
             
-            <div class="skills-grid">
-                <!-- Design & Creative -->
-                <div class="skill-category fade-in">
-                    <div class="flex items-center mb-4">
+            <div class="services-grid fade-in">
+                <div class="service-card">
+                    <div class="service-icon">
                         <lord-icon
-                            src="https://cdn.lordicon.com/gqzfzudq.json"
+                            src="https://cdn.lordicon.com/zvamcipt.json"
                             trigger="hover"
-                            colors="primary:#3b82f6,secondary:#8b5cf6"
+                            colors="primary:#0071E3"
                             style="width:40px;height:40px;">
                         </lord-icon>
-                        <h3 class="text-xl font-bold ml-3">Design & Creative</h3>
                     </div>
-                    <div class="space-y-3">
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/wxnxiano.json"
-                                trigger="hover"
-                                colors="primary:#8b5cf6"
-                                style="width:24px;height:24px;">
-                            </lord-icon>
-                            <span class="ml-3 font-medium">Custom UI/UX Design</span>
+                    <h3>Custom Web Development</h3>
+                    <p>Bespoke websites built from scratch using modern technologies and best practices for optimal performance and user experience.</p>
                         </div>
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/gqzfzudq.json"
-                                trigger="hover"
-                                colors="primary:#06b6d4"
-                                style="width:24px;height:24px;">
-                            </lord-icon>
-                            <span class="ml-3 font-medium">Brand Integration & Identity</span>
-                        </div>
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/rehjpyyh.json"
-                                trigger="hover"
-                                colors="primary:#10b981"
-                                style="width:24px;height:24px;">
-                            </lord-icon>
-                            <span class="ml-3 font-medium">Responsive Design Systems</span>
-                        </div>
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/dxjqoygy.json"
-                                trigger="hover"
-                                colors="primary:#f59e0b"
-                                style="width:24px;height:24px;">
-                            </lord-icon>
-                            <span class="ml-3 font-medium">Visual Prototyping</span>
-                        </div>
-                    </div>
-                </div>
                 
-                <!-- Front-End Development -->
-                <div class="skill-category fade-in">
-                    <div class="flex items-center mb-4">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/fkdzyfle.json"
-                            trigger="hover"
-                            colors="primary:#3b82f6,secondary:#8b5cf6"
+                <div class="service-card">
+                    <div class="service-icon">
+                            <lord-icon
+                            src="https://cdn.lordicon.com/surcxhka.json"
+                                trigger="hover"
+                            colors="primary:#0071E3"
                             style="width:40px;height:40px;">
-                        </lord-icon>
-                        <h3 class="text-xl font-bold ml-3">Front-End Development</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/fkdzyfle.json"
-                                trigger="hover"
-                                colors="primary:#61dafb"
-                                style="width:24px;height:24px;">
                             </lord-icon>
-                            <span class="ml-3 font-medium">React & Next.js Applications</span>
                         </div>
-                        <div class="skill-item">
+                    <h3>Performance Optimization</h3>
+                    <p>Speed up your website with advanced optimization techniques, reducing load times by up to 70% and improving user engagement.</p>
+                        </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
                             <lord-icon
-                                src="https://cdn.lordicon.com/lomfljuq.json"
+                            src="https://cdn.lordicon.com/abfverha.json"
                                 trigger="hover"
-                                colors="primary:#f97316"
-                                style="width:24px;height:24px;">
+                            colors="primary:#0071E3"
+                            style="width:40px;height:40px;">
                             </lord-icon>
-                            <span class="ml-3 font-medium">Modern HTML5 & CSS3</span>
                         </div>
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/gqzfzudq.json"
-                                trigger="hover"
-                                colors="primary:#06b6d4"
-                                style="width:24px;height:24px;">
-                            </lord-icon>
-                            <span class="ml-3 font-medium">Tailwind CSS Styling</span>
-                        </div>
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/kiynvdns.json"
-                                trigger="hover"
-                                colors="primary:#f59e0b"
-                                style="width:24px;height:24px;">
-                            </lord-icon>
-                            <span class="ml-3 font-medium">Interactive JavaScript</span>
-                        </div>
-                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-first design approach ensuring your website looks and functions perfectly across all devices and screen sizes.</p>
                 </div>
                 
-                <!-- Support & Communication -->
-                <div class="skill-category fade-in">
-                    <div class="flex items-center mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
                         <lord-icon
                             src="https://cdn.lordicon.com/diihvcfp.json"
                             trigger="hover"
-                            colors="primary:#3b82f6,secondary:#8b5cf6"
+                            colors="primary:#0071E3"
                             style="width:40px;height:40px;">
                         </lord-icon>
-                        <h3 class="text-xl font-bold ml-3">Support & Communication</h3>
                     </div>
-                    <div class="space-y-3">
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/abfverha.json"
-                                trigger="hover"
-                                colors="primary:#10b981"
-                                style="width:24px;height:24px;">
-                            </lord-icon>
-                            <span class="ml-3 font-medium">Rapid Response Times</span>
+                    <h3>SEO & Maintenance</h3>
+                    <p>Ongoing SEO optimization and maintenance services to keep your website secure, updated, and ranking high in search results.</p>
                         </div>
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/tkgyrmwq.json"
-                                trigger="hover"
-                                colors="primary:#8b5cf6"
-                                style="width:24px;height:24px;">
-                            </lord-icon>
-                            <span class="ml-3 font-medium">Clear Project Communication</span>
                         </div>
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/surcxhka.json"
-                                trigger="hover"
-                                colors="primary:#06b6d4"
-                                style="width:24px;height:24px;">
-                            </lord-icon>
-                            <span class="ml-3 font-medium">Ongoing Maintenance</span>
                         </div>
-                        <div class="skill-item">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/rehjpyyh.json"
-                                trigger="hover"
-                                colors="primary:#f59e0b"
-                                style="width:24px;height:24px;">
-                            </lord-icon>
-                            <span class="ml-3 font-medium">Performance Optimization</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
-    
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Previous Work - Live Preview Portals -->
+    <section id="previous-work" class="section">
+        <div class="container">
             <div class="fade-in">
-                <h2 class="section-title">Portfolio</h2>
+                <h2 class="section-title">Previous Work</h2>
                 <p class="section-subtitle">
-                    A showcase of my recent projects and achievements
+                    Explore live websites we've built for our clients - hover to interact
                 </p>
             </div>
             
-            <!-- Coming Soon Card -->
-            <div class="max-w-2xl mx-auto fade-in">
-                <div class="card text-center">
-                    <div class="mb-6">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/wxnxiano.json"
-                            trigger="loop"
-                            delay="2000"
-                            colors="primary:#3b82f6,secondary:#8b5cf6"
-                            style="width:80px;height:80px;">
-                        </lord-icon>
+            <div class="portal-grid">
+                <!-- Portal 1: CNich Text -->
+                <div class="portal-window fade-in">
+                    <div class="portal-header">
+                        <div class="portal-dot"></div>
+                        <div class="portal-dot"></div>
+                        <div class="portal-dot"></div>
                     </div>
-                    <h3 class="text-3xl font-bold text-gradient mb-4">Coming Soon</h3>
-                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-                        I'm currently working on some exciting projects that showcase modern web development 
-                        with cutting-edge technologies. Portfolio examples will be available soon!
-                    </p>
-                    <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-6 rounded-lg border border-blue-500/20 mb-6">
-                        <p class="font-semibold text-blue-400 mb-2">What's Coming:</p>
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Next.js Applications</span>
-                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">E-Commerce Solutions</span>
-                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm">SaaS Dashboards</span>
-                            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Mobile-First PWAs</span>
+                    <div class="portal-iframe-container">
+                        <iframe 
+                            src="https://cnichtext.co.uk" 
+                            class="portal-iframe"
+                            title="CNich Text Website"
+                            loading="lazy">
+                        </iframe>
+                        <div class="portal-overlay">
+                            <div class="portal-info">
+                                <h3>CNich Text</h3>
+                                <p>Professional text services website with modern design</p>
+                                <a href="https://cnichtext.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
+                                    View Full Site
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm">
-                        In the meantime, feel free to <a href="#contact" class="text-blue-400 hover:text-blue-300 transition-colors">get in touch</a> 
-                        to discuss your project needs.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="section" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="fade-in">
-                <h2 class="section-title">Let's Work Together</h2>
-                <p class="section-subtitle">
-                    Ready to bring your project to life? Get in touch and let's discuss your vision.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Contact Info -->
-                <div class="slide-in-left">
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gradient mb-6">Get In Touch</h3>
-                            <p class="text-lg text-gray-300 leading-relaxed">
-                                I'm always excited to work on new projects and help businesses 
-                                create amazing digital experiences. Let's discuss how we can 
-                                bring your vision to life.
-                            </p>
-                        </div>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                    <lord-icon
-                                        src="https://cdn.lordicon.com/zvamcipt.json"
-                                        trigger="hover"
-                                        colors="primary:#ffffff"
-                                        style="width:24px;height:24px;">
-                                    </lord-icon>
-                                </div>
-                                <div>
-                                    <div class="font-semibold">Email</div>
-                                    <div class="text-gray-400">contact@visualsites.co.uk</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                    <lord-icon
-                                        src="https://cdn.lordicon.com/surcxhka.json"
-                                        trigger="hover"
-                                        colors="primary:#ffffff"
-                                        style="width:24px;height:24px;">
-                                    </lord-icon>
-                                </div>
-                                <div>
-                                    <div class="font-semibold">Location</div>
-                                    <div class="text-gray-400">Gwynedd, North Wales, UK</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                    <lord-icon
-                                        src="https://cdn.lordicon.com/abfverha.json"
-                                        trigger="hover"
-                                        colors="primary:#ffffff"
-                                        style="width:24px;height:24px;">
-                                    </lord-icon>
-                                </div>
-                                <div>
-                                    <div class="font-semibold">Response Time</div>
-                                    <div class="text-gray-400">Within 24 hours</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="portal-label">
+                        <h3>CNich Text</h3>
+                        <p>Professional Services</p>
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
-                <div class="slide-in-right">
-                    <form class="contact-form space-y-6" id="contactForm">
-                        <div class="form-group">
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                            <input type="text" name="name" class="form-input" placeholder="Your full name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                            <input type="email" name="email" class="form-input" placeholder="your.email@example.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Project Type</label>
-                            <select name="project_type" class="form-input" required>
-                                <option value="">Select project type</option>
-                                <option value="Website Development">Website Development</option>
-                           
-                                <option value="Website Redesign">Website Redesign</option>
-
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Budget Range</label>
-                            <select name="budget_range" id="budgetRangeSelect" class="form-input" required>
-                                <option value="">Select budget range</option>
-                                <option value="1000-1500">£1,000 – £1,500 — Starter Pro Website</option>
-                                <option value="1501-2000">£1,501 – £2,000 — Business Website</option>
-                                <option value="2001-2500">£2,001 – £2,500 — Custom Website</option>
-                                <option value="2501-3000">£2,501 – £3,000 — Advanced Business / Booking Website</option>
-                            </select>
-                        </div>
-
-                        <!-- Package Display Containers -->
-                        <div class="package-display-section">
-                            <div class="package-grid" id="packageGrid">
-                                <!-- Package containers will be populated by JavaScript -->
+                <!-- Portal 2: CNicht Cleaning Services -->
+                <div class="portal-window fade-in">
+                    <div class="portal-header">
+                        <div class="portal-dot"></div>
+                        <div class="portal-dot"></div>
+                        <div class="portal-dot"></div>
+                    </div>
+                    <div class="portal-iframe-container">
+                        <iframe 
+                            src="https://cnichtcleaningservices.co.uk" 
+                            class="portal-iframe"
+                            title="CNicht Cleaning Services Website"
+                            loading="lazy">
+                        </iframe>
+                        <div class="portal-overlay">
+                            <div class="portal-info">
+                                <h3>CNicht Cleaning Services</h3>
+                                <p>Complete cleaning services website with booking system</p>
+                                <a href="https://cnichtcleaningservices.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
+                                    View Full Site
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
-                        
-                        <!-- Website Project Questions -->
-                        <div class="form-group">
-                            <label class="block text-sm font-medium text-gray-300 mb-3">Website Project Questions</label>
-                            
-                            <!-- Logo Question -->
-                            <div class="question-group mb-4">
-                                <label class="block text-sm font-medium text-gray-300 mb-2">1. Do you have a logo?</label>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="has_logo" value="Yes" required>
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">Yes</span>
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="has_logo" value="No" required>
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">No</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <!-- Domain Question -->
-                            <div class="question-group mb-4">
-                                <label class="block text-sm font-medium text-gray-300 mb-2">2. Do you have a domain name?</label>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="has_domain" value="Yes" required>
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">Yes</span>
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="has_domain" value="No" required>
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">No</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <!-- Existing Website Question -->
-                            <div class="question-group mb-4">
-                                <label class="block text-sm font-medium text-gray-300 mb-2">3. Do you have an existing website?</label>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="has_website" value="Yes" required>
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">Yes (please provide URL):</span>
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="has_website" value="No" required>
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">No</span>
-                                    </label>
-                                </div>
-                                <input type="url" name="website_url" class="form-input mt-2" placeholder="https://yourwebsite.com" style="display: none;">
-                            </div>
-
-                            <!-- Online Information Question -->
-                            <div class="question-group mb-4">
-                                <label class="block text-sm font-medium text-gray-300 mb-2">4. Do you have accessible information online (e.g., social media, company profiles)?</label>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="has_online_info" value="Yes" required>
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">Yes (please specify):</span>
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="has_online_info" value="No" required>
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">No</span>
-                                    </label>
-                                </div>
-                                <input type="text" name="online_info_details" class="form-input mt-2" placeholder="e.g., Facebook, LinkedIn, Company website..." style="display: none;">
-                            </div>
-
-                            <!-- Company Description -->
-                            <div class="question-group mb-4">
-                                <label class="block text-sm font-medium text-gray-300 mb-2">5. What is your company/about your business?</label>
-                                <textarea name="company_description" class="form-input" rows="4" placeholder="Please describe your business, services, and target audience..." required></textarea>
-                            </div>
-
-
-
-                            <!-- Style Preferences -->
-                            <div class="question-group mb-4">
-                                <label class="block text-sm font-medium text-gray-300 mb-2">6. What style are you going for? (tick all that apply)</label>
-                                <div class="checkbox-group">
-                                    <label class="checkbox-option">
-                                        <input type="checkbox" name="style_preferences[]" value="Modern">
-                                        <span class="checkbox-custom"></span>
-                                        <span class="checkbox-text">Modern</span>
-                                    </label>
-                                    <label class="checkbox-option">
-                                        <input type="checkbox" name="style_preferences[]" value="Minimalist">
-                                        <span class="checkbox-custom"></span>
-                                        <span class="checkbox-text">Minimalist</span>
-                                    </label>
-                                    <label class="checkbox-option">
-                                        <input type="checkbox" name="style_preferences[]" value="Professional">
-                                        <span class="checkbox-custom"></span>
-                                        <span class="checkbox-text">Professional</span>
-                                    </label>
-                                    <label class="checkbox-option">
-                                        <input type="checkbox" name="style_preferences[]" value="Fun / Creative">
-                                        <span class="checkbox-custom"></span>
-                                        <span class="checkbox-text">Fun / Creative</span>
-                                    </label>
-                                    <label class="checkbox-option">
-                                        <input type="checkbox" name="style_preferences[]" value="Corporate">
-                                        <span class="checkbox-custom"></span>
-                                        <span class="checkbox-text">Corporate</span>
-                                    </label>
-                                    <label class="checkbox-option">
-                                        <input type="checkbox" name="style_preferences[]" value="Other">
-                                        <span class="checkbox-custom"></span>
-                                        <span class="checkbox-text">Other (please specify):</span>
-                                    </label>
-                                </div>
-                                <input type="text" name="other_style" class="form-input mt-2" placeholder="Please specify your style preference..." style="display: none;">
-                                <!-- Hidden input to store comma-separated style preferences for EmailJS -->
-                                <input type="hidden" id="stylePreferencesHidden" name="style_preferences" value="">
-                            </div>
-
-                            <!-- Project Details -->
-                            <div class="form-group">
-                                <label class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
-                                <textarea name="message" class="form-input" rows="6" placeholder="Tell us about your project, goals, and any specific requirements..." required></textarea>
-                            </div>
-                        
-                        <div class="relative inline-block w-full">
-                            <button type="submit" class="btn-primary contact-btn w-full" id="contactSubmitBtn">
-                                <span class="btn-text" id="btnText">Send Message</span>
-                            </button>
-                            <!-- Confirmation Popup -->
-                            <div class="confirmation-popup" id="confirmationPopup">
-                                <span class="checkmark"></span>
-                                Message Sent!
-                            </div>
-                            <!-- Error Popup -->
-                            <div class="confirmation-popup" id="errorPopup" style="background: rgba(239, 68, 68, 0.95); border-color: rgba(239, 68, 68, 0.3);">
-                                <span style="color: #fff;">❌</span>
-                                Failed to send. Please try again.
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                    <div class="portal-label">
+                        <h3>CNicht Cleaning Services</h3>
+                        <p>Service Provider</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section id="process" class="section">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="section-title">How We Work</h2>
+                <p class="section-subtitle">
+                    A proven process that ensures quality results and clear communication
+                </p>
+            </div>
+            
+            <div class="process-steps fade-in">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Discovery</h3>
+                    <p class="step-description">We understand your business goals, target audience, and project requirements through detailed consultation.</p>
+                    </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Design</h3>
+                    <p class="step-description">Create wireframes and visual designs that align with your brand and user experience goals.</p>
+                        </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Build</h3>
+                    <p class="step-description">Develop your website using modern technologies with clean, maintainable code and best practices.</p>
+                    </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Launch</h3>
+                    <p class="step-description">Deploy your website with proper testing, optimization, and seamless go-live process.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Support</h3>
+                    <p class="step-description">Ongoing maintenance, updates, and support to keep your website running smoothly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section section-alt">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">
+                    Real feedback from businesses we've helped grow online
+                </p>
+            </div>
+            
+            <div class="testimonials-grid fade-in">
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        Working with VisualSites was a fantastic experience. They delivered a professional website that perfectly represents my business. The attention to detail and quality of work exceeded my expectations.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PM</div>
+                        <div class="author-info">
+                            <h4>Pauli Murphy</h4>
+                            <p>Wix Project</p>
+                        </div>
+                    </div>
+                </div>
+                            
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        VisualSites created an outstanding website for my text services business. The site is fast, professional, and has significantly improved my online presence. Highly recommend their expertise.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">OP</div>
+                        <div class="author-info">
+                            <h4>Owain Piggon</h4>
+                            <p>CNich Text - cnichtext.co.uk</p>
+                        </div>
+                    </div>
+                </div>
+                            
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        Absolutely thrilled with my new cleaning services website! It's professional, easy to navigate, and has helped attract more clients. The team was responsive and delivered exactly what I needed.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LP</div>
+                        <div class="author-info">
+                            <h4>Lisa Piggon</h4>
+                            <p>CNicht Cleaning Services - cnichtcleaningservices.co.uk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="section-title">About VisualSites</h2>
+                <p class="section-subtitle">
+                    We're passionate about creating exceptional digital experiences that drive business growth
+                </p>
+                        </div>
+                        
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+                <div>
+                    <h3 class="text-3xl font-semibold mb-6" style="color: var(--text-primary);">Crafting Digital Excellence</h3>
+                    <p class="text-lg mb-6" style="color: var(--text-secondary); line-height: 1.6;">
+                        With over 5 years of experience in web development, we specialize in creating 
+                        high-performance websites that not only look stunning but also deliver measurable 
+                        business results.
+                    </p>
+                    <p class="text-lg mb-8" style="color: var(--text-secondary); line-height: 1.6;">
+                        Our team combines technical expertise with creative vision to build websites 
+                        that are fast, secure, and optimized for conversions. We believe every pixel 
+                        matters and every line of code should serve a purpose.
+                    </p>
+                    <div class="flex gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold mb-2" style="color: var(--accent);">50+</div>
+                            <div class="text-sm" style="color: var(--text-secondary);">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold mb-2" style="color: var(--accent);">98%</div>
+                            <div class="text-sm" style="color: var(--text-secondary);">Client Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold mb-2" style="color: var(--accent);">5+</div>
+                            <div class="text-sm" style="color: var(--text-secondary);">Years Experience</div>
+                        </div>
+                            </div>
+                        </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold mb-4" style="color: var(--text-primary);">Our Expertise</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full" style="background: var(--accent);"></div>
+                            <span style="color: var(--text-secondary);">Modern JavaScript Frameworks</span>
+                                </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full" style="background: var(--accent);"></div>
+                            <span style="color: var(--text-secondary);">Performance Optimization</span>
+                            </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full" style="background: var(--accent);"></div>
+                            <span style="color: var(--text-secondary);">SEO & Analytics</span>
+                                </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full" style="background: var(--accent);"></div>
+                            <span style="color: var(--text-secondary);">Responsive Design</span>
+                            </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full" style="background: var(--accent);"></div>
+                            <span style="color: var(--text-secondary);">E-commerce Solutions</span>
+                                </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full" style="background: var(--accent);"></div>
+                            <span style="color: var(--text-secondary);">Ongoing Support</span>
+                            </div>
+                                </div>
+                            </div>
+                            </div>
+                                </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="section section-alt">
+        <div class="container">
+            <div class="text-center fade-in">
+                <h2 class="section-title">Ready to Grow Your Business?</h2>
+                <p class="section-subtitle">
+                    Let's discuss your project and create a website that drives real results
+                </p>
+                <div class="mt-8">
+                    <a href="contact-us.html" class="btn btn-primary">Get Started Today</a>
+                            </div>
             </div>
         </div>
     </section>
     
     <!-- Footer -->
     <footer class="footer">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-4 md:mb-0">
-                    <div class="text-xl font-bold text-gradient mb-2">Visual Sites</div>
-                    <div class="text-gray-400">Professional Web Developments</div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>VisualSites</h3>
+                    <p>Professional web development that drives growth and delivers exceptional results for businesses worldwide.</p>
                 </div>
                 
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/iqagrlso.json"
-                            trigger="hover"
-                            colors="primary:#64748b"
-                            style="width:24px;height:24px;">
-                        </lord-icon>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/ewswvzmw.json"
-                            trigger="hover"
-                            colors="primary:#64748b"
-                            style="width:24px;height:24px;">
-                        </lord-icon>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/puvaffet.json"
-                            trigger="hover"
-                            colors="primary:#64748b"
-                            style="width:24px;height:24px;">
-                        </lord-icon>
-                    </a>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="#services">Custom Development</a></p>
+                    <p><a href="#services">Performance Optimization</a></p>
+                    <p><a href="#services">Responsive Design</a></p>
+                    <p><a href="#services">SEO & Maintenance</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <p><a href="#about">About Us</a></p>
+                    <p><a href="#portfolio">Portfolio</a></p>
+                    <p><a href="#process">Our Process</a></p>
+                    <p><a href="#testimonials">Testimonials</a></p>
+            </div>
+            
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>contact@visualsites.co.uk</p>
+                    <p>Gwynedd, North Wales, UK</p>
+                    <p>Response within 24 hours</p>
                 </div>
             </div>
             
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-                <p>&copy; 2025 Visual Sites. All rights reserved. Built with passion and modern technology.</p>
-                       <div class="mt-1 text-blue-300">Last updated: 17/08/2025</div>
-                <div class="mt-2">
-                    <a href="privacy-policy.html" class="text-blue-200 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 VisualSites. All rights reserved.</p>
             </div>
         </div>
     </footer>
     
     <script>
-        // ============================================
-        // MODERN PORTFOLIO JAVASCRIPT
-        // ============================================
-        
-        // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        const hoverElements = document.querySelectorAll('a, button, .card, .portfolio-item, .skill-item');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-        
-        hoverElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-            });
-            
-            element.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-            });
-        });
-        
-        // Navigation
-        const navbar = document.querySelector('.navbar');
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelectorAll('.nav-link');
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
         
         // Navbar scroll effect
-        let hasScrolled = false;
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50 && !hasScrolled) {
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
-                hasScrolled = true;
+            } else {
+                navbar.classList.remove('scrolled');
             }
         });
-        
-        // Mobile menu toggle
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Smooth scrolling and active link management
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    targetSection.scrollIntoView({
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    
-                    // Close mobile menu
-                    mobileMenu.classList.add('hidden');
-                    
-                    // Update active link
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
                 }
             });
         });
         
-        // Scroll animations
+        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
         
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -1760,591 +1650,68 @@ small business online, professional portfolio, personal site design, brand ident
             });
         }, observerOptions);
         
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
         
-        // ============================================
-        // EMAIL.JS CONFIGURATION & FORM HANDLING
-        // ============================================
-        
-        // Initialize EmailJS (You need to replace these with your actual EmailJS credentials)
-        // To set up EmailJS:
-        // 1. Go to https://www.emailjs.com/
-        // 2. Create a free account
-        // 3. Add an email service (Gmail, Outlook, etc.)
-        // 4. Create an email template
-        // 5. Replace the IDs below with your actual IDs
-        
-        // IMPORTANT: Replace these with your actual EmailJS credentials
-        const EMAIL_SERVICE_ID = 'service_2k6g3nj';  // Replace with your EmailJS service ID
-        const EMAIL_TEMPLATE_ID = 'template_dwsx5lb'; // Replace with your EmailJS template ID
-        const EMAIL_PUBLIC_KEY = 'I-7odFuBbJUAYM6es';   // Replace with your EmailJS public key
-        
-        // Initialize EmailJS
-        emailjs.init(EMAIL_PUBLIC_KEY);
-        
-        // Enhanced Form submission with actual email sending
-        const contactForm = document.getElementById('contactForm');
-        const contactBtn = document.getElementById('contactSubmitBtn');
-        const btnText = document.getElementById('btnText');
-        const confirmationPopup = document.getElementById('confirmationPopup');
-        const errorPopup = document.getElementById('errorPopup');
-        
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Validate all required fields are filled
-            const requiredFields = ['name', 'email', 'project_type', 'budget_range', 'message'];
-            const missingFields = [];
-            
-            requiredFields.forEach(field => {
-                const fieldElement = contactForm.querySelector(`[name="${field}"]`);
-                if (!fieldElement || !fieldElement.value.trim()) {
-                    missingFields.push(field);
-                }
-            });
-            
-            if (missingFields.length > 0) {
-                console.error('Missing required fields:', missingFields);
-                alert('Please fill in all required fields: ' + missingFields.join(', '));
-                return;
-            }
-            
-            // Trigger button click animation
-            handleContactButtonClick();
-            
-            // Show loading state
-            showLoadingState();
-            
-            try {
-                // Log form data before sending
-                const formData = new FormData(contactForm);
-                console.log('Form data being sent:');
-                for (let [key, value] of formData.entries()) {
-                    console.log(`${key}: ${value}`);
-                }
-                
-                // Send email using EmailJS sendForm method
-                const result = await emailjs.sendForm(
-                    EMAIL_SERVICE_ID,
-                    EMAIL_TEMPLATE_ID,
-                    contactForm
-                );
-                
-                console.log('Email sent successfully:', result);
-                
-                // Show success animation
-                setTimeout(() => {
-                    showSuccessAnimation();
-                    contactForm.reset();
-                }, 800);
-                
-            } catch (error) {
-                console.error('Failed to send email:', error);
-                console.error('EmailJS Error Details:', error.text || error.message);
-                
-                // Try fallback method if EmailJS fails
-                console.log('Attempting fallback email method...');
-                const formData = new FormData(contactForm);
-                const fallbackParams = {
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    project_type: formData.get('project_type'),
-                    budget_range: formData.get('budget_range'),
-                    message: formData.get('message'),
-                    subject: `New Project Inquiry: ${formData.get('project_type')}`
-                };
-                sendEmailFallback(fallbackParams);
-                
-                // Show error animation
-                setTimeout(() => {
-                    showErrorAnimation();
-                }, 800);
-            }
-        });
-        
-        // Enhanced contact button click handler
-        function handleContactButtonClick() {
-            // Add clicking animation
-            contactBtn.classList.add('clicking');
-            
-            // Create ripple effect
-            createRippleEffect(event);
-            
-            // Remove clicking class after animation
-            setTimeout(() => {
-                contactBtn.classList.remove('clicking');
-            }, 200);
-        }
-        
-        // Create ripple effect on button click
-        function createRippleEffect(e) {
-            const ripple = document.createElement('span');
-            const rect = contactBtn.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = (e?.clientX || rect.left + rect.width / 2) - rect.left - size / 2;
-            const y = (e?.clientY || rect.top + rect.height / 2) - rect.top - size / 2;
-            
-            ripple.classList.add('ripple');
-            ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            
-            contactBtn.appendChild(ripple);
-            
-            // Remove ripple after animation
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        }
+        // Active navigation link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
 
-        // Package data with features
-const packageData = {
-    '1000-1500': {
-        title: "Starter Pro Website",
-        price: "£1,000 – £1,500",
-        description: "Perfect for small businesses or personal brands needing a professional online presence.",
-        features: [
-            "Up to 5 pages (Home, About, Services, Contact, Blog/Portfolio)",
-            "Mobile & tablet responsive design",
-            "Basic SEO setup (titles, descriptions, keywords)",
-            "Contact form with email notifications",
-            "SSL certificate for secure browsing",
-            "Social media links integration",
-            "1 revision round",
-            "Stock images included",
-            "1 month of basic support"
-        ]
-    },
-    '1501-2000': {
-        title: "Business Website",
-        price: "£1,501 – £2,000",
-        description: "For businesses wanting a stronger presence and content flexibility.",
-        features: [
-            "Up to 10 pages",
-            "Everything in Starter Pro Website",
-            "Blog setup with categories/tags",
-            "Basic CMS (WordPress) so you can edit content yourself",
-            "Enhanced SEO optimisation (page speed, headings, sitemap)",
-            "Social media feed integration",
-            "2 revision rounds",
-            "2 months of standard support"
-        ]
-    },
-    '2001-2500': {
-        title: "Custom Website",
-        price: "£2,001 – £2,500",
-        description: "Tailored for brands that need more complex design & features.",
-        features: [
-            "Up to 15 pages",
-            "Everything in Business Website",
-            "Bespoke custom design (no templates)",
-            "Advanced CMS functionality (custom post types, plugins)",
-            "Image optimisation & performance tuning",
-            "Email newsletter integration (Mailchimp, etc.)",
-            "On-page SEO for every page",
-            "3 revision rounds",
-            "3 months of support"
-        ]
-    },
-    '2501-3000': {
-        title: "Advanced Business / Booking Website",
-        price: "£2,501 – £3,000",
-        description: "For companies needing booking systems or advanced functionality.",
-        features: [
-            "Up to 20 pages",
-            "Everything in Custom Website",
-            "Booking system integration (appointments, events, classes)",
-            "Advanced search/filter features for services/products",
-            "Custom animations & interactive elements",
-            "Training session for managing your website",
-            "Ongoing support for 3 months with priority updates"
-        ]
-    }
-};
-
-// DOM elements
-const budgetRangeSelect = document.getElementById('budgetRangeSelect');
-
-// ============================================
-// WEBSITE PROJECT QUESTIONS FUNCTIONALITY
-// ============================================
-
-// Function to toggle text input containers based on radio button selection
-function toggleTextInputs() {
-    // Website URL input
-    const hasWebsiteRadios = document.querySelectorAll('input[name="has_website"]');
-    const websiteUrlInput = document.querySelector('input[name="website_url"]');
-    
-    hasWebsiteRadios.forEach(radio => {
-        radio.addEventListener('change', function() {
-            if (this.value === 'Yes') {
-                websiteUrlInput.style.display = 'block';
-                websiteUrlInput.required = true;
-            } else {
-                websiteUrlInput.style.display = 'none';
-                websiteUrlInput.required = false;
-                websiteUrlInput.value = '';
-            }
-        });
-    });
-
-    // Online info details input
-    const hasOnlineInfoRadios = document.querySelectorAll('input[name="has_online_info"]');
-    const onlineInfoInput = document.querySelector('input[name="online_info_details"]');
-    
-    hasOnlineInfoRadios.forEach(radio => {
-        radio.addEventListener('change', function() {
-            if (this.value === 'Yes') {
-                onlineInfoInput.style.display = 'block';
-                onlineInfoInput.required = true;
-            } else {
-                onlineInfoInput.style.display = 'none';
-                onlineInfoInput.required = false;
-                onlineInfoInput.value = '';
-            }
-        });
-    });
-
-    // Style preferences "Other" input
-    const otherStyleCheckbox = document.querySelector('input[value="Other"]');
-    const otherStyleInput = document.querySelector('input[name="other_style"]');
-    
-    if (otherStyleCheckbox) {
-        otherStyleCheckbox.addEventListener('change', function() {
-            if (this.checked) {
-                otherStyleInput.style.display = 'block';
-                otherStyleInput.required = true;
-            } else {
-                otherStyleInput.style.display = 'none';
-                otherStyleInput.required = false;
-                otherStyleInput.value = '';
-            }
-        });
-    }
-}
-
-        // Create and display package containers
-        function createPackageContainers() {
-            const packageGrid = document.getElementById('packageGrid');
-            if (!packageGrid) return;
-
-            // Clear existing containers
-            packageGrid.innerHTML = '';
-
-            // Create containers for all packages
-            Object.keys(packageData).forEach(packageKey => {
-                const package = packageData[packageKey];
-                const container = document.createElement('div');
-                container.className = 'package-container';
-                container.dataset.packageKey = packageKey;
-
-                container.innerHTML = `
-                    <div class="package-header">
-                        <h3 class="package-title">${package.title}</h3>
-                        <p class="package-price">${package.price}</p>
-                    </div>
-                    <p class="package-description">${package.description}</p>
-                    <ul class="package-features-list">
-                        ${package.features.map(feature => `<li>${feature}</li>`).join('')}
-                    </ul>
-                    <div class="package-footer">
-                        <button class="package-select-btn" data-package-key="${packageKey}">Select This Package</button>
-                    </div>
-                `;
-
-                packageGrid.appendChild(container);
-            });
-
-            // Add event listeners to package select buttons
-            const selectButtons = packageGrid.querySelectorAll('.package-select-btn');
-            selectButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const packageKey = this.dataset.packageKey;
-                    selectPackage(packageKey, this);
-                });
-            });
-        }
-
-        // Handle package selection
-        function selectPackage(packageKey, buttonElement) {
-            // Update the budget range select to match the selected package
-            const budgetSelect = document.getElementById('budgetRangeSelect');
-            if (budgetSelect) {
-                budgetSelect.value = packageKey;
-            }
-
-            // Show success state on the clicked button
-            buttonElement.textContent = 'Package Selected!';
-            buttonElement.classList.add('selected');
-
-            // Reset all other buttons
-            const allButtons = document.querySelectorAll('.package-select-btn');
-            allButtons.forEach(btn => {
-                if (btn !== buttonElement) {
-                    btn.textContent = 'Select This Package';
-                    btn.classList.remove('selected');
-                }
-            });
-
-            // Keep the selected button green permanently - no timeout reset
-        }
-
-        // Initialize package containers on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            createPackageContainers();
-        });
-
-        // Add change event listener to budget range select
-        budgetRangeSelect.addEventListener('change', function(e) {
-            if (e.target.value) {
-                // Highlight the corresponding package container
-                const allContainers = document.querySelectorAll('.package-container');
-                allContainers.forEach(container => {
-                    container.style.borderColor = 'var(--border-subtle)';
-                });
-
-                const selectedContainer = document.querySelector(`[data-package-key="${e.target.value}"]`);
-                if (selectedContainer) {
-                    selectedContainer.style.borderColor = 'var(--primary-blue)';
-                    selectedContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }
-        });
-
-        // Add event listeners for style preferences checkboxes
-        document.addEventListener('DOMContentLoaded', function() {
-            const styleCheckboxes = document.querySelectorAll('input[name="style_preferences[]"]');
-            const otherStyleInput = document.querySelector('input[name="other_style"]');
-            
-            // Update hidden field when any checkbox changes
-            styleCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', updateStylePreferencesHidden);
-            });
-            
-            // Update hidden field when other style input changes
-            if (otherStyleInput) {
-                otherStyleInput.addEventListener('input', updateStylePreferencesHidden);
-            }
-        });
-
-        // Function to get selected style preferences
-        function getStylePreferences() {
-            const selectedStyles = document.querySelectorAll('input[name="style_preferences[]"]:checked');
-            const styleList = Array.from(selectedStyles).map(style => {
-                if (style.value === 'Other') {
-                    const otherInput = document.querySelector('input[name="other_style"]');
-                    return otherInput.value.trim() || 'Other (not specified)';
-                }
-                return style.value;
-            });
-            
-            if (styleList.length === 0) {
-                return 'No style preferences selected';
-            }
-            
-            return styleList.join(', ');
-        }
-
-        // Function to update hidden style preferences field
-        function updateStylePreferencesHidden() {
-            const hiddenField = document.getElementById('stylePreferencesHidden');
-            hiddenField.value = getStylePreferences();
-        }
-        
-        // Show loading state while sending email
-        function showLoadingState() {
-            btnText.classList.add('hide');
-            
-            setTimeout(() => {
-                btnText.textContent = 'Sending...';
-                btnText.classList.remove('hide');
-                btnText.classList.add('show');
-                contactBtn.disabled = true;
-            }, 300);
-        }
-        
-        // Show success animation sequence
-        function showSuccessAnimation() {
-            // Step 1: Hide loading text
-            btnText.classList.add('hide');
-            
-            setTimeout(() => {
-                // Step 2: Change button to success state and update text
-                contactBtn.classList.add('success');
-                btnText.textContent = 'Sent!';
-                btnText.classList.remove('hide');
-                btnText.classList.add('show');
-                contactBtn.disabled = false;
-                
-                // Step 3: Show confirmation popup
-                setTimeout(() => {
-                    confirmationPopup.classList.add('show');
-                }, 100);
-                
-                // Step 4: Hide popup after 3 seconds
-                setTimeout(() => {
-                    confirmationPopup.classList.remove('show');
-                    
-                    // Step 5: Reset button after popup hides
-                    setTimeout(() => {
-                        resetContactButton();
-                    }, 400);
-                }, 3000);
-                
-            }, 300);
-        }
-        
-        // Show error animation sequence
-        function showErrorAnimation() {
-            // Step 1: Hide loading text
-            btnText.classList.add('hide');
-            
-            setTimeout(() => {
-                // Step 2: Show error state
-                btnText.textContent = 'Try Again';
-                btnText.classList.remove('hide');
-                btnText.classList.add('show');
-                contactBtn.disabled = false;
-                
-                // Step 3: Show error popup
-                setTimeout(() => {
-                    errorPopup.classList.add('show');
-                }, 100);
-                
-                // Step 4: Hide popup after 3 seconds
-                setTimeout(() => {
-                    errorPopup.classList.remove('show');
-                    
-                    // Step 5: Reset button after popup hides
-                    setTimeout(() => {
-                        resetContactButton();
-                    }, 400);
-                }, 3000);
-                
-            }, 300);
-        }
-        
-        // Reset contact button to original state
-        function resetContactButton() {
-            btnText.classList.add('hide');
-            
-            setTimeout(() => {
-                contactBtn.classList.remove('success');
-                contactBtn.disabled = false;
-                btnText.textContent = 'Send Message';
-                btnText.classList.remove('hide', 'show');
-            }, 300);
-        }
-        
-        // Add click event listener for enhanced feedback
-        contactBtn.addEventListener('click', (e) => {
-            // Only add visual effects if form is valid
-            if (contactForm.checkValidity()) {
-                handleContactButtonClick();
-            }
-        });
-        
-        // Alternative: Fallback email method using mailto (if EmailJS fails)
-        function sendEmailFallback(params) {
-            const emailBody = `
-Project Inquiry Details:
-
-Name: ${params.name}
-Email: ${params.email}
-Project Type: ${params.project_type}
-Budget Range: ${params.budget_range}
-
-Project Details:
-${params.message}
-
----
-This email was sent from the VisualSites contact form.
-            `.trim();
-            
-            const emailSubject = encodeURIComponent(params.subject || 'New Project Inquiry');
-            const emailBodyEncoded = encodeURIComponent(emailBody);
-            
-            // Create mailto link with all form data
-            const mailtoLink = `mailto:your-email@example.com?subject=${emailSubject}&body=${emailBodyEncoded}`;
-            
-            console.log('Opening fallback email with all form data...');
-            window.open(mailtoLink);
-        }
-        
-        // Legacy fallback method (keeping for compatibility)
-        function sendEmailFallbackLegacy(formData) {
-            const subject = `New Project Inquiry: ${formData.get('project_type')}`;
-            const body = `
-Name: ${formData.get('from_name')}
-Email: ${formData.get('from_email')}
-Project Type: ${formData.get('project_type')}
-Budget Range: ${formData.get('budget_range')}
-
-Project Details:
-${formData.get('message')}
-            `;
-            
-            const mailtoLink = `mailto:contact@visualsites.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
-        }
-        
-        // Parallax effect for floating elements
         window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.hero .absolute');
-            
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-        
-        // Performance optimization: Throttle scroll events
-        let ticking = false;
-        function updateScrollEffects() {
-            // Your scroll-based animations here
-            ticking = false;
-        }
-        
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateScrollEffects);
-                ticking = true;
-            }
-        });
-        
-        // Section visibility for navigation highlighting
-        const sections = document.querySelectorAll('section');
-        const navObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    const navLink = document.querySelector(`a[href="#${id}"]`);
-                    
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    if (navLink) navLink.classList.add('active');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
                 }
             });
-        }, {
-            threshold: 0.6
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}` || 
+                    (current === '' && link.getAttribute('href') === '#home')) {
+                    link.classList.add('active');
+                }
+            });
         });
         
-        sections.forEach(section => {
-            navObserver.observe(section);
-        });
-        
-        // Loading animation
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
+        // 3D Tilt Effect for Portal Windows
+        document.querySelectorAll('.portal-window').forEach(portal => {
+            portal.addEventListener('mousemove', (e) => {
+                const rect = portal.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / centerY) * -5;
+                const rotateY = ((x - centerX) / centerX) * 5;
+                
+                portal.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+            });
+            
+            portal.addEventListener('mouseleave', () => {
+                portal.style.transform = '';
+            });
         });
 
-        // Initialize website project questions functionality
-        toggleTextInputs();
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
         
-        console.log('🚀 Portfolio loaded successfully!');
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+
+        console.log('🚀 VisualSites loaded successfully!');
     </script>
 </body>
 </html>

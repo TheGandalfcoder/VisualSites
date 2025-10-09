@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - VisualSites</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Get in touch with VisualSites for professional web development services. Contact us for custom websites, redesigns, and digital solutions.">
+    <meta name="keywords" content="contact, web development, Visual Sites, professional websites, custom development, get quote">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Apple-style Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Lordicon for Premium Icons -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    
+    <!-- EmailJS for Contact Form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <style>
+        /* ===========================================
+           APPLE-INSPIRED CONTACT PAGE DESIGN
+           =========================================== */
+        
+        /* CSS Variables for Apple Design System */
+        :root {
+            /* Apple Color System */
+            --white: #FFFFFF;
+            --off-white: #F5F5F7;
+            --text-primary: #1D1D1F;
+            --text-secondary: #424245;
+            --accent: #0071E3;
+            --border: #D2D2D7;
+            --footer-bg: #1D1D1F;
+            --footer-text: #F5F5F7;
+            
+            /* Typography Scale */
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-size-6xl: 3.75rem;
+            --font-size-7xl: 4.5rem;
+            --font-size-8xl: 6rem;
+            --font-size-9xl: 8rem;
+            
+            /* Spacing Scale (8px base) */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+            --space-32: 8rem;
+            --space-40: 10rem;
+            --space-48: 12rem;
+            --space-56: 14rem;
+            --space-64: 16rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            /* Transitions */
+            --transition-fast: 150ms ease-in-out;
+            --transition-normal: 300ms ease-in-out;
+            --transition-slow: 500ms ease-in-out;
+            
+            /* Container */
+            --container-max: 1440px;
+            --container-padding: 5rem;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            font-weight: 400;
+            font-size: var(--font-size-base);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            letter-spacing: -0.022em;
+        }
+        
+        /* Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(29, 29, 31, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            transition: all var(--transition-normal);
+            height: 44px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(29, 29, 31, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .nav-logo {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: -0.022em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-logo img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            font-size: var(--font-size-sm);
+            letter-spacing: -0.022em;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: #FFFFFF;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width var(--transition-fast);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 44px;
+            left: 0;
+            right: 0;
+            background: rgba(29, 29, 31, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu .nav-link {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .mobile-menu .nav-link::after {
+            display: none;
+        }
+        
+        .mobile-menu .nav-link:hover,
+        .mobile-menu .nav-link.active {
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: var(--space-20) 0;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+        
+        .hero-title {
+            font-size: clamp(var(--font-size-5xl), 6vw, var(--font-size-7xl));
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-6);
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            animation: fadeInUp var(--transition-slow) ease-out 0.3s both;
+        }
+        
+        .hero-subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            animation: fadeInUp var(--transition-slow) ease-out 0.5s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Sections */
+        .section {
+            padding: var(--space-24) 0;
+            position: relative;
+        }
+        
+        .section-alt {
+            background: var(--off-white);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-6);
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+            font-size: var(--font-size-base);
+            letter-spacing: -0.022em;
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: var(--space-4);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: var(--font-size-base);
+            font-family: inherit;
+            background: var(--white);
+            color: var(--text-primary);
+            transition: all var(--transition-normal);
+            letter-spacing: -0.022em;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-secondary);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-3) var(--space-6);
+            border-radius: 980px;
+            font-size: var(--font-size-base);
+            font-weight: 500;
+            letter-spacing: -0.022em;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            border: none;
+            min-width: 140px;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: #0051D5;
+            transform: translateY(-1px);
+            color: var(--white);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: var(--space-8);
+            background: var(--white);
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            transition: all var(--transition-normal);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-6);
+        }
+        
+        .contact-item h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+            letter-spacing: -0.022em;
+        }
+        
+        .contact-item p {
+            color: var(--text-secondary);
+            font-size: var(--font-size-base);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--footer-bg);
+            border-top: 1px solid rgba(210, 210, 215, 0.2);
+            padding: var(--space-16) 0 var(--space-12);
+            margin-top: var(--space-16);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+        
+        .footer-section h3 {
+            color: var(--footer-text);
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.022em;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(245, 245, 247, 0.8);
+            font-size: var(--font-size-sm);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            line-height: 1.6;
+        }
+        
+        .footer-section a:hover {
+            color: var(--footer-text);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(210, 210, 215, 0.2);
+            padding-top: var(--space-8);
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: rgba(245, 245, 247, 0.6);
+            font-size: var(--font-size-sm);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-4);
+            }
+            
+            .section {
+                padding: var(--space-16) 0;
+            }
+            
+            .hero {
+                padding: var(--space-16) 0;
+                min-height: 50vh;
+            }
+            
+            .hero-content {
+                padding: 0 var(--space-4);
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all var(--transition-slow) ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Form Grid */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="logo.png" alt="VisualSites Logo">
+                    VisualSites
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="contact-us.html" class="nav-link active">Contact Us</a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="contact-us.html" class="nav-link active">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div style="margin-bottom: 2rem;">
+                <img src="logo.png" alt="VisualSites Logo" style="width: 80px; height: 80px; margin: 0 auto; display: block;">
+            </div>
+            <h1 class="hero-title">Get In Touch</h1>
+            <p class="hero-subtitle">
+                Ready to transform your digital presence? Contact us to discuss your project 
+                and discover how we can help your business grow online.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section">
+        <div class="container">
+            <div class="fade-in">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <img src="logo.png" alt="VisualSites Logo" style="width: 60px; height: 60px; margin: 0 auto; display: block;">
+                    </div>
+                    <h2 class="text-4xl font-semibold text-center mb-6" style="color: var(--text-primary); letter-spacing: -0.04em;">Send Us a Message</h2>
+                    <p class="text-xl text-center mb-12" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                        Fill out the form below and we'll get back to you within 24 hours to discuss your project requirements.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="contact-form fade-in">
+                <form id="contactForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company (Optional)</label>
+                            <input type="text" id="company" name="company" class="form-input" placeholder="Your company name">
+                        </div>
+                        <div class="form-group">
+                            <label for="project_type" class="form-label">Project Type</label>
+                            <select id="project_type" name="project_type" class="form-select" required>
+                                <option value="">Select project type</option>
+                                <option value="Website Development">Website Development</option>
+                                <option value="Website Redesign">Website Redesign</option>
+                                <option value="E-commerce Store">E-commerce Store</option>
+                                <option value="Web Application">Web Application</option>
+                                <option value="Performance Optimization">Performance Optimization</option>
+                                <option value="SEO Services">SEO Services</option>
+                                <option value="Consultation">Consultation</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget" class="form-label">Budget Range</label>
+                        <select id="budget" name="budget" class="form-select">
+                            <option value="">Select budget range</option>
+                            <option value="Under £1,000">Under £1,000</option>
+                            <option value="£1,000 - £2,500">£1,000 - £2,500</option>
+                            <option value="£2,500 - £5,000">£2,500 - £5,000</option>
+                            <option value="£5,000 - £10,000">£5,000 - £10,000</option>
+                            <option value="Over £10,000">Over £10,000</option>
+                            <option value="Not sure">Not sure</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeline" class="form-label">Project Timeline</label>
+                        <select id="timeline" name="timeline" class="form-select">
+                            <option value="">Select timeline</option>
+                            <option value="ASAP">ASAP</option>
+                            <option value="Within 1 month">Within 1 month</option>
+                            <option value="1-3 months">1-3 months</option>
+                            <option value="3-6 months">3-6 months</option>
+                            <option value="Flexible">Flexible</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Project Details</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project, goals, and any specific requirements..." required></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="text-4xl font-semibold text-center mb-6" style="color: var(--text-primary); letter-spacing: -0.04em;">Other Ways to Reach Us</h2>
+                <p class="text-xl text-center mb-12" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Prefer a different method? Here are other ways to get in touch with our team.
+                </p>
+            </div>
+            
+            <div class="contact-info fade-in">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/zvamcipt.json"
+                            trigger="hover"
+                            colors="primary:#ffffff"
+                            style="width:32px;height:32px;">
+                        </lord-icon>
+                    </div>
+                    <h3>Email</h3>
+                    <p>contact@visualsites.co.uk</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/abfverha.json"
+                            trigger="hover"
+                            colors="primary:#ffffff"
+                            style="width:32px;height:32px;">
+                        </lord-icon>
+                    </div>
+                    <h3>Response Time</h3>
+                    <p>Within 24 hours</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/surcxhka.json"
+                            trigger="hover"
+                            colors="primary:#ffffff"
+                            style="width:32px;height:32px;">
+                        </lord-icon>
+                    </div>
+                    <h3>Availability</h3>
+                    <p>Monday - Friday<br>9:00 AM - 6:00 PM GMT</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/diihvcfp.json"
+                            trigger="hover"
+                            colors="primary:#ffffff"
+                            style="width:32px;height:32px;">
+                        </lord-icon>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Gwynedd, North Wales, UK</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>VisualSites</h3>
+                    <p>Professional web development that drives growth and delivers exceptional results for businesses worldwide.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="index.html#services">Custom Development</a></p>
+                    <p><a href="index.html#services">Performance Optimization</a></p>
+                    <p><a href="index.html#services">Responsive Design</a></p>
+                    <p><a href="index.html#services">SEO & Maintenance</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <p><a href="index.html#about">About Us</a></p>
+                    <p><a href="index.html#portfolio">Portfolio</a></p>
+                    <p><a href="index.html#process">Our Process</a></p>
+                    <p><a href="index.html#testimonials">Testimonials</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>contact@visualsites.co.uk</p>
+                    <p>Gwynedd, North Wales, UK</p>
+                    <p>Response within 24 hours</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 VisualSites. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', Object.fromEntries(formData))
+                .then(function(response) {
+                    alert('Message sent successfully! We\'ll get back to you within 24 hours.');
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    alert('Sorry, there was an error sending your message. Please try again or email us directly at contact@visualsites.co.uk');
+                    console.error('EmailJS Error:', error);
+                })
+                .finally(function() {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+
+        console.log('🚀 Contact page loaded successfully!');
+    </script>
+</body>
+</html>
