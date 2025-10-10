@@ -935,9 +935,15 @@
             
             .services-grid,
             .portfolio-grid,
-            .testimonials-grid {
+            .testimonials-grid,
+            .unique-grid {
                 grid-template-columns: 1fr;
                 gap: var(--space-6);
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
             }
             
             .process-steps {
@@ -965,6 +971,180 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        
+        /* What Makes Us Unique */
+        .unique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+        }
+        
+        .unique-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: var(--space-8);
+            border: 1px solid var(--border);
+            transition: all var(--transition-normal);
+            text-align: center;
+        }
+        
+        .unique-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(0, 113, 227, 0.3);
+        }
+        
+        .unique-icon {
+            margin: 0 auto var(--space-4);
+            width: 80px;
+            height: 80px;
+            background: var(--off-white);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .unique-card:hover .unique-icon {
+            background: rgba(0, 113, 227, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .unique-card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-3);
+            letter-spacing: -0.022em;
+        }
+        
+        .unique-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+        
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: var(--space-12);
+            margin-top: var(--space-16);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: var(--space-12);
+            border: 2px solid var(--border);
+            transition: all var(--transition-normal);
+            position: relative;
+            text-align: center;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+            border-color: var(--accent);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--white);
+            padding: var(--space-2) var(--space-6);
+            border-radius: 980px;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            letter-spacing: -0.022em;
+        }
+        
+        .pricing-icon {
+            margin: var(--space-4) auto var(--space-6);
+        }
+        
+        .pricing-card h3 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.04em;
+        }
+        
+        .pricing-description {
+            margin-bottom: var(--space-8);
+        }
+        
+        .pricing-description p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: var(--space-8);
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3) 0;
+            color: var(--text-secondary);
+            font-size: var(--font-size-base);
+        }
+        
+        .pricing-features li svg {
+            flex-shrink: 0;
+        }
+        
+        .pricing-btn {
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4) var(--space-8);
+            border-radius: 980px;
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            letter-spacing: -0.022em;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .pricing-note {
+            margin-top: var(--space-12);
+            text-align: center;
+            background: rgba(0, 113, 227, 0.05);
+            padding: var(--space-6) var(--space-8);
+            border-radius: 18px;
+            border: 1px solid rgba(0, 113, 227, 0.2);
+        }
+        
+        .pricing-note p {
+            color: var(--text-secondary);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-note strong {
+            color: var(--accent);
+            font-weight: 600;
         }
         
         /* Previous Work Portal Windows */
@@ -1202,7 +1382,7 @@
                 <div class="nav-links">
                     <a href="index.html" class="nav-link active">Home</a>
                     <a href="index.html#services" class="nav-link">Services</a>
-                    <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    <a href="index.html#previous-work" class="nav-link">Portfolio</a>
                     <a href="index.html#about" class="nav-link">About</a>
                     <a href="contact-us.html" class="nav-link">Contact Us</a>
                 </div>
@@ -1215,7 +1395,7 @@
             <div class="mobile-menu" id="mobileMenu">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="index.html#services" class="nav-link">Services</a>
-                <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                <a href="index.html#previous-work" class="nav-link">Portfolio</a>
                 <a href="index.html#about" class="nav-link">About</a>
                 <a href="contact-us.html" class="nav-link">Contact Us</a>
             </div>
@@ -1233,7 +1413,7 @@
             </p>
             <div class="hero-buttons">
                 <a href="contact-us.html" class="btn btn-primary">Contact Us</a>
-                <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+                <a href="#previous-work" class="btn btn-secondary">View Portfolio</a>
             </div>
         </div>
     </section>
@@ -1383,9 +1563,215 @@
             </div>
         </div>
     </section>
+
+    <!-- What Makes Us Unique Section -->
+    <section id="unique" class="section section-alt">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="section-title">What Makes Us Unique?</h2>
+                <p class="section-subtitle">
+                    Own your website outright - no subscriptions, no hidden fees, no hassle
+                </p>
+            </div>
+            
+            <div class="unique-grid fade-in">
+                <div class="unique-card">
+                    <div class="unique-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/lomfljuq.json"
+                            trigger="hover"
+                            colors="primary:#0071E3"
+                            style="width:48px;height:48px;">
+                        </lord-icon>
+                    </div>
+                    <h3>You Own It Forever</h3>
+                    <p>Pay once and the website is 100% yours. No monthly subscriptions, no recurring fees. Full ownership, complete control.</p>
+                </div>
+                
+                <div class="unique-card">
+                    <div class="unique-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/jvihlqtw.json"
+                            trigger="hover"
+                            colors="primary:#0071E3"
+                            style="width:48px;height:48px;">
+                        </lord-icon>
+                    </div>
+                    <h3>No Hidden Costs</h3>
+                    <p>Transparent pricing from day one. What you see is what you pay. No surprise charges, no hidden fees, no fine print.</p>
+                </div>
+                
+                <div class="unique-card">
+                    <div class="unique-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/yqzmiobz.json"
+                            trigger="hover"
+                            colors="primary:#0071E3"
+                            style="width:48px;height:48px;">
+                        </lord-icon>
+                    </div>
+                    <h3>Hassle-Free Experience</h3>
+                    <p>Simple, straightforward process. Pay, launch, done. Keep your website as long as you want without ongoing commitments.</p>
+                </div>
+                
+                <div class="unique-card">
+                    <div class="unique-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/cgzlioyf.json"
+                            trigger="hover"
+                            colors="primary:#0071E3"
+                            style="width:48px;height:48px;">
+                        </lord-icon>
+                    </div>
+                    <h3>Full Control</h3>
+                    <p>Your website, your rules. Make changes anytime, host anywhere. No platform lock-in, no restrictions.</p>
+                </div>
+                
+                <div class="unique-card">
+                    <div class="unique-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/wxnxiano.json"
+                            trigger="hover"
+                            colors="primary:#0071E3"
+                            style="width:48px;height:48px;">
+                        </lord-icon>
+                    </div>
+                    <h3>Lifetime Updates</h3>
+                    <p>Get source code and documentation. Update and modify your website independently or hire any developer you choose.</p>
+                </div>
+                
+                <div class="unique-card">
+                    <div class="unique-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/dxjqoygy.json"
+                            trigger="hover"
+                            colors="primary:#0071E3"
+                            style="width:48px;height:48px;">
+                        </lord-icon>
+                    </div>
+                    <h3>Better Value</h3>
+                    <p>Unlike subscription platforms costing £20-50/month, you save thousands over time with our one-time payment model.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flexible Payment Options Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="section-title">Flexible Payment Options</h2>
+                <p class="section-subtitle">
+                    Choose the payment method that works best for your budget
+                </p>
+            </div>
+            
+            <div class="pricing-grid fade-in">
+                <div class="pricing-card">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/qhviklyi.json"
+                            trigger="hover"
+                            colors="primary:#0071E3"
+                            style="width:64px;height:64px;">
+                        </lord-icon>
+                    </div>
+                    <h3>One-Time Payment</h3>
+                    <div class="pricing-description">
+                        <p>Pay in full and own your website outright from day one</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#34C759"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Full ownership immediately</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#34C759"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Best overall value</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#34C759"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>No interest or fees</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#34C759"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Complete peace of mind</span>
+                        </li>
+                    </ul>
+                    <a href="contact-us.html" class="pricing-btn btn-primary">Get Started</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/slkvcfos.json"
+                            trigger="hover"
+                            colors="primary:#0071E3"
+                            style="width:64px;height:64px;">
+                        </lord-icon>
+                    </div>
+                    <h3>Monthly Installments</h3>
+                    <div class="pricing-description">
+                        <p>Split the cost into manageable monthly payments</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#34C759"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Flexible 3-12 month plans</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#34C759"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Budget-friendly approach</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#34C759"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Own after final payment</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#34C759"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Easier cash flow management</span>
+                        </li>
+                    </ul>
+                    <a href="contact-us.html" class="pricing-btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="pricing-note fade-in">
+                <p>
+                    <strong>Important:</strong> Both options lead to full ownership - you're not renting or subscribing. 
+                    After the final payment, the website is 100% yours with no ongoing fees.
+                </p>
+            </div>
+        </div>
+    </section>
     
     <!-- Process Section -->
-    <section id="process" class="section">
+    <section id="process" class="section section-alt">
         <div class="container">
             <div class="fade-in">
                 <h2 class="section-title">How We Work</h2>
@@ -1460,7 +1846,7 @@
                         <div class="author-avatar">OP</div>
                         <div class="author-info">
                             <h4>Owain Piggon</h4>
-                            <p>CNich Text - cnichtext.co.uk</p>
+                            <p>Cnicht External - cnichtext.co.uk</p>
                         </div>
                     </div>
                 </div>
@@ -1473,7 +1859,7 @@
                         <div class="author-avatar">LP</div>
                         <div class="author-info">
                             <h4>Lisa Piggon</h4>
-                            <p>CNicht Cleaning Services - cnichtcleaningservices.co.uk</p>
+                            <p>Cnicht External - cnichtcleaningservices.co.uk</p>
                         </div>
                     </div>
                 </div>
@@ -1506,16 +1892,16 @@
                     </p>
                     <div class="flex gap-8">
                         <div class="text-center">
-                            <div class="text-4xl font-bold mb-2" style="color: var(--accent);">50+</div>
-                            <div class="text-sm" style="color: var(--text-secondary);">Projects Completed</div>
-                        </div>
-                        <div class="text-center">
                             <div class="text-4xl font-bold mb-2" style="color: var(--accent);">98%</div>
                             <div class="text-sm" style="color: var(--text-secondary);">Client Satisfaction</div>
                         </div>
                         <div class="text-center">
                             <div class="text-4xl font-bold mb-2" style="color: var(--accent);">5+</div>
                             <div class="text-sm" style="color: var(--text-secondary);">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold mb-2" style="color: var(--accent);">24/7</div>
+                            <div class="text-sm" style="color: var(--text-secondary);">Support Available</div>
                         </div>
                             </div>
                         </div>
@@ -1587,7 +1973,7 @@
                 <div class="footer-section">
                     <h3>Company</h3>
                     <p><a href="#about">About Us</a></p>
-                    <p><a href="#portfolio">Portfolio</a></p>
+                    <p><a href="#previous-work">Portfolio</a></p>
                     <p><a href="#process">Our Process</a></p>
                     <p><a href="#testimonials">Testimonials</a></p>
             </div>
