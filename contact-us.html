@@ -804,6 +804,199 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* Budget Recommendation Panels */
+        .budget-recommendations {
+            margin-top: var(--space-8);
+            animation: fadeInUp var(--transition-slow) ease-out;
+        }
+        
+        .budget-panel {
+            background: var(--white);
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            margin-bottom: var(--space-6);
+        }
+        
+        .budget-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(0, 113, 227, 0.3);
+        }
+        
+        .budget-panel-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            padding: var(--space-6);
+            border-radius: 18px 18px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .budget-panel-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            pointer-events: none;
+        }
+        
+        .budget-panel-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .budget-panel-icon svg {
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+        }
+        
+        .budget-panel-title {
+            flex: 1;
+            z-index: 1;
+        }
+        
+        .budget-panel-title h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--white);
+            margin: 0 0 var(--space-1) 0;
+            letter-spacing: -0.022em;
+        }
+        
+        .budget-panel-title p {
+            font-size: var(--font-size-lg);
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            letter-spacing: -0.022em;
+        }
+        
+        .budget-panel-content {
+            padding: var(--space-6);
+            background: var(--white);
+        }
+        
+        .budget-features {
+            margin-bottom: var(--space-6);
+        }
+        
+        .budget-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid var(--border);
+            transition: all var(--transition-fast);
+        }
+        
+        .budget-feature:last-child {
+            border-bottom: none;
+        }
+        
+        .budget-feature:hover {
+            background: var(--off-white);
+            margin: 0 calc(-1 * var(--space-6));
+            padding: var(--space-3) var(--space-6);
+            border-radius: 8px;
+        }
+        
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .budget-feature span {
+            font-size: var(--font-size-base);
+            color: var(--text-primary);
+            font-weight: 400;
+            letter-spacing: -0.022em;
+        }
+        
+        .budget-description {
+            padding-top: var(--space-4);
+            border-top: 1px solid var(--border);
+        }
+        
+        .budget-description p {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            font-style: italic;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* Panel Header Color Variants */
+        .starter-header {
+            background: linear-gradient(135deg, #34C759 0%, #2FB350 100%);
+        }
+        
+        .starter-header .feature-icon {
+            background: rgba(52, 199, 89, 0.1);
+            color: #34C759;
+        }
+        
+        .growth-header {
+            background: linear-gradient(135deg, #007AFF 0%, #0051D5 100%);
+        }
+        
+        .growth-header .feature-icon {
+            background: rgba(0, 122, 255, 0.1);
+            color: #007AFF;
+        }
+        
+        .ecommerce-header {
+            background: linear-gradient(135deg, #FF9500 0%, #FF7A00 100%);
+        }
+        
+        .ecommerce-header .feature-icon {
+            background: rgba(255, 149, 0, 0.1);
+            color: #FF9500;
+        }
+        
+        .enterprise-header {
+            background: linear-gradient(135deg, #FF3B30 0%, #D70015 100%);
+        }
+        
+        .enterprise-header .feature-icon {
+            background: rgba(255, 59, 48, 0.1);
+            color: #FF3B30;
+        }
+        
+        /* Animation for panel appearance */
+        @keyframes budgetPanelSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .budget-panel {
+            animation: budgetPanelSlideIn var(--transition-slow) ease-out;
+        }
     </style>
 </head>
 <body>
@@ -952,15 +1145,248 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="budget_range" class="form-label">Budget Range</label>
-                        <select id="budget_range" name="budget_range" class="form-select" required>
-                            <option value="">Select budget range</option>
-                         
-                            <option value="£1,000 - £1,500">£1,500 - £2,000</option>
-                            <option value="£2,000 - £2,500">£2,000 - £2,500</option>
-                           
-                            <option value="Not sure">Not sure</option>
+                        <label for="budget_range_option" class="form-label">Do you have a budget in mind?</label>
+                        <select id="budget_range_option" name="budget_range_option" class="form-select" required onchange="toggleBudgetInput(this.value)">
+                            <option value="">Please select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
                         </select>
+                    </div>
+                    
+                    <div class="form-group" id="budgetInputGroup" style="display: none;">
+                        <label for="budget_amount" class="form-label">Budget Amount (£)</label>
+                        <input type="number" id="budget_amount" name="budget_amount" class="form-input" placeholder="Enter your budget amount" min="0" step="100" onchange="showBudgetRecommendation()">
+                    </div>
+                    
+                    <!-- Budget Recommendation Panels -->
+                    <div id="budgetRecommendations" class="budget-recommendations" style="display: none;">
+                        <!-- Panel 1 - Starter -->
+                        <div id="starterPanel" class="budget-panel" style="display: none;">
+                            <div class="budget-panel-header starter-header">
+                                <div class="budget-panel-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="budget-panel-title">
+                                    <h3>Starter Package</h3>
+                                    <p>£1,000 – £2,000</p>
+                                </div>
+                            </div>
+                            <div class="budget-panel-content">
+                                <div class="budget-features">
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>1–3 page responsive site</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Modern design, contact form, social links</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Hosting & domain setup</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>1–2 revisions</span>
+                                    </div>
+                                </div>
+                                <div class="budget-description">
+                                    <p>Ideal for freelancers or startups needing a fast, simple web presence.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Panel 2 - Growth -->
+                        <div id="growthPanel" class="budget-panel" style="display: none;">
+                            <div class="budget-panel-header growth-header">
+                                <div class="budget-panel-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 3v18h18"/>
+                                        <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                                    </svg>
+                                </div>
+                                <div class="budget-panel-title">
+                                    <h3>Growth Package</h3>
+                                    <p>£2,000 – £3,000</p>
+                                </div>
+                            </div>
+                            <div class="budget-panel-content">
+                                <div class="budget-features">
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>5–8 custom pages</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>CMS (WordPress or custom)</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Basic SEO, animations, blog/portfolio</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Up to 3 revisions</span>
+                                    </div>
+                                </div>
+                                <div class="budget-description">
+                                    <p>Great for small businesses scaling their online brand.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Panel 3 - E-commerce -->
+                        <div id="ecommercePanel" class="budget-panel" style="display: none;">
+                            <div class="budget-panel-header ecommerce-header">
+                                <div class="budget-panel-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="9" cy="21" r="1"/>
+                                        <circle cx="20" cy="21" r="1"/>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                    </svg>
+                                </div>
+                                <div class="budget-panel-title">
+                                    <h3>E-Commerce Package</h3>
+                                    <p>£3,000 – £5,000</p>
+                                </div>
+                            </div>
+                            <div class="budget-panel-content">
+                                <div class="budget-features">
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Online store with checkout & payments</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>SEO optimization</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Analytics integration</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Security setup (SSL, spam protection)</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>1 month post-launch support</span>
+                                    </div>
+                                </div>
+                                <div class="budget-description">
+                                    <p>Ideal for online retailers or businesses selling products/services.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Panel 4 - Enterprise -->
+                        <div id="enterprisePanel" class="budget-panel" style="display: none;">
+                            <div class="budget-panel-header enterprise-header">
+                                <div class="budget-panel-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                        <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"/>
+                                    </svg>
+                                </div>
+                                <div class="budget-panel-title">
+                                    <h3>Enterprise Package</h3>
+                                    <p>£5,000+</p>
+                                </div>
+                            </div>
+                            <div class="budget-panel-content">
+                                <div class="budget-features">
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Full bespoke design & functionality</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Advanced integrations (CRM, booking, APIs)</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Branding package & copywriting</span>
+                                    </div>
+                                    <div class="budget-feature">
+                                        <div class="feature-icon">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Ongoing support & marketing</span>
+                                    </div>
+                                </div>
+                                <div class="budget-description">
+                                    <p>For established brands needing premium, high-performance websites.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="form-group">
@@ -1222,7 +1648,8 @@
         // {{website_url}} - Current website URL (if applicable)
         // {{has_online_info}} - Do you have any other online information?
         // {{online_info_details}} - Online information details (if applicable)
-        // {{budget_range}} - Budget range
+        // {{budget_range_option}} - Do you have a budget in mind? (Yes/No)
+        // {{budget_amount}} - Budget amount entered by user
         // {{style_preferences}} - Style preferences (comma-separated)
         // {{other_style}} - Other style preferences
         
@@ -1338,7 +1765,8 @@
             const websiteUrl = formData.get('website_url') || 'Not provided';
             const hasOnlineInfo = formData.get('has_online_info') || 'Not provided';
             const onlineInfoDetails = formData.get('online_info_details') || 'Not provided';
-            const budgetRange = formData.get('budget_range') || 'Not provided';
+            const budgetRangeOption = formData.get('budget_range_option') || 'Not provided';
+            const budgetAmount = formData.get('budget_amount') || 'Not provided';
             
             // Collect style preferences
             const styleCheckboxes = document.querySelectorAll('input[name="style_preferences"]:checked');
@@ -1361,7 +1789,9 @@ Current Assets:
 - Has Online Info: ${hasOnlineInfo}
 - Online Info Details: ${onlineInfoDetails}
 
-Budget Range: ${budgetRange}
+Budget Information:
+- Has Budget in Mind: ${budgetRangeOption}
+- Budget Amount: £${budgetAmount}
 
 Style Preferences: ${stylePreferences}
 Other Style Preferences: ${otherStyle}
@@ -1393,6 +1823,69 @@ This email was sent from the VisualSites contact form.
                 onlineInfoDetails.required = false;
                 onlineInfoDetails.value = '';
             }
+        }
+        
+        // Budget system functions
+        function toggleBudgetInput(value) {
+            const budgetInputGroup = document.getElementById('budgetInputGroup');
+            const budgetAmount = document.getElementById('budget_amount');
+            const budgetRecommendations = document.getElementById('budgetRecommendations');
+            
+            if (value === 'Yes') {
+                budgetInputGroup.style.display = 'block';
+                budgetAmount.required = true;
+            } else {
+                budgetInputGroup.style.display = 'none';
+                budgetAmount.required = false;
+                budgetAmount.value = '';
+                budgetRecommendations.style.display = 'none';
+                hideAllBudgetPanels();
+            }
+        }
+        
+        function showBudgetRecommendation() {
+            const budgetAmount = document.getElementById('budget_amount');
+            const budgetRecommendations = document.getElementById('budgetRecommendations');
+            const budgetRangeNumber = parseInt(budgetAmount.value);
+            
+            if (!budgetAmount.value || isNaN(budgetRangeNumber)) {
+                budgetRecommendations.style.display = 'none';
+                hideAllBudgetPanels();
+                return;
+            }
+            
+            // Hide all panels first
+            hideAllBudgetPanels();
+            
+            // Show recommendations container
+            budgetRecommendations.style.display = 'block';
+            
+            // Switch logic to determine which panel to show
+            switch (true) {
+                case (budgetRangeNumber >= 1000 && budgetRangeNumber <= 2000):
+                    document.getElementById('starterPanel').style.display = 'block';
+                    break;
+                case (budgetRangeNumber > 2000 && budgetRangeNumber <= 3000):
+                    document.getElementById('growthPanel').style.display = 'block';
+                    break;
+                case (budgetRangeNumber > 3000 && budgetRangeNumber <= 5000):
+                    document.getElementById('ecommercePanel').style.display = 'block';
+                    break;
+                case (budgetRangeNumber > 5000):
+                    document.getElementById('enterprisePanel').style.display = 'block';
+                    break;
+                default:
+                    // No panel for values outside the ranges
+                    budgetRecommendations.style.display = 'none';
+                    break;
+            }
+        }
+        
+        function hideAllBudgetPanels() {
+            document.getElementById('starterPanel').style.display = 'none';
+            document.getElementById('growthPanel').style.display = 'none';
+            document.getElementById('ecommercePanel').style.display = 'none';
+            document.getElementById('enterprisePanel').style.display = 'none';
         }
 
         // Intersection Observer for fade-in animations
