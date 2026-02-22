@@ -489,10 +489,18 @@
         
         .portal-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: var(--space-16);
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-8);
             margin-top: var(--space-16);
             perspective: 1500px;
+        }
+
+        @media (max-width: 1100px) {
+            .portal-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 700px) {
+            .portal-grid { grid-template-columns: 1fr; gap: var(--space-6); }
         }
         
         .portal-window {
@@ -982,6 +990,96 @@
             color: #FF3B30;
         }
         
+        /* ============================================================
+           RFC STATIC PREVIEW
+           ============================================================ */
+        .rfc-preview {
+            width: 100%; height: 100%;
+            background: #0f0f0f;
+            display: flex; flex-direction: column;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+        }
+
+        .rfc-nav {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.6rem 1rem;
+            background: #1a1a1a;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            flex-shrink: 0;
+        }
+
+        .rfc-nav-brand { font-size: 0.72rem; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
+
+        .rfc-nav-links { display: flex; gap: 0.75rem; }
+        .rfc-nav-links span { font-size: 0.62rem; color: rgba(255,255,255,0.55); font-weight: 500; }
+
+        .rfc-hero {
+            flex: 1;
+            background: linear-gradient(160deg, #1a0000 0%, #2d0000 40%, #0f0f1a 100%);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; padding: 1.2rem;
+            position: relative; overflow: hidden;
+        }
+
+        .rfc-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 40%, rgba(180,0,0,0.25) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .rfc-hero-badge {
+            font-size: 0.6rem; font-weight: 600;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: rgba(255,120,120,0.85);
+            background: rgba(200,0,0,0.15);
+            border: 1px solid rgba(200,0,0,0.3);
+            padding: 0.2rem 0.6rem; border-radius: 980px;
+            margin-bottom: 0.7rem; position: relative; z-index: 1;
+        }
+
+        .rfc-hero-title {
+            font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+            font-weight: 800; color: #fff;
+            letter-spacing: -0.03em; line-height: 1.1;
+            margin-bottom: 0.4rem; position: relative; z-index: 1;
+        }
+
+        .rfc-hero-sub {
+            font-size: 0.65rem; color: rgba(255,255,255,0.5);
+            font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
+            margin-bottom: 1rem; position: relative; z-index: 1;
+        }
+
+        .rfc-hero-btn {
+            display: inline-flex; align-items: center;
+            padding: 0.35rem 0.9rem;
+            background: #c00000; color: #fff;
+            border-radius: 980px; font-size: 0.65rem; font-weight: 600;
+            text-decoration: none; transition: all 0.2s ease;
+            position: relative; z-index: 1; pointer-events: all;
+        }
+
+        .rfc-hero-btn:hover { background: #e00000; transform: translateY(-1px); color: #fff; }
+
+        .rfc-cards {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            flex-shrink: 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .rfc-card {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: 0.7rem 0.4rem; background: #141414;
+            border-right: 1px solid rgba(255,255,255,0.05); gap: 0.25rem;
+        }
+
+        .rfc-card:last-child { border-right: none; }
+        .rfc-card-icon { font-size: 1rem; line-height: 1; }
+        .rfc-card-label { font-size: 0.58rem; color: rgba(255,255,255,0.45); font-weight: 500; letter-spacing: 0.04em; }
+
         /* Animation for panel appearance */
         @keyframes budgetPanelSlideIn {
             from {
@@ -1488,8 +1586,8 @@
                         <div class="portal-dot"></div>
                     </div>
                     <div class="portal-iframe-container">
-                        <iframe 
-                            src="https://cnichtcleaningservices.co.uk" 
+                        <iframe
+                            src="https://cnichtcleaningservices.co.uk"
                             class="portal-iframe"
                             title="CNicht Cleaning Services Website"
                             loading="lazy">
@@ -1510,6 +1608,54 @@
                     <div class="portal-label">
                         <h3>Cnicht Cleaning Services</h3>
                         <p>Service Provider</p>
+                    </div>
+                </div>
+
+                <!-- Portal 3: Porthmadog RFC -->
+                <div class="portal-window">
+                    <div class="portal-header">
+                        <div class="portal-dot"></div>
+                        <div class="portal-dot"></div>
+                        <div class="portal-dot"></div>
+                    </div>
+                    <div class="portal-iframe-container">
+                        <!-- Static preview: site blocks iframe embedding -->
+                        <div class="rfc-preview">
+                            <div class="rfc-nav">
+                                <span class="rfc-nav-brand">⚫ Porthmadog RFC</span>
+                                <div class="rfc-nav-links">
+                                    <span>Fixtures</span><span>Results</span><span>Squad</span><span>News</span>
+                                </div>
+                            </div>
+                            <div class="rfc-hero">
+                                <div class="rfc-hero-badge">Est. 1879</div>
+                                <div class="rfc-hero-title">Porthmadog<br>Rugby Football Club</div>
+                                <div class="rfc-hero-sub">North Wales Premiership</div>
+                                <a href="https://porthmadogrfc.co.uk" target="_blank" rel="noopener noreferrer" class="rfc-hero-btn">Visit Website ↗</a>
+                            </div>
+                            <div class="rfc-cards">
+                                <div class="rfc-card">
+                                    <div class="rfc-card-icon">📅</div>
+                                    <div class="rfc-card-label">Fixtures</div>
+                                </div>
+                                <div class="rfc-card">
+                                    <div class="rfc-card-icon">🏉</div>
+                                    <div class="rfc-card-label">Results</div>
+                                </div>
+                                <div class="rfc-card">
+                                    <div class="rfc-card-icon">👥</div>
+                                    <div class="rfc-card-label">Squad</div>
+                                </div>
+                                <div class="rfc-card">
+                                    <div class="rfc-card-icon">📰</div>
+                                    <div class="rfc-card-label">News</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-label">
+                        <h3>Porthmadog RFC</h3>
+                        <p>Sports &amp; Community</p>
                     </div>
                 </div>
             </div>
@@ -1616,7 +1762,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 VisualSites. All rights reserved.</p>
+                <p>&copy; 2025 VisualSites. All rights reserved.</p>
             </div>
         </div>
     </footer>
