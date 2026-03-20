@@ -27,57 +27,19 @@
 
     <style>
         /* ============================================================
-           CINEMATIC VS INTRO
+           PRELOADER — VS Stock-to-Mountain Line
            ============================================================ */
-        .cinematic-intro {
-            position: fixed; top: 0; left: 0;
-            width: 100vw; height: 100vh; background: #000;
+        .preloader {
+            position: fixed; inset: 0; z-index: 99999;
+            background: #07080F;
             display: flex; align-items: center; justify-content: center;
-            z-index: 99999;
-            animation: introFadeOut 0.6s ease-out 3.2s forwards;
         }
-        .cinematic-logo {
-            position: relative;
-            font-size: clamp(6rem, 15vw, 12rem); font-weight: 700;
-            letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.1em; z-index: 10;
+        .pl-svg {
+            width: min(800px, 92vw);
+            height: auto;
+            display: block;
+            overflow: visible;
         }
-        .cinematic-letter-v {
-            background: linear-gradient(135deg, #E5E5E5 0%, #C0C0C0 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            opacity: 0; transform: translateY(20px) scale(0.95);
-            animation: letterVAppear 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s forwards;
-        }
-        .cinematic-letter-s {
-            background: linear-gradient(135deg, #E5E5E5 0%, #C0C0C0 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            opacity: 0; transform: translateX(40px) scale(0.9);
-            animation: letterSAppear 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.9s forwards;
-        }
-        .cinematic-letter-v::after, .cinematic-letter-s::after {
-            content: ''; position: absolute; top: 0; left: -100%;
-            width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.7) 50%, transparent 100%);
-            filter: blur(10px); pointer-events: none;
-        }
-        .cinematic-letter-v::after { animation: sheenSlide 1.2s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s forwards; }
-        .cinematic-letter-s::after { animation: sheenSlide 1.2s cubic-bezier(0.25,0.46,0.45,0.94) 1.2s forwards; }
-        .cinematic-glow {
-            position: absolute; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(192,192,192,0.15) 0%, transparent 70%);
-            filter: blur(60px); opacity: 0;
-            animation: glowPulse 2s ease-in-out 0.5s forwards;
-        }
-        .cinematic-rays {
-            position: absolute; width: 100%; height: 100%;
-            background: conic-gradient(from 0deg, transparent 0%, rgba(255,255,255,0.03) 10%, transparent 20%, rgba(255,255,255,0.03) 30%, transparent 40%);
-            opacity: 0; animation: raysRotate 3s ease-out 0.5s forwards;
-        }
-        @keyframes letterVAppear { from{opacity:0;transform:translateY(20px) scale(0.95);}to{opacity:1;transform:translateY(0) scale(1);} }
-        @keyframes letterSAppear { from{opacity:0;transform:translateX(40px) scale(0.9);}to{opacity:1;transform:translateX(0) scale(1);} }
-        @keyframes sheenSlide { 0%{left:-100%;opacity:0;}50%{opacity:1;}100%{left:200%;opacity:0;} }
-        @keyframes glowPulse { 0%{opacity:0;transform:scale(0.8);}50%{opacity:0.3;transform:scale(1.2);}100%{opacity:0;transform:scale(1);} }
-        @keyframes raysRotate { 0%{opacity:0;transform:scale(0.5) rotate(0deg);}50%{opacity:0.15;transform:scale(1.5) rotate(180deg);}100%{opacity:0;transform:scale(1.8) rotate(360deg);} }
-        @keyframes introFadeOut { to{opacity:0;visibility:hidden;} }
 
         /* ============================================================
            DESIGN SYSTEM
@@ -732,15 +694,140 @@
 </head>
 <body>
 
-<!-- CINEMATIC INTRO -->
-<div class="cinematic-intro" id="cinematicIntro">
-    <div class="cinematic-rays"></div>
-    <div class="cinematic-glow"></div>
-    <div class="cinematic-logo">
-        <span class="cinematic-letter-v">V</span>
-        <span class="cinematic-letter-s">S</span>
-    </div>
+<!-- PRELOADER — VS Stock-to-Mountain -->
+<div class="preloader" id="preloader" aria-hidden="true">
+    <svg class="pl-svg" id="plSvg" viewBox="0 0 800 300"
+         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+            <linearGradient id="pl-fill-g" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#4F6EF5" stop-opacity="0.14"/>
+                <stop offset="100%" stop-color="#4F6EF5" stop-opacity="0"/>
+            </linearGradient>
+        </defs>
+
+        <!-- Subtle fill below the mountain line -->
+        <path id="plFill" d="" fill="url(#pl-fill-g)" opacity="0"/>
+
+        <!-- The animated line: stock chart → mountain silhouette -->
+        <path id="plLine" d="" fill="none"
+              stroke="#4F6EF5" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Pointer line: draws upward from peak to text (animated via JS) -->
+        <line id="plPointer" x1="343" y1="62" x2="343" y2="26"
+              stroke="#4F6EF5" stroke-width="0.9" opacity="0.45"
+              stroke-dasharray="36" stroke-dashoffset="36"/>
+
+        <!-- VS + tagline — fades in after pointer finishes drawing -->
+        <g id="plLabel" opacity="0">
+            <text x="343" y="18" text-anchor="middle"
+                  font-family="'Syne', sans-serif" font-size="24"
+                  font-weight="800" letter-spacing="-0.5"
+                  fill="#EEF0FF">VS</text>
+            <text x="343" y="30" text-anchor="middle"
+                  font-family="'Syne', sans-serif" font-size="6.2"
+                  font-weight="600" letter-spacing="2.4"
+                  fill="rgba(123,147,255,0.60)">BASED IN SNOWDONIA</text>
+        </g>
+    </svg>
 </div>
+
+<script>
+(function () {
+    'use strict';
+
+    // ── Data ────────────────────────────────────────────────────────────
+    var N = 36, W = 800, H = 300;
+    var xs = [];
+    for (var i = 0; i < N; i++) xs.push(+(W / (N - 1) * i).toFixed(2));
+
+    // Stock chart: convincing bull-run — starts low (~y 218), ends high (~y 128)
+    // Overall downward y = upward visual trend, with realistic oscillations
+    var stockY = [
+        218,210,224,212,228,214,204,218,206,222,208,195,
+        210,198,214,200,188,203,192,206,192,178,194,180,
+        166,180,166,152,166,152,138,152,138,124,140,128
+    ];
+
+    // Snowdonia silhouette — Yr Wyddfa at index 15 (x≈343, y=62)
+    // Sea level ≈ y=297. Crib Goch, Glyderau, Tryfan, Carneddau encoded.
+    var mountainY = [
+        300,293,285,275,263,249,233,215,195,173,147,121,
+         97, 77, 62, 62, 71, 87, 77, 89,103, 95,110,103,
+        118,107,113,128,148,168,188,211,230,253,277,297
+    ];
+
+    // ── Helpers ─────────────────────────────────────────────────────────
+    function pts(ys) {
+        return 'M ' + xs.map(function (x, i) { return x + ',' + ys[i]; }).join(' L ');
+    }
+    function fillPts(ys) {
+        return pts(ys) + ' L ' + xs[N - 1] + ',' + H + ' L 0,' + H + ' Z';
+    }
+    function ease(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
+    function lerp(a, b, t) {
+        return a.map(function (v, i) { return v + (b[i] - v) * t; });
+    }
+
+    // ── Elements ─────────────────────────────────────────────────────────
+    var line    = document.getElementById('plLine');
+    var fill    = document.getElementById('plFill');
+    var pointer = document.getElementById('plPointer');
+    var label   = document.getElementById('plLabel');
+    var pre     = document.getElementById('preloader');
+
+    // ── Phase 1: draw stock line left → right ────────────────────────────
+    line.setAttribute('d', pts(stockY));
+    var len = line.getTotalLength();
+    line.style.strokeDasharray  = len;
+    line.style.strokeDashoffset = len;
+
+    requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+            line.style.transition = 'stroke-dashoffset 0.82s cubic-bezier(0.25,0.46,0.45,0.94)';
+            line.style.strokeDashoffset = 0;
+        });
+    });
+
+    // ── Phase 2: morph stock → Snowdonia ─────────────────────────────────
+    setTimeout(function () {
+        line.style.transition      = 'none';
+        line.style.strokeDasharray = '';
+        line.style.strokeDashoffset = '';
+
+        var t0  = performance.now();
+        var dur = 950;
+
+        (function frame(now) {
+            var t = Math.min((now - t0) / dur, 1);
+            var e = ease(t);
+            var ys = lerp(stockY, mountainY, e);
+            line.setAttribute('d', pts(ys));
+            fill.setAttribute('d', fillPts(ys));
+            fill.style.opacity = (e * 0.13).toFixed(3);
+            if (t < 1) {
+                requestAnimationFrame(frame);
+            } else {
+                // ── Phase 3a: draw pointer line upward from peak ──────
+                pointer.style.transition      = 'stroke-dashoffset 0.42s cubic-bezier(0.25,0.46,0.45,0.94)';
+                pointer.style.strokeDashoffset = 0;
+                // ── Phase 3b: fade in VS + tagline after line draws ───
+                setTimeout(function () {
+                    label.style.transition = 'opacity 0.5s cubic-bezier(0.25,0.46,0.45,0.94)';
+                    label.style.opacity    = 1;
+                }, 480);
+            }
+        }(performance.now()));
+    }, 1050);
+
+    // ── Phase 4: fade out ────────────────────────────────────────────────
+    setTimeout(function () {
+        pre.style.transition = 'opacity 0.85s cubic-bezier(0.7,0,1,1)';
+        pre.style.opacity    = 0;
+        setTimeout(function () { pre.style.display = 'none'; }, 900);
+    }, 3400);
+}());
+</script>
 
 <!-- CUSTOM CURSOR -->
 <div class="cursor-dot" id="cursorDot"></div>
@@ -1287,7 +1374,7 @@
             <div class="pcard pcard--featured">
                 <div class="pcard-badge">⭐ Most Popular</div>
                 <div class="pcard-name">One-Time Payment</div>
-                <div class="pcard-price"><sup>£</sup>499</div>
+                <div class="pcard-price"><sup>£</sup>899<span style="font-size:1rem;font-weight:400;letter-spacing:0;"> +</span></div>
                 <div class="pcard-sub">One payment. Full ownership. No monthly fees ever.</div>
                 <div class="pcard-divider"></div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Bespoke design — no templates</div>
