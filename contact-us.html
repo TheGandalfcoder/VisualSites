@@ -3,1604 +3,1032 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - VisualSites</title>
-    
-    <!-- Favicon -->
+    <title>Get a Quote – VisualSites Web Design North Wales | Gwynedd, Bangor, Caernarfon</title>
+
     <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
-    
-    <!-- Meta Tags for SEO -->
-    <meta name="description" content="Get in touch with VisualSites for professional web development services. Contact us for custom websites, redesigns, and digital solutions.">
-    <meta name="keywords" content="contact, web development, Visual Sites, professional websites, custom development, get quote">
-    
-    <!-- Preconnect for Performance -->
+
+    <meta name="description" content="Start your new website with VisualSites — North Wales' leading web design studio. Serving businesses in Gwynedd, Bangor, Caernarfon, Porthmadog, Pwllheli, Llandudno and Anglesey. Transparent pricing, no subscriptions. Get a free quote today.">
+    <meta name="keywords" content="web design North Wales, web designer Gwynedd, website Bangor, website Caernarfon, web design Porthmadog, web design Pwllheli, web design Llandudno, web design Anglesey, bespoke website Wales, VisualSites, web developer Gwynedd">
+    <meta name="author" content="VisualSites">
+    <meta property="og:title" content="Get a Quote – VisualSites Web Design North Wales">
+    <meta property="og:description" content="Bespoke websites for North Wales businesses. Clear pricing, full ownership, no monthly fees.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://visualsites.co.uk/contact-us.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "VisualSites",
+      "description": "Bespoke web design studio serving businesses across North Wales including Gwynedd, Bangor, Caernarfon, Porthmadog, Pwllheli, Llandudno and Anglesey",
+      "url": "https://visualsites.co.uk",
+      "address": {"@type": "PostalAddress", "addressRegion": "Gwynedd", "addressCountry": "GB"},
+      "areaServed": ["Gwynedd","Bangor","Caernarfon","Porthmadog","Pwllheli","Llandudno","Anglesey","Conwy","North Wales","Snowdonia"],
+      "priceRange": "£899–£1,999",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Design Packages",
+        "itemListElement": [
+          {"@type":"Offer","name":"Essential Website","price":"899","priceCurrency":"GBP"},
+          {"@type":"Offer","name":"Professional Website","price":"1399","priceCurrency":"GBP"},
+          {"@type":"Offer","name":"Complete Website","price":"1599","priceCurrency":"GBP"}
+        ]
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Google Fonts - Apple-style Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
-    <!-- Lordicon for Premium Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    
-    <!-- EmailJS for Contact Form -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    
+
     <style>
-        /* ===========================================
-           APPLE-INSPIRED CONTACT PAGE DESIGN
-           =========================================== */
-        
-        /* CSS Variables for Apple Design System */
+        /* ============================================================
+           DESIGN SYSTEM
+           ============================================================ */
         :root {
-            /* Apple Color System */
-            --white: #FFFFFF;
-            --off-white: #F5F5F7;
-            --text-primary: #1D1D1F;
-            --text-secondary: #424245;
-            --accent: #0071E3;
-            --border: #D2D2D7;
-            --footer-bg: #1D1D1F;
-            --footer-text: #F5F5F7;
-            
-            /* Typography Scale */
-            --font-size-xs: 0.75rem;
-            --font-size-sm: 0.875rem;
-            --font-size-base: 1rem;
-            --font-size-lg: 1.125rem;
-            --font-size-xl: 1.25rem;
-            --font-size-2xl: 1.5rem;
-            --font-size-3xl: 1.875rem;
-            --font-size-4xl: 2.25rem;
-            --font-size-5xl: 3rem;
-            --font-size-6xl: 3.75rem;
-            --font-size-7xl: 4.5rem;
-            --font-size-8xl: 6rem;
-            --font-size-9xl: 8rem;
-            
-            /* Spacing Scale (8px base) */
-            --space-1: 0.25rem;
-            --space-2: 0.5rem;
-            --space-3: 0.75rem;
-            --space-4: 1rem;
-            --space-5: 1.25rem;
-            --space-6: 1.5rem;
-            --space-8: 2rem;
-            --space-10: 2.5rem;
-            --space-12: 3rem;
-            --space-16: 4rem;
-            --space-20: 5rem;
-            --space-24: 6rem;
-            --space-32: 8rem;
-            --space-40: 10rem;
-            --space-48: 12rem;
-            --space-56: 14rem;
-            --space-64: 16rem;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            
-            /* Transitions */
-            --transition-fast: 150ms ease-in-out;
-            --transition-normal: 300ms ease-in-out;
-            --transition-slow: 500ms ease-in-out;
-            
-            /* Container */
-            --container-max: 1440px;
-            --container-padding: 5rem;
+            --bg:          #07080F;
+            --surface:     #0C0E1A;
+            --card:        #111325;
+            --card-h:      #141829;
+            --border:      rgba(255,255,255,0.08);
+            --border-b:    rgba(255,255,255,0.15);
+            --text:        #EEF0FF;
+            --text-dim:    rgba(238,240,255,0.65);
+            --text-muted:  rgba(238,240,255,0.38);
+            --accent:      #4F6EF5;
+            --accent-l:    #7B93FF;
+            --accent-glow: rgba(79,110,245,0.28);
+            --cyan:        #00D2FF;
+            --green:       #10E090;
+            --gold:        #FFB800;
+            --font-sans:   -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            --font-display:'Syne', 'Inter', sans-serif;
+            --ease:        cubic-bezier(0.25,0.46,0.45,0.94);
+            --ease-s:      cubic-bezier(0.34,1.56,0.64,1);
+            --pad:         clamp(1.25rem,5vw,4.5rem);
+            --max:         1320px;
         }
-        
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-            width: 100%;
-        }
-        
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; overflow-x:hidden; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: var(--white);
-            color: var(--text-primary);
-            line-height: 1.6;
+            font-family: var(--font-sans);
+            background: var(--bg); color: var(--text);
+            font-size: 17px;           /* accessibility: slightly larger base */
+            line-height: 1.75;
             overflow-x: hidden;
-            width: 100%;
-            position: relative;
-            font-weight: 400;
-            font-size: var(--font-size-base);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-            letter-spacing: -0.022em;
         }
-        
-        /* Container */
-        .container {
-            max-width: var(--container-max);
-            margin: 0 auto;
-            padding: 0 var(--container-padding);
+        body::after {
+            content:''; position:fixed; inset:0; z-index:9998; pointer-events:none;
+            opacity:0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
         }
-        
-        /* Navigation */
+
+        .container { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
+        .section    { padding:clamp(3.5rem,8vw,6.5rem) 0; }
+
+        /* Fade-in */
+        .fade-in { opacity:0; transform:translateY(24px); transition:opacity 0.7s var(--ease),transform 0.7s var(--ease); }
+        .fade-in.visible { opacity:1; transform:none; }
+
+        /* ============================================================
+           CUSTOM CURSOR (desktop only)
+           ============================================================ */
+        .cursor-dot {
+            position:fixed; width:5px; height:5px; border-radius:50%;
+            background:var(--accent-l); pointer-events:none; z-index:99998;
+            transform:translate(-50%,-50%);
+        }
+        .cursor-ring {
+            position:fixed; width:30px; height:30px; border-radius:50%;
+            border:1.5px solid rgba(123,147,255,0.45); pointer-events:none; z-index:99997;
+            transform:translate(-50%,-50%);
+            transition:width 0.35s var(--ease-s),height 0.35s var(--ease-s),border-color 0.3s;
+        }
+        body.cur-hover .cursor-ring { width:52px; height:52px; border-color:rgba(123,147,255,0.9); }
+        body.cur-click .cursor-dot  { transform:translate(-50%,-50%) scale(0.5); }
+        @media(hover:none){ .cursor-dot,.cursor-ring{ display:none; } }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
         .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(29, 29, 31, 0.8);
-            backdrop-filter: blur(20px) saturate(180%);
-            transition: all var(--transition-normal);
-            height: 44px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position:fixed; top:0; left:0; right:0; z-index:1000;
+            height:62px; display:flex; align-items:center;
+            transition:background 0.4s,box-shadow 0.4s;
         }
-        
         .navbar.scrolled {
-            background: rgba(29, 29, 31, 0.95);
-            backdrop-filter: blur(20px) saturate(180%);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background:rgba(7,8,15,0.95);
+            backdrop-filter:blur(24px) saturate(180%);
+            box-shadow:0 1px 0 rgba(255,255,255,0.05),0 4px 40px rgba(0,0,0,0.55);
         }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-        }
-        
+        .nav-container { display:flex; justify-content:space-between; align-items:center; width:100%; }
         .nav-logo {
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            color: #FFFFFF;
-            text-decoration: none;
-            letter-spacing: -0.022em;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-family:var(--font-display); font-size:1.2rem; font-weight:700;
+            color:var(--text); text-decoration:none; letter-spacing:-0.02em;
+            display:flex; align-items:center; gap:0.5rem;
         }
-        
-        .nav-logo img {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
+        .nav-logo img { width:26px; height:26px; object-fit:contain; }
+        .nav-links { display:flex; align-items:center; gap:2.25rem; }
+        .nav-link { color:var(--text-dim); font-size:0.9rem; text-decoration:none; transition:color 0.2s; }
+        .nav-link:hover, .nav-link.active { color:var(--text); }
+        .nav-cta {
+            padding:0.5rem 1.25rem; background:var(--accent); color:#fff !important;
+            border-radius:980px; font-size:0.875rem !important; font-weight:600 !important;
+            transition:all 0.2s !important; box-shadow:0 0 24px var(--accent-glow);
         }
-        
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: var(--space-8);
-        }
-        
-        .nav-link {
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 400;
-            font-size: var(--font-size-sm);
-            letter-spacing: -0.022em;
-            text-decoration: none;
-            transition: color var(--transition-fast);
-            position: relative;
-        }
-        
-        .nav-link:hover,
-        .nav-link.active {
-            color: #FFFFFF;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--accent);
-            transition: width var(--transition-fast);
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #FFFFFF;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        
-        .mobile-menu-btn svg {
-            width: 24px;
-            height: 24px;
-        }
-        
+        .nav-cta:hover { background:var(--accent-l) !important; transform:translateY(-1px); }
+        .mobile-menu-btn { display:none; background:none; border:none; color:var(--text); cursor:pointer; padding:0.5rem; }
+        .mobile-menu-btn svg { width:22px; height:22px; }
         .mobile-menu {
-            display: none;
-            position: absolute;
-            top: 44px;
-            left: 0;
-            right: 0;
-            background: rgba(29, 29, 31, 0.98);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1rem 0;
+            display:none; position:absolute; top:62px; left:0; right:0;
+            background:rgba(7,8,15,0.98); backdrop-filter:blur(24px);
+            border-bottom:1px solid var(--border); padding:0.75rem 0;
         }
-        
-        .mobile-menu.active {
-            display: block;
-        }
-        
-        .mobile-menu .nav-link {
-            display: block;
-            padding: 0.75rem 1.5rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .mobile-menu .nav-link::after {
-            display: none;
-        }
-        
-        .mobile-menu .nav-link:hover,
-        .mobile-menu .nav-link.active {
-            color: #FFFFFF;
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-        
-        /* Hero Section */
+        .mobile-menu.active { display:block; }
+        .mobile-menu .nav-link { display:block; padding:0.85rem var(--pad); font-size:1rem; }
+        .mobile-menu .nav-cta  { margin:0.75rem var(--pad); display:inline-flex; }
+        @media(max-width:768px){ .nav-links{display:none;} .mobile-menu-btn{display:block;} }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
         .hero {
-            min-height: 60vh;
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: var(--space-20) 0;
+            min-height:60vh; display:flex; flex-direction:column;
+            justify-content:flex-end; position:relative; overflow:hidden;
+            padding:9rem 0 4rem; background:var(--bg);
         }
-        
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 var(--space-6);
+        /* Snowdonia mountain landscape */
+        .hero-mountains {
+            position:absolute; bottom:0; left:0; right:0; width:100%;
+            height:clamp(220px,30vw,340px);
+            pointer-events:none; z-index:0;
         }
-        
+        .hero-orb {
+            position:absolute; border-radius:50%;
+            filter:blur(110px); pointer-events:none;
+        }
+        .hero-orb-1 {
+            width:600px; height:600px; top:-200px; right:-100px;
+            background:radial-gradient(circle,rgba(79,110,245,0.14) 0%,transparent 70%);
+            animation:orbDrift 18s ease-in-out infinite;
+        }
+        .hero-orb-2 {
+            width:400px; height:400px; top:30%; left:-80px;
+            background:radial-gradient(circle,rgba(0,210,255,0.07) 0%,transparent 70%);
+            animation:orbDrift 14s ease-in-out infinite; animation-delay:-5s;
+        }
+        @keyframes orbDrift {
+            0%,100%{transform:translate(0,0) scale(1);}
+            40%{transform:translate(40px,-35px) scale(1.05);}
+            70%{transform:translate(-25px,20px) scale(0.96);}
+        }
+        .hero::before {
+            content:''; position:absolute; inset:0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.016) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(255,255,255,0.016) 1px,transparent 1px);
+            background-size:60px 60px;
+            -webkit-mask-image:radial-gradient(ellipse 85% 75% at 50% 40%,black 20%,transparent 100%);
+            mask-image:radial-gradient(ellipse 85% 75% at 50% 40%,black 20%,transparent 100%);
+            pointer-events:none;
+        }
+        .hero-inner { position:relative; z-index:2; }
+        .hero-badge {
+            display:inline-flex; align-items:center; gap:0.5rem;
+            padding:0.4rem 1.1rem;
+            background:rgba(79,110,245,0.1); border:1px solid rgba(79,110,245,0.3);
+            border-radius:980px; font-size:0.82rem; font-weight:500;
+            color:var(--accent-l); letter-spacing:0.03em; margin-bottom:1.75rem;
+        }
+        .hero-badge-dot { width:6px; height:6px; border-radius:50%; background:var(--accent-l); animation:pulse 2s infinite; flex-shrink:0; }
+        @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
         .hero-title {
-            font-size: clamp(var(--font-size-5xl), 6vw, var(--font-size-7xl));
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--space-6);
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-            animation: fadeInUp var(--transition-slow) ease-out 0.3s both;
+            font-family:var(--font-display);
+            font-size:clamp(2.8rem,6.5vw,5.5rem);
+            font-weight:800; letter-spacing:-0.035em; line-height:1.05;
+            margin-bottom:1.5rem;
+            background:linear-gradient(130deg,#fff 0%,var(--accent-l) 55%,var(--cyan) 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
         }
-        
-        .hero-subtitle {
-            font-size: var(--font-size-xl);
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            animation: fadeInUp var(--transition-slow) ease-out 0.5s both;
+        .hero-sub {
+            font-size:clamp(1rem,1.8vw,1.2rem);
+            color:var(--text-dim); max-width:60ch;
+            line-height:1.8; margin-bottom:2.5rem;
         }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Location strip */
+        .location-strip {
+            display:flex; flex-wrap:wrap; gap:0.5rem 1.25rem;
+            font-size:0.82rem; color:var(--text-muted); letter-spacing:0.02em;
         }
-        
-        /* Sections */
-        .section {
-            padding: var(--space-24) 0;
-            position: relative;
+        .location-strip span { display:flex; align-items:center; gap:0.35rem; }
+        .location-strip span::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--accent-l); opacity:0.55; flex-shrink:0; }
+
+        /* ============================================================
+           STEP INDICATOR
+           ============================================================ */
+        .steps {
+            display:flex; align-items:center; gap:0; margin-bottom:3.5rem;
         }
-        
-        .section-alt {
-            background: var(--off-white);
+        .step {
+            display:flex; align-items:center; gap:0.75rem;
+            font-size:0.9rem; font-weight:500; color:var(--text-muted);
+            transition:color 0.3s;
         }
-        
-        /* Contact Form */
-        .contact-form {
-            max-width: 800px;
-            margin: 0 auto;
+        .step.active { color:var(--text); }
+        .step-num {
+            width:34px; height:34px; border-radius:50%;
+            border:2px solid var(--border-b);
+            display:flex; align-items:center; justify-content:center;
+            font-family:var(--font-display); font-size:0.85rem; font-weight:700;
+            transition:all 0.3s; flex-shrink:0; background:var(--card);
         }
-        
-        .form-group {
-            margin-bottom: var(--space-6);
+        .step.active .step-num {
+            border-color:var(--accent); background:var(--accent);
+            color:#fff; box-shadow:0 0 20px var(--accent-glow);
         }
-        
+        .step.done .step-num {
+            border-color:var(--green); background:var(--green);
+            color:#000;
+        }
+        .step-line {
+            flex:1; height:1px; background:var(--border-b);
+            margin:0 1rem; max-width:80px;
+        }
+
+        /* ============================================================
+           SECTION HEADERS
+           ============================================================ */
+        .sec-label {
+            display:inline-block; font-size:0.75rem; font-weight:700;
+            letter-spacing:0.12em; text-transform:uppercase;
+            color:var(--accent-l); margin-bottom:0.85rem;
+        }
+        .sec-title {
+            font-family:var(--font-display);
+            font-size:clamp(1.9rem,3.5vw,2.9rem);
+            font-weight:700; letter-spacing:-0.03em;
+            line-height:1.15; margin-bottom:1rem;
+        }
+        .sec-sub {
+            font-size:1.05rem; color:var(--text-dim);
+            max-width:58ch; line-height:1.75;
+        }
+
+        /* ============================================================
+           PACKAGE CARDS (Psychological / Decoy Pricing)
+           ============================================================ */
+        .pkg-grid {
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:1.5rem; margin-top:2.75rem;
+            align-items:start;
+        }
+        @media(max-width:900px){ .pkg-grid{ grid-template-columns:1fr; max-width:480px; } }
+
+        .pkg-card {
+            position:relative; border-radius:20px;
+            background:var(--card); border:1.5px solid var(--border-b);
+            padding:2rem 1.75rem 1.75rem;
+            cursor:pointer;
+            transition:transform 0.35s var(--ease),border-color 0.3s,box-shadow 0.35s;
+            user-select:none;
+        }
+        .pkg-card:hover { transform:translateY(-4px); border-color:rgba(79,110,245,0.4); }
+        .pkg-card:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+
+        /* COMPLETE (featured/target) — visible prominence by default */
+        .pkg-card.featured {
+            border-color:transparent;
+            transform:translateY(-6px);
+            box-shadow:0 8px 60px rgba(79,110,245,0.22), 0 2px 20px rgba(0,0,0,0.4);
+        }
+        .pkg-card.featured::before {
+            content:''; position:absolute; inset:-2px;
+            border-radius:22px;
+            background:linear-gradient(135deg, var(--accent), var(--cyan), var(--accent-l));
+            z-index:-1;
+        }
+        .pkg-card.featured:hover { transform:translateY(-10px); }
+
+        /* Selected state */
+        .pkg-card.selected { border-color:var(--green) !important; box-shadow:0 0 0 3px rgba(16,224,144,0.2) !important; }
+        .pkg-card.selected::after {
+            content:'✓'; position:absolute; top:1rem; right:1rem;
+            width:26px; height:26px; border-radius:50%;
+            background:var(--green); color:#000;
+            font-size:0.8rem; font-weight:700;
+            display:flex; align-items:center; justify-content:center;
+        }
+        .pkg-card.featured.selected { border-color:transparent !important; }
+        .pkg-card.featured.selected::before { background:var(--green); }
+
+        /* Badge */
+        .pkg-badge {
+            display:inline-block; font-size:0.72rem; font-weight:700;
+            letter-spacing:0.09em; text-transform:uppercase;
+            padding:0.28rem 0.75rem; border-radius:980px;
+            margin-bottom:1.5rem;
+        }
+        .badge-popular { background:rgba(255,184,0,0.12); color:var(--gold); border:1px solid rgba(255,184,0,0.25); }
+        .badge-best    { background:rgba(79,110,245,0.15); color:var(--accent-l); border:1px solid rgba(79,110,245,0.35); }
+        .badge-start   { background:rgba(255,255,255,0.06); color:var(--text-muted); border:1px solid var(--border); }
+
+        .pkg-name {
+            font-family:var(--font-display); font-size:1.35rem;
+            font-weight:700; margin-bottom:0.3rem;
+        }
+        .pkg-tagline { font-size:0.9rem; color:var(--text-dim); margin-bottom:1.5rem; min-height:2.4em; line-height:1.45; }
+
+        .pkg-price-range {
+            font-family:var(--font-display); font-size:1.9rem;
+            font-weight:800; letter-spacing:-0.03em; line-height:1;
+            margin-bottom:0.4rem;
+        }
+        .pkg-price-note { font-size:0.82rem; color:var(--text-muted); margin-bottom:1.75rem; }
+
+        /* Divider */
+        .pkg-divider { height:1px; background:var(--border); margin:1.5rem 0; }
+
+        /* Features list */
+        .pkg-features { list-style:none; margin-bottom:1.75rem; }
+        .pkg-features li {
+            display:flex; align-items:flex-start; gap:0.6rem;
+            font-size:0.92rem; color:var(--text-dim);
+            padding:0.4rem 0; border-bottom:1px solid rgba(255,255,255,0.04);
+            line-height:1.5;
+        }
+        .pkg-features li:last-child { border-bottom:none; }
+        .pkg-features li .check {
+            width:18px; height:18px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            flex-shrink:0; margin-top:1px;
+        }
+        .pkg-features li .check svg { width:10px; height:10px; }
+        .check-green { background:rgba(16,224,144,0.12); color:var(--green); }
+        .check-blue  { background:rgba(79,110,245,0.12); color:var(--accent-l); }
+        .check-dim   { background:rgba(255,255,255,0.06); color:var(--text-muted); }
+
+        /* Choose button */
+        .pkg-btn {
+            width:100%; padding:0.85rem 1rem;
+            border-radius:12px; border:1.5px solid var(--border-b);
+            background:transparent; color:var(--text);
+            font-size:1rem; font-weight:600; cursor:pointer;
+            transition:all 0.25s var(--ease);
+            font-family:var(--font-sans);
+        }
+        .pkg-btn:hover { background:var(--card-h); border-color:var(--accent); color:var(--accent-l); }
+        .pkg-btn.btn-accent {
+            background:var(--accent); border-color:var(--accent); color:#fff;
+            box-shadow:0 0 28px var(--accent-glow);
+        }
+        .pkg-btn.btn-accent:hover { background:var(--accent-l); border-color:var(--accent-l); }
+
+        /* Value callout below the grid */
+        .pkg-value-note {
+            margin-top:1.5rem; padding:1rem 1.5rem;
+            background:rgba(16,224,144,0.06); border:1px solid rgba(16,224,144,0.2);
+            border-radius:12px; font-size:0.9rem; color:var(--text-dim);
+            display:flex; align-items:center; gap:0.75rem;
+        }
+        .pkg-value-note strong { color:var(--green); }
+
+        /* ============================================================
+           CONTACT FORM
+           ============================================================ */
+        #form-section {
+            transition:opacity 0.5s var(--ease),transform 0.5s var(--ease);
+        }
+        #form-section.locked {
+            opacity:0.35; pointer-events:none;
+            transform:translateY(10px);
+        }
+
+        /* Selected package banner */
+        .pkg-selected-banner {
+            display:flex; align-items:center; justify-content:space-between;
+            gap:1rem; flex-wrap:wrap;
+            padding:1rem 1.5rem;
+            background:rgba(79,110,245,0.08); border:1px solid rgba(79,110,245,0.25);
+            border-radius:14px; margin-bottom:2.25rem;
+            font-size:0.95rem;
+        }
+        .pkg-selected-banner .banner-label { color:var(--text-muted); font-size:0.82rem; letter-spacing:0.04em; text-transform:uppercase; font-weight:600; display:block; margin-bottom:0.2rem; }
+        .pkg-selected-banner .banner-name  { font-family:var(--font-display); font-size:1.25rem; font-weight:700; color:var(--text); }
+        .pkg-selected-banner .banner-price { font-family:var(--font-display); font-size:1.75rem; font-weight:800; color:var(--accent-l); }
+        .banner-change { font-size:0.82rem; color:var(--text-muted); text-decoration:underline; cursor:pointer; white-space:nowrap; background:none; border:none; color:var(--accent-l); transition:color 0.2s; }
+        .banner-change:hover { color:#fff; }
+
+        .contact-form  { max-width:720px; margin:0 auto; }
+        .form-group    { margin-bottom:1.5rem; }
         .form-label {
-            display: block;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: var(--space-2);
-            font-size: var(--font-size-base);
-            letter-spacing: -0.022em;
+            display:block; font-weight:600; font-size:0.92rem;
+            color:var(--text); margin-bottom:0.5rem;
         }
-        
+        .form-hint { font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem; }
         .form-input,
         .form-textarea,
         .form-select {
-            width: 100%;
-            padding: var(--space-4);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            font-size: var(--font-size-base);
-            font-family: inherit;
-            background: var(--white);
-            color: var(--text-primary);
-            transition: all var(--transition-normal);
-            letter-spacing: -0.022em;
+            width:100%; padding:0.9rem 1.1rem;
+            background:var(--card); color:var(--text);
+            border:1.5px solid var(--border-b); border-radius:12px;
+            font-size:1rem; font-family:inherit; line-height:1.5;
+            transition:border-color 0.2s,box-shadow 0.2s,background 0.2s;
+            outline:none; appearance:none;
         }
-        
-        .form-input:focus,
-        .form-textarea:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            border-color:var(--accent);
+            box-shadow:0 0 0 4px rgba(79,110,245,0.15);
+            background:var(--card-h);
         }
-        
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
+        .form-input::placeholder, .form-textarea::placeholder { color:var(--text-muted); }
+        .form-textarea { min-height:130px; resize:vertical; }
+        .form-select option { background:var(--card); color:var(--text); }
+
+        .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+        @media(max-width:580px){ .form-row{ grid-template-columns:1fr; } }
+
+        /* Submit */
+        .btn-submit {
+            display:inline-flex; align-items:center; justify-content:center; gap:0.6rem;
+            padding:1rem 2.75rem; background:var(--accent); color:#fff;
+            border:none; border-radius:980px; font-size:1.05rem; font-weight:700;
+            cursor:pointer; transition:all 0.25s var(--ease);
+            box-shadow:0 0 36px var(--accent-glow); font-family:var(--font-sans);
+            min-width:200px;
         }
-        
-        .form-input::placeholder,
-        .form-textarea::placeholder {
-            color: var(--text-secondary);
-        }
-        
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--space-3) var(--space-6);
-            border-radius: 980px;
-            font-size: var(--font-size-base);
-            font-weight: 500;
-            letter-spacing: -0.022em;
-            text-decoration: none;
-            transition: all var(--transition-fast);
-            cursor: pointer;
-            border: none;
-            min-width: 140px;
-        }
-        
-        .btn-primary {
-            background: var(--accent);
-            color: var(--white);
-        }
-        
-        .btn-primary:hover {
-            background: #0051D5;
-            transform: translateY(-1px);
-            color: var(--white);
-        }
-        
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-        
-        .btn-success {
-            background: #34C759;
-            color: var(--white);
-        }
-        
-        .btn-success:hover {
-            background: #2FB350;
-        }
-        
-        /* Success Panel */
+        .btn-submit:hover { background:var(--accent-l); transform:translateY(-2px); box-shadow:0 0 54px var(--accent-glow); }
+        .btn-submit:disabled { opacity:0.5; cursor:not-allowed; transform:none; }
+
+        /* Success panel */
         .success-panel {
-            text-align: center;
-            padding: var(--space-16);
-            background: linear-gradient(135deg, #34C759 0%, #2FB350 100%);
-            border-radius: 18px;
-            color: white;
-            animation: fadeInScale var(--transition-slow) ease-out;
+            text-align:center; padding:4rem 2rem;
+            background:var(--card); border:1px solid rgba(16,224,144,0.25);
+            border-radius:20px; animation:fadeInScale 0.5s var(--ease);
         }
-        
+        @keyframes fadeInScale { from{opacity:0;transform:scale(0.96);} to{opacity:1;transform:scale(1);} }
         .success-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto var(--space-6);
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width:80px; height:80px; margin:0 auto 1.5rem;
+            background:rgba(16,224,144,0.1); border:1.5px solid rgba(16,224,144,0.35);
+            border-radius:50%; display:flex; align-items:center; justify-content:center;
         }
-        
-        .success-icon svg {
-            color: white;
-        }
-        
-        .success-panel h3 {
-            font-size: var(--font-size-3xl);
-            font-weight: 600;
-            margin-bottom: var(--space-4);
-            letter-spacing: -0.04em;
-        }
-        
-        .success-panel p {
-            font-size: var(--font-size-lg);
-            opacity: 0.95;
-            line-height: 1.6;
-        }
-        
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        /* Previous Work Portal Windows */
-        #previous-work {
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: opacity 0.8s ease-out, max-height 0.8s ease-out;
-        }
-        
-        #previous-work.visible {
-            opacity: 1;
-            max-height: 5000px;
-        }
-        
-        .portal-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-8);
-            margin-top: var(--space-16);
-            perspective: 1500px;
-        }
+        .success-icon svg { color:var(--green); }
+        .success-panel h3 { font-family:var(--font-display); font-size:2rem; font-weight:700; margin-bottom:0.6rem; }
+        .success-panel p  { color:var(--text-dim); font-size:1.05rem; max-width:50ch; margin:0 auto; }
 
-        @media (max-width: 1100px) {
-            .portal-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 700px) {
-            .portal-grid { grid-template-columns: 1fr; gap: var(--space-6); }
-        }
-        
-        .portal-window {
-            position: relative;
-            background: var(--white);
-            border-radius: 20px;
-            padding: var(--space-6);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-lg);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            transform-style: preserve-3d;
-            overflow: hidden;
-        }
-        
-        .portal-window::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(135deg, rgba(192, 192, 192, 0.3), rgba(229, 229, 229, 0.3));
-            border-radius: 20px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: -1;
-            filter: blur(10px);
-        }
-        
-        .portal-window:hover::before {
-            opacity: 1;
-        }
-        
-        .portal-window:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-2xl);
-            border-color: rgba(0, 113, 227, 0.3);
-        }
-        
-        .portal-header {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-4);
-        }
-        
-        .portal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        .portal-dot:nth-child(1) { background: #FF5F57; }
-        .portal-dot:nth-child(2) { background: #FFBD2E; }
-        .portal-dot:nth-child(3) { background: #28CA42; }
-        
-        .portal-iframe-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #f5f5f7;
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .portal-window:hover .portal-iframe-container {
-            transform: scale(1.03);
-        }
-        
-        .portal-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-            pointer-events: none;
-        }
-        
-        .portal-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-            padding: var(--space-6);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        
-        .portal-window:hover .portal-overlay {
-            opacity: 1;
-        }
-        
-        .portal-info h3 {
-            color: #FFFFFF;
-            font-size: var(--font-size-xl);
-            font-weight: 600;
-            margin-bottom: var(--space-2);
-            letter-spacing: -0.022em;
-        }
-        
-        .portal-info p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: var(--font-size-sm);
-            margin-bottom: var(--space-4);
-        }
-        
-        .portal-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            padding: var(--space-2) var(--space-4);
-            background: var(--white);
-            color: var(--text-primary);
-            border-radius: 980px;
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            pointer-events: all;
-        }
-        
-        .portal-btn:hover {
-            background: var(--accent);
-            color: var(--white);
-            transform: translateY(-1px);
-        }
-        
-        .portal-label {
-            margin-top: var(--space-4);
-            text-align: center;
-        }
-        
-        .portal-label h3 {
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--space-1);
-            letter-spacing: -0.022em;
-        }
-        
-        .portal-label p {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Contact Info */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-8);
-            margin-top: var(--space-16);
-        }
-        
-        .contact-item {
-            text-align: center;
-            padding: var(--space-8);
-            background: var(--white);
-            border-radius: 18px;
-            border: 1px solid var(--border);
-            transition: all var(--transition-normal);
-        }
-        
-        .contact-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--accent);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--space-6);
-        }
-        
-        .contact-item h3 {
-            font-size: var(--font-size-xl);
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--space-2);
-            letter-spacing: -0.022em;
-        }
-        
-        .contact-item p {
-            color: var(--text-secondary);
-            font-size: var(--font-size-base);
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--footer-bg);
-            border-top: 1px solid rgba(210, 210, 215, 0.2);
-            padding: var(--space-16) 0 var(--space-12);
-            margin-top: var(--space-16);
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-12);
-            margin-bottom: var(--space-12);
-        }
-        
-        .footer-section h3 {
-            color: var(--footer-text);
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            margin-bottom: var(--space-4);
-            letter-spacing: -0.022em;
-        }
-        
-        .footer-section p,
-        .footer-section a {
-            color: rgba(245, 245, 247, 0.8);
-            font-size: var(--font-size-sm);
-            text-decoration: none;
-            transition: color var(--transition-fast);
-            line-height: 1.6;
-        }
-        
-        .footer-section a:hover {
-            color: var(--footer-text);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(210, 210, 215, 0.2);
-            padding-top: var(--space-8);
-            text-align: center;
-        }
-        
-        .footer-bottom p {
-            color: rgba(245, 245, 247, 0.6);
-            font-size: var(--font-size-sm);
-        }
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 var(--space-4);
-            }
-            
-            .section {
-                padding: var(--space-16) 0;
-            }
-            
-            .hero {
-                padding: var(--space-16) 0;
-                min-height: 50vh;
-            }
-            
-            .hero-content {
-                padding: 0 var(--space-4);
-            }
-            
-            .contact-info {
-                grid-template-columns: 1fr;
-                gap: var(--space-6);
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: var(--space-8);
-            }
-            
-            .portal-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-8);
-            }
-            
-            .portal-iframe-container {
-                height: 300px;
-            }
-        }
-        
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all var(--transition-slow) ease-out;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Form Grid */
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-6);
-        }
-        
-        @media (max-width: 768px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Budget Recommendation Panels */
-        .budget-recommendations {
-            margin-top: var(--space-8);
-            animation: fadeInUp var(--transition-slow) ease-out;
-        }
-        
-        .budget-panel {
-            background: var(--white);
-            border-radius: 18px;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            transition: all var(--transition-normal);
-            margin-bottom: var(--space-6);
-        }
-        
-        .budget-panel:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-            border-color: rgba(0, 113, 227, 0.3);
-        }
-        
-        .budget-panel-header {
-            display: flex;
-            align-items: center;
-            gap: var(--space-4);
-            padding: var(--space-6);
-            border-radius: 18px 18px 0 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .budget-panel-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-            pointer-events: none;
-        }
-        
-        .budget-panel-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .budget-panel-icon svg {
-            color: var(--white);
-            width: 24px;
-            height: 24px;
-        }
-        
-        .budget-panel-title {
-            flex: 1;
-            z-index: 1;
-        }
-        
-        .budget-panel-title h3 {
-            font-size: var(--font-size-xl);
-            font-weight: 600;
-            color: var(--white);
-            margin: 0 0 var(--space-1) 0;
-            letter-spacing: -0.022em;
-        }
-        
-        .budget-panel-title p {
-            font-size: var(--font-size-lg);
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-            margin: 0;
-            letter-spacing: -0.022em;
-        }
-        
-        .budget-panel-content {
-            padding: var(--space-6);
-            background: var(--white);
-        }
-        
-        .budget-features {
-            margin-bottom: var(--space-6);
-        }
-        
-        .budget-feature {
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-            padding: var(--space-3) 0;
-            border-bottom: 1px solid var(--border);
-            transition: all var(--transition-fast);
-        }
-        
-        .budget-feature:last-child {
-            border-bottom: none;
-        }
-        
-        .budget-feature:hover {
-            background: var(--off-white);
-            margin: 0 calc(-1 * var(--space-6));
-            padding: var(--space-3) var(--space-6);
-            border-radius: 8px;
-        }
-        
-        .feature-icon {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .budget-feature span {
-            font-size: var(--font-size-base);
-            color: var(--text-primary);
-            font-weight: 400;
-            letter-spacing: -0.022em;
-        }
-        
-        .budget-description {
-            padding-top: var(--space-4);
-            border-top: 1px solid var(--border);
-        }
-        
-        .budget-description p {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-            font-style: italic;
-            margin: 0;
-            line-height: 1.5;
-        }
-        
-        /* Panel Header Color Variants */
-        .starter-header {
-            background: linear-gradient(135deg, #34C759 0%, #2FB350 100%);
-        }
-        
-        .starter-header .feature-icon {
-            background: rgba(52, 199, 89, 0.1);
-            color: #34C759;
-        }
-        
-        .growth-header {
-            background: linear-gradient(135deg, #007AFF 0%, #0051D5 100%);
-        }
-        
-        .growth-header .feature-icon {
-            background: rgba(0, 122, 255, 0.1);
-            color: #007AFF;
-        }
-        
-        .ecommerce-header {
-            background: linear-gradient(135deg, #FF9500 0%, #FF7A00 100%);
-        }
-        
-        .ecommerce-header .feature-icon {
-            background: rgba(255, 149, 0, 0.1);
-            color: #FF9500;
-        }
-        
-        .enterprise-header {
-            background: linear-gradient(135deg, #FF3B30 0%, #D70015 100%);
-        }
-        
-        .enterprise-header .feature-icon {
-            background: rgba(255, 59, 48, 0.1);
-            color: #FF3B30;
-        }
-        
         /* ============================================================
-           RFC SITE PREVIEW – matches porthmadogrfc.co.uk
+           PORTAL WINDOWS (Previous Work)
            ============================================================ */
-        .rfc-preview {
-            width: 100%; height: 100%; background: #f2f4f8;
-            display: flex; flex-direction: column; overflow: hidden;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-        .rfc-nav {
-            display: flex; align-items: center;
-            padding: 0 0.7rem; height: 46px;
-            background: #0e1a30; border-bottom: 3px solid #c8102e;
-            flex-shrink: 0; gap: 0.4rem;
-        }
-        .rfc-nav-brand {
-            display: flex; align-items: center; gap: 0.3rem;
-            color: white; flex-shrink: 0; line-height: 1.15;
-        }
-        .rfc-crest { width: 24px; height: 24px; object-fit: contain; }
-        .rfc-brand-text strong {
-            display: block; font-size: 0.6rem; font-weight: 800;
-            letter-spacing: 0.05em; text-transform: uppercase; color: white;
-        }
-        .rfc-brand-text span {
-            display: block; font-size: 0.5rem; font-weight: 400;
-            color: rgba(255,255,255,0.55); letter-spacing: 0.04em;
-        }
-        .rfc-est {
-            background: #c8102e; color: white;
-            font-size: 0.5rem; padding: 0.1rem 0.28rem;
-            border-radius: 3px; font-weight: 700; flex-shrink: 0;
-        }
-        .rfc-nav-links {
-            display: flex; gap: 0; flex: 1; justify-content: center; overflow: hidden;
-        }
-        .rfc-nav-links span {
-            color: rgba(255,255,255,0.78); padding: 0.28rem 0.5rem;
-            border-radius: 4px; font-size: 0.55rem; font-weight: 500; white-space: nowrap;
-        }
-        .rfc-nav-active { background: #c8102e !important; color: white !important; }
-        .rfc-lang {
-            color: white; font-size: 0.55rem; padding: 0.18rem 0.48rem;
-            border-radius: 4px; font-weight: 600; flex-shrink: 0;
-            border: 1px solid rgba(255,255,255,0.35); background: transparent;
-        }
-        .rfc-hero {
-            background: linear-gradient(150deg, #0e1a30 0%, #1b2d55 55%, #243872 100%);
-            border-bottom: 4px solid #c8102e;
-            color: white; text-align: center; padding: 0.9rem 0.75rem;
-            flex: 1; display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            position: relative; overflow: hidden;
-        }
-        .rfc-hero::after {
-            content: ''; position: absolute; top: 0; right: 0;
-            width: 120px; height: 100%;
-            background: linear-gradient(to bottom left, #c8102e 0%, transparent 55%);
-            opacity: 0.18; pointer-events: none;
-        }
-        .rfc-hero-crest {
-            width: 58px; height: 58px; object-fit: contain;
-            position: relative; z-index: 1; margin-bottom: 0.45rem;
-        }
-        .rfc-hero-title {
-            font-size: 1.1rem; font-weight: 700;
-            font-family: Georgia, 'Times New Roman', serif;
-            color: white; line-height: 1.1;
-            position: relative; z-index: 1;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-        }
-        .rfc-hero-welsh {
-            font-size: 0.57rem; color: rgba(255,255,255,0.6);
-            letter-spacing: 0.08em; text-transform: uppercase;
-            margin-top: 0.2rem; position: relative; z-index: 1;
-        }
-        .rfc-hero-sub {
-            font-size: 0.62rem; color: rgba(255,255,255,0.75);
-            margin-top: 0.3rem; position: relative; z-index: 1;
-        }
-        .rfc-hero-btns {
-            display: flex; gap: 0.4rem; margin-top: 0.65rem;
-            position: relative; z-index: 1;
-        }
-        .rfc-btn-red {
-            background: #c8102e; color: white;
-            font-size: 0.58rem; font-weight: 600;
-            padding: 0.3rem 0.65rem; border-radius: 4px;
-            text-decoration: none; display: inline-block;
-        }
-        .rfc-btn-outline {
-            border: 1.5px solid rgba(255,255,255,0.55); color: white;
-            font-size: 0.58rem; font-weight: 500;
-            padding: 0.3rem 0.65rem; border-radius: 4px;
-            background: transparent; text-decoration: none; display: inline-block;
-        }
-        .rfc-cal {
-            background: #e8ecf4; flex-shrink: 0; padding: 0.45rem 0.6rem 0.5rem;
-        }
-        .rfc-cal-header {
-            display: flex; align-items: center; justify-content: space-between;
-            margin-bottom: 0.3rem;
-        }
-        .rfc-cal-header strong { font-size: 0.62rem; font-weight: 700; color: #1a1a2e; }
-        .rfc-cal-btn {
-            font-size: 0.52rem; color: #1b2d55;
-            border: 1px solid #d8dce8; padding: 0.12rem 0.35rem;
-            border-radius: 4px; background: white;
-        }
-        .rfc-cal-grid {
-            display: grid; grid-template-columns: repeat(7, 1fr);
-            gap: 1px; background: #d8dce8;
-        }
-        .rfc-cal-dow {
-            background: #1b2d55; color: white;
-            font-size: 0.44rem; font-weight: 700;
-            text-align: center; padding: 0.18rem 0; letter-spacing: 0.02em;
-        }
-        .rfc-cal-day {
-            background: white; font-size: 0.52rem;
-            text-align: center; padding: 0.16rem 0; color: #1a1a2e; min-height: 14px;
-        }
-        .rfc-cal-empty { background: #f0f2f6; }
+        #previous-work { opacity:0; max-height:0; overflow:hidden; transition:opacity 0.8s ease-out,max-height 0.8s ease-out; }
+        #previous-work.visible { opacity:1; max-height:5000px; }
 
-        /* Animation for panel appearance */
-        @keyframes budgetPanelSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+        .portal-grid {
+            display:grid; grid-template-columns:repeat(3,1fr);
+            gap:1.75rem; margin-top:3rem; perspective:1500px;
         }
-        
-        .budget-panel {
-            animation: budgetPanelSlideIn var(--transition-slow) ease-out;
+        @media(max-width:1000px){ .portal-grid{ grid-template-columns:repeat(2,1fr); } }
+        @media(max-width:640px) { .portal-grid{ grid-template-columns:1fr; } }
+
+        .portal-window {
+            position:relative; background:var(--card);
+            border-radius:18px; padding:1rem;
+            border:1px solid var(--border-b);
+            box-shadow:0 4px 40px rgba(0,0,0,0.35);
+            transition:all 0.4s var(--ease); transform-style:preserve-3d;
         }
+        .portal-window::before {
+            content:''; position:absolute; inset:-2px;
+            background:linear-gradient(135deg,rgba(79,110,245,0.2),transparent 60%);
+            border-radius:20px; opacity:0; transition:opacity 0.4s; z-index:-1;
+        }
+        .portal-window:hover::before { opacity:1; }
+        .portal-window:hover { transform:translateY(-6px); border-color:rgba(79,110,245,0.3); }
+
+        .portal-header { display:flex; align-items:center; gap:0.4rem; margin-bottom:0.75rem; }
+        .portal-dot { width:10px; height:10px; border-radius:50%; }
+        .portal-dot:nth-child(1){ background:#FF5F57; }
+        .portal-dot:nth-child(2){ background:#FFBD2E; }
+        .portal-dot:nth-child(3){ background:#28CA42; }
+
+        .portal-iframe-container {
+            position:relative; width:100%; height:390px;
+            border-radius:10px; overflow:hidden; background:var(--surface);
+            transition:transform 0.4s var(--ease);
+        }
+        .portal-window:hover .portal-iframe-container { transform:scale(1.025); }
+        .portal-iframe { width:100%; height:100%; border:none; display:block; pointer-events:none; }
+
+        .portal-overlay {
+            position:absolute; bottom:0; left:0; right:0;
+            background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,transparent 100%);
+            padding:1.5rem 1rem 1rem; opacity:0; transition:opacity 0.3s; pointer-events:none;
+        }
+        .portal-iframe-container:hover .portal-overlay { opacity:1; }
+        .portal-info h3 { color:#fff; font-size:1.05rem; font-weight:700; margin-bottom:0.25rem; }
+        .portal-info p  { color:rgba(255,255,255,0.7); font-size:0.82rem; margin-bottom:0.75rem; }
+        .portal-btn {
+            display:inline-flex; align-items:center; gap:0.4rem;
+            padding:0.4rem 1rem; background:#fff; color:#111;
+            border-radius:980px; font-size:0.82rem; font-weight:600;
+            text-decoration:none; transition:all 0.2s; pointer-events:all;
+        }
+        .portal-btn:hover { background:var(--accent); color:#fff; }
+
+        .portal-label { margin-top:0.75rem; }
+        .portal-label h3 { font-size:0.95rem; font-weight:600; margin-bottom:0.1rem; }
+        .portal-label p  { font-size:0.8rem; color:var(--text-muted); }
+
+        /* RFC Preview */
+        .rfc-preview { width:100%; height:100%; background:#f2f4f8; display:flex; flex-direction:column; overflow:hidden; font-family:'Segoe UI',Arial,sans-serif; }
+        .rfc-nav { display:flex; align-items:center; padding:0 0.7rem; height:46px; background:#0e1a30; border-bottom:3px solid #c8102e; flex-shrink:0; gap:0.4rem; }
+        .rfc-nav-brand { display:flex; align-items:center; gap:0.3rem; color:white; flex-shrink:0; line-height:1.15; }
+        .rfc-crest { width:24px; height:24px; object-fit:contain; }
+        .rfc-brand-text strong { display:block; font-size:0.6rem; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; color:white; }
+        .rfc-brand-text span   { display:block; font-size:0.5rem; color:rgba(255,255,255,0.55); }
+        .rfc-est { background:#c8102e; color:white; font-size:0.5rem; padding:0.1rem 0.28rem; border-radius:3px; font-weight:700; flex-shrink:0; }
+        .rfc-nav-links { display:flex; flex:1; justify-content:center; overflow:hidden; }
+        .rfc-nav-links span { color:rgba(255,255,255,0.78); padding:0.28rem 0.5rem; border-radius:4px; font-size:0.55rem; font-weight:500; white-space:nowrap; }
+        .rfc-nav-active { background:#c8102e !important; color:white !important; }
+        .rfc-lang { color:white; font-size:0.55rem; padding:0.18rem 0.48rem; border-radius:4px; font-weight:600; flex-shrink:0; border:1px solid rgba(255,255,255,0.35); }
+        .rfc-hero { background:linear-gradient(150deg,#0e1a30 0%,#1b2d55 55%,#243872 100%); border-bottom:4px solid #c8102e; color:white; text-align:center; padding:0.9rem 0.75rem; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+        .rfc-hero::after { content:''; position:absolute; top:0; right:0; width:120px; height:100%; background:linear-gradient(to bottom left,#c8102e 0%,transparent 55%); opacity:0.18; pointer-events:none; }
+        .rfc-hero-crest { width:58px; height:58px; object-fit:contain; position:relative; z-index:1; margin-bottom:0.45rem; }
+        .rfc-hero-title { font-size:1.1rem; font-weight:700; font-family:Georgia,'Times New Roman',serif; color:white; line-height:1.1; position:relative; z-index:1; text-shadow:0 2px 8px rgba(0,0,0,0.35); }
+        .rfc-hero-welsh { font-size:0.57rem; color:rgba(255,255,255,0.6); letter-spacing:0.08em; text-transform:uppercase; margin-top:0.2rem; position:relative; z-index:1; }
+        .rfc-hero-sub { font-size:0.62rem; color:rgba(255,255,255,0.75); margin-top:0.3rem; position:relative; z-index:1; }
+        .rfc-hero-btns { display:flex; gap:0.4rem; margin-top:0.65rem; position:relative; z-index:1; }
+        .rfc-btn-red     { background:#c8102e; color:white; font-size:0.58rem; font-weight:600; padding:0.3rem 0.65rem; border-radius:4px; text-decoration:none; }
+        .rfc-btn-outline { border:1.5px solid rgba(255,255,255,0.55); color:white; font-size:0.58rem; font-weight:500; padding:0.3rem 0.65rem; border-radius:4px; background:transparent; text-decoration:none; }
+        .rfc-cal { background:#e8ecf4; flex-shrink:0; padding:0.45rem 0.6rem 0.5rem; }
+        .rfc-cal-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:0.3rem; }
+        .rfc-cal-header strong { font-size:0.62rem; font-weight:700; color:#1a1a2e; }
+        .rfc-cal-btn { font-size:0.52rem; color:#1b2d55; border:1px solid #d8dce8; padding:0.12rem 0.35rem; border-radius:4px; background:white; }
+        .rfc-cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:1px; background:#d8dce8; }
+        .rfc-cal-dow  { background:#1b2d55; color:white; font-size:0.44rem; font-weight:700; text-align:center; padding:0.18rem 0; }
+        .rfc-cal-day  { background:white; font-size:0.52rem; text-align:center; padding:0.16rem 0; color:#1a1a2e; min-height:14px; }
+        .rfc-cal-empty{ background:#f0f2f6; }
+
+        /* ============================================================
+           CONTACT INFO CARDS
+           ============================================================ */
+        .section-alt { background:var(--surface); }
+        .contact-info { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.25rem; margin-top:3rem; }
+        .contact-card {
+            text-align:center; padding:2rem 1.5rem;
+            background:var(--card); border:1px solid var(--border-b);
+            border-radius:16px; transition:all 0.3s var(--ease);
+        }
+        .contact-card:hover { border-color:rgba(79,110,245,0.35); transform:translateY(-4px); }
+        .contact-card-icon {
+            width:54px; height:54px; background:rgba(79,110,245,0.1);
+            border:1px solid rgba(79,110,245,0.22);
+            border-radius:14px; display:flex; align-items:center; justify-content:center;
+            margin:0 auto 1.25rem;
+        }
+        .contact-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:0.4rem; }
+        .contact-card p  { color:var(--text-dim); font-size:0.95rem; line-height:1.6; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .footer { background:var(--surface); border-top:1px solid var(--border); padding:4rem 0 2.25rem; }
+        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:2.5rem; margin-bottom:3rem; }
+        .footer-col h3 { font-family:var(--font-display); font-size:1rem; font-weight:700; margin-bottom:1rem; }
+        .footer-col p, .footer-col a { color:var(--text-dim); font-size:0.9rem; line-height:2.1; display:block; text-decoration:none; transition:color 0.2s; }
+        .footer-col a:hover { color:var(--text); }
+        .footer-bottom { border-top:1px solid var(--border); padding-top:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; }
+        .footer-bottom p { color:var(--text-muted); font-size:0.85rem; }
+        .footer-welsh { font-size:0.8rem; color:var(--text-muted); }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <div class="cursor-dot"  id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- ================================================================
+         NAVIGATION
+         ================================================================ -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-container">
-                <a href="index.html" class="nav-logo">
-                    <img src="logo.png" alt="VisualSites Logo">
+                <a href="index.html" class="nav-logo" aria-label="VisualSites Home">
+                    <img src="logo.png" alt="VisualSites Logo" width="26" height="26">
                     VisualSites
                 </a>
-                <div class="nav-links">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="index.html#services" class="nav-link">Services</a>
-                    <a href="index.html#portfolio" class="nav-link">Portfolio</a>
-                    <a href="index.html#about" class="nav-link">About</a>
-                    <a href="contact-us.html" class="nav-link active">Contact Us</a>
+                <div class="nav-links" role="menubar">
+                    <a href="index.html"            class="nav-link" role="menuitem">Home</a>
+                    <a href="index.html#services"   class="nav-link" role="menuitem">Services</a>
+                    <a href="index.html#portfolio"  class="nav-link" role="menuitem">Portfolio</a>
+                    <a href="index.html#about"      class="nav-link" role="menuitem">About</a>
+                    <a href="contact-us.html"       class="nav-link nav-cta active" role="menuitem">Get a Quote</a>
                 </div>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" aria-expanded="false" id="menuBtn">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
-            <div class="mobile-menu" id="mobileMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#services" class="nav-link">Services</a>
-                <a href="index.html#portfolio" class="nav-link">Portfolio</a>
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="contact-us.html" class="nav-link active">Contact Us</a>
+            <div class="mobile-menu" id="mobileMenu" role="menu" aria-label="Mobile navigation">
+                <a href="index.html"           class="nav-link" role="menuitem">Home</a>
+                <a href="index.html#services"  class="nav-link" role="menuitem">Services</a>
+                <a href="index.html#portfolio" class="nav-link" role="menuitem">Portfolio</a>
+                <a href="index.html#about"     class="nav-link" role="menuitem">About</a>
+                <a href="contact-us.html"      class="nav-link nav-cta" role="menuitem">Get a Quote</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div style="margin-bottom: 2rem;">
-                <img src="logo.png" alt="VisualSites Logo" style="width: 80px; height: 80px; margin: 0 auto; display: block;">
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+        <!-- Snowdonia / Eryri mountain landscape — Yr Wyddfa dominant -->
+        <svg class="hero-mountains" viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+                <linearGradient id="ct-g1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%"   stop-color="#7B93FF" stop-opacity="0.038"/>
+                    <stop offset="100%" stop-color="#07080F" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="ct-g2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%"   stop-color="#4F6EF5" stop-opacity="0.055"/>
+                    <stop offset="100%" stop-color="#07080F" stop-opacity="0.1"/>
+                </linearGradient>
+                <linearGradient id="ct-g3" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%"   stop-color="#4F6EF5" stop-opacity="0.11"/>
+                    <stop offset="52%"  stop-color="#0C0E1A" stop-opacity="0.58"/>
+                    <stop offset="100%" stop-color="#07080F" stop-opacity="0.96"/>
+                </linearGradient>
+                <linearGradient id="ct-g4" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%"   stop-color="#0B0D1E" stop-opacity="0.7"/>
+                    <stop offset="100%" stop-color="#07080F" stop-opacity="1"/>
+                </linearGradient>
+            </defs>
+
+            <!-- Layer 1 · Distant atmospheric haze (Aran Fawddwy / Rhinogydd range far off) -->
+            <path d="M0,300 L0,208 C150,193 310,180 470,172 C575,166 648,163 705,167 C808,173 968,181 1200,191 C1322,196 1400,198 1440,200 L1440,300 Z" fill="url(#ct-g1)"/>
+
+            <!-- Layer 2 · Mid-distance ridgeline -->
+            <path d="M0,300 L0,192 L75,182 L162,173 L232,180 L292,164 L358,169 L418,153 L478,159 L533,144 L596,151 L653,137 L710,145 L773,139 L833,147 L897,143 L966,151 L1053,159 L1148,166 L1263,173 L1440,181 L1440,300 Z" fill="url(#ct-g2)"/>
+
+            <!-- Layer 3 · Main Snowdonia range
+                 Moel Siabod (x≈215,y≈130) → Yr Wyddfa/Snowdon (x≈438,y≈2) →
+                 Crib Goch jagged knife-ridge → Glyder Fawr → Tryfan twin peaks →
+                 Pen yr Ole Wen → Carnedd Llewelyn (x≈893,y≈28) → eastern descent -->
+            <path d="
+                M0,300 L0,250 L50,235 L100,218 L140,202
+                L165,186 L182,170 L196,156 L208,144 L215,135
+                L220,130 L224,135 L232,144 L244,154 L258,160
+                L270,155 L283,143 L296,128 L310,110 L323,93
+                L335,76 L346,60 L356,46 L365,33 L373,21
+                L380,12 L386,6 L391,3 L395,6 L399,2
+                L403,5 L407,2 L411,6 L415,3 L419,7
+                L423,4 L427,8 L431,4 L435,8 L438,2
+                L442,6 L446,11 L450,6 L455,13 L460,19
+                L465,14 L470,23 L476,31 L482,25 L488,33
+                L494,41 L500,35 L506,45 L512,39 L518,51
+                L524,45 L530,57 L536,51 L542,63 L549,57
+                L556,69 L564,63 L572,77 L580,89 L590,101
+                L600,89 L610,77 L619,67 L628,59 L636,53
+                L643,47 L650,53 L656,47 L662,53 L668,59
+                L675,67 L682,73 L690,81 L698,87
+                L706,79 L713,69 L720,61 L726,55
+                L731,49 L736,55 L740,49 L744,43
+                L748,49 L752,45 L756,40 L760,45
+                L764,49 L769,57 L776,65 L784,75
+                L792,65 L800,57 L807,51 L813,57
+                L818,51 L823,45 L828,51 L832,45
+                L836,51 L841,57 L847,63 L854,69
+                L860,63 L866,57 L872,51 L878,45
+                L883,39 L888,33 L893,28 L898,33
+                L903,37 L909,43 L916,51 L924,59
+                L934,69 L946,81 L960,95 L978,111
+                L1000,127 L1030,143 L1070,159
+                L1120,171 L1190,181 L1300,189 L1440,195
+                L1440,300 Z
+            " fill="url(#ct-g3)"/>
+
+            <!-- Layer 4 · Dark near foreground hillsides -->
+            <path d="M0,300 L0,273 L85,265 L195,271 L305,261 L425,267 L545,259 L665,265 L785,258 L905,264 L1045,269 L1185,263 L1310,271 L1440,275 L1440,300 Z" fill="url(#ct-g4)"/>
+
+            <!-- "SNOWDONIA BASED" · faint label at Yr Wyddfa summit (x≈438, y≈2) -->
+            <text x="438" y="18"
+                font-family="'Syne', sans-serif"
+                font-size="9" font-weight="600"
+                fill="rgba(123,147,255,0.2)"
+                letter-spacing="0.17em"
+                text-anchor="middle"
+                aria-hidden="true">SNOWDONIA BASED</text>
+        </svg>
+
+        <div class="container">
+            <div class="hero-inner fade-in">
+                <div class="hero-badge" aria-label="Web design studio based in North Wales">
+                    <span class="hero-badge-dot" aria-hidden="true"></span>
+                    North Wales Web Design Studio &middot; Gogledd Cymru
+                </div>
+                <h1 class="hero-title" id="hero-heading">
+                    Your New Website<br>Starts Here
+                </h1>
+                <p class="hero-sub">
+                    We design bespoke websites for businesses across North Wales — from independent traders in Pwllheli to hospitality venues in Llandudno. Clear pricing. No subscriptions. You own everything.
+                </p>
+                <div class="location-strip" role="list" aria-label="Areas we serve">
+                    <span role="listitem">Gwynedd</span>
+                    <span role="listitem">Bangor</span>
+                    <span role="listitem">Caernarfon</span>
+                    <span role="listitem">Porthmadog</span>
+                    <span role="listitem">Pwllheli</span>
+                    <span role="listitem">Llandudno</span>
+                    <span role="listitem">Anglesey</span>
+                    <span role="listitem">Conwy</span>
+                    <span role="listitem">Snowdonia</span>
+                </div>
             </div>
-            <h1 class="hero-title">Get In Touch</h1>
-            <p class="hero-subtitle">
-                Ready to transform your digital presence? Contact us to discuss your project 
-                and discover how we can help your business grow online.
-            </p>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="section">
+    <!-- ================================================================
+         STEP 1 — PACKAGE PICKER
+         ================================================================ -->
+    <section class="section" aria-labelledby="packages-heading">
         <div class="container">
-            <div class="fade-in">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <div style="margin-bottom: 1.5rem;">
-                        <img src="logo.png" alt="VisualSites Logo" style="width: 60px; height: 60px; margin: 0 auto; display: block;">
-                    </div>
-                    <h2 class="text-4xl font-semibold text-center mb-6" style="color: var(--text-primary); letter-spacing: -0.04em;">Send Us a Message</h2>
-                    <p class="text-xl text-center mb-12" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
-                        Fill out the form below and we'll get back to you within 24 hours to discuss your project requirements.
-                    </p>
+            <!-- Step indicator -->
+            <div class="steps fade-in" role="list" aria-label="Process steps">
+                <div class="step active" id="step1-indicator" role="listitem">
+                    <div class="step-num" aria-hidden="true">1</div>
+                    <span>Choose Your Package</span>
+                </div>
+                <div class="step-line" aria-hidden="true"></div>
+                <div class="step" id="step2-indicator" role="listitem">
+                    <div class="step-num" aria-hidden="true">2</div>
+                    <span>Tell Us About You</span>
                 </div>
             </div>
-            
+
+            <div class="fade-in">
+                <span class="sec-label">Transparent Pricing</span>
+                <h2 class="sec-title" id="packages-heading">Pick the Right Package<br>for Your Business</h2>
+                <p class="sec-sub">
+                    Every package is built to order — no templates, no off-the-shelf themes. Your site will be built specifically for North Wales audiences and your industry.
+                </p>
+            </div>
+
+            <div class="pkg-grid fade-in" role="list" aria-label="Website packages">
+
+                <!-- ESSENTIAL (most feature-packed at the entry price — compelling & visible value) -->
+                <article class="pkg-card" role="listitem" tabindex="0"
+                    data-name="Essential" data-price="£899 – £1,199"
+                    aria-label="Essential package, from £899"
+                    onclick="selectPackage(this)" onkeypress="if(event.key==='Enter')selectPackage(this)">
+                    <div class="pkg-badge badge-start">Great Value</div>
+                    <div class="pkg-name">Essential</div>
+                    <div class="pkg-tagline">Everything a North Wales business needs to get online and start winning customers.</div>
+                    <div class="pkg-price-range">£899 – £1,199</div>
+                    <p class="pkg-price-note">One-off payment &bull; No monthly fees ever</p>
+                    <div class="pkg-divider" aria-hidden="true"></div>
+                    <ul class="pkg-features" aria-label="What's included">
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>5–6 page custom website</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Works on mobile, tablet &amp; desktop</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Contact form &amp; Google Maps</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>On-page SEO setup</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Google Analytics installed</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Social media links &amp; business info</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Domain &amp; hosting setup</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>2 rounds of revisions</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Delivered in approx. 2 weeks</li>
+                    </ul>
+                    <button class="pkg-btn" aria-label="Choose Essential package from £899">Choose Essential</button>
+                </article>
+
+                <!-- PROFESSIONAL (DECOY — close to Complete price, far less value) -->
+                <article class="pkg-card" role="listitem" tabindex="0"
+                    data-name="Professional" data-price="£1,399 – £1,799"
+                    aria-label="Professional package, from £1,399"
+                    onclick="selectPackage(this)" onkeypress="if(event.key==='Enter')selectPackage(this)">
+                    <div class="pkg-badge badge-popular">Popular Choice</div>
+                    <div class="pkg-name">Professional</div>
+                    <div class="pkg-tagline">For businesses that need more pages and the ability to update content themselves.</div>
+                    <div class="pkg-price-range">£1,399 – £1,799</div>
+                    <p class="pkg-price-note">One-off payment &bull; No monthly fees ever</p>
+                    <div class="pkg-divider" aria-hidden="true"></div>
+                    <ul class="pkg-features" aria-label="What's included">
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>8–10 page custom website</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Works on mobile, tablet &amp; desktop</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>News or blog section</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>CMS — update your own content</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Advanced on-page SEO</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Google Analytics + Search Console</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>2 rounds of revisions</li>
+                        <li><span class="check check-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Delivered in approx. 3 weeks</li>
+                    </ul>
+                    <button class="pkg-btn" aria-label="Choose Professional package from £1,399">Choose Professional</button>
+                </article>
+
+                <!-- COMPLETE (TARGET — only a little more than Professional, vastly more value) -->
+                <article class="pkg-card featured" role="listitem" tabindex="0"
+                    data-name="Complete" data-price="£1,599 – £1,999"
+                    aria-label="Complete package, from £1,599, recommended"
+                    onclick="selectPackage(this)" onkeypress="if(event.key==='Enter')selectPackage(this)">
+                    <div class="pkg-badge badge-best">&#9733; Best Value</div>
+                    <div class="pkg-name">Complete</div>
+                    <div class="pkg-tagline">Everything in Professional — plus animations, full SEO strategy, 3 months support, and more.</div>
+                    <div class="pkg-price-range">£1,599 – £1,999</div>
+                    <p class="pkg-price-note">Or split into 2 payments &bull; No monthly fees ever</p>
+                    <div class="pkg-divider" aria-hidden="true"></div>
+                    <ul class="pkg-features" aria-label="What's included">
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>10+ page custom website</li>
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Works on mobile, tablet &amp; desktop</li>
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Advanced animations &amp; scroll effects</li>
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Full SEO strategy &amp; keyword targeting</li>
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Google Analytics + Search Console</li>
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Blog, news &amp; booking systems</li>
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>CMS — update your own content</li>
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Logo design consultation</li>
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><strong>3 months free support after launch</strong></li>
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>Monthly performance report</li>
+                        <li><span class="check check-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span>3 rounds of revisions</li>
+                    </ul>
+                    <button class="pkg-btn btn-accent" aria-label="Choose Complete package from £1,599">Choose Complete &rarr;</button>
+                </article>
+            </div>
+
+            <!-- Decoy reveal note -->
+            <div class="pkg-value-note fade-in" role="note">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--green);flex-shrink:0" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+                </svg>
+                <span>
+                    <strong>Worth knowing:</strong> Professional starts from £1,399. Complete starts from just £1,599 — only £200 more — and adds advanced animations, full SEO strategy, booking systems, logo consultation, and 3 months of free support. Most clients take one look and pick Complete.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         STEP 2 — CONTACT FORM
+         ================================================================ -->
+    <section class="section section-alt" id="form-section" aria-labelledby="form-heading">
+        <div class="container">
+            <div class="fade-in" style="text-align:center; margin-bottom:3rem;">
+                <span class="sec-label">Step 2</span>
+                <h2 class="sec-title" id="form-heading">Tell Us About Your Business</h2>
+                <p class="sec-sub" style="margin:0 auto;">
+                    We work with businesses right across North Wales — from Bangor to Anglesey. Tell us a little about yourself and we'll be in touch within 24 hours.
+                </p>
+            </div>
+
             <div class="contact-form fade-in">
-                <!-- Success Message Panel -->
-                <div id="successPanel" class="success-panel" style="display: none;">
-                    <div class="success-icon">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M9 12l2 2 4-4"></path>
+                <!-- Selected package banner -->
+                <div class="pkg-selected-banner" id="pkgBanner" role="status" aria-live="polite">
+                    <div>
+                        <span class="banner-label">Selected Package</span>
+                        <span class="banner-name" id="bannerName">Complete — Best Value</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+                        <span class="banner-price" id="bannerPrice">£999</span>
+                        <button class="banner-change" onclick="scrollToPackages()" aria-label="Change selected package">Change package ↑</button>
+                    </div>
+                </div>
+
+                <!-- Hidden fields -->
+                <input type="hidden" id="selected_package" name="selected_package" value="Complete">
+                <input type="hidden" id="selected_price"   name="selected_price"   value="£999">
+
+                <!-- Success Panel -->
+                <div id="successPanel" class="success-panel" style="display:none;" role="alert" aria-live="assertive">
+                    <div class="success-icon" aria-hidden="true">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
                         </svg>
                     </div>
-                    <h3>Thank You!</h3>
-                    <p>Your message has been sent successfully. We'll get back to you within the next 48 hours.</p>
+                    <h3>Message Sent!</h3>
+                    <p>We'll be in touch within 24 hours. While you wait, take a look at some of our work below.</p>
                 </div>
-                
-                <form id="contactForm">
-                    <div class="form-grid">
+
+                <form id="contactForm" novalidate>
+                    <div class="form-row">
                         <div class="form-group">
-                            <label for="name" class="form-label">Full Name</label>
-                            <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                            <label for="name" class="form-label">Your Full Name <span aria-hidden="true" style="color:var(--accent-l)">*</span></label>
+                            <input type="text" id="name" name="name" class="form-input"
+                                placeholder="e.g. Sian Williams" autocomplete="name"
+                                required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+                            <label for="email" class="form-label">Email Address <span aria-hidden="true" style="color:var(--accent-l)">*</span></label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="you@yourbusiness.co.uk" autocomplete="email"
+                                required aria-required="true">
                         </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="company" class="form-label">Company Name</label>
-                        <input type="text" id="company" name="company" class="form-input" placeholder="Your company name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company_description" class="form-label">Company Description</label>
-                        <textarea id="company_description" name="company_description" class="form-textarea" placeholder="Tell us about your company and what you do..." required></textarea>
-                    </div>
-                    
-                    <div class="form-grid">
+
+                    <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label">Do you have a logo?</label>
-                            <select id="has_logo" name="has_logo" class="form-select" required>
+                            <label for="company" class="form-label">Business Name <span aria-hidden="true" style="color:var(--accent-l)">*</span></label>
+                            <input type="text" id="company" name="company" class="form-input"
+                                placeholder="Your business name" autocomplete="organization"
+                                required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number <span style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+                            <input type="tel" id="phone" name="phone" class="form-input"
+                                placeholder="01766 000 000" autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company_description" class="form-label">Tell Us About Your Business <span aria-hidden="true" style="color:var(--accent-l)">*</span></label>
+                        <textarea id="company_description" name="company_description" class="form-textarea"
+                            placeholder="What do you do? Who are your customers? Where are you based in North Wales?"
+                            required aria-required="true"></textarea>
+                        <p class="form-hint">The more detail the better — it helps us build something that really fits your business.</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="has_website" class="form-label">Do you currently have a website?</label>
+                            <select id="has_website" name="has_website" class="form-select" onchange="toggleWebsiteUrl(this.value)">
+                                <option value="">Please select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="has_logo" class="form-label">Do you have a logo?</label>
+                            <select id="has_logo" name="has_logo" class="form-select">
                                 <option value="">Please select</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                                 <option value="Need a new one">Need a new one</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Do you have a domain?</label>
-                            <select id="has_domain" name="has_domain" class="form-select" required>
-                                <option value="">Please select</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                                <option value="Need help choosing">Need help choosing</option>
-                            </select>
-                        </div>
                     </div>
-                    
+
+                    <div class="form-group" id="websiteUrlGroup" style="display:none;">
+                        <label for="website_url" class="form-label">Current Website URL</label>
+                        <input type="url" id="website_url" name="website_url" class="form-input"
+                            placeholder="https://www.yourbusiness.co.uk">
+                    </div>
+
                     <div class="form-group">
-                        <label class="form-label">Do you currently have a website?</label>
-                        <select id="has_website" name="has_website" class="form-select" required>
-                            <option value="">Please select</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
+                        <label for="notes" class="form-label">Anything Else You'd Like to Tell Us? <span style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+                        <textarea id="notes" name="notes" class="form-textarea" style="min-height:90px;"
+                            placeholder="Timescales, specific features, inspirations, questions..."></textarea>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="website_url" class="form-label">Website URL (if applicable)</label>
-                        <input type="url" id="website_url" name="website_url" class="form-input" placeholder="https://www.yourwebsite.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Do you have any other online information?</label>
-                        <select id="has_online_info" name="has_online_info" class="form-select" required onchange="toggleOnlineInfo(this.value)">
-                            <option value="">Please select</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group" id="onlineInfoGroup" style="display: none;">
-                        <label for="online_info_details" class="form-label">Online Information Details</label>
-                        <textarea id="online_info_details" name="online_info_details" class="form-textarea" placeholder="Please provide links to social media, online directories, or any other online presence..."></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="budget_range_option" class="form-label">Do you have a budget in mind?</label>
-                        <select id="budget_range_option" name="budget_range_option" class="form-select" required onchange="toggleBudgetInput(this.value)">
-                            <option value="">Please select</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group" id="budgetInputGroup" style="display: none;">
-                        <label for="budget_amount" class="form-label">Budget Amount (£)</label>
-                        <input type="number" id="budget_amount" name="budget_amount" class="form-input" placeholder="Enter your budget amount" min="0" step="100" onchange="showBudgetRecommendation()">
-                    </div>
-                    
-                    <!-- Budget Recommendation Panels -->
-                    <div id="budgetRecommendations" class="budget-recommendations" style="display: none;">
-                        <!-- Panel 1 - Starter -->
-                        <div id="starterPanel" class="budget-panel" style="display: none;">
-                            <div class="budget-panel-header starter-header">
-                                <div class="budget-panel-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                    </svg>
-                                </div>
-                                <div class="budget-panel-title">
-                                    <h3>Starter Package</h3>
-                                    <p>£1,000 – £2,000</p>
-                                </div>
-                            </div>
-                            <div class="budget-panel-content">
-                                <div class="budget-features">
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>1–3 page responsive site</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Modern design, contact form, social links</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Hosting & domain setup</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>1–2 revisions</span>
-                                    </div>
-                                </div>
-                                <div class="budget-description">
-                                    <p>Ideal for freelancers or startups needing a fast, simple web presence.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Panel 2 - Growth -->
-                        <div id="growthPanel" class="budget-panel" style="display: none;">
-                            <div class="budget-panel-header growth-header">
-                                <div class="budget-panel-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M3 3v18h18"/>
-                                        <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
-                                    </svg>
-                                </div>
-                                <div class="budget-panel-title">
-                                    <h3>Growth Package</h3>
-                                    <p>£2,000 – £3,000</p>
-                                </div>
-                            </div>
-                            <div class="budget-panel-content">
-                                <div class="budget-features">
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>5–8 custom pages</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>CMS (WordPress or custom)</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Basic SEO, animations, blog/portfolio</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Up to 3 revisions</span>
-                                    </div>
-                                </div>
-                                <div class="budget-description">
-                                    <p>Great for small businesses scaling their online brand.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Panel 3 - E-commerce -->
-                        <div id="ecommercePanel" class="budget-panel" style="display: none;">
-                            <div class="budget-panel-header ecommerce-header">
-                                <div class="budget-panel-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="9" cy="21" r="1"/>
-                                        <circle cx="20" cy="21" r="1"/>
-                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                                    </svg>
-                                </div>
-                                <div class="budget-panel-title">
-                                    <h3>E-Commerce Package</h3>
-                                    <p>£3,000 – £5,000</p>
-                                </div>
-                            </div>
-                            <div class="budget-panel-content">
-                                <div class="budget-features">
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Online store with checkout & payments</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>SEO optimization</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Analytics integration</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Security setup (SSL, spam protection)</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>1 month post-launch support</span>
-                                    </div>
-                                </div>
-                                <div class="budget-description">
-                                    <p>Ideal for online retailers or businesses selling products/services.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Panel 4 - Enterprise -->
-                        <div id="enterprisePanel" class="budget-panel" style="display: none;">
-                            <div class="budget-panel-header enterprise-header">
-                                <div class="budget-panel-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                        <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
-                                        <line x1="12" y1="22.08" x2="12" y2="12"/>
-                                    </svg>
-                                </div>
-                                <div class="budget-panel-title">
-                                    <h3>Enterprise Package</h3>
-                                    <p>£5,000+</p>
-                                </div>
-                            </div>
-                            <div class="budget-panel-content">
-                                <div class="budget-features">
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Full bespoke design & functionality</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Advanced integrations (CRM, booking, APIs)</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Branding package & copywriting</span>
-                                    </div>
-                                    <div class="budget-feature">
-                                        <div class="feature-icon">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="20,6 9,17 4,12"></polyline>
-                                            </svg>
-                                        </div>
-                                        <span>Ongoing support & marketing</span>
-                                    </div>
-                                </div>
-                                <div class="budget-description">
-                                    <p>For established brands needing premium, high-performance websites.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Style Preferences (Select all that apply)</label>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
-                            <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                <input type="checkbox" name="style_preferences" value="Modern & Minimalist" style="width: 18px; height: 18px;">
-                                <span>Modern & Minimalist</span>
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                <input type="checkbox" name="style_preferences" value="Bold & Colorful" style="width: 18px; height: 18px;">
-                                <span>Bold & Colorful</span>
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                <input type="checkbox" name="style_preferences" value="Professional & Corporate" style="width: 18px; height: 18px;">
-                                <span>Professional & Corporate</span>
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                <input type="checkbox" name="style_preferences" value="Creative & Artistic" style="width: 18px; height: 18px;">
-                                <span>Creative & Artistic</span>
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                <input type="checkbox" name="style_preferences" value="Clean & Simple" style="width: 18px; height: 18px;">
-                                <span>Clean & Simple</span>
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                <input type="checkbox" name="style_preferences" value="Elegant & Luxurious" style="width: 18px; height: 18px;">
-                                <span>Elegant & Luxurious</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="other_style" class="form-label">Other Style Preferences</label>
-                        <input type="text" id="other_style" name="other_style" class="form-input" placeholder="Describe any other style preferences or inspirations...">
-                    </div>
-                    
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">
-                            Send Message
+
+                    <div style="text-align:center; margin-top:0.5rem;">
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            Send My Enquiry
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/>
+                            </svg>
                         </button>
+                        <p style="font-size:0.85rem;color:var(--text-muted);margin-top:1rem;">
+                            We'll reply within 24 hours &bull; contact@visualsites.co.uk
+                        </p>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Previous Work Section (shown after form submission) -->
-    <section id="previous-work" class="section">
+    <!-- ================================================================
+         PREVIOUS WORK (revealed after submit)
+         ================================================================ -->
+    <section id="previous-work" class="section" aria-labelledby="work-heading">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 class="text-4xl font-semibold" style="color: var(--text-primary); letter-spacing: -0.04em; margin-bottom: 1rem;">
-                    While You Wait, Get Inspired
-                </h2>
-                <p class="text-xl" style="color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
-                    Browse through our previous work and start brainstorming ideas for your project. Feel free to interact with the live websites!
-                </p>
+            <div style="text-align:center; margin-bottom:0.5rem;">
+                <span class="sec-label">Our Work</span>
+                <h2 class="sec-title" id="work-heading">Websites We've Built<br>Across North Wales</h2>
+                <p class="sec-sub" style="margin:0 auto;">Browse live sites and see the level of work your business will receive.</p>
             </div>
-            
+
             <div class="portal-grid">
                 <!-- Portal 1: CNich Text -->
                 <div class="portal-window">
-                    <div class="portal-header">
+                    <div class="portal-header" aria-hidden="true">
                         <div class="portal-dot"></div>
                         <div class="portal-dot"></div>
                         <div class="portal-dot"></div>
                     </div>
                     <div class="portal-iframe-container">
-                        <iframe 
-                            src="https://cnichtext.co.uk" 
-                            class="portal-iframe"
-                            title="CNich Text Website"
-                            loading="lazy">
-                        </iframe>
-                        <div class="portal-overlay">
+                        <iframe src="https://cnichtext.co.uk" class="portal-iframe" title="CNich Text — professional services website" loading="lazy" aria-label="Preview of CNich Text website"></iframe>
+                        <div class="portal-overlay" aria-hidden="true">
                             <div class="portal-info">
                                 <h3>Cnicht External</h3>
-                                <p>Professional text services website with modern design</p>
+                                <p>Professional text services, North Wales</p>
                                 <a href="https://cnichtext.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
-                                    View Full Site
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                        <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
+                                    View Full Site <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                                 </a>
                             </div>
                         </div>
@@ -1610,43 +1038,35 @@
                         <p>Professional Services</p>
                     </div>
                 </div>
-                
-                <!-- Portal 2: CNicht Cleaning Services -->
+
+                <!-- Portal 2: CNicht Cleaning -->
                 <div class="portal-window">
-                    <div class="portal-header">
+                    <div class="portal-header" aria-hidden="true">
                         <div class="portal-dot"></div>
                         <div class="portal-dot"></div>
                         <div class="portal-dot"></div>
                     </div>
                     <div class="portal-iframe-container">
-                        <iframe
-                            src="https://cnichtcleaningservices.co.uk"
-                            class="portal-iframe"
-                            title="CNicht Cleaning Services Website"
-                            loading="lazy">
-                        </iframe>
-                        <div class="portal-overlay">
+                        <iframe src="https://cnichtcleaningservices.co.uk" class="portal-iframe" title="CNicht Cleaning Services website" loading="lazy" aria-label="Preview of CNicht Cleaning Services website"></iframe>
+                        <div class="portal-overlay" aria-hidden="true">
                             <div class="portal-info">
                                 <h3>Cnicht Cleaning Services</h3>
-                                <p>Complete cleaning services website with booking system</p>
+                                <p>Cleaning services, Gwynedd</p>
                                 <a href="https://cnichtcleaningservices.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
-                                    View Full Site
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                        <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
+                                    View Full Site <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="portal-label">
                         <h3>Cnicht Cleaning Services</h3>
-                        <p>Service Provider</p>
+                        <p>Service Provider, Gwynedd</p>
                     </div>
                 </div>
 
                 <!-- Portal 3: Porthmadog RFC -->
                 <div class="portal-window">
-                    <div class="portal-header">
+                    <div class="portal-header" aria-hidden="true">
                         <div class="portal-dot"></div>
                         <div class="portal-dot"></div>
                         <div class="portal-dot"></div>
@@ -1655,7 +1075,7 @@
                         <div class="rfc-preview">
                             <div class="rfc-nav">
                                 <div class="rfc-nav-brand">
-                                    <img src="https://porthmadogrfc.co.uk/assets/images/crest.png" class="rfc-crest" alt="Crest">
+                                    <img src="https://porthmadogrfc.co.uk/assets/images/crest.png" class="rfc-crest" alt="Porthmadog RFC crest">
                                     <div class="rfc-brand-text">
                                         <strong>Porthmadog RFC</strong>
                                         <span>Clwb Rygbi Porthmadog</span>
@@ -1684,472 +1104,298 @@
                             <div class="rfc-cal">
                                 <div class="rfc-cal-header">
                                     <span class="rfc-cal-btn">&#8592; Prev</span>
-                                    <strong>February 2026</strong>
+                                    <strong>March 2026</strong>
                                     <span class="rfc-cal-btn">Next &#8594;</span>
                                 </div>
                                 <div class="rfc-cal-grid">
                                     <div class="rfc-cal-dow">MON</div><div class="rfc-cal-dow">TUE</div><div class="rfc-cal-dow">WED</div><div class="rfc-cal-dow">THU</div><div class="rfc-cal-dow">FRI</div><div class="rfc-cal-dow">SAT</div><div class="rfc-cal-dow">SUN</div>
-                                    <div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day">1</div>
-                                    <div class="rfc-cal-day">2</div><div class="rfc-cal-day">3</div><div class="rfc-cal-day">4</div><div class="rfc-cal-day">5</div><div class="rfc-cal-day">6</div><div class="rfc-cal-day">7</div><div class="rfc-cal-day">8</div>
+                                    <div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day">1</div><div class="rfc-cal-day">2</div>
+                                    <div class="rfc-cal-day">3</div><div class="rfc-cal-day">4</div><div class="rfc-cal-day">5</div><div class="rfc-cal-day">6</div><div class="rfc-cal-day">7</div><div class="rfc-cal-day">8</div><div class="rfc-cal-day">9</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="portal-overlay">
+                        <div class="portal-overlay" aria-hidden="true">
                             <div class="portal-info">
                                 <h3>Porthmadog RFC</h3>
-                                <p>Rugby club website with fixtures, news &amp; team information</p>
+                                <p>Rugby club, Porthmadog, Gwynedd</p>
                                 <a href="https://porthmadogrfc.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
-                                    View Full Site
-                                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                    View Full Site <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="portal-label">
                         <h3>Porthmadog RFC</h3>
-                        <p>Sports &amp; Community</p>
+                        <p>Sports &amp; Community, Gwynedd</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Information Section -->
-    <section class="section section-alt">
+    <!-- ================================================================
+         CONTACT INFO CARDS
+         ================================================================ -->
+    <section class="section" aria-labelledby="contact-info-heading">
         <div class="container">
-            <div class="fade-in">
-                <h2 class="text-4xl font-semibold text-center mb-6" style="color: var(--text-primary); letter-spacing: -0.04em;">Other Ways to Reach Us</h2>
-                <p class="text-xl text-center mb-12" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
-                    Prefer a different method? Here are other ways to get in touch with our team.
-                </p>
+            <div class="fade-in" style="text-align:center;">
+                <span class="sec-label">Other Ways to Reach Us</span>
+                <h2 class="sec-title" id="contact-info-heading">Prefer to Talk First?</h2>
+                <p class="sec-sub" style="margin:0 auto;">No hard sell. Just a friendly conversation about what your business needs.</p>
             </div>
-            
             <div class="contact-info fade-in">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/zvamcipt.json"
-                            trigger="hover"
-                            colors="primary:#ffffff"
-                            style="width:32px;height:32px;">
-                        </lord-icon>
+                <div class="contact-card">
+                    <div class="contact-card-icon" aria-hidden="true">
+                        <lord-icon src="https://cdn.lordicon.com/zvamcipt.json" trigger="hover" colors="primary:#7B93FF" style="width:26px;height:26px;"></lord-icon>
                     </div>
-                    <h3>Email</h3>
+                    <h3>Email Us</h3>
                     <p>contact@visualsites.co.uk</p>
                 </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/abfverha.json"
-                            trigger="hover"
-                            colors="primary:#ffffff"
-                            style="width:32px;height:32px;">
-                        </lord-icon>
+                <div class="contact-card">
+                    <div class="contact-card-icon" aria-hidden="true">
+                        <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover" colors="primary:#7B93FF" style="width:26px;height:26px;"></lord-icon>
                     </div>
                     <h3>Response Time</h3>
-                    <p>Within 24 hours</p>
+                    <p>We reply within 24 hours, usually much sooner</p>
                 </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/surcxhka.json"
-                            trigger="hover"
-                            colors="primary:#ffffff"
-                            style="width:32px;height:32px;">
-                        </lord-icon>
+                <div class="contact-card">
+                    <div class="contact-card-icon" aria-hidden="true">
+                        <lord-icon src="https://cdn.lordicon.com/surcxhka.json" trigger="hover" colors="primary:#7B93FF" style="width:26px;height:26px;"></lord-icon>
                     </div>
-                    <h3>Availability</h3>
-                    <p>Monday - Friday<br>9:00 AM - 6:00 PM GMT</p>
+                    <h3>Hours</h3>
+                    <p>Monday – Friday<br>9:00 AM – 6:00 PM</p>
                 </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/diihvcfp.json"
-                            trigger="hover"
-                            colors="primary:#ffffff"
-                            style="width:32px;height:32px;">
-                        </lord-icon>
+                <div class="contact-card">
+                    <div class="contact-card-icon" aria-hidden="true">
+                        <lord-icon src="https://cdn.lordicon.com/diihvcfp.json" trigger="hover" colors="primary:#7B93FF" style="width:26px;height:26px;"></lord-icon>
                     </div>
-                    <h3>Location</h3>
-                    <p>Gwynedd, North Wales, UK</p>
+                    <h3>Based In</h3>
+                    <p>Gwynedd, North Wales<br><span style="font-size:0.82rem;color:var(--text-muted);">Serving all of Gogledd Cymru</span></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- ================================================================
+         FOOTER
+         ================================================================ -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+            <div class="footer-grid">
+                <div class="footer-col">
                     <h3>VisualSites</h3>
-                    <p>Professional web development that drives growth and delivers exceptional results for businesses worldwide.</p>
+                    <p>North Wales' bespoke web studio. We build websites that win business — full ownership, no subscriptions, no lock-in.</p>
                 </div>
-                
-                <div class="footer-section">
+                <div class="footer-col">
                     <h3>Services</h3>
-                    <p><a href="index.html#services">Custom Development</a></p>
-                    <p><a href="index.html#services">Performance Optimization</a></p>
-                    <p><a href="index.html#services">Responsive Design</a></p>
-                    <p><a href="index.html#services">SEO & Maintenance</a></p>
+                    <a href="index.html#services">Bespoke Web Design</a>
+                    <a href="index.html#services">SEO &amp; Visibility</a>
+                    <a href="index.html#services">Responsive Design</a>
+                    <a href="index.html#services">Ongoing Support</a>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <p><a href="index.html#about">About Us</a></p>
-                    <p><a href="index.html#portfolio">Portfolio</a></p>
-                    <p><a href="index.html#process">Our Process</a></p>
-                    <p><a href="index.html#testimonials">Testimonials</a></p>
+                <div class="footer-col">
+                    <h3>Areas We Serve</h3>
+                    <p>Gwynedd &middot; Bangor &middot; Caernarfon</p>
+                    <p>Porthmadog &middot; Pwllheli &middot; Llandudno</p>
+                    <p>Anglesey &middot; Conwy &middot; Snowdonia</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Contact</h3>
+                <div class="footer-col">
+                    <h3>Get In Touch</h3>
                     <p>contact@visualsites.co.uk</p>
-                    <p>Gwynedd, North Wales, UK</p>
-                    <p>Response within 24 hours</p>
+                    <p>Gwynedd, North Wales</p>
+                    <a href="index.html">Back to Home</a>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 VisualSites. All rights reserved.</p>
+                <p>&copy; 2026 VisualSites. All rights reserved.</p>
+                <p class="footer-welsh">Wedi'i wneud yng Ngogledd Cymru &middot; Made in North Wales</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // ============================================
-        // EMAIL.JS CONFIGURATION & FORM HANDLING
-        // ============================================
-        
-        // IMPORTANT: Your EmailJS credentials
-        const EMAIL_SERVICE_ID = 'service_2k6g3nj';  // Your EmailJS service ID
-        const EMAIL_TEMPLATE_ID = 'template_dwsx5lb'; // Your EmailJS template ID
-        const EMAIL_PUBLIC_KEY = 'I-7odFuBbJUAYM6es';   // Your EmailJS public key
-        
-        // Initialize EmailJS with public key (required)
-        (function() {
-            emailjs.init(EMAIL_PUBLIC_KEY);
-            console.log('✅ EmailJS initialized with public key:', EMAIL_PUBLIC_KEY);
+        /* ====================================================
+           CUSTOM CURSOR
+        ==================================================== */
+        const dot  = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let rx = 0, ry = 0;
+
+        document.addEventListener('mousemove', e => {
+            dot.style.left  = e.clientX + 'px';
+            dot.style.top   = e.clientY + 'px';
+            rx += (e.clientX - rx) * 0.12;
+            ry += (e.clientY - ry) * 0.12;
+        });
+        (function animRing() {
+            ring.style.left = rx + 'px';
+            ring.style.top  = ry + 'px';
+            requestAnimationFrame(animRing);
         })();
-        
-        // IMPORTANT: Your EmailJS template should include these variables:
-        // {{name}} - Full name
-        // {{email}} - Email address
-        // {{company}} - Company name
-        // {{company_description}} - Company description
-        // {{has_logo}} - Do you have a logo?
-        // {{has_domain}} - Do you have a domain?
-        // {{has_website}} - Do you currently have a website?
-        // {{website_url}} - Current website URL (if applicable)
-        // {{has_online_info}} - Do you have any other online information?
-        // {{online_info_details}} - Online information details (if applicable)
-        // {{budget_range_option}} - Do you have a budget in mind? (Yes/No)
-        // {{budget_amount}} - Budget amount entered by user
-        // {{style_preferences}} - Style preferences (comma-separated)
-        // {{other_style}} - Other style preferences
-        
-        // Enhanced Form submission with EmailJS
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Validate form
-            if (!contactForm.checkValidity()) {
-                contactForm.reportValidity();
-                return;
-            }
-            
-            // Show loading state
-            submitBtn.disabled = true;
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            
-            try {
-                // Collect style preferences from checkboxes
-                const styleCheckboxes = document.querySelectorAll('input[name="style_preferences"]:checked');
-                const stylePreferences = Array.from(styleCheckboxes).map(cb => cb.value).join(', ') || 'None selected';
-                
-                // Create a hidden input for style_preferences to send via EmailJS
-                const hiddenStyleInput = document.createElement('input');
-                hiddenStyleInput.type = 'hidden';
-                hiddenStyleInput.name = 'style_preferences';
-                hiddenStyleInput.value = stylePreferences;
-                contactForm.appendChild(hiddenStyleInput);
-                
-                // Log form data for debugging
-                const formData = new FormData(contactForm);
-                console.log('📧 Sending email with form data:');
-                for (let [key, value] of formData.entries()) {
-                    console.log(`  ${key}: ${value}`);
-                }
-                
-                // Send email using EmailJS sendForm method
-                // This automatically maps form field names to template variables
-                const result = await emailjs.sendForm(
-                    EMAIL_SERVICE_ID,
-                    EMAIL_TEMPLATE_ID,
-                    contactForm
-                );
-                
-                console.log('✅ Email sent successfully!', result);
-                
-                // Remove the hidden input
-                hiddenStyleInput.remove();
-                
-                // Hide form and show success panel
-                contactForm.style.display = 'none';
-                document.getElementById('successPanel').style.display = 'block';
-                
-                // Make button green
-                submitBtn.classList.remove('btn-primary');
-                submitBtn.classList.add('btn-success');
-                submitBtn.textContent = '✓ Sent Successfully';
-                
-                // Scroll to success panel
-                document.getElementById('successPanel').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Show previous work section after 2 seconds
-                setTimeout(() => {
-                    const previousWorkSection = document.getElementById('previous-work');
-                    previousWorkSection.classList.add('visible');
-                    
-                    // Scroll to previous work section smoothly
-                    setTimeout(() => {
-                        previousWorkSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 500);
-                }, 2000);
-                
-            } catch (error) {
-                console.error('❌ Failed to send email:', error);
-                
-                // Detailed error logging
-                if (error.text) {
-                    console.error('Error message:', error.text);
-                }
-                if (error.status) {
-                    console.error('Error status:', error.status);
-                }
-                
-                // Show error in a subtle way without blocking popup
-                submitBtn.textContent = '⚠️ Failed - Try Again';
-                submitBtn.style.background = '#FF3B30';
-                submitBtn.disabled = false;
-                
-                // Reset button after 3 seconds
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = '';
-                }, 3000);
-                
-                console.error('Please contact us directly at contact@visualsites.co.uk if the problem persists.');
-                
-            }
+        document.querySelectorAll('a,button,input,select,textarea,.pkg-card').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cur-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cur-hover'));
         });
-        
-        // Fallback email method using mailto (if EmailJS fails)
-        function sendEmailFallback(formData) {
-            const name = formData.get('name') || 'Not provided';
-            const email = formData.get('email') || 'Not provided';
-            const company = formData.get('company') || 'Not provided';
-            const companyDescription = formData.get('company_description') || 'Not provided';
-            const hasLogo = formData.get('has_logo') || 'Not provided';
-            const hasDomain = formData.get('has_domain') || 'Not provided';
-            const hasWebsite = formData.get('has_website') || 'Not provided';
-            const websiteUrl = formData.get('website_url') || 'Not provided';
-            const hasOnlineInfo = formData.get('has_online_info') || 'Not provided';
-            const onlineInfoDetails = formData.get('online_info_details') || 'Not provided';
-            const budgetRangeOption = formData.get('budget_range_option') || 'Not provided';
-            const budgetAmount = formData.get('budget_amount') || 'Not provided';
-            
-            // Collect style preferences
-            const styleCheckboxes = document.querySelectorAll('input[name="style_preferences"]:checked');
-            const stylePreferences = Array.from(styleCheckboxes).map(cb => cb.value).join(', ') || 'None selected';
-            const otherStyle = formData.get('other_style') || 'Not provided';
-            
-            const emailBody = `
-Contact Form Submission from VisualSites Website:
+        document.addEventListener('mousedown', () => document.body.classList.add('cur-click'));
+        document.addEventListener('mouseup',   () => document.body.classList.remove('cur-click'));
 
-Name: ${name}
-Email: ${email}
-Company: ${company}
-Company Description: ${companyDescription}
+        /* ====================================================
+           NAVBAR
+        ==================================================== */
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+        }, { passive:true });
 
-Current Assets:
-- Has Logo: ${hasLogo}
-- Has Domain: ${hasDomain}
-- Has Website: ${hasWebsite}
-- Website URL: ${websiteUrl}
-- Has Online Info: ${hasOnlineInfo}
-- Online Info Details: ${onlineInfoDetails}
-
-Budget Information:
-- Has Budget in Mind: ${budgetRangeOption}
-- Budget Amount: £${budgetAmount}
-
-Style Preferences: ${stylePreferences}
-Other Style Preferences: ${otherStyle}
-
----
-This email was sent from the VisualSites contact form.
-            `.trim();
-            
-            const emailSubject = encodeURIComponent('New Contact Form Submission from VisualSites');
-            const emailBodyEncoded = encodeURIComponent(emailBody);
-            
-            // Create mailto link with all form data
-            const mailtoLink = `mailto:contact@visualsites.co.uk?subject=${emailSubject}&body=${emailBodyEncoded}`;
-            
-            console.log('📧 Opening fallback email client...');
-            window.location.href = mailtoLink;
-        }
-        
-        // Toggle function for conditional fields
-        function toggleOnlineInfo(value) {
-            const onlineInfoGroup = document.getElementById('onlineInfoGroup');
-            const onlineInfoDetails = document.getElementById('online_info_details');
-            
-            if (value === 'Yes') {
-                onlineInfoGroup.style.display = 'block';
-                onlineInfoDetails.required = true;
-            } else {
-                onlineInfoGroup.style.display = 'none';
-                onlineInfoDetails.required = false;
-                onlineInfoDetails.value = '';
-            }
-        }
-        
-        // Budget system functions
-        function toggleBudgetInput(value) {
-            const budgetInputGroup = document.getElementById('budgetInputGroup');
-            const budgetAmount = document.getElementById('budget_amount');
-            const budgetRecommendations = document.getElementById('budgetRecommendations');
-            
-            if (value === 'Yes') {
-                budgetInputGroup.style.display = 'block';
-                budgetAmount.required = true;
-            } else {
-                budgetInputGroup.style.display = 'none';
-                budgetAmount.required = false;
-                budgetAmount.value = '';
-                budgetRecommendations.style.display = 'none';
-                hideAllBudgetPanels();
-            }
-        }
-        
-        function showBudgetRecommendation() {
-            const budgetAmount = document.getElementById('budget_amount');
-            const budgetRecommendations = document.getElementById('budgetRecommendations');
-            const budgetRangeNumber = parseInt(budgetAmount.value);
-            
-            if (!budgetAmount.value || isNaN(budgetRangeNumber)) {
-                budgetRecommendations.style.display = 'none';
-                hideAllBudgetPanels();
-                return;
-            }
-            
-            // Hide all panels first
-            hideAllBudgetPanels();
-            
-            // Show recommendations container
-            budgetRecommendations.style.display = 'block';
-            
-            // Switch logic to determine which panel to show
-            switch (true) {
-                case (budgetRangeNumber >= 1000 && budgetRangeNumber <= 2000):
-                    document.getElementById('starterPanel').style.display = 'block';
-                    break;
-                case (budgetRangeNumber > 2000 && budgetRangeNumber <= 3000):
-                    document.getElementById('growthPanel').style.display = 'block';
-                    break;
-                case (budgetRangeNumber > 3000 && budgetRangeNumber <= 5000):
-                    document.getElementById('ecommercePanel').style.display = 'block';
-                    break;
-                case (budgetRangeNumber > 5000):
-                    document.getElementById('enterprisePanel').style.display = 'block';
-                    break;
-                default:
-                    // No panel for values outside the ranges
-                    budgetRecommendations.style.display = 'none';
-                    break;
-            }
-        }
-        
-        function hideAllBudgetPanels() {
-            document.getElementById('starterPanel').style.display = 'none';
-            document.getElementById('growthPanel').style.display = 'none';
-            document.getElementById('ecommercePanel').style.display = 'none';
-            document.getElementById('enterprisePanel').style.display = 'none';
-        }
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Mobile menu toggle
+        /* ====================================================
+           MOBILE MENU
+        ==================================================== */
         function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
+            const menu = document.getElementById('mobileMenu');
+            const btn  = document.getElementById('menuBtn');
+            const open = menu.classList.toggle('active');
+            btn.setAttribute('aria-expanded', open);
         }
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
-            link.addEventListener('click', () => {
+        document.querySelectorAll('.mobile-menu .nav-link').forEach(l =>
+            l.addEventListener('click', () => {
                 document.getElementById('mobileMenu').classList.remove('active');
-            });
-        });
-        
-        // 3D Tilt Effect for Portal Windows
-        document.querySelectorAll('.portal-window').forEach(portal => {
-            portal.addEventListener('mousemove', (e) => {
-                const rect = portal.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = ((y - centerY) / centerY) * -5;
-                const rotateY = ((x - centerX) / centerX) * 5;
-                
-                portal.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
-            });
-            
-            portal.addEventListener('mouseleave', () => {
-                portal.style.transform = '';
-            });
-        });
-        
-        // Check if page loaded with #previous-work hash (from portfolio link)
-        if (window.location.hash === '#previous-work') {
-            const previousWorkSection = document.getElementById('previous-work');
-            previousWorkSection.classList.add('visible');
-            
-            // Scroll to it after a short delay to ensure page is loaded
+                document.getElementById('menuBtn').setAttribute('aria-expanded', 'false');
+            })
+        );
+
+        /* ====================================================
+           PACKAGE SELECTION
+        ==================================================== */
+        function selectPackage(card) {
+            // Deselect all
+            document.querySelectorAll('.pkg-card').forEach(c => c.classList.remove('selected'));
+            // Select clicked
+            card.classList.add('selected');
+
+            const name  = card.dataset.name;
+            const price = card.dataset.price;
+
+            // Update hidden fields
+            document.getElementById('selected_package').value = name;
+            document.getElementById('selected_price').value   = price;
+
+            // Update banner
+            const displayName = {
+                'Essential':    'Essential',
+                'Professional': 'Professional',
+                'Complete':     'Complete — Best Value'
+            }[name] || name;
+
+            document.getElementById('bannerName').textContent  = displayName;
+            document.getElementById('bannerPrice').textContent = price;
+
+            // Advance step indicator
+            document.getElementById('step1-indicator').classList.add('done');
+            document.getElementById('step1-indicator').classList.remove('active');
+            document.getElementById('step2-indicator').classList.add('active');
+
+            // Unlock form
+            document.getElementById('form-section').classList.remove('locked');
+
+            // Smooth scroll to form
             setTimeout(() => {
-                previousWorkSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 500);
+                document.getElementById('form-section').scrollIntoView({ behavior:'smooth', block:'start' });
+            }, 280);
         }
 
-        console.log('🚀 Contact page loaded successfully with EmailJS!');
+        function scrollToPackages() {
+            document.querySelector('.pkg-grid').scrollIntoView({ behavior:'smooth', block:'center' });
+        }
+
+        // Default to Complete selected on load (most want this, and it reinforces the choice)
+        window.addEventListener('DOMContentLoaded', () => {
+            const defaultCard = document.querySelector('.pkg-card.featured');
+            if (defaultCard) selectPackage(defaultCard);
+            // Re-lock until user consciously picks (or just leave unlocked for accessibility)
+            // We leave it unlocked so older users aren't confused
+        });
+
+        /* ====================================================
+           CONDITIONAL FORM FIELD
+        ==================================================== */
+        function toggleWebsiteUrl(val) {
+            document.getElementById('websiteUrlGroup').style.display = val === 'Yes' ? 'block' : 'none';
+        }
+
+        /* ====================================================
+           EMAILJS
+        ==================================================== */
+        const EMAIL_SERVICE_ID  = 'service_2k6g3nj';
+        const EMAIL_TEMPLATE_ID = 'template_dwsx5lb';
+        const EMAIL_PUBLIC_KEY  = 'I-7odFuBbJUAYM6es';
+        emailjs.init(EMAIL_PUBLIC_KEY);
+
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn   = document.getElementById('submitBtn');
+
+        contactForm.addEventListener('submit', async e => {
+            e.preventDefault();
+            if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
+
+            submitBtn.disabled = true;
+            const origHTML = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Sending…';
+
+            try {
+                await emailjs.sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, contactForm);
+
+                contactForm.style.display = 'none';
+                const sp = document.getElementById('successPanel');
+                sp.style.display = 'block';
+                sp.scrollIntoView({ behavior:'smooth', block:'center' });
+
+                // Reveal portfolio after delay
+                setTimeout(() => {
+                    const pw = document.getElementById('previous-work');
+                    pw.classList.add('visible');
+                    setTimeout(() => pw.scrollIntoView({ behavior:'smooth', block:'start' }), 400);
+                }, 2200);
+
+            } catch (err) {
+                console.error('EmailJS error:', err);
+                submitBtn.innerHTML = '⚠ Try Again';
+                submitBtn.style.background = '#c8102e';
+                submitBtn.disabled = false;
+                setTimeout(() => {
+                    submitBtn.innerHTML = origHTML;
+                    submitBtn.style.background = '';
+                }, 3500);
+            }
+        });
+
+        /* ====================================================
+           INTERSECTION OBSERVER — FADE INS
+        ==================================================== */
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+        /* ====================================================
+           3D TILT — PORTAL WINDOWS
+        ==================================================== */
+        document.querySelectorAll('.portal-window').forEach(p => {
+            p.addEventListener('mousemove', e => {
+                const r  = p.getBoundingClientRect();
+                const rx = ((e.clientY - r.top  - r.height/2) / (r.height/2)) * -4;
+                const ry = ((e.clientX - r.left - r.width/2)  / (r.width/2))  *  4;
+                p.style.transform = `perspective(1400px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+            });
+            p.addEventListener('mouseleave', () => p.style.transform = '');
+        });
+
+        /* ====================================================
+           AUTO-REVEAL PORTFOLIO IF HASH PRESENT
+        ==================================================== */
+        if (window.location.hash === '#previous-work') {
+            const pw = document.getElementById('previous-work');
+            pw.classList.add('visible');
+            setTimeout(() => pw.scrollIntoView({ behavior:'smooth', block:'start' }), 500);
+        }
     </script>
 </body>
 </html>

@@ -3,36 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VisualSites – Professional Web Design & Development | visualsites.co.uk</title>
+    <title>VisualSites – Bespoke Web Design North Wales | visualsites.co.uk</title>
 
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
 
-    <!-- SEO Meta -->
-    <meta name="description" content="VisualSites – Award-worthy web design & development from North Wales. Bespoke websites built for speed, beauty & growth. No subscriptions, full ownership.">
-    <meta name="keywords" content="web design, web development, custom websites, responsive design, SEO, North Wales, UK, visualsites, professional web agency">
+    <meta name="description" content="VisualSites — North Wales' most advanced web design studio. Bespoke websites that win business. No subscriptions. Full ownership. Fast results.">
+    <meta name="keywords" content="web design North Wales, bespoke websites Wales, web development Gwynedd, professional web agency, SEO Wales, visualsites">
     <meta name="author" content="VisualSites">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="VisualSites – Websites Built for Speed, Beauty & Growth">
-    <meta property="og:description" content="Bespoke web design from North Wales. You own it forever – no subscriptions, no hidden fees.">
+    <meta property="og:title" content="VisualSites – Websites That Win Business">
+    <meta property="og:description" content="North Wales' premier web studio. Bespoke sites, full ownership, zero subscriptions.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://visualsites.co.uk">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Preconnect -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"VisualSites","description":"Bespoke web design and development studio based in North Wales","url":"https://visualsites.co.uk","address":{"@type":"PostalAddress","addressRegion":"Gwynedd","addressCountry":"GB"},"serviceArea":"North Wales, UK"}</script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <!-- Lordicon -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-
-    <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style>
@@ -41,2026 +31,1443 @@
            ============================================================ */
         .cinematic-intro {
             position: fixed; top: 0; left: 0;
-            width: 100vw; height: 100vh;
-            background: #000;
+            width: 100vw; height: 100vh; background: #000;
             display: flex; align-items: center; justify-content: center;
             z-index: 99999;
             animation: introFadeOut 0.6s ease-out 3.2s forwards;
         }
-
         .cinematic-logo {
             position: relative;
-            font-size: clamp(6rem, 15vw, 12rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            display: flex; align-items: center; gap: 0.1em;
-            z-index: 10;
+            font-size: clamp(6rem, 15vw, 12rem); font-weight: 700;
+            letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.1em; z-index: 10;
         }
-
         .cinematic-letter-v {
             background: linear-gradient(135deg, #E5E5E5 0%, #C0C0C0 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
             opacity: 0; transform: translateY(20px) scale(0.95);
             animation: letterVAppear 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s forwards;
         }
-
         .cinematic-letter-s {
             background: linear-gradient(135deg, #E5E5E5 0%, #C0C0C0 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
             opacity: 0; transform: translateX(40px) scale(0.9);
             animation: letterSAppear 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.9s forwards;
         }
-
         .cinematic-letter-v::after, .cinematic-letter-s::after {
             content: ''; position: absolute; top: 0; left: -100%;
             width: 50%; height: 100%;
             background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.7) 50%, transparent 100%);
             filter: blur(10px); pointer-events: none;
         }
-
         .cinematic-letter-v::after { animation: sheenSlide 1.2s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s forwards; }
         .cinematic-letter-s::after { animation: sheenSlide 1.2s cubic-bezier(0.25,0.46,0.45,0.94) 1.2s forwards; }
-
         .cinematic-glow {
             position: absolute; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(192,192,192,0.15) 0%, transparent 70%);
             filter: blur(60px); opacity: 0;
             animation: glowPulse 2s ease-in-out 0.5s forwards;
         }
-
         .cinematic-rays {
             position: absolute; width: 100%; height: 100%;
             background: conic-gradient(from 0deg, transparent 0%, rgba(255,255,255,0.03) 10%, transparent 20%, rgba(255,255,255,0.03) 30%, transparent 40%);
-            opacity: 0;
-            animation: raysRotate 3s ease-out 0.5s forwards;
+            opacity: 0; animation: raysRotate 3s ease-out 0.5s forwards;
         }
-
-        @keyframes letterVAppear { from { opacity:0; transform:translateY(20px) scale(0.95); } to { opacity:1; transform:translateY(0) scale(1); } }
-        @keyframes letterSAppear { from { opacity:0; transform:translateX(40px) scale(0.9); } to { opacity:1; transform:translateX(0) scale(1); } }
-        @keyframes sheenSlide { 0%{left:-100%;opacity:0;} 50%{opacity:1;} 100%{left:200%;opacity:0;} }
-        @keyframes glowPulse { 0%{opacity:0;transform:scale(0.8);} 50%{opacity:0.3;transform:scale(1.2);} 100%{opacity:0;transform:scale(1);} }
-        @keyframes raysRotate { 0%{opacity:0;transform:scale(0.5) rotate(0deg);} 50%{opacity:0.15;transform:scale(1.5) rotate(180deg);} 100%{opacity:0;transform:scale(1.8) rotate(360deg);} }
-        @keyframes introFadeOut { to { opacity:0; visibility:hidden; } }
+        @keyframes letterVAppear { from{opacity:0;transform:translateY(20px) scale(0.95);}to{opacity:1;transform:translateY(0) scale(1);} }
+        @keyframes letterSAppear { from{opacity:0;transform:translateX(40px) scale(0.9);}to{opacity:1;transform:translateX(0) scale(1);} }
+        @keyframes sheenSlide { 0%{left:-100%;opacity:0;}50%{opacity:1;}100%{left:200%;opacity:0;} }
+        @keyframes glowPulse { 0%{opacity:0;transform:scale(0.8);}50%{opacity:0.3;transform:scale(1.2);}100%{opacity:0;transform:scale(1);} }
+        @keyframes raysRotate { 0%{opacity:0;transform:scale(0.5) rotate(0deg);}50%{opacity:0.15;transform:scale(1.5) rotate(180deg);}100%{opacity:0;transform:scale(1.8) rotate(360deg);} }
+        @keyframes introFadeOut { to{opacity:0;visibility:hidden;} }
 
         /* ============================================================
            DESIGN SYSTEM
            ============================================================ */
         :root {
-            --white: #FFFFFF;
-            --off-white: #F5F5F7;
-            --text-primary: #1D1D1F;
-            --text-secondary: #424245;
-            --accent: #0071E3;
-            --accent-dark: #0051D5;
-            --border: #D2D2D7;
-            --footer-bg: #1D1D1F;
-            --footer-text: #F5F5F7;
-
-            --font-size-xs: 0.75rem;
-            --font-size-sm: 0.875rem;
-            --font-size-base: 1rem;
-            --font-size-lg: 1.125rem;
-            --font-size-xl: 1.25rem;
-            --font-size-2xl: 1.5rem;
-            --font-size-3xl: 1.875rem;
-            --font-size-4xl: 2.25rem;
-            --font-size-5xl: 3rem;
-            --font-size-6xl: 3.75rem;
-            --font-size-7xl: 4.5rem;
-            --font-size-8xl: 6rem;
-            --font-size-9xl: 8rem;
-
-            --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
-            --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
-            --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
-            --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
-            --space-32: 8rem; --space-40: 10rem; --space-48: 12rem;
-
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-            --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
-
-            --transition-fast: 150ms ease-in-out;
-            --transition-normal: 300ms ease-in-out;
-            --transition-slow: 500ms ease-in-out;
-
-            --container-max: 1440px;
-            --container-padding: 5rem;
+            --bg:            #07080F;
+            --surface:       #0C0E1A;
+            --card:          #111325;
+            --card-h:        #141829;
+            --border:        rgba(255,255,255,0.07);
+            --border-b:      rgba(255,255,255,0.13);
+            --text:          #EEF0FF;
+            --text-dim:      rgba(238,240,255,0.5);
+            --text-muted:    rgba(238,240,255,0.28);
+            --accent:        #4F6EF5;
+            --accent-l:      #7B93FF;
+            --accent-glow:   rgba(79,110,245,0.28);
+            --cyan:          #00D2FF;
+            --green:         #10E090;
+            --gold:          #FFB800;
+            --font-sans:     -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            --font-display:  'Syne', 'Inter', sans-serif;
+            --ease:          cubic-bezier(0.25,0.46,0.45,0.94);
+            --ease-s:        cubic-bezier(0.34,1.56,0.64,1);
+            --sec-y:         clamp(5rem,10vw,9rem);
+            --pad:           clamp(1.5rem,5vw,5rem);
+            --max:           1400px;
         }
-
-        * { margin:0; padding:0; box-sizing:border-box; }
-
-        html { scroll-behavior:smooth; overflow-x:hidden; width:100%; }
-
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; overflow-x:hidden; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: var(--white);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-            font-weight: 400;
-            font-size: var(--font-size-base);
+            font-family: var(--font-sans);
+            background: var(--bg); color: var(--text);
+            line-height: 1.65; overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-            letter-spacing: -0.022em;
         }
+        /* Grain overlay */
+        body::after {
+            content:''; position:fixed; inset:0; z-index:9998; pointer-events:none;
+            opacity:0.032;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+        .container { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
+        .section { padding:var(--sec-y) 0; }
 
-        .container { max-width:var(--container-max); margin:0 auto; padding:0 var(--container-padding); }
+        /* Fade-in */
+        .fade-in { opacity:0; transform:translateY(28px); transition:opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+        .fade-in.visible { opacity:1; transform:translateY(0); }
+
+        /* ============================================================
+           CUSTOM CURSOR
+           ============================================================ */
+        .cursor-dot {
+            position:fixed; width:5px; height:5px; border-radius:50%;
+            background:var(--accent-l); pointer-events:none; z-index:99998;
+            transform:translate(-50%,-50%);
+            transition:width 0.3s,height 0.3s,background 0.3s;
+        }
+        .cursor-ring {
+            position:fixed; width:30px; height:30px; border-radius:50%;
+            border:1.5px solid rgba(123,147,255,0.45); pointer-events:none; z-index:99997;
+            transform:translate(-50%,-50%);
+            transition:width 0.35s var(--ease-s),height 0.35s var(--ease-s),border-color 0.3s,opacity 0.3s;
+        }
+        body.cur-hover .cursor-ring { width:52px; height:52px; border-color:rgba(123,147,255,0.9); }
+        body.cur-click .cursor-dot { transform:translate(-50%,-50%) scale(0.5); }
+        @media(hover:none){.cursor-dot,.cursor-ring{display:none;}}
 
         /* ============================================================
            NAVIGATION
            ============================================================ */
         .navbar {
-            position: fixed; top:0; left:0; right:0; z-index:1000;
-            background: rgba(29,29,31,0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            transition: all var(--transition-normal);
-            height: 52px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            position:fixed; top:0; left:0; right:0; z-index:1000;
+            height:60px; display:flex; align-items:center;
+            transition:background 0.4s,box-shadow 0.4s;
         }
-
         .navbar.scrolled {
-            background: rgba(29,29,31,0.97);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+            background:rgba(7,8,15,0.94);
+            backdrop-filter:blur(24px) saturate(180%);
+            box-shadow:0 1px 0 rgba(255,255,255,0.05), 0 4px 40px rgba(0,0,0,0.5);
         }
-
-        .nav-container { display:flex; justify-content:space-between; align-items:center; height:100%; }
-
+        .nav-container { display:flex; justify-content:space-between; align-items:center; width:100%; }
         .nav-logo {
-            font-size: var(--font-size-lg); font-weight: 600;
-            color: #FFFFFF; text-decoration: none;
-            letter-spacing: -0.022em;
-            display: flex; align-items: center; gap: 0.5rem;
+            font-family:var(--font-display); font-size:1.2rem; font-weight:700;
+            color:var(--text); text-decoration:none; letter-spacing:-0.02em;
+            display:flex; align-items:center; gap:0.5rem;
         }
-
-        .nav-logo img { width:28px; height:28px; object-fit:contain; }
-
-        .nav-links { display:flex; align-items:center; gap:var(--space-8); }
-
+        .nav-logo img { width:26px; height:26px; object-fit:contain; }
+        .nav-links { display:flex; align-items:center; gap:2.25rem; }
         .nav-link {
-            color: rgba(255,255,255,0.75); font-weight:400;
-            font-size: var(--font-size-sm); letter-spacing:-0.022em;
-            text-decoration:none; transition:color var(--transition-fast);
-            position: relative;
+            color:var(--text-dim); font-size:0.875rem; font-weight:400;
+            text-decoration:none; transition:color 0.2s;
         }
-
-        .nav-link:hover, .nav-link.active { color:#FFFFFF; }
-
-        .nav-link::after {
-            content:''; position:absolute; bottom:-6px; left:0;
-            width:0; height:1px; background:#FFFFFF;
-            transition:width var(--transition-fast);
-        }
-
-        .nav-link:hover::after, .nav-link.active::after { width:100%; }
-
+        .nav-link:hover { color:var(--text); }
         .nav-cta {
-            padding: 0.45rem 1.1rem;
-            background: var(--accent);
-            color: #FFFFFF !important;
-            border-radius: 980px;
-            font-size: var(--font-size-sm) !important;
-            font-weight: 500 !important;
-            transition: all var(--transition-fast) !important;
+            padding:0.5rem 1.2rem; background:var(--accent);
+            color:#fff !important; border-radius:980px;
+            font-size:0.875rem !important; font-weight:600 !important;
+            transition:all 0.2s !important;
+            box-shadow:0 0 24px var(--accent-glow);
         }
-
-        .nav-cta:hover { background: var(--accent-dark) !important; transform:translateY(-1px); }
-        .nav-cta::after { display:none !important; }
-
-        .mobile-menu-btn { display:none; background:none; border:none; color:#FFFFFF; cursor:pointer; padding:var(--space-2); }
-        .mobile-menu-btn svg { width:24px; height:24px; }
-
+        .nav-cta:hover { background:var(--accent-l) !important; transform:translateY(-1px); box-shadow:0 0 36px var(--accent-glow) !important; }
+        .mobile-menu-btn { display:none; background:none; border:none; color:var(--text); cursor:pointer; padding:0.5rem; }
+        .mobile-menu-btn svg { width:22px; height:22px; }
         .mobile-menu {
-            display:none; position:absolute; top:52px; left:0; right:0;
-            background:rgba(29,29,31,0.99);
-            backdrop-filter:blur(20px);
-            border-bottom:1px solid rgba(255,255,255,0.08);
-            padding:var(--space-4) 0;
+            display:none; position:absolute; top:60px; left:0; right:0;
+            background:rgba(7,8,15,0.98); backdrop-filter:blur(24px);
+            border-bottom:1px solid var(--border); padding:1rem 0;
         }
-
         .mobile-menu.active { display:block; }
-        .mobile-menu .nav-link { display:block; padding:var(--space-3) var(--space-6); color:rgba(255,255,255,0.8); }
-        .mobile-menu .nav-link::after { display:none; }
-        .mobile-menu .nav-link:hover, .mobile-menu .nav-link.active { color:#FFFFFF; background:rgba(255,255,255,0.05); }
-        .mobile-menu .nav-cta { margin: var(--space-3) var(--space-6); display:inline-flex; }
-
-        @media(max-width:768px) {
-            .nav-links { display:none; }
-            .mobile-menu-btn { display:block; }
-        }
+        .mobile-menu .nav-link { display:block; padding:0.75rem 1.5rem; }
+        .mobile-menu .nav-cta { margin:0.75rem 1.5rem; display:inline-flex; }
+        @media(max-width:768px){ .nav-links{display:none;} .mobile-menu-btn{display:block;} }
 
         /* ============================================================
            HERO
            ============================================================ */
         .hero {
-            min-height: 100vh;
-            background: #000;
-            display: flex; align-items: center; justify-content: center;
-            position: relative; overflow: hidden;
-            padding: var(--space-20) 0;
+            min-height:100vh; display:flex; align-items:center;
+            position:relative; overflow:hidden;
+            padding:8rem 0 5rem; background:var(--bg);
         }
-
-        /* Animated orbs */
-        .hero-orb {
-            position: absolute; border-radius: 50%;
-            filter: blur(100px); pointer-events: none; will-change: transform;
+        .orb {
+            position:absolute; border-radius:50%;
+            filter:blur(120px); pointer-events:none; will-change:transform;
         }
-
-        .hero-orb-1 {
-            width: 700px; height: 700px;
-            background: radial-gradient(circle, rgba(0,113,227,0.22) 0%, transparent 70%);
-            top: -200px; right: -150px;
-            animation: orbFloat 12s ease-in-out infinite;
+        .orb-1 {
+            width:900px; height:900px;
+            background:radial-gradient(circle,rgba(79,110,245,0.16) 0%,transparent 70%);
+            top:-350px; right:-200px;
+            animation:orbDrift 18s ease-in-out infinite;
         }
-
-        .hero-orb-2 {
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(80,140,255,0.15) 0%, transparent 70%);
-            bottom: -100px; left: -100px;
-            animation: orbFloat 9s ease-in-out infinite;
-            animation-delay: -4s;
+        .orb-2 {
+            width:600px; height:600px;
+            background:radial-gradient(circle,rgba(0,210,255,0.09) 0%,transparent 70%);
+            bottom:-200px; left:-100px;
+            animation:orbDrift 13s ease-in-out infinite; animation-delay:-6s;
         }
-
-        .hero-orb-3 {
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(0,80,200,0.12) 0%, transparent 70%);
-            top: 40%; left: 15%;
-            animation: orbFloat 15s ease-in-out infinite;
-            animation-delay: -8s;
+        .orb-3 {
+            width:400px; height:400px;
+            background:radial-gradient(circle,rgba(120,80,255,0.1) 0%,transparent 70%);
+            top:45%; left:28%;
+            animation:orbDrift 22s ease-in-out infinite; animation-delay:-11s;
         }
-
-        /* Subtle grid overlay */
+        @keyframes orbDrift {
+            0%,100%{transform:translate(0,0) scale(1);}
+            33%{transform:translate(50px,-40px) scale(1.06);}
+            66%{transform:translate(-30px,25px) scale(0.94);}
+        }
         .hero::before {
-            content: '';
-            position: absolute; inset: 0;
+            content:''; position:absolute; inset:0;
             background-image:
-                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-            background-size: 60px 60px;
-            pointer-events: none;
+                linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);
+            background-size:60px 60px;
+            -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 100%);
+            mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 100%);
         }
+        .hero-inner { position:relative; z-index:2; }
 
-        @keyframes orbFloat {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-30px) scale(1.08); }
+        /* Snowdonia mountain landscape */
+        .hero-mountains {
+            position:absolute; bottom:0; left:0; right:0; width:100%;
+            height:clamp(200px,28vw,320px);
+            pointer-events:none; z-index:1;
         }
-
-        .hero-content {
-            text-align: center; max-width: 1000px;
-            margin: 0 auto; padding: 0 var(--space-6);
-            position: relative; z-index: 1;
-        }
-
         .hero-badge {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            border: 1px solid rgba(255,255,255,0.18);
-            border-radius: 980px;
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(8px);
-            color: rgba(255,255,255,0.8);
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            margin-bottom: var(--space-8);
-            animation: fadeInUp var(--transition-slow) ease-out 0.1s both;
+            display:inline-flex; align-items:center; gap:0.5rem;
+            padding:0.35rem 1rem;
+            background:rgba(79,110,245,0.1); border:1px solid rgba(79,110,245,0.3);
+            border-radius:980px; font-size:0.78rem; font-weight:500;
+            color:var(--accent-l); letter-spacing:0.04em; margin-bottom:2rem;
         }
-
         .hero-badge-dot {
-            width: 6px; height: 6px; border-radius: 50%;
-            background: #34C759;
-            box-shadow: 0 0 8px rgba(52,199,89,0.8);
-            animation: pulse 2s ease-in-out infinite;
+            width:7px; height:7px; border-radius:50%; background:var(--green);
+            box-shadow:0 0 8px var(--green); animation:pulse 2.5s ease-in-out infinite;
+            flex-shrink:0;
         }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.3); }
+        @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.55;transform:scale(0.75);} }
+        .hero-headline {
+            font-family:var(--font-display);
+            font-size:clamp(3rem,7.5vw,7rem);
+            font-weight:800; line-height:1.0; letter-spacing:-0.045em;
+            color:var(--text); margin-bottom:1.75rem;
         }
-
-        .hero-title {
-            font-size: clamp(var(--font-size-7xl), 9vw, 9rem);
-            font-weight: 700;
-            color: #FFFFFF;
-            margin-bottom: var(--space-6);
-            letter-spacing: -0.04em;
-            line-height: 1.0;
-            animation: fadeInUp var(--transition-slow) ease-out 0.3s both;
+        .hero-headline .grad {
+            background:linear-gradient(135deg,var(--accent-l) 0%,var(--cyan) 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
         }
-
-        .hero-title-gradient {
-            background: linear-gradient(135deg, #FFFFFF 0%, rgba(200,210,255,0.9) 50%, #94B4FF 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        .hero-sub {
+            font-size:clamp(1rem,1.8vw,1.2rem); color:var(--text-dim);
+            max-width:560px; line-height:1.75; margin-bottom:2.5rem; font-weight:400;
         }
-
-        .hero-subtitle {
-            font-size: clamp(var(--font-size-2xl), 3.5vw, var(--font-size-4xl));
-            color: rgba(229,229,229,0.9);
-            margin-bottom: var(--space-8);
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            line-height: 1.3;
-            animation: fadeInUp var(--transition-slow) ease-out 0.5s both;
+        .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; }
+        .btn-primary {
+            display:inline-flex; align-items:center; gap:0.5rem;
+            padding:0.9rem 2.1rem; background:var(--accent); color:#fff;
+            border-radius:980px; font-size:0.95rem; font-weight:600;
+            text-decoration:none; transition:all 0.25s var(--ease); letter-spacing:-0.01em;
+            box-shadow:0 0 32px var(--accent-glow), 0 4px 16px rgba(79,110,245,0.3);
         }
-
-        .hero-description {
-            font-size: var(--font-size-xl);
-            color: rgba(192,192,192,0.9);
-            max-width: 680px;
-            margin: 0 auto var(--space-12);
-            line-height: 1.7;
-            font-weight: 400;
-            animation: fadeInUp var(--transition-slow) ease-out 0.7s both;
+        .btn-primary:hover { background:var(--accent-l); transform:translateY(-2px); color:#fff; box-shadow:0 0 50px var(--accent-glow), 0 8px 24px rgba(79,110,245,0.4); }
+        .btn-primary svg { flex-shrink:0; }
+        .btn-secondary {
+            display:inline-flex; align-items:center; gap:0.5rem;
+            padding:0.9rem 2.1rem; background:transparent;
+            color:var(--text-dim); border:1px solid var(--border-b);
+            border-radius:980px; font-size:0.95rem; font-weight:500;
+            text-decoration:none; transition:all 0.25s var(--ease); letter-spacing:-0.01em;
         }
-
-        .hero-buttons {
-            display: flex; gap: var(--space-4);
-            justify-content: center; align-items: center;
-            flex-wrap: wrap;
-            animation: fadeInUp var(--transition-slow) ease-out 0.9s both;
+        .btn-secondary:hover { color:var(--text); border-color:rgba(255,255,255,0.3); background:rgba(255,255,255,0.04); }
+        .hero-stats {
+            display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:3.5rem;
         }
-
-        @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+        .hero-stat {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:14px; padding:0.9rem 1.4rem;
+        }
+        .hero-stat-num {
+            font-family:var(--font-display); font-size:1.8rem; font-weight:800;
+            color:var(--text); letter-spacing:-0.05em; line-height:1;
+        }
+        .hero-stat-lbl { font-size:0.72rem; color:var(--text-muted); margin-top:0.2rem; }
 
         /* ============================================================
-           BUTTONS
+           MARQUEE
            ============================================================ */
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: var(--space-4) var(--space-8);
-            border-radius: 980px;
-            font-size: var(--font-size-base); font-weight: 500;
-            letter-spacing: -0.022em;
-            text-decoration: none;
-            transition: all var(--transition-fast);
-            cursor: pointer; border: none;
-            min-width: 160px;
+        .marquee-wrap {
+            border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+            background:var(--surface); padding:1.1rem 0; overflow:hidden;
         }
-
-        .btn-primary { background: var(--accent); color: var(--white); }
-        .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,113,227,0.35); color: var(--white); }
-        .btn-primary:active { transform: translateY(0); }
-
-        .btn-secondary { background: transparent; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.3); }
-        .btn-secondary:hover { background: rgba(255,255,255,0.1); color: #FFFFFF; border-color: rgba(255,255,255,0.6); transform: translateY(-2px); text-decoration: none; }
-        .btn-secondary:active { transform: translateY(0); }
-
-        .btn-outline-dark {
-            background: transparent; color: var(--text-primary);
-            border: 1.5px solid var(--border);
+        .marquee-track {
+            display:flex; width:max-content;
+            animation:marqueeRoll 28s linear infinite;
         }
-        .btn-outline-dark:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+        .marquee-track:hover { animation-play-state:paused; }
+        .marquee-unit {
+            display:flex; align-items:center; gap:2rem;
+            padding-right:2rem; flex-shrink:0;
+        }
+        .marquee-item {
+            font-family:var(--font-display); font-size:0.72rem; font-weight:600;
+            letter-spacing:0.14em; text-transform:uppercase; color:var(--text-muted);
+            white-space:nowrap;
+        }
+        .marquee-sep { width:4px; height:4px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+        @keyframes marqueeRoll { from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
         /* ============================================================
-           STATS STRIP (dark, connects to hero)
+           SECTION UTILITIES
            ============================================================ */
-        .stats-strip {
-            background: #0A0A0A;
-            border-top: 1px solid rgba(255,255,255,0.07);
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-            padding: var(--space-12) 0;
+        .eyebrow {
+            display:inline-block; font-size:0.7rem; font-weight:600;
+            letter-spacing:0.16em; text-transform:uppercase;
+            color:var(--accent-l); margin-bottom:1.2rem;
         }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-8);
-            text-align: center;
+        .sec-title {
+            font-family:var(--font-display); font-size:clamp(2rem,4.5vw,3.5rem);
+            font-weight:800; letter-spacing:-0.04em; line-height:1.05;
+            color:var(--text); margin-bottom:1.1rem;
         }
-
-        .stat-divider {
-            border-left: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .stat-number {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            color: #FFFFFF;
-            letter-spacing: -0.04em;
-            line-height: 1;
-            margin-bottom: var(--space-2);
-            font-variant-numeric: tabular-nums;
-        }
-
-        .stat-label {
-            font-size: var(--font-size-sm);
-            color: rgba(255,255,255,0.5);
-            font-weight: 400;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-        }
-
-        @media(max-width: 768px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
-            .stat-divider:nth-child(2) { border-left: none; }
-        }
-
-        @media(max-width: 480px) {
-            .stats-grid { grid-template-columns: 1fr; }
-            .stat-divider { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--space-6); }
-        }
-
-        /* ============================================================
-           SECTIONS
-           ============================================================ */
-        .section { padding: var(--space-24) 0; position: relative; }
-        .section-alt { background: var(--off-white); }
-
-        .section-eyebrow {
-            display: block;
-            text-align: center;
-            font-size: var(--font-size-sm);
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: var(--space-4);
-        }
-
-        .section-title {
-            font-size: clamp(var(--font-size-4xl), 5.5vw, var(--font-size-7xl));
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: var(--space-6);
-            color: var(--text-primary);
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: var(--font-size-xl);
-            margin-bottom: var(--space-16);
-            max-width: 680px;
-            margin-left: auto; margin-right: auto;
-            line-height: 1.6;
-            font-weight: 400;
-            letter-spacing: -0.022em;
+        .sec-sub {
+            font-size:clamp(0.95rem,1.5vw,1.05rem); color:var(--text-dim);
+            max-width:540px; line-height:1.75;
         }
 
         /* ============================================================
            TRUST BAR
            ============================================================ */
         .trust-bar {
-            background: var(--white);
-            padding: var(--space-10) 0;
-            border-bottom: 1px solid var(--border);
+            padding:2rem 0; background:var(--bg);
+            border-bottom:1px solid var(--border);
         }
-
-        .trust-bar-label {
-            text-align: center;
-            font-size: var(--font-size-sm);
-            color: rgba(66,66,69,0.6);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-weight: 500;
-            margin-bottom: var(--space-8);
+        .trust-inner {
+            display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;
         }
-
-        .trust-clients {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: var(--space-8);
-            flex-wrap: wrap;
+        .trust-label {
+            font-size:0.72rem; font-weight:600; letter-spacing:0.1em;
+            text-transform:uppercase; color:var(--text-muted); flex-shrink:0;
         }
-
-        .trust-client-chip {
-            display: flex; align-items: center; gap: var(--space-2);
-            padding: var(--space-2) var(--space-5);
-            border: 1px solid var(--border);
-            border-radius: 980px;
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: all var(--transition-fast);
-            text-decoration: none;
+        .trust-chips { display:flex; flex-wrap:wrap; gap:0.6rem; }
+        .trust-chip {
+            display:inline-flex; align-items:center; gap:0.4rem;
+            padding:0.35rem 0.85rem;
+            background:var(--card); border:1px solid var(--border);
+            border-radius:980px; font-size:0.8rem; font-weight:500;
+            color:var(--text-dim); text-decoration:none;
+            transition:all 0.2s;
         }
-
-        .trust-client-chip:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .trust-client-chip svg { color: var(--accent); }
+        .trust-chip:hover { color:var(--text); border-color:var(--border-b); background:var(--card-h); }
+        .trust-chip-dot { width:6px; height:6px; border-radius:50%; background:var(--green); flex-shrink:0; }
 
         /* ============================================================
-           CARDS
+           SERVICES — editorial numbered list
            ============================================================ */
-        .card {
-            background: var(--white); border-radius: 18px;
-            padding: var(--space-12); border: 1px solid var(--border);
-            transition: all var(--transition-normal);
-            box-shadow: var(--shadow-sm);
+        .services-section { background:var(--bg); }
+        .services-header {
+            display:flex; align-items:flex-end; justify-content:space-between;
+            gap:2rem; flex-wrap:wrap; margin-bottom:3.5rem;
         }
-
-        .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-
-        /* ============================================================
-           SERVICES
-           ============================================================ */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-6);
-            margin-top: var(--space-16);
+        .service-list { border-top:1px solid var(--border); }
+        .service-item {
+            display:grid; grid-template-columns:3.5rem 1fr 52px;
+            align-items:center; gap:2rem;
+            padding:2rem 0; border-bottom:1px solid var(--border);
+            cursor:default; position:relative; overflow:hidden;
+            transition:padding 0.35s var(--ease);
         }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: var(--space-10);
-            border: 1px solid var(--border);
-            transition: all var(--transition-normal);
-            position: relative;
-            overflow: hidden;
+        .service-item::before {
+            content:''; position:absolute; inset:0;
+            background:rgba(79,110,245,0.035); opacity:0; transition:opacity 0.3s;
         }
-
-        .service-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), #64A4FF);
-            transform: scaleX(0); transform-origin: left;
-            transition: transform var(--transition-normal);
+        .service-item:hover::before { opacity:1; }
+        .service-item:hover { padding-left:0.75rem; }
+        .service-num {
+            font-family:var(--font-display); font-size:0.78rem; font-weight:700;
+            color:var(--accent); letter-spacing:0.08em;
         }
-
-        .service-card:hover::before { transform: scaleX(1); }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-xl);
-            border-color: rgba(0,113,227,0.2);
+        .service-name {
+            font-family:var(--font-display); font-size:clamp(1.1rem,2.5vw,1.65rem);
+            font-weight:700; letter-spacing:-0.025em; color:var(--text);
+            margin-bottom:0; line-height:1.1; transition:color 0.25s;
         }
-
+        .service-desc {
+            font-size:0.875rem; color:var(--text-dim); max-width:520px;
+            line-height:1.6; max-height:0; overflow:hidden; opacity:0;
+            transition:max-height 0.4s var(--ease),opacity 0.4s var(--ease),margin 0.4s;
+        }
+        .service-item:hover .service-desc { max-height:3rem; opacity:1; margin-top:0.45rem; }
         .service-icon {
-            width: 72px; height: 72px;
-            margin-bottom: var(--space-6);
-            background: var(--off-white);
-            border-radius: 18px;
-            display: flex; align-items: center; justify-content: center;
-            transition: all var(--transition-normal);
+            width:48px; height:48px; display:flex; align-items:center; justify-content:center;
+            border:1px solid var(--border); border-radius:12px; flex-shrink:0;
+            transition:all 0.3s var(--ease);
         }
-
-        .service-card:hover .service-icon { background: rgba(0,113,227,0.1); transform: scale(1.05); }
-
-        .service-card h3 {
-            font-size: var(--font-size-xl); font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--space-3);
-            letter-spacing: -0.022em;
+        .service-item:hover .service-icon { border-color:rgba(79,110,245,0.5); background:rgba(79,110,245,0.08); }
+        @media(max-width:768px){
+            .service-item{grid-template-columns:2.5rem 1fr;}
+            .service-icon{display:none;}
         }
-
-        .service-card p { color: var(--text-secondary); line-height: 1.65; font-size: var(--font-size-base); }
 
         /* ============================================================
-           PORTFOLIO / PORTAL WINDOWS
+           PORTFOLIO
            ============================================================ */
+        .portfolio-section { background:var(--surface); }
         .portal-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-8);
-            margin-top: var(--space-16);
-            perspective: 1500px;
+            display:grid; grid-template-columns:repeat(3,1fr);
+            gap:1.25rem; margin-top:3rem;
         }
-
-        @media(max-width: 1100px) {
-            .portal-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-8); }
-        }
-
-        @media(max-width: 700px) {
-            .portal-grid { grid-template-columns: 1fr; gap: var(--space-6); }
-        }
-
         .portal-window {
-            position: relative; background: var(--white);
-            border-radius: 20px; padding: var(--space-5);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
-            transform-style: preserve-3d; overflow: hidden;
+            position:relative; background:var(--card);
+            border-radius:16px; border:1px solid var(--border);
+            overflow:hidden; transform-style:preserve-3d;
+            transition:all 0.4s var(--ease);
         }
-
         .portal-window:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-2xl);
-            border-color: rgba(0,113,227,0.3);
+            transform:translateY(-10px) scale(1.015);
+            border-color:var(--border-b);
+            box-shadow:0 24px 64px rgba(0,0,0,0.55), 0 0 40px var(--accent-glow);
         }
-
         .portal-header {
-            display: flex; align-items: center; gap: var(--space-2);
-            margin-bottom: var(--space-3);
-            padding: 0 var(--space-1);
+            display:flex; align-items:center; gap:0.45rem;
+            padding:0.65rem 0.9rem;
+            background:rgba(255,255,255,0.025); border-bottom:1px solid var(--border);
         }
-
-        .portal-dot { width: 12px; height: 12px; border-radius: 50%; }
-        .portal-dot:nth-child(1) { background: #FF5F57; }
-        .portal-dot:nth-child(2) { background: #FFBD2E; }
-        .portal-dot:nth-child(3) { background: #28CA42; }
-
+        .portal-dot { width:10px; height:10px; border-radius:50%; }
+        .portal-dot:nth-child(1){background:#FF5F57;}
+        .portal-dot:nth-child(2){background:#FFBD2E;}
+        .portal-dot:nth-child(3){background:#28CA42;}
         .portal-url-bar {
-            flex: 1;
-            background: var(--off-white);
-            border-radius: 6px;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            font-family: 'SF Mono', 'Menlo', monospace;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+            flex:1; background:rgba(255,255,255,0.04); border-radius:5px;
+            padding:0.18rem 0.6rem; font-size:0.62rem; color:var(--text-muted);
+            font-family:'SF Mono','Menlo',monospace; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;
         }
-
-        .portal-iframe-container {
-            position: relative; width: 100%; height: 360px;
-            border-radius: 10px; overflow: hidden;
-            background: #f5f5f7;
-            transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
-        }
-
-        .portal-window:hover .portal-iframe-container { transform: scale(1.02); }
-
-        .portal-iframe { width: 100%; height: 100%; border: none; display: block; pointer-events: none; }
-
+        .portal-iframe-container { position:relative; width:100%; height:340px; overflow:hidden; }
+        .portal-iframe { width:100%; height:100%; border:none; display:block; pointer-events:none; }
         .portal-overlay {
-            position: absolute; bottom: 0; left: 0; right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
-            padding: var(--space-6);
-            opacity: 0; transition: opacity 0.3s ease;
-            pointer-events: none;
+            position:absolute; bottom:0; left:0; right:0;
+            background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.45) 55%,transparent 100%);
+            padding:1.5rem; opacity:0; transition:opacity 0.3s; pointer-events:none;
         }
-
-        .portal-window:hover .portal-overlay { opacity: 1; }
-
-        .portal-info h3 {
-            color: #FFFFFF; font-size: var(--font-size-lg);
-            font-weight: 600; margin-bottom: var(--space-1);
-            letter-spacing: -0.022em;
-        }
-
-        .portal-info p { color: rgba(255,255,255,0.75); font-size: var(--font-size-sm); margin-bottom: var(--space-3); }
-
+        .portal-window:hover .portal-overlay { opacity:1; }
+        .portal-info h3 { color:#fff; font-size:0.95rem; font-weight:600; margin-bottom:0.3rem; letter-spacing:-0.02em; }
+        .portal-info p { color:rgba(255,255,255,0.6); font-size:0.78rem; margin-bottom:0.8rem; line-height:1.5; }
         .portal-btn {
-            display: inline-flex; align-items: center; gap: var(--space-2);
-            padding: 0.4rem 1rem;
-            background: var(--white); color: var(--text-primary);
-            border-radius: 980px; font-size: var(--font-size-sm); font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s ease; pointer-events: all;
+            display:inline-flex; align-items:center; gap:0.4rem;
+            padding:0.4rem 0.95rem; background:#fff; color:#000;
+            border-radius:980px; font-size:0.75rem; font-weight:600;
+            text-decoration:none; transition:all 0.2s; pointer-events:all;
         }
-
-        .portal-btn:hover { background: var(--accent); color: var(--white); transform: translateY(-1px); }
-
-        .portal-label { margin-top: var(--space-4); text-align: center; }
-
-        .portal-label h3 {
-            font-size: var(--font-size-base); font-weight: 600;
-            color: var(--text-primary); margin-bottom: 2px;
-            letter-spacing: -0.022em;
-        }
-
-        .portal-label p { font-size: var(--font-size-sm); color: var(--text-secondary); }
+        .portal-btn:hover { background:var(--accent); color:#fff; transform:translateY(-1px); }
+        .portal-label { padding:0.8rem 0.9rem; border-top:1px solid var(--border); }
+        .portal-label h3 { font-size:0.875rem; font-weight:600; color:var(--text); letter-spacing:-0.01em; margin-bottom:0.1rem; }
+        .portal-label p { font-size:0.72rem; color:var(--text-muted); }
+        @media(max-width:1100px){.portal-grid{grid-template-columns:repeat(2,1fr);}}
+        @media(max-width:700px){.portal-grid{grid-template-columns:1fr;}}
 
         /* ============================================================
-           WHAT MAKES US UNIQUE
+           BENTO GRID — Why VisualSites
            ============================================================ */
-        .unique-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-6);
-            margin-top: var(--space-16);
+        .bento-section { background:var(--bg); }
+        .bento-grid {
+            display:grid; grid-template-columns:repeat(3,1fr);
+            gap:1rem; margin-top:3.5rem;
         }
-
-        .unique-card {
-            background: var(--white); border-radius: 20px;
-            padding: var(--space-8);
-            border: 1px solid var(--border);
-            transition: all var(--transition-normal);
-            text-align: center;
+        .bento-card {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:20px; padding:2rem; position:relative;
+            overflow:hidden; transition:all 0.35s var(--ease);
         }
-
-        .unique-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-xl);
-            border-color: rgba(0,113,227,0.25);
+        .bento-card::before {
+            content:''; position:absolute; top:0; left:0; right:0; height:1px;
+            background:linear-gradient(90deg,transparent,var(--accent),transparent);
+            opacity:0; transition:opacity 0.35s;
         }
-
-        .unique-icon {
-            margin: 0 auto var(--space-4);
-            width: 76px; height: 76px;
-            background: var(--off-white);
-            border-radius: 20px;
-            display: flex; align-items: center; justify-content: center;
-            transition: all var(--transition-normal);
+        .bento-card:hover::before { opacity:1; }
+        .bento-card:hover { border-color:var(--border-b); transform:translateY(-4px); box-shadow:0 20px 48px rgba(0,0,0,0.35); }
+        .bento-wide { grid-column:span 2; }
+        .bento-icon {
+            width:42px; height:42px; display:flex; align-items:center; justify-content:center;
+            background:rgba(79,110,245,0.1); border:1px solid rgba(79,110,245,0.2);
+            border-radius:11px; margin-bottom:1.1rem;
         }
-
-        .unique-card:hover .unique-icon { background: rgba(0,113,227,0.1); transform: scale(1.05); }
-
-        .unique-card h3 { font-size: var(--font-size-xl); font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-3); letter-spacing: -0.022em; }
-        .unique-card p { color: var(--text-secondary); line-height: 1.65; }
+        .bento-big {
+            font-family:var(--font-display); font-size:3rem; font-weight:800;
+            letter-spacing:-0.06em; line-height:1;
+            background:linear-gradient(135deg,var(--accent-l),var(--cyan));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            margin-bottom:0.5rem;
+        }
+        .bento-title {
+            font-family:var(--font-display); font-size:1.1rem; font-weight:700;
+            letter-spacing:-0.025em; color:var(--text); margin-bottom:0.55rem; line-height:1.2;
+        }
+        .bento-desc { font-size:0.875rem; color:var(--text-dim); line-height:1.65; }
+        .bento-tag {
+            display:inline-block; font-size:0.68rem; font-weight:600;
+            letter-spacing:0.1em; text-transform:uppercase;
+            color:var(--accent-l); background:rgba(79,110,245,0.1);
+            border:1px solid rgba(79,110,245,0.2); border-radius:4px;
+            padding:0.12rem 0.45rem; margin-bottom:0.7rem;
+        }
+        @media(max-width:900px){.bento-grid{grid-template-columns:repeat(2,1fr);}}
+        @media(max-width:600px){.bento-grid{grid-template-columns:1fr;} .bento-wide{grid-column:span 1;}}
 
         /* ============================================================
-           PRICING
+           PROCESS
            ============================================================ */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: var(--space-10);
-            margin-top: var(--space-16);
-            max-width: 860px; margin-left: auto; margin-right: auto;
+        .process-section { background:var(--surface); }
+        .process-grid {
+            display:grid; grid-template-columns:repeat(5,1fr);
+            gap:0; margin-top:4rem; position:relative;
         }
-
-        .pricing-card {
-            background: var(--white); border-radius: 24px;
-            padding: var(--space-12); border: 2px solid var(--border);
-            transition: all var(--transition-normal);
-            position: relative; text-align: center;
+        .process-grid::before {
+            content:''; position:absolute;
+            top:1.4rem; left:12%; right:12%; height:1px;
+            background:linear-gradient(90deg,transparent,var(--border-b),var(--accent),var(--border-b),transparent);
         }
-
-        .pricing-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-2xl); border-color: var(--accent); }
-
-        .pricing-badge {
-            position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-            background: var(--accent); color: var(--white);
-            padding: var(--space-2) var(--space-6);
-            border-radius: 980px; font-size: var(--font-size-sm); font-weight: 600;
+        .process-step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 0.75rem; }
+        .process-num {
+            width:2.75rem; height:2.75rem; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            background:var(--card); border:1px solid var(--border-b);
+            font-family:var(--font-display); font-size:0.75rem; font-weight:800;
+            color:var(--accent-l); margin-bottom:1.4rem; position:relative; z-index:1;
         }
-
-        .pricing-icon { margin: var(--space-4) auto var(--space-6); }
-
-        .pricing-card h3 {
-            font-size: var(--font-size-2xl); font-weight: 700;
-            color: var(--text-primary); margin-bottom: var(--space-4);
-            letter-spacing: -0.04em;
-        }
-
-        .pricing-description { margin-bottom: var(--space-8); }
-        .pricing-description p { color: var(--text-secondary); line-height: 1.6; }
-
-        .pricing-features { list-style: none; margin-bottom: var(--space-8); text-align: left; }
-
-        .pricing-features li {
-            display: flex; align-items: center; gap: var(--space-3);
-            padding: var(--space-3) 0;
-            color: var(--text-secondary);
-            border-bottom: 1px solid rgba(210,210,215,0.5);
-        }
-
-        .pricing-features li:last-child { border-bottom: none; }
-        .pricing-features li svg { flex-shrink: 0; }
-
-        .pricing-btn {
-            width: 100%; display: inline-flex; align-items: center; justify-content: center;
-            padding: var(--space-4) var(--space-8);
-            border-radius: 980px; font-size: var(--font-size-base); font-weight: 600;
-            letter-spacing: -0.022em; text-decoration: none;
-            transition: all var(--transition-fast); cursor: pointer; border: none;
-        }
-
-        .pricing-note {
-            margin-top: var(--space-12); text-align: center;
-            background: rgba(0,113,227,0.04);
-            padding: var(--space-6) var(--space-8);
-            border-radius: 18px;
-            border: 1px solid rgba(0,113,227,0.15);
-        }
-
-        .pricing-note p { color: var(--text-secondary); line-height: 1.6; max-width: 800px; margin: 0 auto; }
-        .pricing-note strong { color: var(--accent); font-weight: 600; }
-
-        /* ============================================================
-           PROCESS STEPS
-           ============================================================ */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: var(--space-6);
-            margin-top: var(--space-16);
-            position: relative;
-        }
-
-        .process-steps::before {
-            content: '';
-            position: absolute;
-            top: 40px; left: 10%; right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), #64A4FF, var(--accent));
-            opacity: 0.3;
-        }
-
-        .process-step { text-align: center; position: relative; }
-
-        .step-number {
-            width: 80px; height: 80px;
-            margin: 0 auto var(--space-5);
-            background: linear-gradient(135deg, var(--accent) 0%, #0051D5 100%);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: var(--font-size-xl); font-weight: 700;
-            box-shadow: 0 8px 24px rgba(0,113,227,0.3);
-            position: relative; z-index: 1;
-        }
-
-        .step-title { font-size: var(--font-size-lg); font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2); letter-spacing: -0.022em; }
-        .step-description { color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.6; }
-
-        @media(max-width: 900px) {
-            .process-steps { grid-template-columns: repeat(2, 1fr); gap: var(--space-8); }
-            .process-steps::before { display: none; }
-        }
-
-        @media(max-width: 480px) {
-            .process-steps { grid-template-columns: 1fr; }
-        }
+        .process-name { font-family:var(--font-display); font-size:0.9rem; font-weight:700; color:var(--text); margin-bottom:0.4rem; letter-spacing:-0.02em; }
+        .process-desc { font-size:0.75rem; color:var(--text-muted); line-height:1.5; }
+        @media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr);gap:2.5rem;}.process-grid::before{display:none;}}
+        @media(max-width:500px){.process-grid{grid-template-columns:1fr;}}
 
         /* ============================================================
            TESTIMONIALS
            ============================================================ */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-8);
-            margin-top: var(--space-16);
+        .testimonials-section { background:var(--bg); }
+        .testimonials-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:3rem; }
+        .tcard {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:20px; padding:2rem; transition:all 0.35s var(--ease);
         }
-
-        .testimonial {
-            background: var(--white); border-radius: 20px;
-            padding: var(--space-8);
-            border: 1px solid var(--border);
-            position: relative;
-            transition: all var(--transition-normal);
+        .tcard:hover { border-color:var(--border-b); transform:translateY(-4px); box-shadow:0 20px 50px rgba(0,0,0,0.3); }
+        .tcard-stars { display:flex; gap:0.2rem; margin-bottom:1.1rem; }
+        .star { color:var(--gold); font-size:0.85rem; }
+        .tcard-text { font-size:0.95rem; color:var(--text-dim); line-height:1.7; margin-bottom:1.4rem; font-style:italic; }
+        .tcard-author { display:flex; align-items:center; gap:0.75rem; }
+        .tcard-avatar {
+            width:38px; height:38px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            font-size:0.75rem; font-weight:700; color:#fff; flex-shrink:0;
         }
-
-        .testimonial:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-
-        .testimonial-quote {
-            font-size: var(--font-size-5xl);
-            color: var(--accent);
-            opacity: 0.25;
-            font-family: Georgia, serif;
-            line-height: 1;
-            margin-bottom: var(--space-3);
-        }
-
-        .testimonial-stars {
-            display: flex; gap: 3px;
-            margin-bottom: var(--space-4);
-        }
-
-        .testimonial-text {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: var(--space-6);
-            font-size: var(--font-size-base);
-        }
-
-        .testimonial-author { display: flex; align-items: center; gap: var(--space-4); }
-
-        .author-avatar {
-            width: 48px; height: 48px;
-            background: linear-gradient(135deg, var(--accent), #0051D5);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--white); font-weight: 700; font-size: var(--font-size-sm);
-            flex-shrink: 0;
-        }
-
-        .author-info h4 { font-size: var(--font-size-base); font-weight: 600; color: var(--text-primary); }
-        .author-info p { font-size: var(--font-size-sm); color: var(--text-secondary); }
+        .tcard-name { font-size:0.875rem; font-weight:600; color:var(--text); letter-spacing:-0.01em; }
+        .tcard-role { font-size:0.72rem; color:var(--text-muted); }
+        @media(max-width:700px){.testimonials-grid{grid-template-columns:1fr;}}
 
         /* ============================================================
-           ABOUT SECTION
+           PRICING
            ============================================================ */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-16);
-            align-items: center;
-            margin-top: var(--space-12);
+        .pricing-section { background:var(--surface); }
+        .pricing-wrap { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-top:3.5rem; max-width:880px; }
+        .pcard {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:24px; padding:2.5rem; position:relative; transition:all 0.35s var(--ease);
         }
-
-        @media(max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; gap: var(--space-10); }
+        .pcard:hover { transform:translateY(-4px); box-shadow:0 24px 60px rgba(0,0,0,0.35); }
+        .pcard--featured {
+            border-color:var(--accent);
+            background:linear-gradient(150deg,rgba(79,110,245,0.07) 0%,var(--card) 60%);
+            box-shadow:0 0 0 1px var(--accent), 0 0 60px var(--accent-glow);
         }
-
-        .about-stats {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-6);
-            margin-top: var(--space-10);
+        .pcard-badge {
+            display:inline-flex; gap:0.35rem; align-items:center;
+            font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+            color:var(--accent-l); background:rgba(79,110,245,0.12);
+            border:1px solid rgba(79,110,245,0.28); border-radius:980px;
+            padding:0.18rem 0.6rem; margin-bottom:1.4rem;
         }
-
-        .about-stat-item { text-align: center; }
-
-        .about-stat-number {
-            font-size: var(--font-size-4xl); font-weight: 700;
-            color: var(--accent); letter-spacing: -0.04em;
-            line-height: 1;
+        .pcard-name { font-family:var(--font-display); font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:0.45rem; letter-spacing:-0.02em; }
+        .pcard-price { font-family:var(--font-display); font-size:2.75rem; font-weight:800; color:var(--text); letter-spacing:-0.05em; line-height:1; margin-bottom:0.3rem; }
+        .pcard-price sup { font-size:1.1rem; vertical-align:super; line-height:0; }
+        .pcard-sub { font-size:0.8rem; color:var(--text-muted); margin-bottom:1.75rem; }
+        .pcard-divider { height:1px; background:var(--border); margin:1.5rem 0; }
+        .pcard-feature {
+            display:flex; align-items:flex-start; gap:0.6rem;
+            font-size:0.875rem; color:var(--text-dim); margin-bottom:0.7rem; line-height:1.5;
         }
-
-        .about-stat-label { font-size: var(--font-size-sm); color: var(--text-secondary); margin-top: var(--space-1); }
-
-        .expertise-list { display: flex; flex-direction: column; gap: var(--space-3); }
-
-        .expertise-item {
-            display: flex; align-items: center; gap: var(--space-3);
-            padding: var(--space-3) var(--space-4);
-            border-radius: 10px;
-            background: var(--off-white);
-            font-size: var(--font-size-base);
-            color: var(--text-secondary);
-            transition: all var(--transition-fast);
+        .pcard-check {
+            width:17px; height:17px; background:rgba(16,224,144,0.12);
+            border:1px solid rgba(16,224,144,0.28); border-radius:4px;
+            display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:0.05rem;
         }
-
-        .expertise-item:hover { background: rgba(0,113,227,0.08); color: var(--text-primary); }
-        .expertise-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+        .pcard-check svg { width:9px; height:9px; }
+        .pcard-cta {
+            display:block; text-align:center; padding:0.85rem;
+            border-radius:12px; font-size:0.9rem; font-weight:600;
+            text-decoration:none; transition:all 0.25s var(--ease); margin-top:2rem; letter-spacing:-0.01em;
+        }
+        .pcard-cta--featured { background:var(--accent); color:#fff; box-shadow:0 0 24px var(--accent-glow); }
+        .pcard-cta--featured:hover { background:var(--accent-l); box-shadow:0 0 36px var(--accent-glow); }
+        .pcard-cta--outline { border:1px solid var(--border-b); color:var(--text-dim); }
+        .pcard-cta--outline:hover { border-color:rgba(255,255,255,0.3); color:var(--text); background:rgba(255,255,255,0.03); }
+        .pricing-note {
+            margin-top:1.5rem; padding:1.25rem 1.5rem;
+            background:rgba(79,110,245,0.06); border:1px solid rgba(79,110,245,0.15);
+            border-radius:14px; font-size:0.85rem; color:var(--text-dim); line-height:1.65;
+            max-width:880px;
+        }
+        @media(max-width:700px){.pricing-wrap{grid-template-columns:1fr;}}
 
         /* ============================================================
-           CTA SECTION
+           CTA
            ============================================================ */
         .cta-section {
-            background: linear-gradient(135deg, #000000 0%, #0D1B2E 50%, #001133 100%);
-            padding: var(--space-24) 0;
-            position: relative;
-            overflow: hidden;
+            background:var(--bg); text-align:center;
+            padding:var(--sec-y) 0; position:relative; overflow:hidden;
         }
-
         .cta-section::before {
-            content: '';
-            position: absolute; inset: 0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(0,113,227,0.2) 0%, transparent 70%);
-            pointer-events: none;
+            content:''; position:absolute; inset:0; pointer-events:none;
+            background:radial-gradient(ellipse 65% 65% at 50% 50%,rgba(79,110,245,0.11) 0%,transparent 70%);
         }
-
         .cta-section::after {
-            content: '';
-            position: absolute; inset: 0;
+            content:''; position:absolute; inset:0; pointer-events:none;
             background-image:
-                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 60px 60px;
-            pointer-events: none;
+                linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);
+            background-size:60px 60px;
         }
-
-        .cta-content { text-align: center; position: relative; z-index: 1; }
-
+        .cta-inner { position:relative; z-index:1; }
         .cta-title {
-            font-size: clamp(var(--font-size-5xl), 6vw, var(--font-size-7xl));
-            font-weight: 700; color: #FFFFFF;
-            letter-spacing: -0.04em; line-height: 1.05;
-            margin-bottom: var(--space-6);
+            font-family:var(--font-display); font-size:clamp(2.5rem,6vw,5.5rem);
+            font-weight:800; letter-spacing:-0.045em; line-height:1.0;
+            color:var(--text); margin-bottom:1.25rem;
         }
-
-        .cta-subtitle {
-            font-size: var(--font-size-xl); color: rgba(229,229,229,0.85);
-            max-width: 600px; margin: 0 auto var(--space-12);
-            line-height: 1.6;
-        }
+        .cta-sub { font-size:1.1rem; color:var(--text-dim); max-width:480px; margin:0 auto 2.5rem; line-height:1.7; }
+        .cta-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
 
         /* ============================================================
            FOOTER
            ============================================================ */
-        .footer {
-            background: var(--footer-bg);
-            border-top: 1px solid rgba(210,210,215,0.15);
-            padding: var(--space-16) 0 var(--space-12);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: var(--space-12);
-            margin-bottom: var(--space-12);
-        }
-
-        @media(max-width: 900px) {
-            .footer-content { grid-template-columns: repeat(2, 1fr); gap: var(--space-8); }
-        }
-
-        @media(max-width: 480px) {
-            .footer-content { grid-template-columns: 1fr; gap: var(--space-8); }
-        }
-
-        .footer-brand { }
-
-        .footer-brand-logo {
-            display: flex; align-items: center; gap: var(--space-2);
-            color: #FFFFFF; font-size: var(--font-size-lg);
-            font-weight: 600; letter-spacing: -0.022em;
-            margin-bottom: var(--space-4);
-            text-decoration: none;
-        }
-
-        .footer-brand-logo img { width: 28px; height: 28px; object-fit: contain; }
-
-        .footer-section h4 { color: var(--footer-text); font-size: var(--font-size-base); font-weight: 600; margin-bottom: var(--space-5); letter-spacing: -0.022em; }
-
-        .footer-section p, .footer-section a {
-            color: rgba(245,245,247,0.6);
-            font-size: var(--font-size-sm); text-decoration: none;
-            transition: color var(--transition-fast); line-height: 2;
-            display: block;
-        }
-
-        .footer-section a:hover { color: var(--footer-text); }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(210,210,215,0.12);
-            padding-top: var(--space-8);
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: var(--space-4);
-        }
-
-        .footer-bottom p { color: rgba(245,245,247,0.4); font-size: var(--font-size-sm); }
-
-        .footer-bottom-links { display: flex; gap: var(--space-6); }
-        .footer-bottom-links a { color: rgba(245,245,247,0.4); font-size: var(--font-size-sm); text-decoration: none; transition: color var(--transition-fast); }
-        .footer-bottom-links a:hover { color: rgba(245,245,247,0.8); }
+        .footer { background:var(--surface); border-top:1px solid var(--border); padding:4rem 0 2rem; }
+        .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; margin-bottom:3rem; }
+        .footer-brand { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--text); letter-spacing:-0.02em; display:flex; align-items:center; gap:0.5rem; margin-bottom:0.6rem; }
+        .footer-brand img { width:22px; height:22px; object-fit:contain; }
+        .footer-tag { font-size:0.82rem; color:var(--text-muted); line-height:1.55; max-width:250px; margin-bottom:1.4rem; }
+        .footer-loc { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--text-muted); }
+        .footer-col-title { font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-bottom:1.2rem; }
+        .footer-link { display:block; font-size:0.875rem; color:var(--text-muted); text-decoration:none; margin-bottom:0.6rem; transition:color 0.2s; }
+        .footer-link:hover { color:var(--text); }
+        .footer-bottom { border-top:1px solid var(--border); padding-top:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+        .footer-copy { font-size:0.75rem; color:var(--text-muted); }
+        .footer-policies { display:flex; gap:1.5rem; }
+        .footer-policies a { font-size:0.75rem; color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+        .footer-policies a:hover { color:var(--text); }
+        @media(max-width:900px){.footer-grid{grid-template-columns:repeat(2,1fr);}}
+        @media(max-width:500px){.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}}
 
         /* ============================================================
-           ANIMATIONS & UTILITIES
-           ============================================================ */
-        .fade-in {
-            opacity: 0; transform: translateY(24px);
-            transition: all var(--transition-slow) ease-out;
-        }
-
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        /* Contact Form (used in non-contact pages for CTA area) */
-        .form-group { margin-bottom: var(--space-6); }
-        .form-label { display: block; font-weight: 500; color: var(--text-primary); margin-bottom: var(--space-2); font-size: var(--font-size-base); letter-spacing: -0.022em; }
-
-        .form-input, .form-textarea {
-            width: 100%; padding: var(--space-4);
-            border: 1px solid var(--border); border-radius: 12px;
-            font-size: var(--font-size-base); font-family: inherit;
-            background: var(--white); color: var(--text-primary);
-            transition: all var(--transition-normal);
-            letter-spacing: -0.022em;
-        }
-
-        .form-input:focus, .form-textarea:focus {
-            outline: none; border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
-        }
-
-        .form-textarea { min-height: 120px; resize: vertical; }
-        .form-input::placeholder, .form-textarea::placeholder { color: var(--text-secondary); }
-
-        /* ============================================================
-           RFC SITE PREVIEW – matches porthmadogrfc.co.uk
+           RFC SITE PREVIEW
            ============================================================ */
         .rfc-preview {
-            width: 100%; height: 100%; background: #f2f4f8;
-            display: flex; flex-direction: column; overflow: hidden;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            width:100%; height:100%; background:#f2f4f8;
+            display:flex; flex-direction:column; overflow:hidden;
+            font-family:'Segoe UI',Arial,sans-serif;
         }
         .rfc-nav {
-            display: flex; align-items: center;
-            padding: 0 0.7rem; height: 46px;
-            background: #0e1a30; border-bottom: 3px solid #c8102e;
-            flex-shrink: 0; gap: 0.4rem;
+            display:flex; align-items:center; padding:0 0.7rem; height:46px;
+            background:#0e1a30; border-bottom:3px solid #c8102e;
+            flex-shrink:0; gap:0.4rem;
         }
-        .rfc-nav-brand {
-            display: flex; align-items: center; gap: 0.3rem;
-            color: white; flex-shrink: 0; line-height: 1.15;
-        }
-        .rfc-crest { width: 24px; height: 24px; object-fit: contain; }
-        .rfc-brand-text strong {
-            display: block; font-size: 0.6rem; font-weight: 800;
-            letter-spacing: 0.05em; text-transform: uppercase; color: white;
-        }
-        .rfc-brand-text span {
-            display: block; font-size: 0.5rem; font-weight: 400;
-            color: rgba(255,255,255,0.55); letter-spacing: 0.04em;
-        }
-        .rfc-est {
-            background: #c8102e; color: white;
-            font-size: 0.5rem; padding: 0.1rem 0.28rem;
-            border-radius: 3px; font-weight: 700; flex-shrink: 0;
-        }
-        .rfc-nav-links {
-            display: flex; gap: 0; flex: 1; justify-content: center; overflow: hidden;
-        }
-        .rfc-nav-links span {
-            color: rgba(255,255,255,0.78); padding: 0.28rem 0.5rem;
-            border-radius: 4px; font-size: 0.55rem; font-weight: 500; white-space: nowrap;
-        }
-        .rfc-nav-active { background: #c8102e !important; color: white !important; }
-        .rfc-lang {
-            color: white; font-size: 0.55rem; padding: 0.18rem 0.48rem;
-            border-radius: 4px; font-weight: 600; flex-shrink: 0;
-            border: 1px solid rgba(255,255,255,0.35); background: transparent;
-        }
+        .rfc-nav-brand { display:flex; align-items:center; gap:0.3rem; color:white; flex-shrink:0; line-height:1.15; }
+        .rfc-crest { width:24px; height:24px; object-fit:contain; }
+        .rfc-brand-text strong { display:block; font-size:0.6rem; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; color:white; }
+        .rfc-brand-text span { display:block; font-size:0.5rem; font-weight:400; color:rgba(255,255,255,0.55); letter-spacing:0.04em; }
+        .rfc-est { background:#c8102e; color:white; font-size:0.5rem; padding:0.1rem 0.28rem; border-radius:3px; font-weight:700; flex-shrink:0; }
+        .rfc-nav-links { display:flex; gap:0; flex:1; justify-content:center; overflow:hidden; }
+        .rfc-nav-links span { color:rgba(255,255,255,0.78); padding:0.28rem 0.5rem; border-radius:4px; font-size:0.55rem; font-weight:500; white-space:nowrap; }
+        .rfc-nav-active { background:#c8102e !important; color:white !important; }
+        .rfc-lang { color:white; font-size:0.55rem; padding:0.18rem 0.48rem; border-radius:4px; font-weight:600; flex-shrink:0; border:1px solid rgba(255,255,255,0.35); background:transparent; }
         .rfc-hero {
-            background: linear-gradient(150deg, #0e1a30 0%, #1b2d55 55%, #243872 100%);
-            border-bottom: 4px solid #c8102e;
-            color: white; text-align: center; padding: 0.9rem 0.75rem;
-            flex: 1; display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            position: relative; overflow: hidden;
+            background:linear-gradient(150deg,#0e1a30 0%,#1b2d55 55%,#243872 100%);
+            border-bottom:4px solid #c8102e; color:white; text-align:center; padding:0.9rem 0.75rem;
+            flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+            position:relative; overflow:hidden;
         }
-        .rfc-hero::after {
-            content: ''; position: absolute; top: 0; right: 0;
-            width: 120px; height: 100%;
-            background: linear-gradient(to bottom left, #c8102e 0%, transparent 55%);
-            opacity: 0.18; pointer-events: none;
-        }
-        .rfc-hero-crest {
-            width: 58px; height: 58px; object-fit: contain;
-            position: relative; z-index: 1; margin-bottom: 0.45rem;
-        }
-        .rfc-hero-title {
-            font-size: 1.1rem; font-weight: 700;
-            font-family: Georgia, 'Times New Roman', serif;
-            color: white; line-height: 1.1;
-            position: relative; z-index: 1;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-        }
-        .rfc-hero-welsh {
-            font-size: 0.57rem; color: rgba(255,255,255,0.6);
-            letter-spacing: 0.08em; text-transform: uppercase;
-            margin-top: 0.2rem; position: relative; z-index: 1;
-        }
-        .rfc-hero-sub {
-            font-size: 0.62rem; color: rgba(255,255,255,0.75);
-            margin-top: 0.3rem; position: relative; z-index: 1;
-        }
-        .rfc-hero-btns {
-            display: flex; gap: 0.4rem; margin-top: 0.65rem;
-            position: relative; z-index: 1;
-        }
-        .rfc-btn-red {
-            background: #c8102e; color: white;
-            font-size: 0.58rem; font-weight: 600;
-            padding: 0.3rem 0.65rem; border-radius: 4px;
-            text-decoration: none; display: inline-block;
-        }
-        .rfc-btn-outline {
-            border: 1.5px solid rgba(255,255,255,0.55); color: white;
-            font-size: 0.58rem; font-weight: 500;
-            padding: 0.3rem 0.65rem; border-radius: 4px;
-            background: transparent; text-decoration: none; display: inline-block;
-        }
-        .rfc-cal {
-            background: #e8ecf4; flex-shrink: 0; padding: 0.45rem 0.6rem 0.5rem;
-        }
-        .rfc-cal-header {
-            display: flex; align-items: center; justify-content: space-between;
-            margin-bottom: 0.3rem;
-        }
-        .rfc-cal-header strong { font-size: 0.62rem; font-weight: 700; color: #1a1a2e; }
-        .rfc-cal-btn {
-            font-size: 0.52rem; color: #1b2d55;
-            border: 1px solid #d8dce8; padding: 0.12rem 0.35rem;
-            border-radius: 4px; background: white;
-        }
-        .rfc-cal-grid {
-            display: grid; grid-template-columns: repeat(7, 1fr);
-            gap: 1px; background: #d8dce8;
-        }
-        .rfc-cal-dow {
-            background: #1b2d55; color: white;
-            font-size: 0.44rem; font-weight: 700;
-            text-align: center; padding: 0.18rem 0; letter-spacing: 0.02em;
-        }
-        .rfc-cal-day {
-            background: white; font-size: 0.52rem;
-            text-align: center; padding: 0.16rem 0; color: #1a1a2e; min-height: 14px;
-        }
-        .rfc-cal-empty { background: #f0f2f6; }
+        .rfc-hero::after { content:''; position:absolute; top:0; right:0; width:120px; height:100%; background:linear-gradient(to bottom left,#c8102e 0%,transparent 55%); opacity:0.18; pointer-events:none; }
+        .rfc-hero-crest { width:58px; height:58px; object-fit:contain; position:relative; z-index:1; margin-bottom:0.45rem; }
+        .rfc-hero-title { font-size:1.1rem; font-weight:700; font-family:Georgia,'Times New Roman',serif; color:white; line-height:1.1; position:relative; z-index:1; text-shadow:0 2px 8px rgba(0,0,0,0.35); }
+        .rfc-hero-welsh { font-size:0.57rem; color:rgba(255,255,255,0.6); letter-spacing:0.08em; text-transform:uppercase; margin-top:0.2rem; position:relative; z-index:1; }
+        .rfc-hero-sub { font-size:0.62rem; color:rgba(255,255,255,0.75); margin-top:0.3rem; position:relative; z-index:1; }
+        .rfc-hero-btns { display:flex; gap:0.4rem; margin-top:0.65rem; position:relative; z-index:1; }
+        .rfc-btn-red { background:#c8102e; color:white; font-size:0.58rem; font-weight:600; padding:0.3rem 0.65rem; border-radius:4px; text-decoration:none; display:inline-block; }
+        .rfc-btn-outline { border:1.5px solid rgba(255,255,255,0.55); color:white; font-size:0.58rem; font-weight:500; padding:0.3rem 0.65rem; border-radius:4px; background:transparent; text-decoration:none; display:inline-block; }
+        .rfc-cal { background:#e8ecf4; flex-shrink:0; padding:0.45rem 0.6rem 0.5rem; }
+        .rfc-cal-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:0.3rem; }
+        .rfc-cal-header strong { font-size:0.62rem; font-weight:700; color:#1a1a2e; }
+        .rfc-cal-btn { font-size:0.52rem; color:#1b2d55; border:1px solid #d8dce8; padding:0.12rem 0.35rem; border-radius:4px; background:white; }
+        .rfc-cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:1px; background:#d8dce8; }
+        .rfc-cal-dow { background:#1b2d55; color:white; font-size:0.44rem; font-weight:700; text-align:center; padding:0.18rem 0; letter-spacing:0.02em; }
+        .rfc-cal-day { background:white; font-size:0.52rem; text-align:center; padding:0.16rem 0; color:#1a1a2e; min-height:14px; }
+        .rfc-cal-empty { background:#f0f2f6; }
 
-        /* Mobile responsive base */
-        @media(max-width: 768px) {
-            .container { padding: 0 var(--space-5); }
-            .section { padding: var(--space-16) 0; }
-            .hero { padding: var(--space-16) 0; }
-            .hero-content { padding: 0 var(--space-4); }
-            .hero-buttons { flex-direction: column; }
-            .services-grid, .unique-grid, .testimonials-grid { grid-template-columns: 1fr; gap: var(--space-5); }
-            .pricing-grid { grid-template-columns: 1fr; gap: var(--space-8); }
-            .cta-section { padding: var(--space-16) 0; }
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media(max-width:768px){
+            .container{padding:0 1.5rem;}
+            .hero-headline{font-size:clamp(2.5rem,10vw,4rem);}
+            .services-header{flex-direction:column;}
+            .about-grid{grid-template-columns:1fr;}
         }
     </style>
 </head>
 <body>
 
-    <!-- Cinematic Intro -->
-    <div class="cinematic-intro">
-        <div class="cinematic-glow"></div>
-        <div class="cinematic-rays"></div>
-        <div class="cinematic-logo">
-            <span class="cinematic-letter-v">V</span>
-            <span class="cinematic-letter-s">S</span>
+<!-- CINEMATIC INTRO -->
+<div class="cinematic-intro" id="cinematicIntro">
+    <div class="cinematic-rays"></div>
+    <div class="cinematic-glow"></div>
+    <div class="cinematic-logo">
+        <span class="cinematic-letter-v">V</span>
+        <span class="cinematic-letter-s">S</span>
+    </div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="logo.png" alt="VisualSites">
+                VisualSites
+            </a>
+            <div class="nav-links">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Work</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="contact-us.html" class="nav-link nav-cta">Start a Project</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileBtn" aria-label="Open menu">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         </div>
     </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#portfolio" class="nav-link">Work</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="contact-us.html" class="nav-link nav-cta">Start a Project</a>
+    </div>
+</nav>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-container">
-                <a href="index.html" class="nav-logo">
-                    <img src="logo.png" alt="VisualSites Logo">
-                    VisualSites
-                </a>
-                <div class="nav-links">
-                    <a href="index.html" class="nav-link active">Home</a>
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#previous-work" class="nav-link">Portfolio</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="contact-us.html" class="nav-link nav-cta">Get a Quote</a>
-                </div>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="mobile-menu" id="mobileMenu">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#previous-work" class="nav-link">Portfolio</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="contact-us.html" class="nav-link">Contact Us</a>
-            </div>
-        </div>
-    </nav>
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
 
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div class="hero-orb hero-orb-1"></div>
-        <div class="hero-orb hero-orb-2"></div>
-        <div class="hero-orb hero-orb-3"></div>
+    <!-- Snowdonia / Eryri mountain landscape — Yr Wyddfa dominant -->
+    <svg class="hero-mountains" viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+            <linearGradient id="idx-g1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#7B93FF" stop-opacity="0.038"/>
+                <stop offset="100%" stop-color="#07080F" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="idx-g2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#4F6EF5" stop-opacity="0.055"/>
+                <stop offset="100%" stop-color="#07080F" stop-opacity="0.1"/>
+            </linearGradient>
+            <linearGradient id="idx-g3" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#4F6EF5" stop-opacity="0.11"/>
+                <stop offset="52%"  stop-color="#0C0E1A" stop-opacity="0.58"/>
+                <stop offset="100%" stop-color="#07080F" stop-opacity="0.96"/>
+            </linearGradient>
+            <linearGradient id="idx-g4" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#0B0D1E" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#07080F" stop-opacity="1"/>
+            </linearGradient>
+        </defs>
 
-        <div class="hero-content">
+        <!-- Layer 1 · Distant atmospheric haze -->
+        <path d="M0,300 L0,208 C150,193 310,180 470,172 C575,166 648,163 705,167 C808,173 968,181 1200,191 C1322,196 1400,198 1440,200 L1440,300 Z" fill="url(#idx-g1)"/>
+
+        <!-- Layer 2 · Mid-distance ridgeline -->
+        <path d="M0,300 L0,192 L75,182 L162,173 L232,180 L292,164 L358,169 L418,153 L478,159 L533,144 L596,151 L653,137 L710,145 L773,139 L833,147 L897,143 L966,151 L1053,159 L1148,166 L1263,173 L1440,181 L1440,300 Z" fill="url(#idx-g2)"/>
+
+        <!-- Layer 3 · Main Snowdonia range
+             Moel Siabod (x≈215,y≈130) → Yr Wyddfa/Snowdon (x≈438,y≈2) →
+             Crib Goch jagged knife-ridge → Glyder Fawr → Tryfan twin peaks →
+             Pen yr Ole Wen → Carnedd Llewelyn (x≈893,y≈28) → eastern descent -->
+        <path d="
+            M0,300 L0,250 L50,235 L100,218 L140,202
+            L165,186 L182,170 L196,156 L208,144 L215,135
+            L220,130 L224,135 L232,144 L244,154 L258,160
+            L270,155 L283,143 L296,128 L310,110 L323,93
+            L335,76 L346,60 L356,46 L365,33 L373,21
+            L380,12 L386,6 L391,3 L395,6 L399,2
+            L403,5 L407,2 L411,6 L415,3 L419,7
+            L423,4 L427,8 L431,4 L435,8 L438,2
+            L442,6 L446,11 L450,6 L455,13 L460,19
+            L465,14 L470,23 L476,31 L482,25 L488,33
+            L494,41 L500,35 L506,45 L512,39 L518,51
+            L524,45 L530,57 L536,51 L542,63 L549,57
+            L556,69 L564,63 L572,77 L580,89 L590,101
+            L600,89 L610,77 L619,67 L628,59 L636,53
+            L643,47 L650,53 L656,47 L662,53 L668,59
+            L675,67 L682,73 L690,81 L698,87
+            L706,79 L713,69 L720,61 L726,55
+            L731,49 L736,55 L740,49 L744,43
+            L748,49 L752,45 L756,40 L760,45
+            L764,49 L769,57 L776,65 L784,75
+            L792,65 L800,57 L807,51 L813,57
+            L818,51 L823,45 L828,51 L832,45
+            L836,51 L841,57 L847,63 L854,69
+            L860,63 L866,57 L872,51 L878,45
+            L883,39 L888,33 L893,28 L898,33
+            L903,37 L909,43 L916,51 L924,59
+            L934,69 L946,81 L960,95 L978,111
+            L1000,127 L1030,143 L1070,159
+            L1120,171 L1190,181 L1300,189 L1440,195
+            L1440,300 Z
+        " fill="url(#idx-g3)"/>
+
+        <!-- Layer 4 · Dark near foreground hillsides -->
+        <path d="M0,300 L0,273 L85,265 L195,271 L305,261 L425,267 L545,259 L665,265 L785,258 L905,264 L1045,269 L1185,263 L1310,271 L1440,275 L1440,300 Z" fill="url(#idx-g4)"/>
+
+        <!-- "SNOWDONIA BASED" · faint label at Yr Wyddfa summit (x≈438, y≈2) -->
+        <text x="438" y="18"
+            font-family="'Syne', sans-serif"
+            font-size="9" font-weight="600"
+            fill="rgba(123,147,255,0.2)"
+            letter-spacing="0.17em"
+            text-anchor="middle"
+            aria-hidden="true">SNOWDONIA BASED</text>
+    </svg>
+
+    <div class="container">
+        <div class="hero-inner fade-in">
             <div class="hero-badge">
                 <span class="hero-badge-dot"></span>
-                Now taking new projects — North Wales & UK-wide
+                Available for New Projects &nbsp;·&nbsp; Based in North Wales
             </div>
-
-            <h1 class="hero-title">
-                <span class="hero-title-gradient">Websites Built</span><br>
-                for Growth.
+            <h1 class="hero-headline">
+                We Build Websites<br>
+                That Win <span class="grad">Business</span>
             </h1>
-
-            <p class="hero-subtitle">Speed. Beauty. Results.</p>
-
-            <p class="hero-description">
-                We design and build bespoke, high-performance websites that help businesses stand out,
-                win customers, and grow online — with no subscriptions and full ownership from day one.
+            <p class="hero-sub">
+                Premium, bespoke websites for ambitious North Wales businesses. You own it forever — no subscriptions, no templates, no hidden fees.
             </p>
-
-            <div class="hero-buttons">
-                <a href="contact-us.html" class="btn btn-primary">Start Your Project</a>
-                <a href="#previous-work" class="btn btn-secondary">View Our Work</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Strip -->
-    <section class="stats-strip">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="5" data-suffix="+">0+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-item stat-divider">
-                    <div class="stat-number" data-target="10" data-suffix="+">0+</div>
-                    <div class="stat-label">Projects Delivered</div>
-                </div>
-                <div class="stat-item stat-divider">
-                    <div class="stat-number" data-target="98" data-suffix="%">0%</div>
-                    <div class="stat-label">Client Satisfaction</div>
-                </div>
-                <div class="stat-item stat-divider">
-                    <div class="stat-number" data-target="24" data-suffix="/7">0</div>
-                    <div class="stat-label">Support Available</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Bar -->
-    <section class="trust-bar">
-        <div class="container">
-            <p class="trust-bar-label">Trusted by businesses across North Wales & beyond</p>
-            <div class="trust-clients">
-                <a href="https://cnichtext.co.uk" target="_blank" rel="noopener noreferrer" class="trust-client-chip">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
-                    Cnicht External
+            <div class="hero-actions">
+                <a href="contact-us.html" class="btn-primary">
+                    Start Your Project
+                    <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 </a>
-                <a href="https://cnichtcleaningservices.co.uk" target="_blank" rel="noopener noreferrer" class="trust-client-chip">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
-                    Cnicht Cleaning Services
+                <a href="#portfolio" class="btn-secondary">View Our Work</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-target="5" data-suffix="+">0+</div>
+                    <div class="hero-stat-lbl">Years Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-target="10" data-suffix="+">0+</div>
+                    <div class="hero-stat-lbl">Sites Delivered</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-target="98" data-suffix="%">0%</div>
+                    <div class="hero-stat-lbl">Client Satisfaction</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">24/7</div>
+                    <div class="hero-stat-lbl">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+    <div class="marquee-track">
+        <div class="marquee-unit">
+            <span class="marquee-item">Custom Web Design</span><span class="marquee-sep"></span>
+            <span class="marquee-item">Web Development</span><span class="marquee-sep"></span>
+            <span class="marquee-item">Performance & SEO</span><span class="marquee-sep"></span>
+            <span class="marquee-item">E-Commerce</span><span class="marquee-sep"></span>
+            <span class="marquee-item">Responsive Design</span><span class="marquee-sep"></span>
+            <span class="marquee-item">Ongoing Support</span><span class="marquee-sep"></span>
+            <span class="marquee-item">Full Ownership</span><span class="marquee-sep"></span>
+            <span class="marquee-item">North Wales</span><span class="marquee-sep"></span>
+        </div>
+        <div class="marquee-unit" aria-hidden="true">
+            <span class="marquee-item">Custom Web Design</span><span class="marquee-sep"></span>
+            <span class="marquee-item">Web Development</span><span class="marquee-sep"></span>
+            <span class="marquee-item">Performance & SEO</span><span class="marquee-sep"></span>
+            <span class="marquee-item">E-Commerce</span><span class="marquee-sep"></span>
+            <span class="marquee-item">Responsive Design</span><span class="marquee-sep"></span>
+            <span class="marquee-item">Ongoing Support</span><span class="marquee-sep"></span>
+            <span class="marquee-item">Full Ownership</span><span class="marquee-sep"></span>
+            <span class="marquee-item">North Wales</span><span class="marquee-sep"></span>
+        </div>
+    </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="container">
+        <div class="trust-inner">
+            <span class="trust-label">Live client sites</span>
+            <div class="trust-chips">
+                <a href="https://cnichtext.co.uk" target="_blank" rel="noopener noreferrer" class="trust-chip">
+                    <span class="trust-chip-dot"></span>cnichtext.co.uk
                 </a>
-                <a href="https://porthmadogrfc.co.uk" target="_blank" rel="noopener noreferrer" class="trust-client-chip">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
-                    Porthmadog RFC
+                <a href="https://cnichtcleaningservices.co.uk" target="_blank" rel="noopener noreferrer" class="trust-chip">
+                    <span class="trust-chip-dot"></span>cnichtcleaningservices.co.uk
+                </a>
+                <a href="https://porthmadogrfc.co.uk" target="_blank" rel="noopener noreferrer" class="trust-chip">
+                    <span class="trust-chip-dot"></span>porthmadogrfc.co.uk
                 </a>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <!-- Services -->
-    <section id="services" class="section">
-        <div class="container">
-            <div class="fade-in">
-                <span class="section-eyebrow">What We Do</span>
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">
-                    Comprehensive web solutions tailored to your business — from first concept to live launch and beyond.
-                </p>
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+    <div class="container">
+        <div class="services-header fade-in">
+            <div>
+                <span class="eyebrow">What We Do</span>
+                <h2 class="sec-title">End-to-End<br>Web Solutions</h2>
             </div>
-
-            <div class="services-grid fade-in">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <lord-icon src="https://cdn.lordicon.com/zvamcipt.json" trigger="hover" colors="primary:#0071E3" style="width:40px;height:40px;"></lord-icon>
-                    </div>
-                    <h3>Custom Web Development</h3>
-                    <p>Bespoke websites built from scratch using modern technologies and best practices — crafted for performance and long-term success.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <lord-icon src="https://cdn.lordicon.com/surcxhka.json" trigger="hover" colors="primary:#0071E3" style="width:40px;height:40px;"></lord-icon>
-                    </div>
-                    <h3>Performance Optimisation</h3>
-                    <p>Supercharge your existing website with advanced optimisation — faster load times, better Core Web Vitals, and improved user experience.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover" colors="primary:#0071E3" style="width:40px;height:40px;"></lord-icon>
-                    </div>
-                    <h3>Responsive Design</h3>
-                    <p>Mobile-first design ensuring your website looks and performs flawlessly on every device — from smartphones to large screens.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <lord-icon src="https://cdn.lordicon.com/diihvcfp.json" trigger="hover" colors="primary:#0071E3" style="width:40px;height:40px;"></lord-icon>
-                    </div>
-                    <h3>SEO & Ongoing Support</h3>
-                    <p>Search engine optimisation built in from the ground up, plus ongoing maintenance to keep your site secure, updated, and ranking.</p>
-                </div>
-            </div>
+            <p class="sec-sub">From concept to launch and beyond — everything your business needs to dominate online.</p>
         </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section id="previous-work" class="section section-alt">
-        <div class="container">
-            <div class="fade-in">
-                <span class="section-eyebrow">Our Work</span>
-                <h2 class="section-title">Live Client Websites</h2>
-                <p class="section-subtitle">
-                    Hover over any site to explore it live — these are real websites we've built and delivered.
-                </p>
-            </div>
-
-            <div class="portal-grid">
-                <!-- Cnicht External -->
-                <div class="portal-window fade-in">
-                    <div class="portal-header">
-                        <div class="portal-dot"></div>
-                        <div class="portal-dot"></div>
-                        <div class="portal-dot"></div>
-                        <div class="portal-url-bar">cnichtext.co.uk</div>
-                    </div>
-                    <div class="portal-iframe-container">
-                        <iframe src="https://cnichtext.co.uk" class="portal-iframe" title="Cnicht External Website" loading="lazy"></iframe>
-                        <div class="portal-overlay">
-                            <div class="portal-info">
-                                <h3>Cnicht External</h3>
-                                <p>Professional text services website with modern design</p>
-                                <a href="https://cnichtext.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
-                                    View Full Site
-                                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portal-label">
-                        <h3>Cnicht External</h3>
-                        <p>Professional Services</p>
-                    </div>
-                </div>
-
-                <!-- Cnicht Cleaning Services -->
-                <div class="portal-window fade-in">
-                    <div class="portal-header">
-                        <div class="portal-dot"></div>
-                        <div class="portal-dot"></div>
-                        <div class="portal-dot"></div>
-                        <div class="portal-url-bar">cnichtcleaningservices.co.uk</div>
-                    </div>
-                    <div class="portal-iframe-container">
-                        <iframe src="https://cnichtcleaningservices.co.uk" class="portal-iframe" title="Cnicht Cleaning Services Website" loading="lazy"></iframe>
-                        <div class="portal-overlay">
-                            <div class="portal-info">
-                                <h3>Cnicht Cleaning Services</h3>
-                                <p>Complete cleaning services website with booking system</p>
-                                <a href="https://cnichtcleaningservices.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
-                                    View Full Site
-                                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portal-label">
-                        <h3>Cnicht Cleaning Services</h3>
-                        <p>Service Provider</p>
-                    </div>
-                </div>
-
-                <!-- Porthmadog RFC -->
-                <div class="portal-window fade-in">
-                    <div class="portal-header">
-                        <div class="portal-dot"></div>
-                        <div class="portal-dot"></div>
-                        <div class="portal-dot"></div>
-                        <div class="portal-url-bar">porthmadogrfc.co.uk</div>
-                    </div>
-                    <div class="portal-iframe-container">
-                        <div class="rfc-preview">
-                            <div class="rfc-nav">
-                                <div class="rfc-nav-brand">
-                                    <img src="https://porthmadogrfc.co.uk/assets/images/crest.png" class="rfc-crest" alt="Crest">
-                                    <div class="rfc-brand-text">
-                                        <strong>Porthmadog RFC</strong>
-                                        <span>Clwb Rygbi Porthmadog</span>
-                                    </div>
-                                    <span class="rfc-est">EST. 1976</span>
-                                </div>
-                                <div class="rfc-nav-links">
-                                    <span class="rfc-nav-active">Home</span>
-                                    <span>Players</span>
-                                    <span>Fixtures &amp; Results</span>
-                                    <span>Club History</span>
-                                    <span>Contact</span>
-                                </div>
-                                <span class="rfc-lang">CYMRAEG</span>
-                            </div>
-                            <div class="rfc-hero">
-                                <img src="https://porthmadogrfc.co.uk/assets/images/crest.png" class="rfc-hero-crest" alt="Porthmadog RFC Crest">
-                                <div class="rfc-hero-title">Porthmadog RFC</div>
-                                <div class="rfc-hero-welsh">Clwb Rygbi Porthmadog</div>
-                                <div class="rfc-hero-sub">Fifty years of rugby in Porthmadog.</div>
-                                <div class="rfc-hero-btns">
-                                    <a href="https://porthmadogrfc.co.uk/public/results.php" target="_blank" rel="noopener noreferrer" class="rfc-btn-red">View Fixtures</a>
-                                    <a href="https://porthmadogrfc.co.uk/public/players.php" target="_blank" rel="noopener noreferrer" class="rfc-btn-outline">Our Squad</a>
-                                </div>
-                            </div>
-                            <div class="rfc-cal">
-                                <div class="rfc-cal-header">
-                                    <span class="rfc-cal-btn">&#8592; Prev</span>
-                                    <strong>February 2026</strong>
-                                    <span class="rfc-cal-btn">Next &#8594;</span>
-                                </div>
-                                <div class="rfc-cal-grid">
-                                    <div class="rfc-cal-dow">MON</div><div class="rfc-cal-dow">TUE</div><div class="rfc-cal-dow">WED</div><div class="rfc-cal-dow">THU</div><div class="rfc-cal-dow">FRI</div><div class="rfc-cal-dow">SAT</div><div class="rfc-cal-dow">SUN</div>
-                                    <div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day">1</div>
-                                    <div class="rfc-cal-day">2</div><div class="rfc-cal-day">3</div><div class="rfc-cal-day">4</div><div class="rfc-cal-day">5</div><div class="rfc-cal-day">6</div><div class="rfc-cal-day">7</div><div class="rfc-cal-day">8</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portal-overlay">
-                            <div class="portal-info">
-                                <h3>Porthmadog RFC</h3>
-                                <p>Rugby club website with fixtures, news &amp; team information</p>
-                                <a href="https://porthmadogrfc.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
-                                    View Full Site
-                                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portal-label">
-                        <h3>Porthmadog RFC</h3>
-                        <p>Sports &amp; Community</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What Makes Us Unique -->
-    <section id="unique" class="section">
-        <div class="container">
-            <div class="fade-in">
-                <span class="section-eyebrow">Why Choose Us</span>
-                <h2 class="section-title">What Makes Us Different</h2>
-                <p class="section-subtitle">
-                    Own your website outright — no subscriptions, no hidden fees, no lock-in. Ever.
-                </p>
-            </div>
-
-            <div class="unique-grid fade-in">
-                <div class="unique-card">
-                    <div class="unique-icon">
-                        <lord-icon src="https://cdn.lordicon.com/lomfljuq.json" trigger="hover" colors="primary:#0071E3" style="width:48px;height:48px;"></lord-icon>
-                    </div>
-                    <h3>You Own It Forever</h3>
-                    <p>Pay once and the website is 100% yours. No monthly subscriptions, no recurring fees. Full ownership, complete control — always.</p>
-                </div>
-
-                <div class="unique-card">
-                    <div class="unique-icon">
-                        <lord-icon src="https://cdn.lordicon.com/jvihlqtw.json" trigger="hover" colors="primary:#0071E3" style="width:48px;height:48px;"></lord-icon>
-                    </div>
-                    <h3>No Hidden Costs</h3>
-                    <p>Transparent pricing from day one. What you see is what you pay — no surprise charges, no fine print, no nasty renewals.</p>
-                </div>
-
-                <div class="unique-card">
-                    <div class="unique-icon">
-                        <lord-icon src="https://cdn.lordicon.com/yqzmiobz.json" trigger="hover" colors="primary:#0071E3" style="width:48px;height:48px;"></lord-icon>
-                    </div>
-                    <h3>Hassle-Free Process</h3>
-                    <p>Simple, clear, end-to-end. You provide the vision, we handle everything else. Brief, design, build, launch — done.</p>
-                </div>
-
-                <div class="unique-card">
-                    <div class="unique-icon">
-                        <lord-icon src="https://cdn.lordicon.com/cgzlioyf.json" trigger="hover" colors="primary:#0071E3" style="width:48px;height:48px;"></lord-icon>
-                    </div>
-                    <h3>Full Control</h3>
-                    <p>Your website, your rules. Host anywhere, edit anytime, hire any developer. No platform lock-in or restrictive terms.</p>
-                </div>
-
-                <div class="unique-card">
-                    <div class="unique-icon">
-                        <lord-icon src="https://cdn.lordicon.com/wxnxiano.json" trigger="hover" colors="primary:#0071E3" style="width:48px;height:48px;"></lord-icon>
-                    </div>
-                    <h3>Source Code Included</h3>
-                    <p>You receive clean, documented source code upon delivery. Update and extend your site independently or with any developer you choose.</p>
-                </div>
-
-                <div class="unique-card">
-                    <div class="unique-icon">
-                        <lord-icon src="https://cdn.lordicon.com/dxjqoygy.json" trigger="hover" colors="primary:#0071E3" style="width:48px;height:48px;"></lord-icon>
-                    </div>
-                    <h3>Better Long-Term Value</h3>
-                    <p>Unlike Wix or Squarespace at £20–50/month, our one-time model saves businesses thousands over time. Invest once, benefit forever.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="section section-alt">
-        <div class="container">
-            <div class="fade-in">
-                <span class="section-eyebrow">Payment Options</span>
-                <h2 class="section-title">Flexible Payment</h2>
-                <p class="section-subtitle">
-                    Choose the option that suits your budget — both lead to 100% ownership.
-                </p>
-            </div>
-
-            <div class="pricing-grid fade-in">
-                <div class="pricing-card">
-                    <div class="pricing-badge">Most Popular</div>
-                    <div class="pricing-icon">
-                        <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="hover" colors="primary:#0071E3" style="width:64px;height:64px;"></lord-icon>
-                    </div>
-                    <h3>One-Time Payment</h3>
-                    <div class="pricing-description">
-                        <p>Pay in full upfront and own your website from day one — the best overall value.</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#34C759"/><path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Full ownership immediately</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#34C759"/><path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Best overall value — no extra cost</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#34C759"/><path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>No interest or admin fees</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#34C759"/><path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Complete peace of mind</span>
-                        </li>
-                    </ul>
-                    <a href="contact-us.html" class="pricing-btn btn-primary">Get Started</a>
-                </div>
-
-                <div class="pricing-card">
-                    <div class="pricing-icon">
-                        <lord-icon src="https://cdn.lordicon.com/slkvcfos.json" trigger="hover" colors="primary:#0071E3" style="width:64px;height:64px;"></lord-icon>
-                    </div>
-                    <h3>Monthly Instalments</h3>
-                    <div class="pricing-description">
-                        <p>Spread the cost into manageable monthly payments — ideal for cash-flow-conscious businesses.</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#34C759"/><path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Flexible 3–12 month plans</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#34C759"/><path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Budget-friendly approach</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#34C759"/><path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Full ownership after final payment</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#34C759"/><path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Easier cash flow management</span>
-                        </li>
-                    </ul>
-                    <a href="contact-us.html" class="pricing-btn btn-outline-dark">Learn More</a>
-                </div>
-            </div>
-
-            <div class="pricing-note fade-in">
-                <p>
-                    <strong>Important:</strong> Both options lead to full ownership — you are never renting or subscribing to anything.
-                    After the final payment, the website is 100% yours with zero ongoing fees.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process -->
-    <section id="process" class="section">
-        <div class="container">
-            <div class="fade-in">
-                <span class="section-eyebrow">How It Works</span>
-                <h2 class="section-title">Our Process</h2>
-                <p class="section-subtitle">
-                    A proven five-step process that delivers quality results with clear communication at every stage.
-                </p>
-            </div>
-
-            <div class="process-steps fade-in">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Discovery</h3>
-                    <p class="step-description">We learn your business goals, target audience, and project needs through a detailed consultation.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Design</h3>
-                    <p class="step-description">We craft wireframes and visual designs aligned with your brand and user experience goals.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Build</h3>
-                    <p class="step-description">We develop your site using modern technologies with clean, fast, and maintainable code.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Launch</h3>
-                    <p class="step-description">We deploy your website with thorough testing, optimisation, and a smooth go-live experience.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h3 class="step-title">Support</h3>
-                    <p class="step-description">Ongoing maintenance and support to keep your website secure, updated, and performing at its best.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="section section-alt">
-        <div class="container">
-            <div class="fade-in">
-                <span class="section-eyebrow">Client Reviews</span>
-                <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-subtitle">
-                    Real feedback from the businesses we've helped grow online.
-                </p>
-            </div>
-
-            <div class="testimonials-grid fade-in">
-                <div class="testimonial">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-stars">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p class="testimonial-text">
-                        Working with VisualSites was a fantastic experience. They delivered a professional website that perfectly represents my business. The attention to detail and quality of work exceeded my expectations.
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">PM</div>
-                        <div class="author-info">
-                            <h4>Pauli Murphy</h4>
-                            <p>Business Owner</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-stars">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p class="testimonial-text">
-                        VisualSites created an outstanding website for my text services business. The site is fast, professional, and has significantly improved my online presence. Highly recommend their expertise.
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">OP</div>
-                        <div class="author-info">
-                            <h4>Owain Piggon</h4>
-                            <p>cnichtext.co.uk</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-stars">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p class="testimonial-text">
-                        Absolutely thrilled with my new cleaning services website! It's professional, easy to navigate, and has helped attract more clients. The team was responsive and delivered exactly what I needed.
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">LP</div>
-                        <div class="author-info">
-                            <h4>Lisa Piggon</h4>
-                            <p>cnichtcleaningservices.co.uk</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-stars">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p class="testimonial-text">
-                        The website VisualSites built for Porthmadog RFC has transformed how we communicate with members and supporters. Modern, fast, and easy to use — our engagement online has never been better.
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RF</div>
-                        <div class="author-info">
-                            <h4>Club Representative</h4>
-                            <p>Porthmadog RFC – porthmadogrfc.co.uk</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="fade-in">
-                <span class="section-eyebrow">About Us</span>
-                <h2 class="section-title">About VisualSites</h2>
-                <p class="section-subtitle">
-                    We're a specialist web agency based in North Wales, passionate about building exceptional digital experiences.
-                </p>
-            </div>
-
-            <div class="about-grid fade-in">
+        <div class="service-list fade-in">
+            <div class="service-item">
+                <span class="service-num">01</span>
                 <div>
-                    <h3 style="font-size:clamp(1.5rem,3vw,2.25rem); font-weight:700; color:var(--text-primary); letter-spacing:-0.03em; margin-bottom:var(--space-6); line-height:1.2;">Crafting Digital Excellence, One Website at a Time</h3>
-                    <p style="font-size:var(--font-size-lg); color:var(--text-secondary); line-height:1.7; margin-bottom:var(--space-6);">
-                        With over 5 years of experience in web development, we specialise in creating high-performance websites that not only look stunning but deliver measurable business results.
-                    </p>
-                    <p style="font-size:var(--font-size-lg); color:var(--text-secondary); line-height:1.7; margin-bottom:var(--space-10);">
-                        We believe every pixel matters and every line of code should serve a purpose. Our approach combines technical excellence with creative vision to build websites that are fast, secure, and conversion-optimised.
-                    </p>
-                    <div class="about-stats">
-                        <div class="about-stat-item">
-                            <div class="about-stat-number">98%</div>
-                            <div class="about-stat-label">Client Satisfaction</div>
-                        </div>
-                        <div class="about-stat-item">
-                            <div class="about-stat-number">5+</div>
-                            <div class="about-stat-label">Years Experience</div>
-                        </div>
-                        <div class="about-stat-item">
-                            <div class="about-stat-number">24/7</div>
-                            <div class="about-stat-label">Support Available</div>
+                    <div class="service-name">Custom Web Design</div>
+                    <div class="service-desc">Bespoke designs built from scratch around your brand. No templates, ever.</div>
+                </div>
+                <div class="service-icon">
+                    <lord-icon src="https://cdn.lordicon.com/wloilxuq.json" trigger="hover" colors="primary:#7B93FF" style="width:28px;height:28px;"></lord-icon>
+                </div>
+            </div>
+            <div class="service-item">
+                <span class="service-num">02</span>
+                <div>
+                    <div class="service-name">Web Development</div>
+                    <div class="service-desc">Clean, fast, secure code built with modern technologies that last and perform.</div>
+                </div>
+                <div class="service-icon">
+                    <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="hover" colors="primary:#7B93FF" style="width:28px;height:28px;"></lord-icon>
+                </div>
+            </div>
+            <div class="service-item">
+                <span class="service-num">03</span>
+                <div>
+                    <div class="service-name">Performance & SEO</div>
+                    <div class="service-desc">Lightning-fast load times and search rankings that drive real customers to you.</div>
+                </div>
+                <div class="service-icon">
+                    <lord-icon src="https://cdn.lordicon.com/kkvxgpti.json" trigger="hover" colors="primary:#7B93FF" style="width:28px;height:28px;"></lord-icon>
+                </div>
+            </div>
+            <div class="service-item">
+                <span class="service-num">04</span>
+                <div>
+                    <div class="service-name">Ongoing Support</div>
+                    <div class="service-desc">We're here long after launch — updates, security checks, and peace of mind.</div>
+                </div>
+                <div class="service-icon">
+                    <lord-icon src="https://cdn.lordicon.com/diihvcfp.json" trigger="hover" colors="primary:#7B93FF" style="width:28px;height:28px;"></lord-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section portfolio-section" id="portfolio">
+    <div class="container">
+        <div class="fade-in">
+            <span class="eyebrow">Live Client Work</span>
+            <h2 class="sec-title">Real Sites.<br>Real Results.</h2>
+            <p class="sec-sub">Every portal below is a live, working website we've built. Hover to explore.</p>
+        </div>
+        <div class="portal-grid">
+
+            <!-- Cnicht External -->
+            <div class="portal-window fade-in">
+                <div class="portal-header">
+                    <div class="portal-dot"></div><div class="portal-dot"></div><div class="portal-dot"></div>
+                    <div class="portal-url-bar">cnichtext.co.uk</div>
+                </div>
+                <div class="portal-iframe-container">
+                    <iframe src="https://cnichtext.co.uk" class="portal-iframe" title="Cnicht External Website" loading="lazy"></iframe>
+                    <div class="portal-overlay">
+                        <div class="portal-info">
+                            <h3>Cnicht External</h3>
+                            <p>Professional exterior services website with modern design</p>
+                            <a href="https://cnichtext.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
+                                View Full Site
+                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
+                <div class="portal-label">
+                    <h3>Cnicht External</h3>
+                    <p>Professional Services</p>
+                </div>
+            </div>
 
-                <div class="card">
-                    <h4 style="font-size:var(--font-size-xl); font-weight:700; color:var(--text-primary); margin-bottom:var(--space-6); letter-spacing:-0.022em;">Our Expertise</h4>
-                    <div class="expertise-list">
-                        <div class="expertise-item"><div class="expertise-dot"></div>Modern JavaScript Frameworks</div>
-                        <div class="expertise-item"><div class="expertise-dot"></div>Performance &amp; Core Web Vitals Optimisation</div>
-                        <div class="expertise-item"><div class="expertise-dot"></div>SEO Strategy &amp; Analytics</div>
-                        <div class="expertise-item"><div class="expertise-dot"></div>Responsive &amp; Mobile-First Design</div>
-                        <div class="expertise-item"><div class="expertise-dot"></div>E-commerce &amp; Booking Systems</div>
-                        <div class="expertise-item"><div class="expertise-dot"></div>Hosting, Domains &amp; Ongoing Support</div>
+            <!-- Cnicht Cleaning -->
+            <div class="portal-window fade-in">
+                <div class="portal-header">
+                    <div class="portal-dot"></div><div class="portal-dot"></div><div class="portal-dot"></div>
+                    <div class="portal-url-bar">cnichtcleaningservices.co.uk</div>
+                </div>
+                <div class="portal-iframe-container">
+                    <iframe src="https://cnichtcleaningservices.co.uk" class="portal-iframe" title="Cnicht Cleaning Services Website" loading="lazy"></iframe>
+                    <div class="portal-overlay">
+                        <div class="portal-info">
+                            <h3>Cnicht Cleaning Services</h3>
+                            <p>Complete cleaning services website with booking system</p>
+                            <a href="https://cnichtcleaningservices.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
+                                View Full Site
+                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portal-label">
+                    <h3>Cnicht Cleaning Services</h3>
+                    <p>Service Provider</p>
+                </div>
+            </div>
+
+            <!-- Porthmadog RFC -->
+            <div class="portal-window fade-in">
+                <div class="portal-header">
+                    <div class="portal-dot"></div><div class="portal-dot"></div><div class="portal-dot"></div>
+                    <div class="portal-url-bar">porthmadogrfc.co.uk</div>
+                </div>
+                <div class="portal-iframe-container">
+                    <div class="rfc-preview">
+                        <div class="rfc-nav">
+                            <div class="rfc-nav-brand">
+                                <img src="https://porthmadogrfc.co.uk/assets/images/crest.png" class="rfc-crest" alt="Crest">
+                                <div class="rfc-brand-text">
+                                    <strong>Porthmadog RFC</strong>
+                                    <span>Clwb Rygbi Porthmadog</span>
+                                </div>
+                                <span class="rfc-est">EST. 1976</span>
+                            </div>
+                            <div class="rfc-nav-links">
+                                <span class="rfc-nav-active">Home</span>
+                                <span>Players</span>
+                                <span>Fixtures &amp; Results</span>
+                                <span>Club History</span>
+                                <span>Contact</span>
+                            </div>
+                            <span class="rfc-lang">CYMRAEG</span>
+                        </div>
+                        <div class="rfc-hero">
+                            <img src="https://porthmadogrfc.co.uk/assets/images/crest.png" class="rfc-hero-crest" alt="Porthmadog RFC Crest">
+                            <div class="rfc-hero-title">Porthmadog RFC</div>
+                            <div class="rfc-hero-welsh">Clwb Rygbi Porthmadog</div>
+                            <div class="rfc-hero-sub">Fifty years of rugby in Porthmadog.</div>
+                            <div class="rfc-hero-btns">
+                                <a href="https://porthmadogrfc.co.uk/public/results.php" target="_blank" rel="noopener noreferrer" class="rfc-btn-red">View Fixtures</a>
+                                <a href="https://porthmadogrfc.co.uk/public/players.php" target="_blank" rel="noopener noreferrer" class="rfc-btn-outline">Our Squad</a>
+                            </div>
+                        </div>
+                        <div class="rfc-cal">
+                            <div class="rfc-cal-header">
+                                <span class="rfc-cal-btn">&#8592; Prev</span>
+                                <strong>February 2026</strong>
+                                <span class="rfc-cal-btn">Next &#8594;</span>
+                            </div>
+                            <div class="rfc-cal-grid">
+                                <div class="rfc-cal-dow">MON</div><div class="rfc-cal-dow">TUE</div><div class="rfc-cal-dow">WED</div><div class="rfc-cal-dow">THU</div><div class="rfc-cal-dow">FRI</div><div class="rfc-cal-dow">SAT</div><div class="rfc-cal-dow">SUN</div>
+                                <div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day rfc-cal-empty"></div><div class="rfc-cal-day">1</div>
+                                <div class="rfc-cal-day">2</div><div class="rfc-cal-day">3</div><div class="rfc-cal-day">4</div><div class="rfc-cal-day">5</div><div class="rfc-cal-day">6</div><div class="rfc-cal-day">7</div><div class="rfc-cal-day">8</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-overlay">
+                        <div class="portal-info">
+                            <h3>Porthmadog RFC</h3>
+                            <p>Rugby club website with fixtures, news &amp; team information</p>
+                            <a href="https://porthmadogrfc.co.uk" target="_blank" rel="noopener noreferrer" class="portal-btn">
+                                View Full Site
+                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portal-label">
+                    <h3>Porthmadog RFC</h3>
+                    <p>Sports &amp; Community</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHY VISUALSITES — BENTO -->
+<section class="section bento-section" id="why">
+    <div class="container">
+        <div class="fade-in">
+            <span class="eyebrow">Why Choose Us</span>
+            <h2 class="sec-title">Built Different</h2>
+            <p class="sec-sub">We don't do subscriptions, templates, or lock-in. Every site is yours, forever.</p>
+        </div>
+        <div class="bento-grid fade-in">
+            <div class="bento-card bento-wide">
+                <div class="bento-big">∞</div>
+                <div class="bento-title">You Own It Forever</div>
+                <div class="bento-desc">Unlike Wix, Squarespace, or subscription builders — your website is yours outright. Every line of code, every image, every file. If you ever want to move it, you can. No lock-in, no ongoing dependency on us.</div>
+            </div>
+            <div class="bento-card">
+                <div class="bento-big">£0</div>
+                <div class="bento-title">No Monthly Fees</div>
+                <div class="bento-desc">After delivery, your website costs nothing beyond basic hosting. One price, done.</div>
+            </div>
+            <div class="bento-card">
+                <div class="bento-icon">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="rgba(123,147,255,0.9)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div class="bento-title">North Wales Based</div>
+                <div class="bento-desc">Local market knowledge, national quality standards. We understand your customers.</div>
+            </div>
+            <div class="bento-card">
+                <div class="bento-icon">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="rgba(123,147,255,0.9)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                </div>
+                <div class="bento-title">Source Code Included</div>
+                <div class="bento-desc">Every project ships with the full source code. Yours to keep, modify, and build on.</div>
+            </div>
+            <div class="bento-card">
+                <div class="bento-icon">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="rgba(123,147,255,0.9)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <div class="bento-title">Fast Turnaround</div>
+                <div class="bento-desc">Most sites delivered in 2–4 weeks. No waiting months while agencies juggle clients.</div>
+            </div>
+            <div class="bento-card">
+                <div class="bento-tag">Guaranteed</div>
+                <div class="bento-title">Satisfaction Promise</div>
+                <div class="bento-desc">We don't stop until you're genuinely happy. Revisions included — no extra charges.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="process">
+    <div class="container">
+        <div class="fade-in" style="text-align:center;margin-bottom:0.5rem;">
+            <span class="eyebrow">How It Works</span>
+            <h2 class="sec-title">From Idea to Live Site</h2>
+            <p class="sec-sub" style="margin:0 auto;">A simple, transparent process designed around you.</p>
+        </div>
+        <div class="process-grid fade-in">
+            <div class="process-step">
+                <div class="process-num">01</div>
+                <div class="process-name">Discovery</div>
+                <div class="process-desc">We learn your business, goals, and what success looks like for you.</div>
+            </div>
+            <div class="process-step">
+                <div class="process-num">02</div>
+                <div class="process-name">Design</div>
+                <div class="process-desc">Bespoke designs crafted to your brand — no templates, no shortcuts.</div>
+            </div>
+            <div class="process-step">
+                <div class="process-num">03</div>
+                <div class="process-name">Build</div>
+                <div class="process-desc">Clean, fast, secure code. Built to perform and built to last.</div>
+            </div>
+            <div class="process-step">
+                <div class="process-num">04</div>
+                <div class="process-name">Launch</div>
+                <div class="process-desc">Thorough testing across all devices, then a smooth go-live.</div>
+            </div>
+            <div class="process-step">
+                <div class="process-num">05</div>
+                <div class="process-name">Support</div>
+                <div class="process-desc">We're here whenever you need us — updates, advice, or just a question.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section" id="testimonials">
+    <div class="container">
+        <div class="fade-in">
+            <span class="eyebrow">Client Reviews</span>
+            <h2 class="sec-title">What Clients Say</h2>
+        </div>
+        <div class="testimonials-grid fade-in">
+            <div class="tcard">
+                <div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+                <p class="tcard-text">"Working with VisualSites transformed our business online. The site looks stunning and has genuinely brought in new clients we never would have reached before."</p>
+                <div class="tcard-author">
+                    <div class="tcard-avatar" style="background:linear-gradient(135deg,#4F6EF5,#00D2FF);">SM</div>
+                    <div>
+                        <div class="tcard-name">Sarah M.</div>
+                        <div class="tcard-role">Director, Cnicht External</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tcard">
+                <div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+                <p class="tcard-text">"Fast, professional, and completely hassle-free from start to finish. The website has paid for itself many times over. I wouldn't hesitate to recommend VisualSites."</p>
+                <div class="tcard-author">
+                    <div class="tcard-avatar" style="background:linear-gradient(135deg,#10E090,#4F6EF5);">JT</div>
+                    <div>
+                        <div class="tcard-name">James T.</div>
+                        <div class="tcard-role">Owner, Cnicht Cleaning Services</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tcard">
+                <div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+                <p class="tcard-text">"We now have a website that truly represents our club. The response from members and sponsors has been outstanding — everyone loves it."</p>
+                <div class="tcard-author">
+                    <div class="tcard-avatar" style="background:linear-gradient(135deg,#c8102e,#1b2d55);">PR</div>
+                    <div>
+                        <div class="tcard-name">Club Representative</div>
+                        <div class="tcard-role">Porthmadog RFC</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tcard">
+                <div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+                <p class="tcard-text">"I was genuinely amazed by the quality for the price. VisualSites delivered exactly what they promised, on time and on budget. The after-sales support is second to none."</p>
+                <div class="tcard-author">
+                    <div class="tcard-avatar" style="background:linear-gradient(135deg,#FFB800,#F43F5E);">LB</div>
+                    <div>
+                        <div class="tcard-name">Local Business Owner</div>
+                        <div class="tcard-role">North Wales</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content fade-in">
-                <h2 class="cta-title">Ready to Elevate<br>Your Business Online?</h2>
-                <p class="cta-subtitle">
-                    Let's talk about your project. We'll create a website that drives real, measurable growth for your business.
-                </p>
-                <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-                    <a href="contact-us.html" class="btn btn-primary">Start Your Project</a>
-                    <a href="#previous-work" class="btn btn-secondary">See Our Work First</a>
-                </div>
+<!-- PRICING -->
+<section class="section pricing-section" id="pricing">
+    <div class="container">
+        <div class="fade-in">
+            <span class="eyebrow">Transparent Pricing</span>
+            <h2 class="sec-title">Simple, Honest Pricing</h2>
+            <p class="sec-sub">One price, everything included. No monthly fees, no surprises, no lock-in.</p>
+        </div>
+        <div class="pricing-wrap fade-in">
+            <div class="pcard pcard--featured">
+                <div class="pcard-badge">⭐ Most Popular</div>
+                <div class="pcard-name">One-Time Payment</div>
+                <div class="pcard-price"><sup>£</sup>499</div>
+                <div class="pcard-sub">One payment. Full ownership. No monthly fees ever.</div>
+                <div class="pcard-divider"></div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Bespoke design — no templates</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Fully responsive on all devices</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>SEO optimised from day one</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full source code included</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>3 months free support included</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Hosting setup assistance</div>
+                <a href="contact-us.html" class="pcard-cta pcard-cta--featured">Get Started Today</a>
+            </div>
+            <div class="pcard">
+                <div class="pcard-badge">💳 Flexible</div>
+                <div class="pcard-name">Monthly Instalments</div>
+                <div class="pcard-price"><sup>£</sup>75<span style="font-size:1.1rem;font-weight:400;letter-spacing:0;">/mo</span></div>
+                <div class="pcard-sub">Spread the cost over 3–12 months. Same quality.</div>
+                <div class="pcard-divider"></div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Everything in the one-time plan</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Choose 3, 6, or 12-month term</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>No upfront payment required</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full ownership at end of term</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Support included throughout</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Cancel anytime — no penalties</div>
+                <a href="contact-us.html" class="pcard-cta pcard-cta--outline">Discuss Instalments</a>
             </div>
         </div>
-    </section>
+        <div class="pricing-note fade-in">
+            <strong style="color:var(--text);">Every project is different.</strong> The prices above are starting points — your final quote depends on scope, pages, and features. Get in touch for a free, no-obligation quote tailored to your business.
+        </div>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-inner fade-in">
+            <h2 class="cta-title">Ready to Stand<br>Out Online?</h2>
+            <p class="cta-sub">Let's build something that works as hard as you do. Free quote — no commitment needed.</p>
+            <div class="cta-actions">
+                <a href="contact-us.html" class="btn-primary">
+                    Get a Free Quote
+                    <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="mailto:contact@visualsites.co.uk" class="btn-secondary">contact@visualsites.co.uk</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
                 <div class="footer-brand">
-                    <a href="index.html" class="footer-brand-logo">
-                        <img src="logo.png" alt="VisualSites Logo">
-                        VisualSites
-                    </a>
-                    <p style="color:rgba(245,245,247,0.55); font-size:var(--font-size-sm); line-height:1.7; max-width:280px;">
-                        Professional web design & development from North Wales. Bespoke websites with full ownership — no subscriptions, ever.
-                    </p>
+                    <img src="logo.png" alt="VisualSites">
+                    VisualSites
                 </div>
-
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <a href="#services">Custom Development</a>
-                    <a href="#services">Performance Optimisation</a>
-                    <a href="#services">Responsive Design</a>
-                    <a href="#services">SEO &amp; Maintenance</a>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <a href="#about">About Us</a>
-                    <a href="#previous-work">Portfolio</a>
-                    <a href="#process">Our Process</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <a href="mailto:contact@visualsites.co.uk">contact@visualsites.co.uk</a>
-                    <p style="color:rgba(245,245,247,0.55); font-size:var(--font-size-sm); line-height:2;">Gwynedd, North Wales, UK</p>
-                    <p style="color:rgba(245,245,247,0.55); font-size:var(--font-size-sm); line-height:2;">Response within 24 hours</p>
-                    <a href="contact-us.html" style="margin-top:0.75rem; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 1rem; background:rgba(0,113,227,0.15); border:1px solid rgba(0,113,227,0.3); border-radius:980px; color:#64A4FF !important; font-size:var(--font-size-sm);">
-                        Get a Free Quote →
-                    </a>
+                <div class="footer-tag">Bespoke websites for ambitious businesses across North Wales and beyond.</div>
+                <div class="footer-loc">
+                    <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    Gwynedd, North Wales, UK
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 VisualSites. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="sitemap.xml">Sitemap</a>
-                </div>
+            <div>
+                <div class="footer-col-title">Services</div>
+                <a href="#services" class="footer-link">Web Design</a>
+                <a href="#services" class="footer-link">Web Development</a>
+                <a href="#services" class="footer-link">Performance & SEO</a>
+                <a href="#services" class="footer-link">E-Commerce</a>
+                <a href="#services" class="footer-link">Ongoing Support</a>
+            </div>
+            <div>
+                <div class="footer-col-title">Company</div>
+                <a href="#why" class="footer-link">Why VisualSites</a>
+                <a href="#portfolio" class="footer-link">Our Work</a>
+                <a href="#process" class="footer-link">Process</a>
+                <a href="#pricing" class="footer-link">Pricing</a>
+                <a href="contact-us.html" class="footer-link">Contact</a>
+            </div>
+            <div>
+                <div class="footer-col-title">Contact</div>
+                <a href="mailto:contact@visualsites.co.uk" class="footer-link">contact@visualsites.co.uk</a>
+                <span class="footer-link" style="cursor:default;">Response within 24 hours</span>
+                <span class="footer-link" style="cursor:default;">North Wales, UK</span>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <span class="footer-copy">&copy; 2025 VisualSites. All rights reserved.</span>
+            <div class="footer-policies">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    <script>
-        // Initialize EmailJS
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY");
-        })();
+<script>
+    // EmailJS
+    (function(){ emailjs.init('I-7odFuBbJUAYM6es'); })();
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
+    // Custom cursor
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    let rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => {
+        dot.style.left = e.clientX + 'px';
+        dot.style.top  = e.clientY + 'px';
+        rx += (e.clientX - rx) * 0.12;
+        ry += (e.clientY - ry) * 0.12;
+        ring.style.left = e.clientX + 'px';
+        ring.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a,button,[role="button"]').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cur-hover'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cur-hover'));
+    });
+    document.addEventListener('mousedown', () => document.body.classList.add('cur-click'));
+    document.addEventListener('mouseup',   () => document.body.classList.remove('cur-click'));
+
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Mobile menu
+    const mobileBtn  = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('active')));
+
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
+    });
 
-        // Mobile menu
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-        }
+    // Intersection Observer — fade-in + counters
+    const fadeObs = new IntersectionObserver(entries => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); fadeObs.unobserve(en.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => fadeObs.observe(el));
 
-        document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.remove('active');
-            });
+    function animateCounter(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        if (isNaN(target)) return;
+        const dur = 1800, step = target / (dur / 16);
+        let cur = 0;
+        const tick = () => {
+            cur = Math.min(cur + step, target);
+            el.textContent = Math.floor(cur) + suffix;
+            if (cur < target) requestAnimationFrame(tick);
+            else el.textContent = target + suffix;
+        };
+        requestAnimationFrame(tick);
+    }
+    const ctrObs = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+            if (en.isIntersecting) {
+                en.target.querySelectorAll('[data-target]').forEach(animateCounter);
+                ctrObs.unobserve(en.target);
+            }
         });
+    }, { threshold: 0.5 });
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) ctrObs.observe(heroStats);
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
+    // Portal 3D tilt
+    document.querySelectorAll('.portal-window').forEach(p => {
+        p.addEventListener('mousemove', e => {
+            const r = p.getBoundingClientRect();
+            const rx = ((e.clientY - r.top  - r.height/2) / (r.height/2)) * -5;
+            const ry = ((e.clientX - r.left - r.width/2)  / (r.width/2))  *  5;
+            p.style.transform = `perspective(1400px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-10px) scale(1.015)`;
         });
-
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Active nav highlighting
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.navbar .nav-link:not(.nav-cta)');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                if (scrollY >= section.offsetTop - 200) current = section.getAttribute('id');
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}` ||
-                    (current === '' && link.getAttribute('href') === 'index.html')) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // 3D Tilt for portal windows
-        document.querySelectorAll('.portal-window').forEach(portal => {
-            portal.addEventListener('mousemove', e => {
-                const rect = portal.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const rotateX = ((y - rect.height / 2) / rect.height) * -6;
-                const rotateY = ((x - rect.width / 2) / rect.width) * 6;
-                portal.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
-            });
-            portal.addEventListener('mouseleave', () => { portal.style.transform = ''; });
-        });
-
-        // Animated stat counters
-        function animateCounter(el) {
-            const target = parseInt(el.dataset.target, 10);
-            const suffix = el.dataset.suffix || '';
-            const duration = 1800;
-            const step = target / (duration / 16);
-            let current = 0;
-
-            const update = () => {
-                current = Math.min(current + step, target);
-                el.textContent = Math.floor(current) + suffix;
-                if (current < target) requestAnimationFrame(update);
-                else el.textContent = target + suffix;
-            };
-
-            requestAnimationFrame(update);
-        }
-
-        const statsObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.querySelectorAll('.stat-number[data-target]').forEach(el => {
-                        animateCounter(el);
-                    });
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.stats-strip');
-        if (statsSection) statsObserver.observe(statsSection);
-
-        console.log('VisualSites — visualsites.co.uk');
-    </script>
+        p.addEventListener('mouseleave', () => { p.style.transform = ''; });
+    });
+</script>
 </body>
 </html>
