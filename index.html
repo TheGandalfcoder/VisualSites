@@ -200,7 +200,71 @@
             -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 100%);
             mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 100%);
         }
-        .hero-inner { position:relative; z-index:2; }
+        .hero-inner {
+            position:relative; z-index:2;
+            display:grid; grid-template-columns:1fr 1fr;
+            gap:clamp(2.5rem,5vw,5rem); align-items:center;
+        }
+        @media(max-width:900px){
+            .hero-inner { grid-template-columns:1fr; }
+            .hero-right { order:-1; } /* form above headline on mobile */
+        }
+
+        /* ── Hero quote form card ── */
+        .hero-form-card {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:20px; padding:clamp(1.5rem,3vw,2.25rem);
+            box-shadow:0 0 60px rgba(79,110,245,0.07);
+        }
+        .hfc-heading {
+            font-family:var(--font-display); font-size:1.2rem; font-weight:700;
+            color:var(--text); margin-bottom:0.3rem; letter-spacing:-0.03em;
+        }
+        .hfc-sub {
+            font-size:0.78rem; color:var(--text-muted); margin-bottom:1.5rem;
+        }
+        .hfc-row { display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; }
+        .hfc-field { margin-bottom:0.65rem; }
+        .hfc-field input,
+        .hfc-field select,
+        .hfc-field textarea {
+            width:100%; background:rgba(255,255,255,0.04);
+            border:1px solid rgba(255,255,255,0.09); border-radius:10px;
+            color:var(--text); padding:0.72rem 1rem;
+            font-size:0.88rem; font-family:inherit;
+            outline:none; transition:border-color 0.2s var(--ease);
+            box-sizing:border-box;
+        }
+        .hfc-field input::placeholder,
+        .hfc-field textarea::placeholder { color:var(--text-muted); }
+        .hfc-field select { appearance:none; cursor:pointer; }
+        .hfc-field select option { background:var(--card); color:var(--text); }
+        .hfc-field input:focus,
+        .hfc-field select:focus,
+        .hfc-field textarea:focus {
+            border-color:rgba(79,110,245,0.5);
+            background:rgba(79,110,245,0.05);
+        }
+        .hfc-btn {
+            width:100%; background:var(--accent); color:#fff; border:none;
+            border-radius:10px; padding:0.88rem 1rem;
+            font-family:var(--font-display); font-size:0.95rem; font-weight:700;
+            cursor:pointer; letter-spacing:-0.01em;
+            transition:background 0.2s var(--ease), transform 0.15s var(--ease);
+            display:flex; align-items:center; justify-content:center; gap:0.4rem;
+            margin-top:0.35rem;
+        }
+        .hfc-btn:hover:not(:disabled) { background:var(--accent-l); transform:translateY(-1px); }
+        .hfc-btn:disabled { opacity:0.7; cursor:not-allowed; }
+        .hfc-note {
+            text-align:center; font-size:0.7rem; color:var(--text-muted);
+            margin-top:0.75rem; letter-spacing:0.02em;
+        }
+        .hfc-success {
+            text-align:center; padding:1.5rem 1rem;
+            font-size:0.95rem; color:var(--green);
+            font-weight:600; display:none;
+        }
 
         /* Snowdonia mountain landscape */
         .hero-mountains {
@@ -539,7 +603,8 @@
            PRICING
            ============================================================ */
         .pricing-section { background:var(--surface); }
-        .pricing-wrap { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-top:3.5rem; max-width:880px; }
+        .pricing-wrap { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3.5rem; max-width:1100px; }
+        @media(max-width:780px){ .pricing-wrap{ grid-template-columns:1fr; } }
         .pcard {
             background:var(--card); border:1px solid var(--border);
             border-radius:24px; padding:2.5rem; position:relative; transition:all 0.35s var(--ease);
@@ -736,6 +801,14 @@
 (function () {
     'use strict';
 
+    // ── Only show preloader once per browser session ─────────────────────
+    var pre = document.getElementById('preloader');
+    if (sessionStorage.getItem('vs_intro_shown')) {
+        pre.style.display = 'none';
+        return;
+    }
+    sessionStorage.setItem('vs_intro_shown', '1');
+
     // ── Data ────────────────────────────────────────────────────────────
     var N = 36, W = 800, H = 300;
     var xs = [];
@@ -774,7 +847,6 @@
     var fill    = document.getElementById('plFill');
     var pointer = document.getElementById('plPointer');
     var label   = document.getElementById('plLabel');
-    var pre     = document.getElementById('preloader');
 
     // ── Phase 1: draw stock line left → right ────────────────────────────
     line.setAttribute('d', pts(stockY));
@@ -948,42 +1020,91 @@
 
     <div class="container">
         <div class="hero-inner fade-in">
-            <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                Available for New Projects &nbsp;·&nbsp; Based in North Wales
-            </div>
-            <h1 class="hero-headline">
-                We Build Websites<br>
-                That Win <span class="grad">Business</span>
-            </h1>
-            <p class="hero-sub">
-                Premium, bespoke websites for ambitious North Wales businesses. You own it forever — no subscriptions, no templates, no hidden fees.
-            </p>
-            <div class="hero-actions">
-                <a href="contact-us.html" class="btn-primary">
-                    Start Your Project
-                    <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                </a>
-                <a href="#portfolio" class="btn-secondary">View Our Work</a>
-            </div>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-num" data-target="5" data-suffix="+">0+</div>
-                    <div class="hero-stat-lbl">Years Experience</div>
+
+            <!-- LEFT: headline + stats -->
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Available for New Projects &nbsp;·&nbsp; Based in North Wales
                 </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-num" data-target="10" data-suffix="+">0+</div>
-                    <div class="hero-stat-lbl">Sites Delivered</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-num" data-target="98" data-suffix="%">0%</div>
-                    <div class="hero-stat-lbl">Client Satisfaction</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-num">24/7</div>
-                    <div class="hero-stat-lbl">Support Available</div>
+                <h1 class="hero-headline">
+                    We Build Websites<br>
+                    That Win <span class="grad">Business</span>
+                </h1>
+                <p class="hero-sub">
+                    Premium, bespoke websites for ambitious North Wales businesses. You own it forever — no subscriptions, no templates, no hidden fees.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-num" data-target="5" data-suffix="+">0+</div>
+                        <div class="hero-stat-lbl">Years Experience</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num" data-target="10" data-suffix="+">0+</div>
+                        <div class="hero-stat-lbl">Sites Delivered</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num" data-target="98" data-suffix="%">0%</div>
+                        <div class="hero-stat-lbl">Client Satisfaction</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">24/7</div>
+                        <div class="hero-stat-lbl">Support Available</div>
+                    </div>
                 </div>
             </div>
+
+            <!-- RIGHT: quick quote form -->
+            <div class="hero-right">
+                <div class="hero-form-card">
+                    <div class="hfc-heading">Get a Free Quote</div>
+                    <p class="hfc-sub">Usually replied same day &nbsp;·&nbsp; No commitment</p>
+                    <form id="heroForm" novalidate>
+                        <!-- Hidden fields — fills all EmailJS template variables not shown in this short form -->
+                        <input type="hidden" name="budget_amount"       value="Quote via homepage">
+                        <input type="hidden" name="time"                id="heroTime" value="">
+                        <input type="hidden" name="company_description" value="Quick quote request from homepage">
+                        <input type="hidden" name="has_website"         value="">
+                        <input type="hidden" name="has_domain"          value="">
+                        <input type="hidden" name="has_logo"            value="">
+                        <input type="hidden" name="website_url"         value="">
+                        <input type="hidden" name="has_online_info"     value="">
+                        <input type="hidden" name="online_info_details" value="">
+                        <input type="hidden" name="style_preferences"   value="">
+                        <input type="hidden" name="other_style"         value="">
+                        <input type="hidden" name="message"             value="">
+                        <div class="hfc-row">
+                            <div class="hfc-field">
+                                <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+                            </div>
+                            <div class="hfc-field">
+                                <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+                            </div>
+                        </div>
+                        <div class="hfc-field">
+                            <select name="budget_range_option">
+                                <option value="" disabled selected>What do you need?</option>
+                                <option value="Essential (1–2 pages)">Essential — 1–2 pages (£395)</option>
+                                <option value="Professional (3–5 pages)">Professional — 3–5 pages (£795)</option>
+                                <option value="Complete (5–8 pages)">Complete — 5–8 pages (£1,295)</option>
+                                <option value="Not sure yet">Not sure yet — just exploring</option>
+                            </select>
+                        </div>
+                        <div class="hfc-field">
+                            <input type="text" name="company" placeholder="Business name (optional)" autocomplete="organization">
+                        </div>
+                        <button type="submit" class="hfc-btn" id="hfcBtn">
+                            Get My Free Quote
+                            <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </button>
+                        <p class="hfc-note">Free &nbsp;·&nbsp; No commitment &nbsp;·&nbsp; Based in North Wales</p>
+                    </form>
+                    <div class="hfc-success" id="hfcSuccess">
+                        ✓ &nbsp;Message sent! We'll be in touch very soon.
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -1370,38 +1491,54 @@
             <h2 class="sec-title">Simple, Honest Pricing</h2>
             <p class="sec-sub">One price, everything included. No monthly fees, no surprises, no lock-in.</p>
         </div>
-        <div class="pricing-wrap fade-in">
+        <div class="pricing-wrap fade-in" style="grid-template-columns:repeat(3,1fr);">
+            <!-- ESSENTIAL -->
+            <div class="pcard">
+                <div class="pcard-badge">⚡ Quick Start</div>
+                <div class="pcard-name">Essential</div>
+                <div class="pcard-price"><sup>£</sup>395</div>
+                <div class="pcard-sub">1–2 pages · One-off payment · No monthly fees</div>
+                <div class="pcard-divider"></div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>1–2 page bespoke website</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Mobile &amp; desktop responsive</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contact form &amp; social links</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Basic SEO setup</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Delivered in ~5–7 days</div>
+                <a href="contact-us.html" class="pcard-cta pcard-cta--outline">Get Started</a>
+            </div>
+            <!-- PROFESSIONAL -->
             <div class="pcard pcard--featured">
                 <div class="pcard-badge">⭐ Most Popular</div>
-                <div class="pcard-name">One-Time Payment</div>
-                <div class="pcard-price"><sup>£</sup>899<span style="font-size:1rem;font-weight:400;letter-spacing:0;"> +</span></div>
-                <div class="pcard-sub">One payment. Full ownership. No monthly fees ever.</div>
+                <div class="pcard-name">Professional</div>
+                <div class="pcard-price"><sup>£</sup>795</div>
+                <div class="pcard-sub">3–5 pages · One-off payment · No monthly fees</div>
                 <div class="pcard-divider"></div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Bespoke design — no templates</div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Fully responsive on all devices</div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>SEO optimised from day one</div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full source code included</div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>3 months free support included</div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Hosting setup assistance</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>3–5 page bespoke website</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Mobile &amp; desktop responsive</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contact form &amp; Google Maps</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full on-page SEO</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Google Analytics + Search Console</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Delivered in ~1–2 weeks</div>
                 <a href="contact-us.html" class="pcard-cta pcard-cta--featured">Get Started Today</a>
             </div>
+            <!-- COMPLETE -->
             <div class="pcard">
-                <div class="pcard-badge">💳 Flexible</div>
-                <div class="pcard-name">Monthly Instalments</div>
-                <div class="pcard-price"><sup>£</sup>75<span style="font-size:1.1rem;font-weight:400;letter-spacing:0;">/mo</span></div>
-                <div class="pcard-sub">Spread the cost over 3–12 months. Same quality.</div>
+                <div class="pcard-badge">🏆 Best Value</div>
+                <div class="pcard-name">Complete</div>
+                <div class="pcard-price"><sup>£</sup>1,295</div>
+                <div class="pcard-sub">5–8 pages · Split payments available</div>
                 <div class="pcard-divider"></div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Everything in the one-time plan</div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Choose 3, 6, or 12-month term</div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>No upfront payment required</div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full ownership at end of term</div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Support included throughout</div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Cancel anytime — no penalties</div>
-                <a href="contact-us.html" class="pcard-cta pcard-cta--outline">Discuss Instalments</a>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>5–8 page bespoke website</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Advanced animations &amp; effects</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full SEO strategy &amp; targeting</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>CMS + booking systems</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Logo consultation included</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>3 months free support</div>
+                <a href="contact-us.html" class="pcard-cta pcard-cta--outline">Get Started</a>
             </div>
         </div>
         <div class="pricing-note fade-in">
-            <strong style="color:var(--text);">Every project is different.</strong> The prices above are starting points — your final quote depends on scope, pages, and features. Get in touch for a free, no-obligation quote tailored to your business.
+            <strong style="color:var(--text);">Every project is different.</strong> These are fixed prices — no hidden extras. Get in touch for a free, no-obligation quote tailored to your business.
         </div>
     </div>
 </section>
@@ -1474,6 +1611,25 @@
 <script>
     // EmailJS
     (function(){ emailjs.init('I-7odFuBbJUAYM6es'); })();
+
+    // Hero quick-quote form
+    document.getElementById('heroForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('heroTime').value = new Date().toLocaleString('en-GB', {
+            dateStyle: 'short', timeStyle: 'short'
+        });
+        var btn = document.getElementById('hfcBtn');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        emailjs.sendForm('service_2k6g3nj', 'template_dwsx5lb', this)
+            .then(function() {
+                document.getElementById('heroForm').style.display = 'none';
+                document.getElementById('hfcSuccess').style.display = 'block';
+            }, function() {
+                btn.textContent = 'Something went wrong — try again';
+                btn.disabled = false;
+            });
+    });
 
     // Custom cursor
     const dot = document.getElementById('cursorDot');
