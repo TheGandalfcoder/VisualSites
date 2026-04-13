@@ -471,6 +471,7 @@
         /* Success panel */
         .success-panel {
             text-align:center; padding:4rem 2rem;
+            width:100%;
             background:var(--card); border:1px solid rgba(16,224,144,0.25);
             border-radius:20px; animation:fadeInScale 0.5s var(--ease);
         }
@@ -1402,6 +1403,7 @@
                 await emailjs.sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, contactForm);
 
                 contactForm.style.display = 'none';
+                document.getElementById('pkgBanner').style.display = 'none';
                 const sp = document.getElementById('successPanel');
                 sp.style.display = 'block';
                 sp.scrollIntoView({ behavior:'smooth', block:'center' });
