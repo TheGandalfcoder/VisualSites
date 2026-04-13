@@ -291,6 +291,10 @@
             font-weight:800; line-height:1.0; letter-spacing:-0.045em;
             color:var(--text); margin-bottom:1.75rem;
         }
+        .grad {
+            background:linear-gradient(135deg,var(--accent-l) 0%,var(--cyan) 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
         .hero-headline .grad {
             background:linear-gradient(135deg,var(--accent-l) 0%,var(--cyan) 100%);
             -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
@@ -654,6 +658,70 @@
         }
         @media(max-width:700px){.pricing-wrap{grid-template-columns:1fr;}}
 
+        /* Availability banner */
+        .availability-banner {
+            display:flex; align-items:center; gap:0.6rem;
+            margin:1.75rem 0 0; padding:0.75rem 1.25rem;
+            background:rgba(255,184,0,0.07); border:1px solid rgba(255,184,0,0.28);
+            border-radius:12px; font-size:0.875rem; color:var(--text-dim);
+            max-width:640px;
+        }
+        .avail-dot {
+            width:8px; height:8px; border-radius:50%;
+            background:var(--gold); flex-shrink:0;
+            animation:availPulse 1.8s ease-in-out infinite;
+        }
+        @keyframes availPulse {
+            0%,100%{opacity:1;transform:scale(1);}
+            50%{opacity:0.55;transform:scale(0.8);}
+        }
+        /* Agency comparison line */
+        .pcard-agency {
+            font-size:0.72rem; color:var(--green); letter-spacing:0.01em;
+            margin-bottom:0.6rem; display:block;
+            padding:0.2rem 0.55rem;
+            background:rgba(16,224,144,0.07); border:1px solid rgba(16,224,144,0.18);
+            border-radius:6px; width:fit-content;
+        }
+        /* Pricing guarantees row */
+        .pricing-guarantees {
+            display:flex; flex-wrap:wrap; gap:0.5rem 2rem;
+            margin-top:2rem; max-width:1100px;
+        }
+        .pg-item {
+            font-size:0.82rem; color:var(--text-dim);
+            display:flex; align-items:center; gap:0.4rem;
+        }
+        .pg-check { color:var(--green); font-size:0.95rem; }
+
+        /* ============================================================
+           FAQ
+           ============================================================ */
+        .faq-section { background:var(--bg); }
+        .faq-list { max-width:800px; margin-top:3rem; }
+        .faq-item { border-bottom:1px solid var(--border); overflow:hidden; }
+        .faq-q {
+            width:100%; background:none; border:none;
+            color:var(--text); font-size:1rem; font-weight:600;
+            text-align:left; padding:1.35rem 0;
+            cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+            gap:1rem; font-family:var(--font-sans); transition:color 0.2s;
+            line-height:1.45;
+        }
+        .faq-q:hover { color:var(--accent-l); }
+        .faq-icon {
+            font-size:1.5rem; font-weight:300; color:var(--accent-l);
+            flex-shrink:0; transition:transform 0.3s var(--ease); line-height:1;
+            width:24px; text-align:center;
+        }
+        .faq-item.open .faq-icon { transform:rotate(45deg); }
+        .faq-a {
+            max-height:0; overflow:hidden;
+            transition:max-height 0.42s ease;
+        }
+        .faq-a p { padding-bottom:1.35rem; color:var(--text-dim); font-size:0.9rem; line-height:1.8; }
+        .faq-item.open .faq-a { max-height:280px; }
+
         /* ============================================================
            CTA
            ============================================================ */
@@ -918,6 +986,7 @@
                 <a href="#portfolio" class="nav-link">Work</a>
                 <a href="#process" class="nav-link">Process</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#faq" class="nav-link">FAQ</a>
                 <a href="contact-us.html" class="nav-link nav-cta">Start a Project</a>
             </div>
             <button class="mobile-menu-btn" id="mobileBtn" aria-label="Open menu">
@@ -930,6 +999,7 @@
         <a href="#portfolio" class="nav-link">Work</a>
         <a href="#process" class="nav-link">Process</a>
         <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#faq" class="nav-link">FAQ</a>
         <a href="contact-us.html" class="nav-link nav-cta">Start a Project</a>
     </div>
 </nav>
@@ -1025,7 +1095,7 @@
             <div class="hero-left">
                 <div class="hero-badge">
                     <span class="hero-badge-dot"></span>
-                    Available for New Projects &nbsp;·&nbsp; Based in North Wales
+                    Limited April Spots &nbsp;·&nbsp; Based in North Wales
                 </div>
                 <h1 class="hero-headline">
                     We Build Websites<br>
@@ -1084,9 +1154,9 @@
                         <div class="hfc-field">
                             <select name="budget_range_option">
                                 <option value="" disabled selected>What do you need?</option>
-                                <option value="Essential (1–2 pages)">Essential — 1–2 pages (£395)</option>
-                                <option value="Professional (3–5 pages)">Professional — 3–5 pages (£795)</option>
-                                <option value="Complete (5–8 pages)">Complete — 5–8 pages (£1,295)</option>
+                                <option value="Essential (1–2 pages)">Essential — 1–2 pages (£400)</option>
+                                <option value="Professional (3–5 pages)">Professional — 3–5 pages (£700)</option>
+                                <option value="Complete (5–8 pages)">Complete — 5–8 pages (£995)</option>
                                 <option value="Not sure yet">Not sure yet — just exploring</option>
                             </select>
                         </div>
@@ -1491,26 +1561,33 @@
             <h2 class="sec-title">Simple, Honest Pricing</h2>
             <p class="sec-sub">One price, everything included. No monthly fees, no surprises, no lock-in.</p>
         </div>
+        <div class="availability-banner fade-in">
+            <span class="avail-dot"></span>
+            <span><strong style="color:var(--gold);">Limited Availability:</strong> Only <strong style="color:var(--text);">3 project slots</strong> remaining this month — secure yours before they fill up.</span>
+        </div>
         <div class="pricing-wrap fade-in" style="grid-template-columns:repeat(3,1fr);">
             <!-- ESSENTIAL -->
             <div class="pcard">
                 <div class="pcard-badge">⚡ Quick Start</div>
                 <div class="pcard-name">Essential</div>
-                <div class="pcard-price"><sup>£</sup>395</div>
+                <div class="pcard-price"><sup>£</sup>400</div>
+                <span class="pcard-agency">Agencies typically charge £800–£1,500 for this</span>
                 <div class="pcard-sub">1–2 pages · One-off payment · No monthly fees</div>
                 <div class="pcard-divider"></div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>1–2 page bespoke website</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Mobile &amp; desktop responsive</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contact form &amp; social links</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Basic SEO setup</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>100% code ownership — yours forever</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Delivered in ~5–7 days</div>
-                <a href="contact-us.html" class="pcard-cta pcard-cta--outline">Get Started</a>
+                <a href="contact-us.html" class="pcard-cta pcard-cta--outline">Start for £400 &rarr;</a>
             </div>
             <!-- PROFESSIONAL -->
             <div class="pcard pcard--featured">
                 <div class="pcard-badge">⭐ Most Popular</div>
                 <div class="pcard-name">Professional</div>
-                <div class="pcard-price"><sup>£</sup>795</div>
+                <div class="pcard-price"><sup>£</sup>700</div>
+                <span class="pcard-agency">Agencies typically charge £1,500–£3,000 for this</span>
                 <div class="pcard-sub">3–5 pages · One-off payment · No monthly fees</div>
                 <div class="pcard-divider"></div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>3–5 page bespoke website</div>
@@ -1518,14 +1595,16 @@
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contact form &amp; Google Maps</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full on-page SEO</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Google Analytics + Search Console</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Free revisions until you're 100% happy</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Delivered in ~1–2 weeks</div>
-                <a href="contact-us.html" class="pcard-cta pcard-cta--featured">Get Started Today</a>
+                <a href="contact-us.html" class="pcard-cta pcard-cta--featured">Claim This Package &rarr;</a>
             </div>
             <!-- COMPLETE -->
             <div class="pcard">
                 <div class="pcard-badge">🏆 Best Value</div>
                 <div class="pcard-name">Complete</div>
-                <div class="pcard-price"><sup>£</sup>1,295</div>
+                <div class="pcard-price"><sup>£</sup>995</div>
+                <span class="pcard-agency">Agencies typically charge £3,000–£6,000 for this</span>
                 <div class="pcard-sub">5–8 pages · Split payments available</div>
                 <div class="pcard-divider"></div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>5–8 page bespoke website</div>
@@ -1534,11 +1613,84 @@
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>CMS + booking systems</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Logo consultation included</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>3 months free support</div>
-                <a href="contact-us.html" class="pcard-cta pcard-cta--outline">Get Started</a>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Split payment option available</div>
+                <a href="contact-us.html" class="pcard-cta pcard-cta--outline">Get Started &rarr;</a>
             </div>
         </div>
+        <div class="pricing-guarantees fade-in">
+            <span class="pg-item"><span class="pg-check">✓</span> Free revisions until you're 100% satisfied</span>
+            <span class="pg-item"><span class="pg-check">✓</span> No payment until you approve the design</span>
+            <span class="pg-item"><span class="pg-check">✓</span> UK-based support 7 days a week</span>
+            <span class="pg-item"><span class="pg-check">✓</span> You own the code — forever, no strings attached</span>
+        </div>
         <div class="pricing-note fade-in">
-            <strong style="color:var(--text);">Every project is different.</strong> These are fixed prices — no hidden extras. Get in touch for a free, no-obligation quote tailored to your business.
+            <strong style="color:var(--text);">Not sure which package suits you?</strong> Get in touch — we'll recommend the best option for your business and budget. Free quote, no commitment, no hard sell.
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+    <div class="container">
+        <div class="fade-in">
+            <span class="eyebrow">Common Questions</span>
+            <h2 class="sec-title">Got Questions?<br>We've Got Answers.</h2>
+        </div>
+        <div class="faq-list fade-in">
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    How quickly can you build my website?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>Faster than you'd think. Essential sites are typically ready in 5–7 working days. Professional packages take 1–2 weeks. Complete builds are usually delivered within 3 weeks. We move quickly without cutting corners — most clients are live before they expect to be.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Do I have to pay anything monthly?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>No — not to us. You pay once and that's it. The only ongoing cost is basic web hosting (around £50–£100/year, arranged directly with a provider). No subscriptions, no platform fees, no surprises. Unlike Wix or Squarespace, you're not renting your website — you own it outright.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    What if I don't like the design?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>We don't start building until you've approved the design — and you'll get free revisions at every stage until you're genuinely happy. We've never had a client walk away dissatisfied. Your satisfaction is the only measure that matters to us.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Can I update the website myself after launch?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>Yes — you own the code and can do whatever you like with it. Complete package clients also receive a CMS (content management system) for easy self-editing. Alternatively, just email us any changes you need — we turn around simple updates the same day and charge nothing for minor edits.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Do you work with businesses outside North Wales?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>Absolutely. We're based in North Wales but work with clients across the whole of the UK and beyond. Everything is handled remotely via video calls and direct messaging. Distance is never a barrier — some of our best-performing projects have been for businesses hundreds of miles away.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    What do I need to provide to get started?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>Very little. Ideally: your logo (if you have one), any text or content you'd like on the site, and a rough idea of your preferred style or colours. Don't worry if you're unsure — we'll guide you through everything in a discovery call. Most clients are pleasantly surprised by how painless it is.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -1547,8 +1699,8 @@
 <section class="cta-section">
     <div class="container">
         <div class="cta-inner fade-in">
-            <h2 class="cta-title">Ready to Stand<br>Out Online?</h2>
-            <p class="cta-sub">Let's build something that works as hard as you do. Free quote — no commitment needed.</p>
+            <h2 class="cta-title">Let's Build Something<br><span class="grad">That Wins.</span></h2>
+            <p class="cta-sub">Spots fill up fast. Get your free quote today and lock in your project before the month is full.</p>
             <div class="cta-actions">
                 <a href="contact-us.html" class="btn-primary">
                     Get a Free Quote
@@ -1700,6 +1852,15 @@
     }, { threshold: 0.5 });
     const heroStats = document.querySelector('.hero-stats');
     if (heroStats) ctrObs.observe(heroStats);
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+    }
+    window.toggleFaq = toggleFaq;
 
     // Portal 3D tilt
     document.querySelectorAll('.portal-window').forEach(p => {
