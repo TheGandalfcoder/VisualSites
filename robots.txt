@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /privacy-policy.html
 
 Sitemap: https://visualsites.co.uk/sitemap.xml

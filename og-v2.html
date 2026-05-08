@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 630px; overflow: hidden; }
+  .wrap {
+    width: 1200px; height: 630px;
+    background: #080C1A;
+    display: flex; flex-direction: column;
+    align-items: flex-start; justify-content: center;
+    padding: 0 96px;
+    position: relative; overflow: hidden;
+  }
+  .orb1 {
+    position: absolute; width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(79,110,245,0.16) 0%, transparent 65%);
+    top: -200px; right: -60px; pointer-events: none;
+  }
+  .orb2 {
+    position: absolute; width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,210,255,0.07) 0%, transparent 65%);
+    bottom: -150px; left: 300px; pointer-events: none;
+  }
+  .vs-watermark {
+    position: absolute; top: -60px; right: 40px;
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-size: 380px; font-weight: 800;
+    letter-spacing: -0.06em; line-height: 1;
+    color: rgba(79,110,245,0.06);
+    pointer-events: none; user-select: none;
+  }
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #7B93FF; margin-bottom: 28px;
+    position: relative; z-index: 1;
+  }
+  .brand {
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-size: 100px; font-weight: 800;
+    letter-spacing: -0.045em; line-height: 1;
+    color: #fff; margin-bottom: 28px;
+    position: relative; z-index: 1;
+  }
+  .tagline {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 22px; font-weight: 400;
+    color: rgba(255,255,255,0.48); line-height: 1.55;
+    max-width: 520px; margin-bottom: 48px;
+    position: relative; z-index: 1;
+  }
+  .bottom {
+    display: flex; align-items: center; gap: 24px;
+    position: relative; z-index: 1;
+  }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(79,110,245,0.14);
+    border: 1px solid rgba(79,110,245,0.28);
+    border-radius: 100px; padding: 8px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 500; color: #7B93FF;
+  }
+  .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: #4F6EF5; }
+  .url {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px; color: rgba(255,255,255,0.22);
+  }
+  .wrap::before {
+    content: ''; position: absolute; left: 0; top: 60px; bottom: 60px;
+    width: 4px;
+    background: linear-gradient(180deg, #4F6EF5 0%, #00D2FF 100%);
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="orb1"></div>
+  <div class="orb2"></div>
+  <div class="vs-watermark">VS</div>
+  <div class="eyebrow">North Wales Web Design Studio</div>
+  <div class="brand">VisualSites</div>
+  <div class="tagline">Handcoded websites built to win business.<br>You own the code — forever.</div>
+  <div class="bottom">
+    <div class="pill"><span class="pill-dot"></span>North Wales · Gwynedd</div>
+    <div class="url">visualsites.co.uk</div>
+  </div>
+</div>
+</body>
+</html>

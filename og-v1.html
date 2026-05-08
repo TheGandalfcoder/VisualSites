@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #fff; }
+  .wrap {
+    width: 1200px; height: 630px;
+    background: #fff;
+    display: flex; align-items: stretch;
+    position: relative;
+  }
+  .left {
+    width: 320px; flex-shrink: 0;
+    background: linear-gradient(160deg, #EEF0FF 0%, #DDE2FF 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .left::after {
+    content: '';
+    position: absolute; right: 0; top: 50px; bottom: 50px;
+    width: 1px; background: rgba(79,110,245,0.15);
+  }
+  .logo-img {
+    width: 130px; height: 130px; object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+  .right {
+    flex: 1; padding: 0 72px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: #4F6EF5; margin-bottom: 20px;
+  }
+  .brand {
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-size: 84px; font-weight: 800;
+    letter-spacing: -0.04em; line-height: 1;
+    color: #07080F; margin-bottom: 24px;
+  }
+  .divider {
+    width: 52px; height: 3px;
+    background: linear-gradient(90deg, #4F6EF5, #7B93FF);
+    border-radius: 2px; margin-bottom: 24px;
+  }
+  .tagline {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 21px; font-weight: 400;
+    color: rgba(7,8,15,0.55); line-height: 1.55;
+    margin-bottom: 36px;
+  }
+  .url {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px; font-weight: 500;
+    color: rgba(7,8,15,0.3);
+  }
+  .wrap::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #4F6EF5 0%, #7B93FF 50%, #00D2FF 100%);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="left">
+    <img src="logo.png" class="logo-img" alt="VisualSites">
+  </div>
+  <div class="right">
+    <div class="eyebrow">Web Design Studio · North Wales</div>
+    <div class="brand">VisualSites</div>
+    <div class="divider"></div>
+    <div class="tagline">Bespoke, handcoded websites for<br>ambitious businesses.</div>
+    <div class="url">visualsites.co.uk</div>
+  </div>
+</div>
+</body>
+</html>
