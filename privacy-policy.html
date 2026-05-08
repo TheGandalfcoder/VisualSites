@@ -37,14 +37,14 @@
             --primary-blue-light: #60A5FA;
             --accent-purple: #8B5CF6;
             --accent-cyan: #06B6D4;
-            --dark-bg: #0F172A;
-            --dark-card: #1E293B;
-            --text-primary: #F8FAFC;
-            --text-secondary: #CBD5E1;
-            --text-muted: #64748B;
-            --border-subtle: #334155;
+            --dark-bg: #FFFFFF;
+            --dark-card: #F4F6FF;
+            --text-primary: #07080F;
+            --text-secondary: rgba(7,8,15,0.65);
+            --text-muted: rgba(7,8,15,0.45);
+            --border-subtle: rgba(79,110,245,0.18);
             --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
-            --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+            --gradient-hero: linear-gradient(135deg, #F4F6FF 0%, #EEF0FF 50%, #F4F6FF 100%);
             --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.3);
             --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         }
@@ -99,7 +99,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-subtle);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -174,7 +174,7 @@
         .hero-title {
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 900;
-            background: linear-gradient(135deg, #F8FAFC 0%, #60A5FA 50%, #8B5CF6 100%);
+            background: linear-gradient(135deg, #07080F 0%, #4F6EF5 50%, #7B4FCC 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -211,7 +211,7 @@
             font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 700;
             margin-bottom: 2rem;
-            background: linear-gradient(135deg, #F8FAFC 0%, #60A5FA 100%);
+            background: linear-gradient(135deg, #07080F 0%, #4F6EF5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -323,7 +323,7 @@
         
         /* Footer */
         .footer {
-            background: var(--dark-card);
+            background: var(--dark-bg);
             border-top: 1px solid var(--border-subtle);
             padding: 3rem 0 2rem;
             text-align: center;
@@ -364,7 +364,7 @@
         
         /* Utility Classes */
         .text-gradient {
-            background: linear-gradient(135deg, #60A5FA 0%, #8B5CF6 100%);
+            background: linear-gradient(135deg, #4F6EF5 0%, #7B4FCC 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -384,7 +384,7 @@
             width: 100%;
             border-collapse: collapse;
             margin: 1.5rem 0;
-            background: rgba(30, 41, 59, 0.5);
+            background: rgba(79,110,245,0.04);
             border-radius: 12px;
             overflow: hidden;
         }
@@ -443,7 +443,7 @@
             
             <!-- Mobile Navigation -->
             <div class="mobile-menu hidden md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800 rounded-lg mt-2">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-100 rounded-lg mt-2">
                     <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Home</a>
                     <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium nav-link">About</a>
                     <a href="index.html#skills" class="block px-3 py-2 rounded-md text-base font-medium nav-link">Services</a>

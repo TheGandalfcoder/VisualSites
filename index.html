@@ -66,7 +66,7 @@
            ============================================================ */
         .preloader {
             position: fixed; inset: 0; z-index: 99999;
-            background: #07080F;
+            background: #FFFFFF;
             display: flex; align-items: center; justify-content: center;
         }
         .pl-svg {
@@ -80,15 +80,15 @@
            DESIGN SYSTEM
            ============================================================ */
         :root {
-            --bg:            #07080F;
-            --surface:       #0C0E1A;
-            --card:          #111325;
-            --card-h:        #141829;
-            --border:        rgba(255,255,255,0.07);
-            --border-b:      rgba(255,255,255,0.13);
-            --text:          #EEF0FF;
-            --text-dim:      rgba(238,240,255,0.5);
-            --text-muted:    rgba(238,240,255,0.28);
+            --bg:            #FFFFFF;
+            --surface:       #F4F6FF;
+            --card:          #EEF0FF;
+            --card-h:        #E6EAFF;
+            --border:        rgba(79,110,245,0.12);
+            --border-b:      rgba(79,110,245,0.24);
+            --text:          #07080F;
+            --text-dim:      rgba(7,8,15,0.58);
+            --text-muted:    rgba(7,8,15,0.40);
             --accent:        #4F6EF5;
             --accent-l:      #7B93FF;
             --accent-glow:   rgba(79,110,245,0.28);
@@ -154,9 +154,9 @@
             transition:background 0.4s,box-shadow 0.4s;
         }
         .navbar.scrolled {
-            background:rgba(7,8,15,0.94);
+            background:rgba(255,255,255,0.94);
             backdrop-filter:blur(24px) saturate(180%);
-            box-shadow:0 1px 0 rgba(255,255,255,0.05), 0 4px 40px rgba(0,0,0,0.5);
+            box-shadow:0 1px 0 rgba(0,0,0,0.08), 0 4px 40px rgba(0,0,0,0.08);
         }
         .nav-container { display:flex; justify-content:space-between; align-items:center; width:100%; }
         .nav-logo {
@@ -183,7 +183,7 @@
         .mobile-menu-btn svg { width:22px; height:22px; }
         .mobile-menu {
             display:none; position:absolute; top:60px; left:0; right:0;
-            background:rgba(7,8,15,0.98); backdrop-filter:blur(24px);
+            background:rgba(255,255,255,0.98); backdrop-filter:blur(24px);
             border-bottom:1px solid var(--border); padding:1rem 0;
         }
         .mobile-menu.active { display:block; }
@@ -229,8 +229,8 @@
         .hero::before {
             content:''; position:absolute; inset:0;
             background-image:
-                linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),
-                linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);
+                linear-gradient(rgba(0,0,0,0.04) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(0,0,0,0.04) 1px,transparent 1px);
             background-size:60px 60px;
             -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 100%);
             mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 100%);
@@ -263,8 +263,8 @@
         .hfc-field input,
         .hfc-field select,
         .hfc-field textarea {
-            width:100%; background:rgba(255,255,255,0.04);
-            border:1px solid rgba(255,255,255,0.09); border-radius:10px;
+            width:100%; background:rgba(0,0,0,0.04);
+            border:1px solid rgba(0,0,0,0.10); border-radius:10px;
             color:var(--text); padding:0.72rem 1rem;
             font-size:0.88rem; font-family:inherit;
             outline:none; transition:border-color 0.2s var(--ease);
@@ -355,7 +355,7 @@
             border-radius:980px; font-size:0.95rem; font-weight:500;
             text-decoration:none; transition:all 0.25s var(--ease); letter-spacing:-0.01em;
         }
-        .btn-secondary:hover { color:var(--text); border-color:rgba(255,255,255,0.3); background:rgba(255,255,255,0.04); }
+        .btn-secondary:hover { color:var(--text); border-color:rgba(0,0,0,0.25); background:rgba(0,0,0,0.04); }
         .hero-stats {
             display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:3.5rem;
         }
@@ -440,7 +440,7 @@
         /* ============================================================
            SERVICES — editorial numbered list
            ============================================================ */
-        .services-section { background:var(--bg); }
+        .services-section { background:var(--surface); }
         .services-header {
             display:flex; align-items:flex-end; justify-content:space-between;
             gap:2rem; flex-wrap:wrap; margin-bottom:3.5rem;
@@ -502,19 +502,19 @@
         .portal-window:hover {
             transform:translateY(-10px) scale(1.015);
             border-color:var(--border-b);
-            box-shadow:0 24px 64px rgba(0,0,0,0.55), 0 0 40px var(--accent-glow);
+            box-shadow:0 24px 64px rgba(79,110,245,0.18), 0 0 40px var(--accent-glow);
         }
         .portal-header {
             display:flex; align-items:center; gap:0.45rem;
             padding:0.65rem 0.9rem;
-            background:rgba(255,255,255,0.025); border-bottom:1px solid var(--border);
+            background:rgba(0,0,0,0.04); border-bottom:1px solid var(--border);
         }
         .portal-dot { width:10px; height:10px; border-radius:50%; }
         .portal-dot:nth-child(1){background:#FF5F57;}
         .portal-dot:nth-child(2){background:#FFBD2E;}
         .portal-dot:nth-child(3){background:#28CA42;}
         .portal-url-bar {
-            flex:1; background:rgba(255,255,255,0.04); border-radius:5px;
+            flex:1; background:rgba(0,0,0,0.06); border-radius:5px;
             padding:0.18rem 0.6rem; font-size:0.62rem; color:var(--text-muted);
             font-family:'SF Mono','Menlo',monospace; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;
         }
@@ -530,7 +530,7 @@
         .portal-info p { color:rgba(255,255,255,0.6); font-size:0.78rem; margin-bottom:0.8rem; line-height:1.5; }
         .portal-btn {
             display:inline-flex; align-items:center; gap:0.4rem;
-            padding:0.4rem 0.95rem; background:#fff; color:#000;
+            padding:0.4rem 0.95rem; background:var(--accent); color:#fff;
             border-radius:980px; font-size:0.75rem; font-weight:600;
             text-decoration:none; transition:all 0.2s; pointer-events:all;
         }
@@ -560,7 +560,7 @@
             opacity:0; transition:opacity 0.35s;
         }
         .bento-card:hover::before { opacity:1; }
-        .bento-card:hover { border-color:var(--border-b); transform:translateY(-4px); box-shadow:0 20px 48px rgba(0,0,0,0.35); }
+        .bento-card:hover { border-color:var(--border-b); transform:translateY(-4px); box-shadow:0 20px 48px rgba(79,110,245,0.14); }
         .bento-wide { grid-column:span 2; }
         .bento-icon {
             width:42px; height:42px; display:flex; align-items:center; justify-content:center;
@@ -618,13 +618,13 @@
         /* ============================================================
            TESTIMONIALS
            ============================================================ */
-        .testimonials-section { background:var(--bg); }
+        .testimonials-section { background:var(--surface); }
         .testimonials-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:3rem; }
         .tcard {
             background:var(--card); border:1px solid var(--border);
             border-radius:20px; padding:2rem; transition:all 0.35s var(--ease);
         }
-        .tcard:hover { border-color:var(--border-b); transform:translateY(-4px); box-shadow:0 20px 50px rgba(0,0,0,0.3); }
+        .tcard:hover { border-color:var(--border-b); transform:translateY(-4px); box-shadow:0 20px 50px rgba(79,110,245,0.14); }
         .tcard-stars { display:flex; gap:0.2rem; margin-bottom:1.1rem; }
         .star { color:var(--gold); font-size:0.85rem; }
         .tcard-text { font-size:0.95rem; color:var(--text-dim); line-height:1.7; margin-bottom:1.4rem; font-style:italic; }
@@ -648,7 +648,7 @@
             background:var(--card); border:1px solid var(--border);
             border-radius:24px; padding:2.5rem; position:relative; transition:all 0.35s var(--ease);
         }
-        .pcard:hover { transform:translateY(-4px); box-shadow:0 24px 60px rgba(0,0,0,0.35); }
+        .pcard:hover { transform:translateY(-4px); box-shadow:0 24px 60px rgba(79,110,245,0.14); }
         .pcard--featured {
             border-color:var(--accent);
             background:linear-gradient(150deg,rgba(79,110,245,0.07) 0%,var(--card) 60%);
@@ -684,7 +684,7 @@
         .pcard-cta--featured { background:var(--accent); color:#fff; box-shadow:0 0 24px var(--accent-glow); }
         .pcard-cta--featured:hover { background:var(--accent-l); box-shadow:0 0 36px var(--accent-glow); }
         .pcard-cta--outline { border:1px solid var(--border-b); color:var(--text-dim); }
-        .pcard-cta--outline:hover { border-color:rgba(255,255,255,0.3); color:var(--text); background:rgba(255,255,255,0.03); }
+        .pcard-cta--outline:hover { border-color:rgba(0,0,0,0.25); color:var(--text); background:rgba(0,0,0,0.04); }
         .pricing-note {
             margin-top:1.5rem; padding:1.25rem 1.5rem;
             background:rgba(79,110,245,0.06); border:1px solid rgba(79,110,245,0.15);
@@ -771,8 +771,8 @@
         .cta-section::after {
             content:''; position:absolute; inset:0; pointer-events:none;
             background-image:
-                linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),
-                linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);
+                linear-gradient(rgba(0,0,0,0.04) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(0,0,0,0.04) 1px,transparent 1px);
             background-size:60px 60px;
         }
         .cta-inner { position:relative; z-index:1; }
@@ -891,7 +891,7 @@
             <text x="343" y="18" text-anchor="middle"
                   font-family="'Syne', sans-serif" font-size="24"
                   font-weight="800" letter-spacing="-0.5"
-                  fill="#EEF0FF">VS</text>
+                  fill="#07080F">VS</text>
             <text x="343" y="32" text-anchor="middle"
                   font-family="'Syne', sans-serif" font-size="10"
                   font-weight="700" letter-spacing="3.2"
@@ -1050,21 +1050,21 @@
     <svg class="hero-mountains" viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
             <linearGradient id="idx-g1" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%"   stop-color="#7B93FF" stop-opacity="0.038"/>
-                <stop offset="100%" stop-color="#07080F" stop-opacity="0"/>
+                <stop offset="0%"   stop-color="#7B93FF" stop-opacity="0.05"/>
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
             </linearGradient>
             <linearGradient id="idx-g2" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%"   stop-color="#4F6EF5" stop-opacity="0.055"/>
-                <stop offset="100%" stop-color="#07080F" stop-opacity="0.1"/>
+                <stop offset="0%"   stop-color="#4F6EF5" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.1"/>
             </linearGradient>
             <linearGradient id="idx-g3" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%"   stop-color="#4F6EF5" stop-opacity="0.11"/>
-                <stop offset="52%"  stop-color="#0C0E1A" stop-opacity="0.58"/>
-                <stop offset="100%" stop-color="#07080F" stop-opacity="0.96"/>
+                <stop offset="0%"   stop-color="#4F6EF5" stop-opacity="0.13"/>
+                <stop offset="52%"  stop-color="#EEF0FF" stop-opacity="0.65"/>
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.96"/>
             </linearGradient>
             <linearGradient id="idx-g4" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%"   stop-color="#0B0D1E" stop-opacity="0.7"/>
-                <stop offset="100%" stop-color="#07080F" stop-opacity="1"/>
+                <stop offset="0%"   stop-color="#E6EAFF" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1"/>
             </linearGradient>
         </defs>
 
@@ -1131,14 +1131,14 @@
             <div class="hero-left">
                 <div class="hero-badge">
                     <span class="hero-badge-dot"></span>
-                    Limited April Spots &nbsp;·&nbsp; Based in North Wales
+                    North Wales · Gwynedd
                 </div>
                 <h1 class="hero-headline">
                     We Build Websites<br>
                     That Win <span class="grad">Business</span>
                 </h1>
                 <p class="hero-sub">
-                    Premium, bespoke websites for ambitious North Wales businesses. You own it forever — no subscriptions, no templates, no hidden fees.
+                    Handcoded websites built around your business. You own the code, the domain, and the results — no subscriptions, no platform dependency, no compromise.
                 </p>
                 <div class="hero-stats">
                     <div class="hero-stat">
@@ -1163,8 +1163,8 @@
             <!-- RIGHT: quick quote form -->
             <div class="hero-right">
                 <div class="hero-form-card">
-                    <div class="hfc-heading">Get a Free Quote</div>
-                    <p class="hfc-sub">Usually replied same day &nbsp;·&nbsp; No commitment</p>
+                    <div class="hfc-heading">Request a Quote</div>
+                    <p class="hfc-sub">Usually replied the same day</p>
                     <form id="heroForm" novalidate>
                         <!-- Hidden fields — fills all EmailJS template variables not shown in this short form -->
                         <input type="hidden" name="budget_amount"       value="Quote via homepage">
@@ -1200,13 +1200,12 @@
                             <input type="text" name="company" placeholder="Business name (optional)" autocomplete="organization">
                         </div>
                         <button type="submit" class="hfc-btn" id="hfcBtn">
-                            Get My Free Quote
+                            Send Request
                             <svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                         </button>
-                        <p class="hfc-note">Free &nbsp;·&nbsp; No commitment &nbsp;·&nbsp; Based in North Wales</p>
                     </form>
                     <div class="hfc-success" id="hfcSuccess">
-                        ✓ &nbsp;Message sent! We'll be in touch very soon.
+                        Message sent. We'll be in touch shortly.
                     </div>
                 </div>
             </div>
@@ -1622,17 +1621,12 @@
             <h2 class="sec-title">Simple, Honest Pricing</h2>
             <p class="sec-sub">One price, everything included. No monthly fees, no surprises, no lock-in.</p>
         </div>
-        <div class="availability-banner fade-in">
-            <span class="avail-dot"></span>
-            <span><strong style="color:var(--gold);">Limited Availability:</strong> Only <strong style="color:var(--text);">3 project slots</strong> remaining this month — secure yours before they fill up.</span>
-        </div>
         <div class="pricing-wrap fade-in">
             <!-- ESSENTIAL -->
             <div class="pcard">
-                <div class="pcard-badge">⚡ Quick Start</div>
+                <div class="pcard-badge">Quick Start</div>
                 <div class="pcard-name">Essential</div>
                 <div class="pcard-price"><sup>£</sup>400</div>
-                <span class="pcard-agency">Agencies typically charge £800–£1,500 for this</span>
                 <div class="pcard-sub">1–2 pages · One-off payment · No monthly fees</div>
                 <div class="pcard-divider"></div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>1–2 page bespoke website</div>
@@ -1645,10 +1639,9 @@
             </div>
             <!-- PROFESSIONAL -->
             <div class="pcard pcard--featured">
-                <div class="pcard-badge">⭐ Most Popular</div>
+                <div class="pcard-badge">Most Popular</div>
                 <div class="pcard-name">Professional</div>
                 <div class="pcard-price"><sup>£</sup>700</div>
-                <span class="pcard-agency">Agencies typically charge £1,500–£3,000 for this</span>
                 <div class="pcard-sub">3–5 pages · One-off payment · No monthly fees</div>
                 <div class="pcard-divider"></div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>3–5 page bespoke website</div>
@@ -1662,10 +1655,9 @@
             </div>
             <!-- COMPLETE -->
             <div class="pcard">
-                <div class="pcard-badge">🏆 Best Value</div>
+                <div class="pcard-badge">Best Value</div>
                 <div class="pcard-name">Complete</div>
                 <div class="pcard-price"><sup>£</sup>995</div>
-                <span class="pcard-agency">Agencies typically charge £3,000–£6,000 for this</span>
                 <div class="pcard-sub">5–8 pages · Split payments available</div>
                 <div class="pcard-divider"></div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>5–8 page bespoke website</div>
@@ -1685,7 +1677,7 @@
             <span class="pg-item"><span class="pg-check">✓</span> You own the code — forever, no strings attached</span>
         </div>
         <div class="pricing-note fade-in">
-            <strong style="color:var(--text);">Not sure which package suits you?</strong> Get in touch — we'll recommend the best option for your business and budget. Free quote, no commitment, no hard sell.
+            <strong style="color:var(--text);">Not sure which package suits you?</strong> Get in touch — we'll recommend the best option for your business and budget. Free quote, no commitment.
         </div>
     </div>
 </section>
@@ -1761,7 +1753,7 @@
     <div class="container">
         <div class="cta-inner fade-in">
             <h2 class="cta-title">Let's Build Something<br><span class="grad">That Wins.</span></h2>
-            <p class="cta-sub">Spots fill up fast. Get your free quote today and lock in your project before the month is full.</p>
+            <p class="cta-sub">Tell us about your business and we'll send a tailored proposal — no commitment required.</p>
             <div class="cta-actions">
                 <a href="contact-us.html" class="btn-primary">
                     Get a Free Quote
