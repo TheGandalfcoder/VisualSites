@@ -252,9 +252,9 @@
 
         /* ── Hero quote form card ── */
         .hero-form-card {
-            background:var(--card); border:1px solid var(--border);
+            background:#fff; border:1.5px solid rgba(79,110,245,0.15);
             border-radius:20px; padding:clamp(1.5rem,3vw,2.25rem);
-            box-shadow:0 0 60px rgba(79,110,245,0.07);
+            box-shadow:0 4px 32px rgba(79,110,245,0.1);
         }
         .hfc-heading {
             font-family:var(--font-display); font-size:1.2rem; font-weight:700;
@@ -264,6 +264,7 @@
             font-size:0.78rem; color:var(--text-muted); margin-bottom:1.5rem;
         }
         .hfc-row { display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; }
+        @media(max-width:480px){ .hfc-row{ grid-template-columns:1fr; } }
         .hfc-field { margin-bottom:0.65rem; }
         .hfc-field input,
         .hfc-field select,
@@ -647,18 +648,29 @@
            PRICING
            ============================================================ */
         .pricing-section { background:var(--surface); }
-        .pricing-wrap { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3.5rem; max-width:1100px; }
-        @media(max-width:780px){ .pricing-wrap{ grid-template-columns:1fr; } }
+        .pricing-wrap { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3.5rem; max-width:1100px; align-items:start; }
+        @media(max-width:900px){ .pricing-wrap{ gap:1.25rem; } }
+        @media(max-width:780px){ .pricing-wrap{ grid-template-columns:1fr; max-width:520px; } }
         .pcard {
-            background:var(--card); border:1px solid var(--border);
-            border-radius:24px; padding:2.5rem; position:relative; transition:all 0.35s var(--ease);
+            background:#fff; border:1.5px solid rgba(79,110,245,0.15);
+            border-radius:20px; padding:2.25rem 2rem; position:relative;
+            box-shadow:0 2px 16px rgba(0,0,0,0.06);
+            transition:transform 0.3s var(--ease),box-shadow 0.3s,border-color 0.25s;
         }
-        .pcard:hover { transform:translateY(-4px); box-shadow:0 24px 60px rgba(79,110,245,0.14); }
+        .pcard:hover { transform:translateY(-4px); box-shadow:0 10px 36px rgba(79,110,245,0.13); border-color:rgba(79,110,245,0.35); }
         .pcard--featured {
-            border-color:var(--accent);
-            background:linear-gradient(150deg,rgba(79,110,245,0.07) 0%,var(--card) 60%);
-            box-shadow:0 0 0 1px var(--accent), 0 0 60px var(--accent-glow);
+            border-color:transparent;
+            transform:translateY(-6px);
+            box-shadow:0 8px 40px rgba(79,110,245,0.18);
         }
+        .pcard--featured::before {
+            content:''; position:absolute; inset:-2px;
+            border-radius:22px;
+            background:linear-gradient(135deg, var(--accent) 0%, var(--accent-l) 50%, var(--cyan) 100%);
+            z-index:-1;
+        }
+        .pcard--featured:hover { transform:translateY(-10px); box-shadow:0 16px 48px rgba(79,110,245,0.22); }
+        @media(max-width:780px){ .pcard--featured{ transform:none; } .pcard--featured:hover{ transform:translateY(-4px); } }
         .pcard-badge {
             display:inline-flex; gap:0.35rem; align-items:center;
             font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
@@ -673,30 +685,29 @@
         .pcard-divider { height:1px; background:var(--border); margin:1.5rem 0; }
         .pcard-feature {
             display:flex; align-items:flex-start; gap:0.6rem;
-            font-size:0.875rem; color:var(--text-dim); margin-bottom:0.7rem; line-height:1.5;
+            font-size:0.875rem; color:var(--text); margin-bottom:0.7rem; line-height:1.5;
         }
         .pcard-check {
-            width:17px; height:17px; background:rgba(16,224,144,0.12);
-            border:1px solid rgba(16,224,144,0.28); border-radius:4px;
+            width:17px; height:17px; background:rgba(79,110,245,0.1);
+            border-radius:4px;
             display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:0.05rem;
         }
         .pcard-check svg { width:9px; height:9px; }
         .pcard-cta {
             display:block; text-align:center; padding:0.85rem;
-            border-radius:12px; font-size:0.9rem; font-weight:600;
+            border-radius:10px; font-size:0.9rem; font-weight:600;
             text-decoration:none; transition:all 0.25s var(--ease); margin-top:2rem; letter-spacing:-0.01em;
         }
-        .pcard-cta--featured { background:var(--accent); color:#fff; box-shadow:0 0 24px var(--accent-glow); }
-        .pcard-cta--featured:hover { background:var(--accent-l); box-shadow:0 0 36px var(--accent-glow); }
-        .pcard-cta--outline { border:1px solid var(--border-b); color:var(--text-dim); }
-        .pcard-cta--outline:hover { border-color:rgba(0,0,0,0.25); color:var(--text); background:rgba(0,0,0,0.04); }
+        .pcard-cta--featured { background:var(--accent); color:#fff; box-shadow:0 4px 20px rgba(79,110,245,0.3); }
+        .pcard-cta--featured:hover { background:var(--accent-l); box-shadow:0 6px 28px rgba(79,110,245,0.35); }
+        .pcard-cta--outline { border:1.5px solid rgba(79,110,245,0.25); color:var(--accent); }
+        .pcard-cta--outline:hover { border-color:var(--accent); background:rgba(79,110,245,0.05); }
         .pricing-note {
             margin-top:1.5rem; padding:1.25rem 1.5rem;
             background:rgba(79,110,245,0.06); border:1px solid rgba(79,110,245,0.15);
             border-radius:14px; font-size:0.85rem; color:var(--text-dim); line-height:1.65;
             max-width:880px;
         }
-        @media(max-width:700px){.pricing-wrap{grid-template-columns:1fr;}}
 
         /* Availability banner */
         .availability-banner {
