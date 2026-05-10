@@ -40,14 +40,14 @@
         "addressCountry": "GB"
       },
       "areaServed": ["Gwynedd","Bangor","Caernarfon","Porthmadog","Pwllheli","Llandudno","Anglesey","Conwy","Wrexham","Rhyl","Prestatyn","Denbighshire","North Wales","United Kingdom"],
-      "priceRange": "£400–£995",
+      "priceRange": "£400–£850",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Web Design Packages",
         "itemListElement": [
-          {"@type":"Offer","name":"Essential Website","price":"400","priceCurrency":"GBP","description":"1–2 page bespoke website, mobile responsive, contact form, basic SEO"},
-          {"@type":"Offer","name":"Professional Website","price":"700","priceCurrency":"GBP","description":"3–5 page bespoke website, full on-page SEO, Google Analytics, contact form"},
-          {"@type":"Offer","name":"Complete Website","price":"995","priceCurrency":"GBP","description":"5–8 page bespoke website, advanced animations, CMS, full SEO strategy, 3 months support"}
+          {"@type":"Offer","name":"Essential Website","price":"400","priceCurrency":"GBP","description":"1 page bespoke website, mobile responsive, contact form, basic SEO"},
+          {"@type":"Offer","name":"Professional Website","price":"730","priceCurrency":"GBP","description":"3 page bespoke website, full on-page SEO, Google Analytics, contact form"},
+          {"@type":"Offer","name":"Complete Website","price":"850","priceCurrency":"GBP","description":"Full bespoke website, advanced animations, CMS, full SEO strategy, 3 months support"}
         ]
       },
       "sameAs": ["https://visualsites.co.uk"],
@@ -64,7 +64,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style>
         /* ============================================================
@@ -1172,7 +1171,11 @@
                     <div class="hfc-heading">Request a Quote</div>
                     <p class="hfc-sub">Usually replied the same day</p>
                     <form id="heroForm" novalidate>
-                        <!-- Hidden fields — fills all EmailJS template variables not shown in this short form -->
+                        <!-- FormSubmit config -->
+                        <input type="hidden" name="_subject" value="New quote request — VisualSites">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Extra context fields -->
                         <input type="hidden" name="budget_amount"       value="Quote via homepage">
                         <input type="hidden" name="time"                id="heroTime" value="">
                         <input type="hidden" name="company_description" value="Quick quote request from homepage">
@@ -1196,9 +1199,9 @@
                         <div class="hfc-field">
                             <select name="budget_range_option">
                                 <option value="" disabled selected>What do you need?</option>
-                                <option value="Essential (1–2 pages)">Essential — 1–2 pages (£400)</option>
-                                <option value="Professional (3–5 pages)">Professional — 3–5 pages (£700)</option>
-                                <option value="Complete (5–8 pages)">Complete — 5–8 pages (£995)</option>
+                                <option value="Essential (1 page)">Essential — 1 page (£400)</option>
+                                <option value="Professional (3 pages)">Professional — 3 pages (£730)</option>
+                                <option value="Complete (full)">Complete — Full website (£850)</option>
                                 <option value="Not sure yet">Not sure yet — just exploring</option>
                             </select>
                         </div>
@@ -1633,9 +1636,9 @@
                 <div class="pcard-badge">Quick Start</div>
                 <div class="pcard-name">Essential</div>
                 <div class="pcard-price"><sup>£</sup>400</div>
-                <div class="pcard-sub">1–2 pages · One-off payment · No monthly fees</div>
+                <div class="pcard-sub">1 page · One-off payment · No monthly fees</div>
                 <div class="pcard-divider"></div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>1–2 page bespoke website</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>1 page bespoke website</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Mobile &amp; desktop responsive</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contact form &amp; social links</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Basic SEO setup</div>
@@ -1647,10 +1650,10 @@
             <div class="pcard pcard--featured">
                 <div class="pcard-badge">Most Popular</div>
                 <div class="pcard-name">Professional</div>
-                <div class="pcard-price"><sup>£</sup>700</div>
-                <div class="pcard-sub">3–5 pages · One-off payment · No monthly fees</div>
+                <div class="pcard-price"><sup>£</sup>730</div>
+                <div class="pcard-sub">3 pages · One-off payment · No monthly fees</div>
                 <div class="pcard-divider"></div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>3–5 page bespoke website</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>3 page bespoke website</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Mobile &amp; desktop responsive</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contact form &amp; Google Maps</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full on-page SEO</div>
@@ -1663,10 +1666,10 @@
             <div class="pcard">
                 <div class="pcard-badge">Best Value</div>
                 <div class="pcard-name">Complete</div>
-                <div class="pcard-price"><sup>£</sup>995</div>
-                <div class="pcard-sub">5–8 pages · Split payments available</div>
+                <div class="pcard-price"><sup>£</sup>850</div>
+                <div class="pcard-sub">Full website · Split payments available</div>
                 <div class="pcard-divider"></div>
-                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>5–8 page bespoke website</div>
+                <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full bespoke website</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Advanced animations &amp; effects</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full SEO strategy &amp; targeting</div>
                 <div class="pcard-feature"><div class="pcard-check"><svg fill="none" viewBox="0 0 10 10" stroke="#10E090" stroke-width="2"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>CMS + booking systems</div>
@@ -1824,9 +1827,6 @@
 </footer>
 
 <script>
-    // EmailJS
-    (function(){ emailjs.init('I-7odFuBbJUAYM6es'); })();
-
     // Hero quick-quote form
     document.getElementById('heroForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -1836,11 +1836,17 @@
         var btn = document.getElementById('hfcBtn');
         btn.textContent = 'Sending…';
         btn.disabled = true;
-        emailjs.sendForm('service_2k6g3nj', 'template_dwsx5lb', this)
-            .then(function() {
+        fetch('https://formsubmit.co/ajax/jos@visualsites.co.uk', {
+            method: 'POST',
+            body: new FormData(this),
+            headers: { 'Accept': 'application/json' }
+        })
+            .then(function(r) {
+                if (!r.ok) throw new Error('failed');
                 document.getElementById('heroForm').style.display = 'none';
                 document.getElementById('hfcSuccess').style.display = 'block';
-            }, function() {
+            })
+            .catch(function() {
                 btn.textContent = 'Something went wrong — try again';
                 btn.disabled = false;
             });
